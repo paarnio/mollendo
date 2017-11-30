@@ -1,6 +1,6 @@
 /* TaskFlowMetaInfo.java
  * 
- * Contains meta data related to one task flow.
+ * Contains meta data related to one (1) task flow (i.e. one exercise).
  * This data is populated by ExcelMng object reading it
  * from the project excel file (.xlsx)
  * One project excel may contain several taskFlow definitions.
@@ -9,7 +9,7 @@ package siima.app.model;
 
 public class TaskFlowMetaData {
 	
-	public String taskFlowMetaId;
+	public String taskFlowMetaId; //e.g. U1E1_1
 	public String taskFlowXmlFile;
 		
 	public String studentZipFileFolder;

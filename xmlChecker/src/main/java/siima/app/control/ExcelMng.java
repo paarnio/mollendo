@@ -15,6 +15,8 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellReference;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import siima.app.model.Student;
+import siima.app.model.StudentExercise;
 import siima.app.model.TaskFlowMetaData;
 import siima.utils.ExcelToStringArray;
 
@@ -52,17 +54,51 @@ public class ExcelMng {
 	
 	//NEW
 	private List<TaskFlowMetaData> taskFlowMetaDataList;
+	private List<Student> studentList;
 	
 	public ExcelMng(String excelfile){
 		this.studentDataExcel = excelfile;
 		this.ex2s = new ExcelToStringArray(excelfile);
-		//this.firstperiodevents = new ArrayList<String>();
-		//this.doubleperiodevents = new ArrayList<String>();
+
+		this.studentList = new ArrayList<Student>();
+		this.readStudentsBaseData();
 		this.taskFlowMetaDataList = new ArrayList<TaskFlowMetaData>();
-		this.readMainInfo();
+		this.readTaskFlowMainInfo();
 	}
 	
-	public void readMainInfo(){
+	public void readStudentsBaseData(){
+		this.ex2s.setSheetind(this.ex2s.getSheetIndex(mainInfoSheet));
+		int colIdx = 1;
+		
+		String searchKey = "StudentSheet";
+		int rowIdx = this.ex2s.searchString(searchKey, colIdx, 0, 2);
+		if(rowIdx>=0){
+			this.zipFilesSheet = this.ex2s.getCellValue(colIdx+1, rowIdx);
+			
+		}
+		/* 
+		 * Reading Students sheet (same as submit sheet)
+		 */
+		
+		// Expecting all lists the same size
+		List<String> surnames = this.readStudentSurname(); 
+		List<String> firstnames = this.readStudentFirstname();
+		List<String> studentIds = this.readStudentId();
+		List<String> studentZips = this.readSubmitZipNames();
+		
+		for(int i = 0; i<surnames.size(); i++){
+			Student student = new Student();
+			student.setSurname(surnames.get(i));
+			student.setFirstname(firstnames.get(i));
+			student.setStudentId(studentIds.get(i));
+			student.setSubmitZip(studentZips.get(i));
+			
+			this.studentList.add(student);
+		}
+		
+	}
+	
+	public void readTaskFlowMainInfo(){
 		//String taskFlowXmlFile = null;
 		this.ex2s.setSheetind(this.ex2s.getSheetIndex(mainInfoSheet));
 		int colIdx = 1;
@@ -179,39 +215,39 @@ public class ExcelMng {
 		
 		System.out.println("???MAININFO taskFlowMetaDataList: size: " + taskFlowMetaDataList.size());
 	}
-	public List<String> readStudentSurname(TaskFlowMetaData taskFlowMD){
+	public List<String> readStudentSurname(){ //TaskFlowMetaData taskFlowMD){
 		/*
 		 * Columns: OrderNr; Surname; Firstname; StudentId; SubmitZip	
 		 */
 		
 		List<String> surnames=null;
-		this.ex2s.setSheetind(this.ex2s.getSheetIndex(taskFlowMD.getZipFilesSheet())); //this.zipFilesSheet));
+		this.ex2s.setSheetind(this.ex2s.getSheetIndex(this.zipFilesSheet));//taskFlowMD.getZipFilesSheet())); //this.zipFilesSheet));
 		this.ex2s.setCellArea(submitZipCol-3, submitZipCol-3, submitZipFirstRow, submitZipFirstRow+submitZipCount-1); //
 		surnames = this.ex2s.toStringList(false);
 		
 		return surnames;
 	}
 	
-	public List<String> readStudentFirstname(TaskFlowMetaData taskFlowMD){
+	public List<String> readStudentFirstname(){ //TaskFlowMetaData taskFlowMD){
 		/*
 		 * Columns: OrderNr; Surname; Firstname; StudentId; SubmitZip	
 		 */
 		
 		List<String> firstnames=null;
-		this.ex2s.setSheetind(this.ex2s.getSheetIndex(taskFlowMD.getZipFilesSheet())); //this.zipFilesSheet));
+		this.ex2s.setSheetind(this.ex2s.getSheetIndex(this.zipFilesSheet));//taskFlowMD.getZipFilesSheet())); //this.zipFilesSheet));
 		this.ex2s.setCellArea(submitZipCol-2, submitZipCol-2, submitZipFirstRow, submitZipFirstRow+submitZipCount-1); //
 		firstnames = this.ex2s.toStringList(false);
 		
 		return firstnames;
 	}
 	
-	public List<String> readStudentId(TaskFlowMetaData taskFlowMD){
+	public List<String> readStudentId(){ //TaskFlowMetaData taskFlowMD){
 		/*
 		 * Columns: OrderNr; Surname; Firstname; StudentId; SubmitZip	
 		 */
 		
 		List<String> studentIds=null;
-		this.ex2s.setSheetind(this.ex2s.getSheetIndex(taskFlowMD.getZipFilesSheet())); //this.zipFilesSheet));
+		this.ex2s.setSheetind(this.ex2s.getSheetIndex(this.zipFilesSheet));//taskFlowMD.getZipFilesSheet())); //this.zipFilesSheet));
 		this.ex2s.setCellArea(submitZipCol-1, submitZipCol-1, submitZipFirstRow, submitZipFirstRow+submitZipCount-1); //
 		studentIds = this.ex2s.toStringList(false);
 		
@@ -219,12 +255,12 @@ public class ExcelMng {
 	}
 	
 	
-	public List<String> readSubmitZipNames(TaskFlowMetaData taskFlowMD){
+	public List<String> readSubmitZipNames(){ //TaskFlowMetaData taskFlowMD){
 		/*
 		 * Columns: OrderNr; Surname; Firstname; StudentId; SubmitZip	
 		 */
 		List<String> zips=null;
-		this.ex2s.setSheetind(this.ex2s.getSheetIndex(taskFlowMD.getZipFilesSheet())); //this.zipFilesSheet));
+		this.ex2s.setSheetind(this.ex2s.getSheetIndex(this.zipFilesSheet));//taskFlowMD.getZipFilesSheet())); //this.zipFilesSheet));
 		this.ex2s.setCellArea(submitZipCol, submitZipCol, submitZipFirstRow, submitZipFirstRow+submitZipCount-1); //
 		zips = this.ex2s.toStringList(false);
 		
@@ -266,10 +302,16 @@ public class ExcelMng {
 	 * GETTERS SETTERS
 	 */
 	
+	
+	
 
 	public List<TaskFlowMetaData> getTaskFlowMetaDataList() {
 		return taskFlowMetaDataList;
 	}
+	public List<Student> getStudentList() {
+		return studentList;
+	}
+
 	/*
 	public String getTaskFlowXmlFile() {
 		return taskFlowXmlFile;

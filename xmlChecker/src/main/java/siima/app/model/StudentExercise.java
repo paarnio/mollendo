@@ -5,7 +5,8 @@ import java.util.List;
 
 public class StudentExercise {
 	/* StudentExercise
-	 * data related to one exercise of one student
+	 * Data related to one exercise (1) of one student (1)
+	 * Student's main data specified in Student class
 	 */
 	private String surname;
 	private String firstname;

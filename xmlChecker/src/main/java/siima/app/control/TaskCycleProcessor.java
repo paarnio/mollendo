@@ -32,6 +32,7 @@ public class TaskCycleProcessor {
 	private String projectHome;
 	private TaskFlowMetaData taskFlowMetaData;
 	private CheckerTaskFlowType currentTaskflow;
+	private List<StudentExercise> studentsExerciseData;
 	//private int currentTaskFlowIdx = 0;
 	private ExcelMng excel_mng; // = new ExcelMng("data/excel/students.xlsx");
 	//private TestCaseContainer test_cc = new TestCaseContainer();
@@ -139,6 +140,7 @@ public class TaskCycleProcessor {
 		this.projectHome = projectHome;
 		this.taskFlowMetaData = taskFlowMD;
 		this.currentTaskflow = currentTaskflow;
+		this.studentsExerciseData = readStudentBaseData();
 	}
 	
 	public void runTaskCycles() {
@@ -152,10 +154,10 @@ public class TaskCycleProcessor {
 		System.out.println("???? runTaskCycles(): taskFlowXmlFile: " + taskFlowXmlFile );
 		List<TestCaseType> testcases = readTestCases(); //taskFlowXmlFile);
 		//TODO:NEW Reading the base info of all students
-		List<StudentExercise> allStudents = readStudentBaseData();
-		System.out.println("???? runTaskCycles(): all Students #" + allStudents.size() );
+		//List<StudentExercise> allStudents = readStudentBaseData();
+		//System.out.println("???? runTaskCycles(): all Students #" + allStudents.size() );
 		List<String> studentzips= new ArrayList<String>();
-		for(StudentExercise student : allStudents){
+		for(StudentExercise student : this.studentsExerciseData){
 			String szip = student.getSubmitZip();
 			studentzips.add(szip);
 		}
@@ -433,16 +435,31 @@ public class TaskCycleProcessor {
 			if((stuFlow_ok)&&(merFlow_ok)) testcasePoints.add(points); //TODO points as string
 				else testcasePoints.add("0");
 			}// TestCase Loop ---
-		saveSubmitTestCaseResults(submitcnt, testcasecount, testcaseResults, operationErrors, testcasePoints);
-		}//Student zip loop		
-	 saveAndCloseAllResults(true); 
+		setStudentData(submitcnt, testcasecount, testcaseResults, operationErrors, testcasePoints);
+		writeSubmitTestCaseResults(submitcnt, testcasecount, testcaseResults, operationErrors, testcasePoints);
+		}//Student zip loop	---	
+		writeAllResultsAndCloseExcel(true); 
 	 
 	}
-	public void  saveAndCloseAllResults(boolean closeExcel){
+	
+	public void setStudentData(int submitcnt, int testcasecount, List<String> tcResults, List<String> operErrors, List<String> tcPoints){
+		//Saving results to StudentExercise object
+		List<StudentExercise> allstudents = this.getStudentsExerciseData();
+		StudentExercise student = allstudents.get(submitcnt-1);
+		student.setResultsOfTestCases(tcResults);
+		student.setErrorsOfTestCases(operErrors);
+		List<Integer> exercisePoints = new ArrayList<Integer>();
+		for(String point : tcPoints){
+			exercisePoints.add(Integer.valueOf(point));			
+		}
+		student.setPointsOfTestCases(exercisePoints);
+	}
+	
+	public void  writeAllResultsAndCloseExcel(boolean closeExcel){
 		excel_mng.saveAndCloseResultsExcel(closeExcel);
 	
 	}
-	public void saveSubmitTestCaseResults(int submitcnt, int testcasecount, List<String> tcResults, List<String> operErrors, List<String> tcPoints){
+	public void writeSubmitTestCaseResults(int submitcnt, int testcasecount, List<String> tcResults, List<String> operErrors, List<String> tcPoints){
 	/* Writing one student's results into project excel
 	 * NOTE: DO NOT write [ ] into excel: problems occur
 	 * testcasesResultsLists	
@@ -468,7 +485,7 @@ public class TaskCycleProcessor {
 		//String sheetname = "ZipFiles";
 		List<String> zips;
 		ExcelMng mng = getExcel_mng();
-		zips = mng.readSubmitZipNames(this.taskFlowMetaData); //sheetname, 4, 5, 10, 13);
+		zips = mng.readSubmitZipNames();//this.taskFlowMetaData); //sheetname, 4, 5, 10, 13);
 		return zips;
 	}
 	
@@ -479,10 +496,10 @@ public class TaskCycleProcessor {
 		List<StudentExercise> students = new ArrayList<StudentExercise>();
 		ExcelMng mng = getExcel_mng();
 		// Expecting all lists the same size
-		List<String> surnames = mng.readStudentSurname(this.taskFlowMetaData);
-		List<String> firstnames = mng.readStudentFirstname(this.taskFlowMetaData);
-		List<String> studentIds = mng.readStudentId(this.taskFlowMetaData);
-		List<String> studentZips = mng.readSubmitZipNames(this.taskFlowMetaData);
+		List<String> surnames = mng.readStudentSurname(); // this.taskFlowMetaData
+		List<String> firstnames = mng.readStudentFirstname();
+		List<String> studentIds = mng.readStudentId();
+		List<String> studentZips = mng.readSubmitZipNames();
 		
 		for(int i = 0; i<surnames.size(); i++){
 			StudentExercise student = new StudentExercise();
@@ -566,6 +583,16 @@ public class TaskCycleProcessor {
 		String result = cycle_pros.getChannelStringValue("merC001");
 		System.out.println("CHECKING RESULT: " + result);
 		*/
+	}
+
+	
+	
+	public List<StudentExercise> getStudentsExerciseData() {
+		return studentsExerciseData;
+	}
+
+	public void setStudentsExerciseData(List<StudentExercise> studentsExerciseData) {
+		this.studentsExerciseData = studentsExerciseData;
 	}
 
 	public ExcelMng getExcel_mng() {
