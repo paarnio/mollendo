@@ -32,7 +32,7 @@ public class StudentExercise {
 		this.submitZip = submitZip;
 		pointsOfTestCases = new ArrayList<Integer>();
 		resultsOfTestCases = new ArrayList<String>();
-		resultsOfTestCases = new ArrayList<String>();
+		errorsOfTestCases = new ArrayList<String>();
 	}
 	
 	public StudentExercise(String surname, String firstname, String studentId){
@@ -41,21 +41,21 @@ public class StudentExercise {
 		this.studentId = studentId;
 		pointsOfTestCases = new ArrayList<Integer>();
 		resultsOfTestCases = new ArrayList<String>();
-		resultsOfTestCases = new ArrayList<String>();
+		errorsOfTestCases = new ArrayList<String>();
 	}
 	
 	public StudentExercise(String studentId){		
 		this.studentId = studentId;
 		pointsOfTestCases = new ArrayList<Integer>();
 		resultsOfTestCases = new ArrayList<String>();
-		resultsOfTestCases = new ArrayList<String>();
+		errorsOfTestCases = new ArrayList<String>();
 	}
 	
 	
 	public StudentExercise(){
 		pointsOfTestCases = new ArrayList<Integer>();
 		resultsOfTestCases = new ArrayList<String>();
-		resultsOfTestCases = new ArrayList<String>();
+		errorsOfTestCases = new ArrayList<String>();
 	}
 	
 	/*
