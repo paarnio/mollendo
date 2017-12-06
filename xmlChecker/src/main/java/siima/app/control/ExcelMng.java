@@ -15,8 +15,8 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellReference;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import siima.app.model.Student;
-import siima.app.model.StudentExercise;
+//import siima.app.model.Student;
+//import siima.app.model.StudentExercise;
 import siima.app.model.TaskFlowMetaData;
 import siima.model.jaxb.checker.student.StudentType;
 import siima.utils.ExcelToStringArray;

@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import siima.app.model.StudentExercise;
+//import siima.app.model.StudentExercise;
 import siima.app.model.StudentJaxbContainer;
 
 //import org.apache.log4j.Level;
@@ -20,6 +20,7 @@ import siima.app.model.TaskFlowMetaData;
 import siima.app.operator.TxtFileReadOper;
 import siima.app.operator.XMLValidationCheck;
 import siima.app.operator.XMLWellFormedCheck;
+import siima.model.jaxb.checker.student.ExerciseType;
 import siima.model.jaxb.checker.student.StudentType;
 import siima.model.jaxb.checker.taskflow.CheckerTaskFlowType;
 import siima.model.jaxb.checker.taskflow.FlowType;
@@ -34,7 +35,10 @@ public class TaskCycleProcessor {
 	private String projectHome;
 	private TaskFlowMetaData taskFlowMetaData;
 	private CheckerTaskFlowType currentTaskflow;
-	private List<StudentExercise> studentsExerciseData;
+	//private List<StudentExercise> studentsExerciseData;
+	
+	private StudentJaxbContainer studentContainer;
+	private List<StudentType> students;
 	//private int currentTaskFlowIdx = 0;
 	private ExcelMng excel_mng; // = new ExcelMng("data/excel/students.xlsx");
 	//private TestCaseContainer test_cc = new TestCaseContainer();
@@ -142,9 +146,10 @@ public class TaskCycleProcessor {
 		this.projectHome = projectHome;
 		this.taskFlowMetaData = taskFlowMD;
 		this.currentTaskflow = currentTaskflow;
-		this.studentsExerciseData = readStudentBaseData();
+		//this.studentsExerciseData = readStudentBaseData();
 		//TODO: NEW
-		List<StudentType> students = studentContainer.getStudents();
+		this.studentContainer = studentContainer;
+		this.students = studentContainer.getStudents();
 	}
 	
 	public void runTaskCycles() {
@@ -161,7 +166,8 @@ public class TaskCycleProcessor {
 		//List<StudentExercise> allStudents = readStudentBaseData();
 		//System.out.println("???? runTaskCycles(): all Students #" + allStudents.size() );
 		List<String> studentzips= new ArrayList<String>();
-		for(StudentExercise student : this.studentsExerciseData){
+		//for(StudentExercise student : this.studentsExerciseData){
+		for(StudentType student : this.students){
 			String szip = student.getSubmitZip();
 			studentzips.add(szip);
 		}
@@ -447,6 +453,24 @@ public class TaskCycleProcessor {
 	}
 	
 	public void setStudentData(int submitcnt, int testcasecount, List<String> tcResults, List<String> operErrors, List<String> tcPoints){
+		//Saving results to Student's ExerciseType object
+		int studentIdx = submitcnt-1;
+		//StudentType student = studentContainer.getStudent(studentIdx);
+		String exerciseId = this.currentTaskflow.getExercise();
+		//Create a new ExerciseType object
+		ExerciseType exercise = new ExerciseType();
+		exercise.setExerciseId(exerciseId);
+		exercise.getResultsOfTestCases().addAll(tcResults);
+		exercise.getErrorsOfTestCases().addAll(operErrors);
+		for(String strPoint : tcPoints){
+			exercise.getPointsOfTestCases().add(Integer.valueOf(strPoint));
+		}
+		
+		this.studentContainer.addStudentExercise(studentIdx, exercise);
+	}
+	
+/*	
+	public void wwwsetStudentData(int submitcnt, int testcasecount, List<String> tcResults, List<String> operErrors, List<String> tcPoints){
 		//Saving results to StudentExercise object
 		List<StudentExercise> allstudents = this.getStudentsExerciseData();
 		StudentExercise student = allstudents.get(submitcnt-1);
@@ -458,7 +482,7 @@ public class TaskCycleProcessor {
 		}
 		student.setPointsOfTestCases(exercisePoints);
 	}
-	
+*/	
 	public void  writeAllResultsAndCloseExcel(boolean closeExcel){
 		excel_mng.saveAndCloseResultsExcel(closeExcel);
 	
@@ -493,10 +517,10 @@ public class TaskCycleProcessor {
 		return zips;
 	}
 	
-	public List<StudentExercise> readStudentBaseData(){
-		/*
-		 * reading base data of all the students listed in project excel 
-		 */
+/*	public List<StudentExercise> wwwreadStudentBaseData(){
+		
+		 //reading base data of all the students listed in project excel 
+		
 		List<StudentExercise> students = new ArrayList<StudentExercise>();
 		ExcelMng mng = getExcel_mng();
 		// Expecting all lists the same size
@@ -517,7 +541,7 @@ public class TaskCycleProcessor {
 		
 		return students;
 	}
-	
+*/
 	public List<TestCaseType> readTestCases(){ //String taskFlowXmlFile){
 		List<TestCaseType> cases = null;
 		
@@ -590,7 +614,7 @@ public class TaskCycleProcessor {
 	}
 
 	
-	
+	/*
 	public List<StudentExercise> getStudentsExerciseData() {
 		return studentsExerciseData;
 	}
@@ -598,7 +622,7 @@ public class TaskCycleProcessor {
 	public void setStudentsExerciseData(List<StudentExercise> studentsExerciseData) {
 		this.studentsExerciseData = studentsExerciseData;
 	}
-
+*/
 	public ExcelMng getExcel_mng() {
 		return excel_mng;
 	}
