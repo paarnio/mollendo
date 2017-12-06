@@ -18,6 +18,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import siima.app.model.Student;
 import siima.app.model.StudentExercise;
 import siima.app.model.TaskFlowMetaData;
+import siima.model.jaxb.checker.student.StudentType;
 import siima.utils.ExcelToStringArray;
 
 
@@ -26,8 +27,8 @@ public class ExcelMng {
 	private String studentDataExcel;
 	private Map<String, String> configuremap = null;
 	private Map<String, String> codeperiodmap = null;
-	private List<String> firstperiodevents = null;
-	private List<String> doubleperiodevents = null;
+	//private List<String> firstperiodevents = null;
+	//private List<String> doubleperiodevents = null;
 	//
 	public static String mainInfoSheet = "MainInfo";
 	public int mainInfoKeyCol = 1;
@@ -54,19 +55,19 @@ public class ExcelMng {
 	
 	//NEW
 	private List<TaskFlowMetaData> taskFlowMetaDataList;
-	private List<Student> studentList;
+	//private List<StudentType> studentList;
 	
 	public ExcelMng(String excelfile){
 		this.studentDataExcel = excelfile;
 		this.ex2s = new ExcelToStringArray(excelfile);
 
-		this.studentList = new ArrayList<Student>();
-		this.readStudentsBaseData();
+		//this.studentList = new ArrayList<StudentType>();
+		//this.readStudentsBaseData();
 		this.taskFlowMetaDataList = new ArrayList<TaskFlowMetaData>();
 		this.readTaskFlowMainInfo();
 	}
 	
-	public void readStudentsBaseData(){
+	public List<StudentType> readStudentsBaseData(){
 		this.ex2s.setSheetind(this.ex2s.getSheetIndex(mainInfoSheet));
 		int colIdx = 1;
 		
@@ -79,6 +80,7 @@ public class ExcelMng {
 		/* 
 		 * Reading Students sheet (same as submit sheet)
 		 */
+		List<StudentType> students = new ArrayList<StudentType>();
 		
 		// Expecting all lists the same size
 		List<String> surnames = this.readStudentSurname(); 
@@ -87,15 +89,15 @@ public class ExcelMng {
 		List<String> studentZips = this.readSubmitZipNames();
 		
 		for(int i = 0; i<surnames.size(); i++){
-			Student student = new Student();
+			StudentType student = new StudentType();
 			student.setSurname(surnames.get(i));
 			student.setFirstname(firstnames.get(i));
 			student.setStudentId(studentIds.get(i));
 			student.setSubmitZip(studentZips.get(i));
 			
-			this.studentList.add(student);
+			students.add(student);
 		}
-		
+		return students;
 	}
 	
 	public void readTaskFlowMainInfo(){
@@ -308,9 +310,9 @@ public class ExcelMng {
 	public List<TaskFlowMetaData> getTaskFlowMetaDataList() {
 		return taskFlowMetaDataList;
 	}
-	public List<Student> getStudentList() {
+/*	public List<StudentType> getStudentList() {
 		return studentList;
-	}
+	} */
 
 	/*
 	public String getTaskFlowXmlFile() {

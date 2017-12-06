@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import siima.app.gui.MainFrame;
+import siima.app.model.StudentJaxbContainer;
 import siima.app.model.TaskFlowJaxbContainer;
 import siima.app.model.TaskFlowMetaData;
 import siima.app.model.tree.ElementModel;
@@ -30,6 +31,9 @@ public class MainAppController {
 	private String projectHome;
 	private MainFrame viewFrame;
 	private TaskFlowJaxbContainer graphbuilder;
+	
+	private StudentJaxbContainer studentContainer;
+	
 	private TaskCycleProcessor taskCycleProcessor;
 	private ExcelMng excel_mng;
 	
@@ -64,6 +68,9 @@ public class MainAppController {
 	public void initApplication(){
 		
 		excel_mng = new ExcelMng(this.projectExcelFile);
+		this.studentContainer = new StudentJaxbContainer(excel_mng);
+		this.studentContainer.readStudentBaseData();
+		
 		this.taskFlowMetaDataList = excel_mng.getTaskFlowMetaDataList();
 		taskCycleProcessor = new TaskCycleProcessor(); //this.projectExcel);
 		if((taskFlowMetaDataList!=null)&&(!taskFlowMetaDataList.isEmpty())){
@@ -74,12 +81,13 @@ public class MainAppController {
 			openTaskFlowFile(taskFlowXmlfile);			
 			}
 		}
+		
 	}
 	
 	public void invokeCheckingProcess(){
 				
 		if(runConditions()){
-			taskCycleProcessor.initProcessor(this.projectHome, taskFlowMetaDataList.get(selectedTaskflowIndex), excel_mng, selectedTaskflowObject );
+			taskCycleProcessor.initProcessor(this.projectHome, taskFlowMetaDataList.get(selectedTaskflowIndex), excel_mng, selectedTaskflowObject, studentContainer);
 			taskCycleProcessor.runTaskCycles();
 		
 		}
@@ -91,7 +99,7 @@ public class MainAppController {
 	public boolean runConditions(){
 		boolean ok = false;
 		if((selectedTaskflowObject!=null)&&(this.taskFlowMetaDataList!=null)&&(this.selectedTaskflowIndex>=0)
-				&&(this.selectedTaskflowIndex<this.taskFlowMetaDataList.size())){
+				&&(this.selectedTaskflowIndex < this.taskFlowMetaDataList.size())){
 			
 			ok = true;
 		}

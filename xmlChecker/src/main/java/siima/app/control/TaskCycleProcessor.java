@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import siima.app.model.StudentExercise;
+import siima.app.model.StudentJaxbContainer;
 
 //import org.apache.log4j.Level;
 //import org.apache.log4j.Logger;
@@ -19,6 +20,7 @@ import siima.app.model.TaskFlowMetaData;
 import siima.app.operator.TxtFileReadOper;
 import siima.app.operator.XMLValidationCheck;
 import siima.app.operator.XMLWellFormedCheck;
+import siima.model.jaxb.checker.student.StudentType;
 import siima.model.jaxb.checker.taskflow.CheckerTaskFlowType;
 import siima.model.jaxb.checker.taskflow.FlowType;
 import siima.model.jaxb.checker.taskflow.OperationType;
@@ -133,7 +135,7 @@ public class TaskCycleProcessor {
 		return value;
 	}
 	
-	public void initProcessor(String projectHome, TaskFlowMetaData taskFlowMD, ExcelMng excel_mng, CheckerTaskFlowType currentTaskflow) {
+	public void initProcessor(String projectHome, TaskFlowMetaData taskFlowMD, ExcelMng excel_mng, CheckerTaskFlowType currentTaskflow, StudentJaxbContainer studentContainer) {
 		//Excel MainInfo contains file paths relative to project home
 		this.excel_mng = excel_mng;
 		this.excel_mng.openResultsExcel();
@@ -141,6 +143,8 @@ public class TaskCycleProcessor {
 		this.taskFlowMetaData = taskFlowMD;
 		this.currentTaskflow = currentTaskflow;
 		this.studentsExerciseData = readStudentBaseData();
+		//TODO: NEW
+		List<StudentType> students = studentContainer.getStudents();
 	}
 	
 	public void runTaskCycles() {
