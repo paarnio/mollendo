@@ -9,7 +9,6 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-//import siima.app.model.StudentExercise;
 import siima.app.model.StudentJaxbContainer;
 
 //import org.apache.log4j.Level;
@@ -469,20 +468,7 @@ public class TaskCycleProcessor {
 		this.studentContainer.addStudentExercise(studentIdx, exercise);
 	}
 	
-/*	
-	public void wwwsetStudentData(int submitcnt, int testcasecount, List<String> tcResults, List<String> operErrors, List<String> tcPoints){
-		//Saving results to StudentExercise object
-		List<StudentExercise> allstudents = this.getStudentsExerciseData();
-		StudentExercise student = allstudents.get(submitcnt-1);
-		student.setResultsOfTestCases(tcResults);
-		student.setErrorsOfTestCases(operErrors);
-		List<Integer> exercisePoints = new ArrayList<Integer>();
-		for(String point : tcPoints){
-			exercisePoints.add(Integer.valueOf(point));			
-		}
-		student.setPointsOfTestCases(exercisePoints);
-	}
-*/	
+
 	public void  writeAllResultsAndCloseExcel(boolean closeExcel){
 		excel_mng.saveAndCloseResultsExcel(closeExcel);
 	
@@ -517,38 +503,9 @@ public class TaskCycleProcessor {
 		return zips;
 	}
 	
-/*	public List<StudentExercise> wwwreadStudentBaseData(){
-		
-		 //reading base data of all the students listed in project excel 
-		
-		List<StudentExercise> students = new ArrayList<StudentExercise>();
-		ExcelMng mng = getExcel_mng();
-		// Expecting all lists the same size
-		List<String> surnames = mng.readStudentSurname(); // this.taskFlowMetaData
-		List<String> firstnames = mng.readStudentFirstname();
-		List<String> studentIds = mng.readStudentId();
-		List<String> studentZips = mng.readSubmitZipNames();
-		
-		for(int i = 0; i<surnames.size(); i++){
-			StudentExercise student = new StudentExercise();
-			student.setSurname(surnames.get(i));
-			student.setFirstname(firstnames.get(i));
-			student.setStudentId(studentIds.get(i));
-			student.setSubmitZip(studentZips.get(i));
-			
-			students.add(student);
-		}
-		
-		return students;
-	}
-*/
+
 	public List<TestCaseType> readTestCases(){ //String taskFlowXmlFile){
 		List<TestCaseType> cases = null;
-		
-		//TaskFlowJaxbContainer tfc = this.getTaskflow_cont();
-		//CheckerTaskFlowType taskflow = tfc.loadCheckerTaskFlowModel(taskFlowXmlFile);
-		//cases = taskflow.getTestCase();
-		//CheckerTaskFlowType taskflow = taskflow_cont.getTaskflow();
 		if(this.currentTaskflow!=null)
 			cases = this.currentTaskflow.getTestCase();
 		else
@@ -556,73 +513,7 @@ public class TaskCycleProcessor {
 		return cases;
 	}
 	
-	public static void main(String[] args) {
-		/*String studentsExcel = "data/excel/students.xlsx";
-		TaskCycleProcessor cycle_pros = new TaskCycleProcessor(studentsExcel); //studentsExcel);
-		
-		String taskFlowXmlFile = "data/taskflow/taskflow3_U1E1_1_sub2.xml"; //"data/taskflow/taskflow2_2.xml";
-		String resultFilePath1 = "./data/zips/result_test1.xml";		
-		String sheetname = "Sheet1";
-				
-		//Submit zip file names from excel
-		ExcelMng mng = cycle_pros.getExcel_mng();
-		//String[] zips = mng.readPredefinedSchedulesFromExcel("NA", 1, sheetname, 4, 5, 10, 13);
-		//for(int i=0; i<zips.length ; i++)
-		//System.out.println("STUDENT SUBMITS: " + zips[i]);
-		//
-		List<String> zips = cycle_pros.readSubmitZipNames();
-		for ( String zip : zips) System.out.println("STUDENT SUBMIT: " + zip);
-		
-		// Testcase Info by unmarshalling taskflow1.xml
-		TestCaseContainer tcc = cycle_pros.getTest_cc();
-		CheckerTaskFlowType taskflow = tcc.loadCheckerTaskFlowModel(taskFlowXmlFile);
-		List<TestCaseType> cases = taskflow.getTestCase();
-		Integer points = cases.get(0).getPoints();
-		System.out.println("TEST CASE POINTS: " + points);
-		String rdir1= cases.get(0).getRefDir1();
-		String rfile1= cases.get(0).getRefFile1();
-		String rfile2= cases.get(0).getRefFile2();
-		String sdir1= cases.get(0).getStuDir1();
-		String sfile1= cases.get(0).getStuFile1();
-		String sfile2= cases.get(0).getStuFile2();
-		List<FlowType> flows = cases.get(0).getFlow();
-		List<OperationType> operations = flows.get(0).getOperation();
-		OperationType oper = operations.get(0);
-		String name =oper.getName();
-		String par1 =oper.getPar1();
-		String par2 =oper.getPar2();
-		System.out.println("TEST CASE OPERATION: " + name);		
-		//If operation name is 'XSLTransform' 
-		String fullXSLPathInZip = sdir1 + sfile1;
-		String fullXMLPathInZip = sdir1 + sfile2;
-		System.out.println("STUDENT XSLFILE: " + fullXSLPathInZip);
-		System.out.println("STUDENT XMLFILE: " + fullXMLPathInZip);
-		//Prepare and run transform
-		TransformController ctrl = cycle_pros.getTrans_ctrl();
-		String zippath = "data/zips/RoundU1/" + zips.get(0);
-		System.out.println("STUDENT ZIPFILE PATH: " + zippath);
-		ctrl.prepareXSLTransformWithImputStreams(zippath, fullXSLPathInZip, zippath, fullXMLPathInZip);		
-		ctrl.runTransformToFile(resultFilePath1,  null,null);
-		System.out.println("Option 1: resultfile: " + resultFilePath1);
-		
-		//Run Cycles
-		cycle_pros.initProcessor();
-		cycle_pros.runTaskCycles();
-		String result = cycle_pros.getChannelStringValue("merC001");
-		System.out.println("CHECKING RESULT: " + result);
-		*/
-	}
-
 	
-	/*
-	public List<StudentExercise> getStudentsExerciseData() {
-		return studentsExerciseData;
-	}
-
-	public void setStudentsExerciseData(List<StudentExercise> studentsExerciseData) {
-		this.studentsExerciseData = studentsExerciseData;
-	}
-*/
 	public ExcelMng getExcel_mng() {
 		return excel_mng;
 	}

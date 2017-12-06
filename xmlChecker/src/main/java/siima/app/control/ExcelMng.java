@@ -15,8 +15,6 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellReference;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-//import siima.app.model.Student;
-//import siima.app.model.StudentExercise;
 import siima.app.model.TaskFlowMetaData;
 import siima.model.jaxb.checker.student.StudentType;
 import siima.utils.ExcelToStringArray;
@@ -27,9 +25,7 @@ public class ExcelMng {
 	private String studentDataExcel;
 	private Map<String, String> configuremap = null;
 	private Map<String, String> codeperiodmap = null;
-	//private List<String> firstperiodevents = null;
-	//private List<String> doubleperiodevents = null;
-	//
+
 	public static String mainInfoSheet = "MainInfo";
 	public int mainInfoKeyCol = 1;
 	public int mainInfoKeyFirstRow = 20; //set in readMainInfo()
@@ -310,9 +306,7 @@ public class ExcelMng {
 	public List<TaskFlowMetaData> getTaskFlowMetaDataList() {
 		return taskFlowMetaDataList;
 	}
-/*	public List<StudentType> getStudentList() {
-		return studentList;
-	} */
+
 
 	/*
 	public String getTaskFlowXmlFile() {

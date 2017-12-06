@@ -91,9 +91,7 @@ public class MainAppController {
 			taskCycleProcessor.runTaskCycles();
 		
 		}
-		//String result = taskCycleProcessor.getChannelStringValue("merC001");
-		//System.out.println("CHECKING RESULT: " + result);
-		//return ok;
+		
 	}
 	
 	public boolean runConditions(){
