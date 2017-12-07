@@ -152,6 +152,12 @@ public class MainAppController {
 		return "(" + index + ")" + nodetype + ":" + info;
 	}
 	
+	public void serializeResultsToXML(String filePath){
+		
+		studentContainer.serializeToXML(filePath);
+		
+	}
+	
 	
 	/*
 	 *  GETTERS SETTERS

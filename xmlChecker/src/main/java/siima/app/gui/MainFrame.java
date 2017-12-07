@@ -68,6 +68,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 
 	private File mainOpenFile;
 	private JMenuItem mntmSave;
+	private JMenuItem mntmSaveResultsAsXML;
 	private JButton btnInvokeButton;
 
 	public MainAppController appControl;
@@ -242,16 +243,17 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		mnFile.add(newProjectVersionSubmenu);
 
 		
-		mntmSaveProject = new JMenuItem("Save Project");
-		mntmSaveProject.addActionListener(this);
-		mnFile.add(mntmSaveProject);
-		mntmSaveProject.setEnabled(false);
-		
-		mntmSaveProjectAs = new JMenuItem("Save Project As...");
-		mntmSaveProjectAs.addActionListener(this);
-		mnFile.add(mntmSaveProjectAs);
-		mntmSaveProjectAs.setEnabled(false);
-		
+		mntmSaveResults = new JMenuItem("Save Results");
+		mntmSaveResults.addActionListener(this);
+		mnFile.add(mntmSaveResults);
+		mntmSaveResults.setEnabled(false);
+		*/
+		mntmSaveResultsAsXML = new JMenuItem("Save Results As XML...");
+		mntmSaveResultsAsXML.addActionListener(this);
+		mnFile.add(mntmSaveResultsAsXML);
+		mntmSaveResultsAsXML.setEnabled(true);
+	
+		/*
 		mnFile.addSeparator();
 		
 		mntmConfigureSchema = new JMenuItem("Configure Schema...");
@@ -703,6 +705,28 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 			txtrConsoleOutput.append(newline + "LOG: PROJECT EXCEL FILE CLOSED: : ");
 			txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
 			
+		} else if (arg0.getSource() == mntmSaveResultsAsXML) {
+			fileChooser.setDialogTitle("SAVE RESULTS AS XML FILE (.xml)");
+			fileChooser.setSelectedFile(new File(""));
+			//fileChooser.setCurrentDirectory(new File(this.eraProjectHomeDirectory + "/data"));
+			
+
+			int retVal = fileChooser.showSaveDialog(MainFrame.this);
+
+			if (retVal == JFileChooser.APPROVE_OPTION) {
+				System.out.println("GUIFrame: Save OK pressed");
+				File saveFile = fileChooser.getSelectedFile();
+				appControl.serializeResultsToXML(saveFile.getPath());
+				System.out.println("-- Saved to file: " + saveFile.getName());
+				String dir = saveFile.getParent();
+				this.latestOpenedFolder = dir;
+				// -- Console Printing ---				
+				txtrConsoleOutput.append(newline + "LOG: RESULTS SERIALIZED AS XML: " + saveFile.getName());
+				txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
+			} else {
+				System.out.println("Frame: No Save File Selected!");
+			}
+
 		}
 		
 		
@@ -923,7 +947,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 			txtrResultOutput.setCaretPosition(txtrResultOutput.getText().length());
 			bottomRightTabbedPane.setEnabledAt(1, true);
 			
-		} if (arg0.getSource() == mntmSaveOntologyModel) {
+		} else if (arg0.getSource() == mntmSaveOntologyModel) {
 			fileChooser.setDialogTitle("SAVE CAEX SOURCE ONTOLOGY MODEL TO FILE (.ttl, .owl)");
 			fileChooser.setSelectedFile(new File(""));
 			fileChooser.setCurrentDirectory(new File(this.eraProjectHomeDirectory + "/data"));

@@ -5,15 +5,36 @@
 
 package siima.app.model;
 
+import static javax.xml.XMLConstants.W3C_XML_SCHEMA_NS_URI;
+
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.ValidationEvent;
+import javax.xml.bind.ValidationEventHandler;
+import javax.xml.bind.ValidationEventLocator;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
 
 import siima.app.control.ExcelMng;
 import siima.model.jaxb.checker.student.ExerciseType;
+import siima.model.jaxb.checker.student.StudentSubmits;
 import siima.model.jaxb.checker.student.StudentType;
+import siima.model.jaxb.checker.taskflow.CheckerTaskFlowType;
 
 public class StudentJaxbContainer {
-	
+	private static final Logger logger=Logger.getLogger(StudentJaxbContainer.class.getName());
+	private static String STUDENT_SCHEMA ="configure/schema/students2.xsd";
 	private ExcelMng excelMng;
 	private List<StudentType> students;
 	
@@ -101,6 +122,97 @@ public class StudentJaxbContainer {
 		}
 	}
 	
+	
+	public boolean serializeToXML(String filepath){
+		/*
+		 * unable to marshal type "siima.model.jaxb.checker.student.StudentSubmitsType" 
+		 * as an element because it is missing an @XmlRootElement annotation]
+		 */
+		StudentSubmits rootObject =  new StudentSubmits();
+		rootObject.setSubmitId("U1_sub1");
+		rootObject.getStudent().addAll(getStudents());
+		
+		JAXBContext context;
+
+		try {
+			context = JAXBContext.newInstance("siima.model.jaxb.checker.student");			
+			Marshaller m = context.createMarshaller();
+	
+			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+			m.marshal(rootObject, new File(filepath)); 
+			//logger.log(Level.INFO, "saveData() SAVING to file: " + filepath);
+		} catch (JAXBException e) {
+			 //logger.log(Level.ERROR, e.getMessage());
+			e.printStackTrace();
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public StudentSubmits unmarshalStudentSubmitsType(Path path) {
+		/*
+		 * FROM: \git\valle-de-luna\ERAmlHandler JaxbContainer.java
+		 */
+		StudentSubmits unmarshalledSubmitsRootObject = null;
+		//setTaskFlowFilePath(path); //latest loaded caex file
+		JAXBContext context;
+		Schema schema;
+		
+		//if(loadedTaskFlowFilePaths==null) loadedTaskFlowFilePaths = new ArrayList<Path>();
+		//loadedTaskFlowFilePaths.add(path);
+		
+		try {
+			context = JAXBContext.newInstance("siima.model.jaxb.checker.student");
+			Unmarshaller u = context.createUnmarshaller();
+			//Validate against taskflow Schema
+			 SchemaFactory sf = SchemaFactory.newInstance(W3C_XML_SCHEMA_NS_URI);
+	            try {
+	            	schema = sf.newSchema(new File(STUDENT_SCHEMA)); //
+	            	
+	                u.setSchema(schema);
+	                u.setEventHandler(
+	                    new ValidationEventHandler() {
+	                        // allow unmarshalling to continue even if there are errors
+	                        public boolean handleEvent(ValidationEvent ve) {
+	                        	StringBuffer msgbuff = new StringBuffer();
+	                        	msgbuff.append("loadData():ValidationEventHandler()\n");
+	                        	ValidationEventLocator vel = ve.getLocator();
+	                        	msgbuff.append("Line:Col[" + vel.getLineNumber() +
+	                                    ":" + vel.getColumnNumber() +
+	                                    "]:" + ve.getMessage());
+	                            // ignore warnings
+	                            if (ve.getSeverity() != ValidationEvent.WARNING) {
+	                                logger.log(Level.SEVERE, msgbuff.toString());
+	                            } else {
+	                            	logger.log(Level.WARNING, msgbuff.toString());
+	                            }
+	                            return true;
+	                        }
+	                    }
+	                );
+	            } catch (org.xml.sax.SAXException se) {
+	                //System.out.println("Unable to validate due to following error.");
+	                logger.log(Level.SEVERE, se.getMessage());
+	                se.printStackTrace();
+	            }
+	            // Unmarshalling main taskflow file
+	            //taskflowRootObject = 
+	            JAXBElement tfelem = (JAXBElement) u.unmarshal(Paths.get(path.toUri()).toFile());
+	            unmarshalledSubmitsRootObject = (StudentSubmits) tfelem.getValue();
+	            logger.log(Level.INFO, "loadData(): StudentSubmits RootObject created by unmarshalling the main student submits xml file!");
+	            
+	            
+		} catch (JAXBException e) {
+
+			e.printStackTrace();
+			return null;
+		}
+
+		return unmarshalledSubmitsRootObject;
+
+	}
+
 	
 	/*
 	 * Getters
