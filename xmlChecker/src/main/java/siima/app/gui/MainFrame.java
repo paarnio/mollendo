@@ -69,6 +69,8 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 	private File mainOpenFile;
 	private JMenuItem mntmSave;
 	private JMenuItem mntmSaveResultsAsXML;
+	private JMenuItem mntmShowResults;
+	
 	private JButton btnInvokeButton;
 
 	public MainAppController appControl;
@@ -272,6 +274,20 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		});
 		mnFile.add(mntmExit);
 
+		/*
+		 * View Menu
+		 * 
+		 */
+		
+		JMenu mnView = new JMenu("View");
+		menuBar.add(mnView);
+
+		mntmShowResults = new JMenuItem("Show Results");
+		mntmShowResults.addActionListener(this); // See: method											// actionPerformed(ActionEvent arg0)
+		mnView.add(mntmShowResults);
+		mntmShowResults.setEnabled(false);	
+		
+		
 		/*
 		 * Processor Menu
 		 * 
@@ -648,14 +664,11 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 				// -- Enabling other menuitems
 				mntmInvoke.setEnabled(true);
 				mntmSave.setEnabled(true);
+				mntmShowResults.setEnabled(true);
 				// -- Console Printing ---				
 				txtrConsoleOutput.append(newline + "LOG: PROJECT EXCEL FILE OPENED: " + mainOpenFile.getName());
 				txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
 				
-				//TODO: TEMP TEST TOIMIIIIII
-				List<Object> newRowData = new ArrayList<Object>();
-				newRowData.add("UUSINEN"); newRowData.add("DYNAAMINEN");
-				studentTablePanel.addStudentTableRow(newRowData);
 				
 
 			} else {
@@ -727,6 +740,19 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 				System.out.println("Frame: No Save File Selected!");
 			}
 
+		} else	if (arg0.getSource() == mntmShowResults) {
+			
+			List<List<Object>> studentRowsList =  appControl.getStudentDataTableRows();
+		
+			int rowidx = 0;
+			for(List<Object> rowData : studentRowsList){
+				studentTablePanel.setOrAddStudentTableRow(rowidx,rowData);
+				rowidx++;
+			}
+			
+			txtrConsoleOutput.append(newline + "LOG: DISPLAYING RESULTS IN THE STUDENTS TABLE: ");
+			txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
+						
 		}
 		
 		

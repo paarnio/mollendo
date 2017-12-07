@@ -62,7 +62,10 @@ public class StudentTablePanel extends JPanel
     	mytablemodel.addRowToTable(newRowData);
     }
     
-    
+    public void setOrAddStudentTableRow(int rowidx, List<Object> newRowData){
+    	MyTableModel mytablemodel = (MyTableModel)this.table.getModel();
+    	mytablemodel.setOrAddRowToTable(rowidx, newRowData);
+    }
  
     private JCheckBox addCheckBox(String text) {
         JCheckBox checkBox = new JCheckBox(text);
@@ -169,37 +172,107 @@ public class StudentTablePanel extends JPanel
     class MyTableModel extends AbstractTableModel {
         //private String[] columnNames = {"First Name","Last Name", "Sport", "# of Years", "Vegetarian"};
         
-        private String[] columnNames = {"Last Name","First Name"}; 
+        private String[] columnNames = {"Nr","Last Name","First Name","Student ID","P1","P2","P3","P4","P5","P6","Total" }; 
         //VPA NEW CONSTRUCTOR
         
         public MyTableModel(){
         	
+        	  List<Object> orderList = new ArrayList<Object>();
         	  List<Object> lastNameList = new ArrayList<Object>();
               List<Object> firstNameList = new ArrayList<Object>();
-              
+              List<Object> studentIDList = new ArrayList<Object>();
+              List<Object> listP1 = new ArrayList<Object>();
+              List<Object> listP2 = new ArrayList<Object>();
+              List<Object> listP3 = new ArrayList<Object>();
+              List<Object> listP4 = new ArrayList<Object>();
+              List<Object> listP5 = new ArrayList<Object>();
+              List<Object> listP6 = new ArrayList<Object>();
+              List<Object> totalList = new ArrayList<Object>();
+              /*
               lastNameList.add("Muuminen"); lastNameList.add("Muuminen");
-              lastNameList.add("Muuminen"); lastNameList.add("Muuminen");
+             // lastNameList.add("Muuminen"); lastNameList.add("Muuminen");
               
               firstNameList.add("Mikko"); firstNameList.add("Mikko");
-              firstNameList.add("Mikko"); firstNameList.add("Mikko");
+             // firstNameList.add("Mikko"); firstNameList.add("Mikko");
               
+              studentIDList.add("111111"); studentIDList.add("111111");
+             // studentIDList.add("111111");  studentIDList.add("111111");
+              listP1.add("10");  listP1.add("10");
+              listP2.add("10");  listP2.add("10");
+              listP3.add("10");  listP3.add("10");
+              listP4.add("10");  listP4.add("10");
+              listP5.add("10");  listP5.add("10");
+              listP6.add("10");  listP6.add("10");
               //this.addColumnToListOfColumnLists(lastNameList);
+               */
+              orderList.add("");
+              lastNameList.add("");
+              firstNameList.add("");
+              studentIDList.add("");
+              listP1.add("");
+              listP2.add("");
+              listP3.add("");
+              listP4.add("");
+              listP5.add("");
+              listP6.add("");
+              totalList.add("");
+              
+              this.listOfColumnLists.add(orderList);
               this.listOfColumnLists.add(lastNameList);
               this.listOfColumnLists.add(firstNameList);
-        	
+              this.listOfColumnLists.add(studentIDList);
+              this.listOfColumnLists.add(listP1);
+              this.listOfColumnLists.add(listP2);
+              this.listOfColumnLists.add(listP3);
+              this.listOfColumnLists.add(listP4);
+              this.listOfColumnLists.add(listP5);
+              this.listOfColumnLists.add(listP6);
+              this.listOfColumnLists.add(totalList);
         }
         
       //My new Table data
         private List<List<Object>> listOfColumnLists = new ArrayList<List<Object>>();
         
         public void addRowToTable(List<Object> newRowData){
-        //TODO: check list lengths	
-        	for(int coli = 0; coli< this.listOfColumnLists.size(); coli++ ){
-        	List<Object> collist = this.listOfColumnLists.get(coli);      	
-        	collist.add(newRowData.get(coli));
-        	}
-        	fireTableStructureChanged();
-        }
+        	/*
+        	 * NOTE: Row length and cell value type must match with column value type
+        	 */
+
+			if (newRowData.size() == this.listOfColumnLists.size()) {
+				for (int coli = 0; coli < this.listOfColumnLists.size(); coli++) {
+					List<Object> collist = this.listOfColumnLists.get(coli);
+					collist.add(newRowData.get(coli));
+				}
+				fireTableStructureChanged();
+			}
+		}
+        
+        public void setOrAddRowToTable(int rowidx, List<Object> newRowData){
+        	/* IF rowidx < row count THEN overwrite the row
+        	 * OTHERWISE add a new row 
+        	 * NOTE: Row length and cell value type must match with column value type
+        	 */
+
+			if (newRowData.size() == this.listOfColumnLists.size()) {
+
+				if (rowidx < this.listOfColumnLists.get(0).size()) {
+					// Overwrite a row
+					for (int coli = 0; coli < this.listOfColumnLists.size(); coli++) {
+						List<Object> collist = this.listOfColumnLists.get(coli);
+						collist.set(rowidx, newRowData.get(coli));
+					}
+					fireTableStructureChanged();
+				} else {
+					// add a new row
+					for (int coli = 0; coli < this.listOfColumnLists.size(); coli++) {
+						List<Object> collist = this.listOfColumnLists.get(coli);
+						collist.add(newRowData.get(coli));
+					}
+					fireTableStructureChanged();
+				}
+			}
+		}
+        
         /*
          * 
          *  Original code

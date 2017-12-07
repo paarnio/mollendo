@@ -13,6 +13,7 @@ package siima.app.control;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -23,6 +24,8 @@ import siima.app.model.TaskFlowMetaData;
 import siima.app.model.tree.ElementModel;
 import siima.app.model.tree.ElementNode;
 import siima.app.model.tree.ElementTree;
+import siima.model.jaxb.checker.student.ExerciseType;
+import siima.model.jaxb.checker.student.StudentType;
 import siima.model.jaxb.checker.taskflow.CheckerTaskFlowType;
 
 public class MainAppController {
@@ -158,6 +161,47 @@ public class MainAppController {
 		
 	}
 	
+	public List<List<Object>> getStudentDataTableRows(){
+		/*
+		 * columnNames = {"Last Name","First Name","Student ID","P1","P2","P3","P4","P5","P6" }; 
+		 * All String type
+		 * Note: points of one Exercise is the sum(testcase points)
+		 */
+		List<List<Object>> studentRowsList = new ArrayList<List<Object>>();
+		int exerCount = 6;
+		List<StudentType> students = this.studentContainer.getStudents();
+		int rowcnt = 0;
+		for(StudentType student: students){
+			rowcnt++;
+			List<Object> tableRow = new ArrayList<Object>();
+			tableRow.add(""+ rowcnt); //Order number
+			tableRow.add(student.getSurname());
+			tableRow.add(student.getFirstname());
+			tableRow.add(student.getStudentId());
+			List<ExerciseType> exercises = student.getExercise();
+			Integer totalPoints = 0;
+			for(int i=0; i<exerCount ;i++){
+				
+				if((exercises!=null)&&(!exercises.isEmpty())&&(i < exercises.size())){
+					List<Integer> testcasepoints = exercises.get(i).getPointsOfTestCases();
+					//Exercise points = sum(testcase points)
+					Integer exPoints = 0;
+					for(Integer tcp : testcasepoints){
+						exPoints =+ tcp;
+					}
+					tableRow.add(exPoints.toString());
+					totalPoints = totalPoints + exPoints;
+				} else {
+					
+					tableRow.add("");
+				}				
+			}
+			tableRow.add(totalPoints.toString());
+			studentRowsList.add(tableRow);
+		}
+		
+		return studentRowsList;
+	}
 	
 	/*
 	 *  GETTERS SETTERS

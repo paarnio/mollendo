@@ -37,6 +37,7 @@ public class StudentJaxbContainer {
 	private static String STUDENT_SCHEMA ="configure/schema/students2.xsd";
 	private ExcelMng excelMng;
 	private List<StudentType> students;
+	private StudentSubmits studentSubmits;
 	
 	public StudentJaxbContainer(ExcelMng exMng){
 		this.excelMng = exMng;
@@ -48,7 +49,10 @@ public class StudentJaxbContainer {
 		 * reading base data of all the students listed in project excel 
 		 */
 		
-		this.students = this.excelMng.readStudentsBaseData();		
+		this.students = this.excelMng.readStudentsBaseData();
+		this.studentSubmits = new StudentSubmits();
+		this.studentSubmits.getStudent().addAll(students);
+		
 		return students;
 	}
 
