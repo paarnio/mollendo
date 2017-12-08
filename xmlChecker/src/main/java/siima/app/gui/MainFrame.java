@@ -678,7 +678,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		} else	if (arg0.getSource() == mntmOpenTaskFlow) {
 			fileChooser.setDialogTitle("OPEN TAKFLOW XML FILE");
 			fileChooser.setSelectedFile(new File(""));
-			//fileChooser.setCurrentDirectory(new File(this.eraProjectHomeDirectory + "/data"));
+			fileChooser.setCurrentDirectory(new File(this.eraProjectHomeDirectory)); // + "/data"));
 			int retVal = fileChooser.showOpenDialog(MainFrame.this);
 
 			if (retVal == JFileChooser.APPROVE_OPTION) {
@@ -721,7 +721,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		} else if (arg0.getSource() == mntmSaveResultsAsXML) {
 			fileChooser.setDialogTitle("SAVE RESULTS AS XML FILE (.xml)");
 			fileChooser.setSelectedFile(new File(""));
-			//fileChooser.setCurrentDirectory(new File(this.eraProjectHomeDirectory + "/data"));
+			fileChooser.setCurrentDirectory(new File(this.eraProjectHomeDirectory));
 			
 
 			int retVal = fileChooser.showSaveDialog(MainFrame.this);

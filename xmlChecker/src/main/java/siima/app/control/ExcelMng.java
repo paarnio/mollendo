@@ -241,13 +241,20 @@ public class ExcelMng {
 	
 	public List<String> readStudentId(){ //TaskFlowMetaData taskFlowMD){
 		/*
-		 * Columns: OrderNr; Surname; Firstname; StudentId; SubmitZip	
+		 * Columns: OrderNr; Surname; Firstname; StudentId; SubmitZip
+		 * 
+		 * NOTE: When accessed StudentId string will contain extra .0 (e.g. 123456.0)
+		 * This .0 must be filtered out 	
 		 */
 		
-		List<String> studentIds=null;
+		List<String> studentIds=new ArrayList<String>();
 		this.ex2s.setSheetind(this.ex2s.getSheetIndex(this.zipFilesSheet));//taskFlowMD.getZipFilesSheet())); //this.zipFilesSheet));
 		this.ex2s.setCellArea(submitZipCol-1, submitZipCol-1, submitZipFirstRow, submitZipFirstRow+submitZipCount-1); //
-		studentIds = this.ex2s.toStringList(false);
+		List<String> idlist = this.ex2s.toStringList(false);
+		for(String idstr : idlist){
+			//Filtering extra .0
+			studentIds.add(idstr.split("\\.")[0]);			
+		}
 		
 		return studentIds;
 	}

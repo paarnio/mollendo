@@ -36,7 +36,7 @@ import siima.model.jaxb.checker.taskflow.TestCaseType;
 
 public class TaskFlowJaxbContainer {
 	private static final Logger logger=Logger.getLogger(TaskFlowJaxbContainer.class.getName());
-	private static String TASKFLOW_SCHEMA ="configure/schema/taskflow4.xsd";
+	private static String TASKFLOW_SCHEMA ="configure/schema/taskflow5.xsd";
 	//private Object taskflowRootObject;
 	private CheckerTaskFlowType taskflow;
 	private Path taskFlowFilePath; //latest loaded
