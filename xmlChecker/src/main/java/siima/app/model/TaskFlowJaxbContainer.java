@@ -76,6 +76,10 @@ public class TaskFlowJaxbContainer {
 		String round = this.taskflow.getRound();
 		String exer = this.taskflow.getExercise();
 		String desc = this.taskflow.getDescription();
+		//NEW v5 schema
+		String stusol = this.taskflow.getStuSolution();
+		String refsol = this.taskflow.getRefSolution();
+		
 		String stuzip = this.taskflow.getStuZip();
 		String refzip = this.taskflow.getRefZip();
 		String comment = this.taskflow.getComment();		
@@ -110,6 +114,20 @@ public class TaskFlowJaxbContainer {
 	    desckid.setNodetype("Description");
 	    taskflow_children.add(desckid);
 		}
+		//NEW v.5
+		if(stusol!=null){
+		    ElementNode kid = new ElementNode("StuSolution:" + stusol);
+		    kid.setJaxbObject(stusol);
+		    kid.setNodetype("StuSolution");
+		    taskflow_children.add(kid);
+		}
+		if(refsol!=null){
+		    ElementNode kid = new ElementNode("RefSolution:" + refsol);
+		    kid.setJaxbObject(refsol);
+		    kid.setNodetype("RefSolution");
+		    taskflow_children.add(kid);
+		}
+		
 		
 		for (TestCaseType tcto : testcasetypes) {
 					

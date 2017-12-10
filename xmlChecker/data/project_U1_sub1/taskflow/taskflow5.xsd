@@ -1,6 +1,6 @@
-<!-- taskflow4.xsd -->
+<!-- taskflow5.xsd -->
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<!-- taskflow4.xsd version=4 2017-10-31 UPDATE: element name="points" type="xsd:string" -->
+<!-- taskflow5.xsd version=5 2017-12-08 UPDATE: added elements "stuSolution" and refSolution  -->
   <xsd:annotation>
     <xsd:documentation xml:lang="en">
 	 2017-12-08 taskflow5.xsd : XML checker taskflow schema for siima.model.checker.taskflow  
