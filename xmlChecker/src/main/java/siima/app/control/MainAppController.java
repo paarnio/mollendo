@@ -139,20 +139,35 @@ public class MainAppController {
 	
 	public String getSelectedElementInfo(){
 		String info=null;
+		StringBuffer infobuff = new StringBuffer();
 		
 		ElementNode node = this.taskFlowsTreeModel.getLastSelectedNode();
 		String nodetype = node.getNodetype();
+		int index = node.getParent().getIndexOfChild(node);
+		
 		if("CheckerTaskFlowType".equals(nodetype)){			
 			this.selectedTaskflowObject = (CheckerTaskFlowType)node.getJaxbObject();
 			this.selectedTaskflowIndex = node.getParent().getIndexOfChild(node);
-			info="(Checking enabled)";
+			
+			infobuff.append("\n(" + index + ") NODE TYPE: \t" + nodetype);
+			infobuff.append("\nROUND: \t" + this.selectedTaskflowObject.getRound());
+			infobuff.append("\nEXERCISE: \t" + this.selectedTaskflowObject.getExercise());
+			infobuff.append("\nDESCRIPTION: \t" + this.selectedTaskflowObject.getDescription());
+			infobuff.append("\nSTUDENT SOLUTION: " + this.selectedTaskflowObject.getStuSolution());
+			infobuff.append("\nREFERENCE SOLUTION: " + this.selectedTaskflowObject.getRefSolution());
+			infobuff.append("\nSTUDENT ZIP prefix: " + this.selectedTaskflowObject.getStuZip());
+			infobuff.append("\nREFERENCE ZIP: " + this.selectedTaskflowObject.getRefZip());
+			
+			infobuff.append("\n\n(Checking enabled)");
+			
 		} else {			
 			this.selectedTaskflowObject = null;
-			this.selectedTaskflowIndex = -1; 
-			info="(Checking disabled)";
+			this.selectedTaskflowIndex = -1;
+			infobuff.append("\n(" + index + ") NODE TYPE: \t" + nodetype);
+			infobuff.append("\n\n(Checking disabled)");
 		}
-		int index = node.getParent().getIndexOfChild(node);
-		return "(" + index + ")" + nodetype + ":" + info;
+	
+		return infobuff.toString();
 	}
 	
 	public void serializeResultsToXML(String filePath){
