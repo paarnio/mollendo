@@ -92,6 +92,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 	
 	private JTextArea rightTopLeftTextArea;
 	private JTextArea rightTopRightTextArea;
+	private JTextArea rightmostBottomTextArea;
 	
 	private JMenuItem mntmLoadRules;
 	private JMenuItem mntmInvokeReasoner;
@@ -104,6 +105,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 	
 	private JMenuItem mntmExit;
 	private JMenuItem mntmInvoke;
+	private JMenuItem mntmCompareSol;
 	
 	private JMenuItem mntmInvokeTransform;
 	private JMenuItem mntmSetTransformContext;
@@ -187,7 +189,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		setBounds(100, 100, 1000, 600); //(100, 100, 450, 300);
 		setTitle("XML-Checker");
 
-		this.appControl = new MainAppController(); //(this);
+		this.appControl = new MainAppController(this); //(this);
 
 		fileChooser = new JFileChooser();
 		fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -301,17 +303,30 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		mnPros.add(mntmInvoke);
 		mntmInvoke.setEnabled(false);	
 		
+		/*
+		 * Student Menu
+		 * TODO:
+		 */
+		
+		JMenu mnStudent = new JMenu("Student");
+		menuBar.add(mnStudent);
+
+		mntmCompareSol = new JMenuItem("Compare Solution");
+		mntmCompareSol.addActionListener(this); // See: method											// actionPerformed(ActionEvent arg0)
+		mnStudent.add(mntmCompareSol);
+		mntmCompareSol.setEnabled(true);	
+		
 		
 		
 		/* ************************
 		 * 
 		 *     Main Window
 		 *     
-		 *     | TopLeft    | RightTopLeft  | RightTopRight | Rightmost |
-		 *     |			|				|				|			|
-		 *     ---------------------------------------------|			|
-		 *     | BottomLeft | RightBottom					|			|
-		 *     |			|								|			|
+		 *     | TopLeft    | RightTopLeft  | RightTopRight | Rightmost 		|
+		 *     |			|				|				|					|
+		 *     ---------------------------------------------|-------------------|
+		 *     | BottomLeft | RightBottom					|RightmostBottom	|
+		 *     |			|								|					|
 		 *     ----------------------------------------------------------
 		 *     
 		 *     
@@ -598,8 +613,65 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		*/
 		this.studentTablePanel = new StudentTablePanel();
 		RightmostSideVerticalSplitPane.setLeftComponent(studentTablePanel);	
+		
+		/*
+		 *  Rightmost Bottom
+		 *  TODO:
+		 */
+		
+		JPanel rightmostBottomPanel = new JPanel();
+		RightmostSideVerticalSplitPane.setRightComponent(rightmostBottomPanel);
+		GridBagLayout gbl_rightmostBottomPanel = new GridBagLayout();
+		gbl_rightmostBottomPanel.columnWidths = new int[] { 0, 0 };
+		gbl_rightmostBottomPanel.rowHeights = new int[] { 0, 0, 0 };
+		gbl_rightmostBottomPanel.columnWeights = new double[] { 1.0, Double.MIN_VALUE };
+		gbl_rightmostBottomPanel.rowWeights = new double[] { 1.0, 0.2, Double.MIN_VALUE };
+		rightmostBottomPanel.setLayout(gbl_rightmostBottomPanel);
+
+		JScrollPane rightmostBottomScrollPane = new JScrollPane();
+		GridBagConstraints gbc_rightmostBottomScrollPane = new GridBagConstraints();
+		gbc_rightmostBottomScrollPane.fill = GridBagConstraints.BOTH;
+		gbc_rightmostBottomScrollPane.gridx = 0;
+		gbc_rightmostBottomScrollPane.gridy = 0;
+		rightmostBottomPanel.add(rightmostBottomScrollPane, gbc_rightmostBottomScrollPane);
+
+		rightmostBottomTextArea = new JTextArea();
+		rightmostBottomTextArea.setRows(30);
+		rightmostBottomTextArea.setColumns(100);
+		rightmostBottomTextArea.setText("----------rightmostBottomTextArea---------\n");
+		
+
+		rightmostBottomScrollPane.setViewportView(rightmostBottomTextArea);
+
+		JPanel rightmostBottomButtonPanel = new JPanel();
+		GridBagConstraints gbc_rightmostBottomButtonPanel = new GridBagConstraints();
+		gbc_rightmostBottomButtonPanel.insets = new Insets(0, 0, 5, 0);
+		gbc_rightmostBottomButtonPanel.fill = GridBagConstraints.BOTH;
+		gbc_rightmostBottomButtonPanel.gridx = 0;
+		gbc_rightmostBottomButtonPanel.gridy = 1;
+		rightmostBottomPanel.add(rightmostBottomButtonPanel, gbc_rightmostBottomButtonPanel);
+
+		JButton btnShowSelectedStudentButton = new JButton("Select Student");
+		btnShowSelectedStudentButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				//int tabnumber = tabbedPane.getSelectedIndex();
+				//this.studentTablePanel.
+				String info = appControl.getSelectedStudentInfo(); 			
+				rightmostBottomTextArea.setText(info);
+				//boolean runEnabled = appControl.runConditions();
+				//if(runEnabled) btnInvokeButton.setEnabled(true);
+			}
+		});
+		rightmostBottomButtonPanel.add(btnShowSelectedStudentButton);
+		
 	}
 
+	public int getSelectedStudentTableRow(){
+		int selectedfirstrow = this.studentTablePanel.getSelectedFirstRow();
+		return selectedfirstrow;
+	}
+	
+	
 	public String getEraProjectHomeDirectory() {
 		return eraProjectHomeDirectory;
 	}
@@ -742,7 +814,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 
 		} else	if (arg0.getSource() == mntmShowResults) {
 			
-			List<List<Object>> studentRowsList =  appControl.getStudentDataTableRows();
+			List<List<Object>> studentRowsList =  appControl.getStudentDataForTableRows();
 		
 			int rowidx = 0;
 			for(List<Object> rowData : studentRowsList){
@@ -753,11 +825,23 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 			txtrConsoleOutput.append(newline + "LOG: DISPLAYING RESULTS IN THE STUDENTS TABLE: ");
 			txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
 						
+		} else	if (arg0.getSource() == mntmCompareSol) {
+			//TODO: Difference of selected students solution with the reference solution
+			// One Student have to be selected from Student table and
+			// stuSolution have to be selected from TaskFlow tree
+			// Displaying student file content in: rightTopLeftTextArea
+			// Displaying reference file content in: rightTopRightTextArea
+			// Computing difference
+			// Displaying difference results in Result tab
+			
+			txtrConsoleOutput.append(newline + "LOG: COMPARING STUDENT SOLUTION WITH REFERENCE: ");
+			txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
+						
 		}
 		
 		
 		
-		
+	
 		
 		
 		/* OLD From ERAmlHandler project

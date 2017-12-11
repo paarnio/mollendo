@@ -163,44 +163,44 @@ public class TaskFlowJaxbContainer {
 		    if(number!=null){
 		    	ElementNode kid = new ElementNode("Nr: " + number);
 				kid.setJaxbObject(number);
-				kid.setNodetype("Integer");
+				kid.setNodetype("Number"); //"Integer");
 			    children.add(kid);	    	
 		    }
 		    if(points!=null){
 		    	ElementNode kid = new ElementNode("Points: " + points);
 				kid.setJaxbObject(points);
-				kid.setNodetype("String");
+				kid.setNodetype("Points"); //String
 			    children.add(kid);	    	
 		    }
 		    if(tcdesc!=null){
 		    	ElementNode kid = new ElementNode("Description: " + tcdesc);
 				kid.setJaxbObject(tcdesc);
-				kid.setNodetype("String");
+				kid.setNodetype("Description");
 			    children.add(kid);	    	
 		    }
 		    //Student
 		    if(sdir1!=null){
 		    	ElementNode kid = new ElementNode("stuDir1: " + sdir1);
 				kid.setJaxbObject(sdir1);
-				kid.setNodetype("String");
+				kid.setNodetype("stuDir1");
 			    children.add(kid);	    	
 		    }		    
 		    if(sdir2!=null){
 		    	ElementNode kid = new ElementNode("stuDir2: " + sdir2);
 				kid.setJaxbObject(sdir2);
-				kid.setNodetype("String");
+				kid.setNodetype("stuDir2");
 			    children.add(kid);	    	
 		    }		 
 		    if(sfile1!=null){
 		    	ElementNode kid = new ElementNode("stuFile1: " + sfile1);
 				kid.setJaxbObject(sfile1);
-				kid.setNodetype("String");
+				kid.setNodetype("stuFile1");
 			    children.add(kid);	    	
 		    }		 
 		    if(sfile2!=null){
 		    	ElementNode kid = new ElementNode("stuFile2: " + sfile2);
 				kid.setJaxbObject(sfile2);
-				kid.setNodetype("String");
+				kid.setNodetype("stuFile2");
 			    children.add(kid);	    	
 		    }
 		    
@@ -209,25 +209,25 @@ public class TaskFlowJaxbContainer {
 		    if(rdir1!=null){
 		    	ElementNode kid = new ElementNode("refDir1: " + rdir1);
 				kid.setJaxbObject(rdir1);
-				kid.setNodetype("String");
+				kid.setNodetype("refDir1");
 			    children.add(kid);	    	
 		    }		    
 		    if(rdir2!=null){
 		    	ElementNode kid = new ElementNode("refDir2: " + rdir2);
 				kid.setJaxbObject(rdir2);
-				kid.setNodetype("String");
+				kid.setNodetype("refDir2");
 			    children.add(kid);	    	
 		    }		 
 		    if(rfile1!=null){
 		    	ElementNode kid = new ElementNode("refFile1: " + rfile1);
 				kid.setJaxbObject(rfile1);
-				kid.setNodetype("String");
+				kid.setNodetype("refFile1");
 			    children.add(kid);	    	
 		    }		 
 		    if(rfile2!=null){
 		    	ElementNode kid = new ElementNode("refFile2: " + rfile2);
 				kid.setJaxbObject(rfile2);
-				kid.setNodetype("String");
+				kid.setNodetype("refFile2");
 			    children.add(kid);	    	
 		    }
 		    
@@ -259,34 +259,34 @@ public class TaskFlowJaxbContainer {
 		 if(ftype!=null){
 		    	ElementNode kid = new ElementNode("Type: " + ftype);
 				kid.setJaxbObject(ftype);
-				kid.setNodetype("String");
+				kid.setNodetype("Type");
 			    children.add(kid);	    	
 		 }		    
 		
 		 if(fname!=null){
 		    	ElementNode kid = new ElementNode("Name: " + fname);
 				kid.setJaxbObject(fname);
-				kid.setNodetype("String");
+				kid.setNodetype("Name");
 			    children.add(kid);	    	
 		 }
 		
 		 if(fdesc!=null){
 		    	ElementNode kid = new ElementNode("Description: " + fdesc);
 				kid.setJaxbObject(fdesc);
-				kid.setNodetype("String");
+				kid.setNodetype("Description");
 			    children.add(kid);	    	
 		 }
 		 
 		 if(finchan!=null){
 		    	ElementNode kid = new ElementNode("InChannel: " + finchan);
 				kid.setJaxbObject(finchan);
-				kid.setNodetype("String");
+				kid.setNodetype("InChannel");
 			    children.add(kid);	    	
 		 }
 		 if(foutchan!=null){
 		    	ElementNode kid = new ElementNode("OutChannel: " + foutchan);
 				kid.setJaxbObject(foutchan);
-				kid.setNodetype("String");
+				kid.setNodetype("OutChannel");
 			    children.add(kid);	    	
 		 }
 	
@@ -320,42 +320,42 @@ public class TaskFlowJaxbContainer {
 		 if(type!=null){
 		    	ElementNode kid = new ElementNode("Type: " + type);
 				kid.setJaxbObject(type);
-				kid.setNodetype("String");
+				kid.setNodetype("Type");
 			    children.add(kid);	    	
 		 }		    
 		
 		 if(name!=null){
 		    	ElementNode kid = new ElementNode("Name: " + name);
 				kid.setJaxbObject(name);
-				kid.setNodetype("String");
+				kid.setNodetype("Name");
 			    children.add(kid);	    	
 		 }
 		
 		 if(desc!=null){
 		    	ElementNode kid = new ElementNode("Description: " + desc);
 				kid.setJaxbObject(desc);
-				kid.setNodetype("String");
+				kid.setNodetype("Description");
 			    children.add(kid);	    	
 		 }
 		 
 		 if(par1!=null){
 		    	ElementNode kid = new ElementNode("Parameter1: " + par1);
 				kid.setJaxbObject(par1);
-				kid.setNodetype("String");
+				kid.setNodetype("Parameter1");
 			    children.add(kid);	    	
 		 }
 		 
 		 if(par2!=null){
 		    	ElementNode kid = new ElementNode("Parameter2: " + par2);
 				kid.setJaxbObject(par2);
-				kid.setNodetype("String");
+				kid.setNodetype("Parameter2");
 			    children.add(kid);	    	
 		 }
 		 
 		 if(ret!=null){
 		    	ElementNode kid = new ElementNode("Return: " + ret);
 				kid.setJaxbObject(ret);
-				kid.setNodetype("String");
+				kid.setNodetype("Return");
 			    children.add(kid);	    	
 		 }
 		 

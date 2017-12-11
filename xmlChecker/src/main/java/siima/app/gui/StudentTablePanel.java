@@ -25,8 +25,33 @@ public class StudentTablePanel extends JPanel
     private JCheckBox cellCheck;
     private ButtonGroup buttonGroup;
     private JTextArea output;
+    
+    //VPA:
+    private int selectedFirstRow=-1;
+    private int selectedLastRow=-1;
  
-    public StudentTablePanel() {
+    
+    public int getSelectedFirstRow() {
+		return selectedFirstRow;
+	}
+
+	public void setSelectedFirstRow(int selectedFirstRow) {
+		this.selectedFirstRow = selectedFirstRow;
+	}
+
+	public int getSelectedLastRow() {
+		return selectedLastRow;
+	}
+
+	public void setSelectedLastRow(int selectedLastRow) {
+		this.selectedLastRow = selectedLastRow;
+	}
+
+	/*
+	 * Constructor
+	 */
+	
+	public StudentTablePanel() {
         super();
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
  
@@ -131,6 +156,11 @@ public class StudentTablePanel extends JPanel
         if (cellCheck.isEnabled()) {
             cellCheck.setSelected(table.getCellSelectionEnabled());
         }
+        
+        //VPA ADDIN
+        setSelectedFirstRow(-1); //clear
+        
+        
     }
  
     private void outputSelection() {
@@ -139,8 +169,14 @@ public class StudentTablePanel extends JPanel
                     table.getColumnModel().getSelectionModel().
                         getLeadSelectionIndex()));
         output.append("Rows:");
+        
+        boolean firstRow = true;
         for (int c : table.getSelectedRows()) {
             output.append(String.format(" %d", c));
+            //VPA:
+            if(firstRow) setSelectedFirstRow(c);
+            setSelectedLastRow(c);
+            firstRow = false;
         }
         output.append(". Columns:");
         for (int c : table.getSelectedColumns()) {
@@ -352,6 +388,10 @@ public class StudentTablePanel extends JPanel
            // data[row][col] = value;
             fireTableCellUpdated(row, col);
         }
+        
+        //VPA: Getters
+        
+        
  
     }
  

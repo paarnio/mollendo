@@ -50,9 +50,11 @@ public class MainAppController {
 	private List<TaskFlowMetaData> taskFlowMetaDataList;
 	private CheckerTaskFlowType selectedTaskflowObject;
 	private int selectedTaskflowIndex = -1;
+	private String selectedStuSolutionObject;
+	private String selectedRefSolutionObject;
 	
-	public MainAppController() { //MainFrame viewFrame) {
-		//this.viewFrame = viewFrame; // if needed
+	public MainAppController(MainFrame viewFrame) {
+		this.viewFrame = viewFrame; // if needed
 		graphbuilder = new TaskFlowJaxbContainer();	
 		
 	}
@@ -140,15 +142,38 @@ public class MainAppController {
 	
 	}
 	
+	public String getSelectedStudentInfo(){
+		//TODO: 
+		//Call MainFrame method getSelectedStudentTableRow()
+		//Selected row from StudenttablePanel
+		StringBuffer infobuff = new StringBuffer();		
+		int studentRowIdx = this.viewFrame.getSelectedStudentTableRow();
+		if(studentRowIdx>=0){
+			List<StudentType> students = this.studentContainer.getStudents();
+			StudentType student = students.get(studentRowIdx);
+			infobuff.append("---- SELECTED STUDENT (" + (studentRowIdx+1) + ") ----");
+			infobuff.append("\nSURNAME: \t" + student.getSurname());
+			infobuff.append("\nFIRST NAME: \t" + student.getFirstname());
+			infobuff.append("\nSTUDENT ID: \t" + student.getStudentId());
+			infobuff.append("\nSUBMIT ZIP: \t" + student.getSubmitZip());
+		}
+		
+		System.out.println("???????? Selected student row index: " + studentRowIdx);
+		
+		return infobuff.toString();
+	}
+	
+	
 	public String getSelectedElementInfo(){
-		//String info=null;
 		StringBuffer infobuff = new StringBuffer();
 		this.selectedTaskflowObject = null;
 		this.selectedTaskflowIndex = -1;
+		this.selectedStuSolutionObject = null;
+		this.selectedRefSolutionObject = null;
 		
 		ElementNode node = this.taskFlowsTreeModel.getLastSelectedNode();
 		String nodetype = node.getNodetype();
-		//int index = node.getParent().getIndexOfChild(node);
+		infobuff.append("---- SELECTED TASKFLOW NODE ----");
 		
 		if("CheckerTaskFlowType".equals(nodetype)){
 			CheckerTaskFlowType taskflow = (CheckerTaskFlowType)node.getJaxbObject();
@@ -199,6 +224,20 @@ public class MainAppController {
 			infobuff.append("\nPARAMETER 1: \t" + oper.getPar1());
 			infobuff.append("\nPARAMETER 2: \t" + oper.getPar2());
 			infobuff.append("\nRETURN: " + oper.getReturn());
+		} else if("StuSolution".equals(nodetype)){
+			String stusol = (String)node.getJaxbObject();
+			this.selectedStuSolutionObject = stusol;
+			int stusolidx = node.getParent().getIndexOfChild(node);
+			//Next child should be RefSolution
+			ElementNode refsolnode = node.getParent().getChildAt(stusolidx+1);
+			if("RefSolution".equals(refsolnode.getNodetype())){
+				String refsol = (String)refsolnode.getJaxbObject();
+				this.selectedRefSolutionObject = refsol;
+			}
+			
+			infobuff.append("\nNODE TYPE: \t" + nodetype);
+			infobuff.append("\nSTUDENT SOLUTION: " + stusol);
+			
 		} else {			
 			infobuff.append("\nNODE TYPE: \t" + nodetype);
 			//infobuff.append("\n\n(Checking disabled)");
@@ -213,7 +252,7 @@ public class MainAppController {
 		
 	}
 	
-	public List<List<Object>> getStudentDataTableRows(){
+	public List<List<Object>> getStudentDataForTableRows(){
 		/*
 		 * columnNames = {"Last Name","First Name","Student ID","P1","P2","P3","P4","P5","P6" }; 
 		 * All String type
@@ -269,11 +308,12 @@ public class MainAppController {
 		return taskFlowsTreeModel;
 	}
 
+	/*
 	public static void main(String[] args) {
 		String taskFlowXmlFile = "data/project_U1_sub1/taskflow/taskflow_U1E1_1_sub1.xml";
 		
 		MainAppController app = new MainAppController();
 		app.openTaskFlowFile(taskFlowXmlFile);
 		
-	}
+	} */
 }
