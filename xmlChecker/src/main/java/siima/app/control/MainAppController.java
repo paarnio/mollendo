@@ -27,6 +27,9 @@ import siima.app.model.tree.ElementTree;
 import siima.model.jaxb.checker.student.ExerciseType;
 import siima.model.jaxb.checker.student.StudentType;
 import siima.model.jaxb.checker.taskflow.CheckerTaskFlowType;
+import siima.model.jaxb.checker.taskflow.FlowType;
+import siima.model.jaxb.checker.taskflow.OperationType;
+import siima.model.jaxb.checker.taskflow.TestCaseType;
 
 public class MainAppController {
 	private static final Logger logger=Logger.getLogger(MainAppController.class.getName());
@@ -138,33 +141,67 @@ public class MainAppController {
 	}
 	
 	public String getSelectedElementInfo(){
-		String info=null;
+		//String info=null;
 		StringBuffer infobuff = new StringBuffer();
+		this.selectedTaskflowObject = null;
+		this.selectedTaskflowIndex = -1;
 		
 		ElementNode node = this.taskFlowsTreeModel.getLastSelectedNode();
 		String nodetype = node.getNodetype();
-		int index = node.getParent().getIndexOfChild(node);
+		//int index = node.getParent().getIndexOfChild(node);
 		
-		if("CheckerTaskFlowType".equals(nodetype)){			
-			this.selectedTaskflowObject = (CheckerTaskFlowType)node.getJaxbObject();
+		if("CheckerTaskFlowType".equals(nodetype)){
+			CheckerTaskFlowType taskflow = (CheckerTaskFlowType)node.getJaxbObject();
+			this.selectedTaskflowObject = taskflow;
 			this.selectedTaskflowIndex = node.getParent().getIndexOfChild(node);
 			
-			infobuff.append("\n(" + index + ") NODE TYPE: \t" + nodetype);
-			infobuff.append("\nROUND: \t" + this.selectedTaskflowObject.getRound());
-			infobuff.append("\nEXERCISE: \t" + this.selectedTaskflowObject.getExercise());
-			infobuff.append("\nDESCRIPTION: \t" + this.selectedTaskflowObject.getDescription());
-			infobuff.append("\nSTUDENT SOLUTION: " + this.selectedTaskflowObject.getStuSolution());
-			infobuff.append("\nREFERENCE SOLUTION: " + this.selectedTaskflowObject.getRefSolution());
-			infobuff.append("\nSTUDENT ZIP prefix: " + this.selectedTaskflowObject.getStuZip());
-			infobuff.append("\nREFERENCE ZIP: " + this.selectedTaskflowObject.getRefZip());
+			infobuff.append("\nNODE TYPE: \t" + nodetype);
+			infobuff.append("\nROUND: \t" + taskflow.getRound());
+			infobuff.append("\nEXERCISE: \t" + taskflow.getExercise());
+			infobuff.append("\nDESCRIPTION: " + taskflow.getDescription());
+			infobuff.append("\nSTUDENT SOLUTION: " + taskflow.getStuSolution());
+			infobuff.append("\nREFERENCE SOLUTION: " + taskflow.getRefSolution());
+			infobuff.append("\nSTUDENT ZIP prefix: " + taskflow.getStuZip());
+			infobuff.append("\nREFERENCE ZIP: " + taskflow.getRefZip());
 			
 			infobuff.append("\n\n(Checking enabled)");
 			
+		} else if("TestCaseType".equals(nodetype)){
+			TestCaseType testcase = (TestCaseType)node.getJaxbObject();
+			infobuff.append("\nNODE TYPE: \t" + nodetype);
+			infobuff.append("\nNUMBER: \t" + testcase.getNumber());
+			infobuff.append("\nDESCRIPTION: " + testcase.getDescription());
+			infobuff.append("\nPOINTS: \t" + testcase.getPoints());
+			infobuff.append("\nSTUDENT DIR1: " + testcase.getStuDir1());
+			infobuff.append("\nSTUDENT DIR2: " + testcase.getStuDir2());
+			infobuff.append("\nSTUDENT FILE1: " + testcase.getStuFile1());
+			infobuff.append("\nSTUDENT FILE2: " + testcase.getStuFile2());
+			infobuff.append("\nREFERENCE DIR1: " + testcase.getRefDir1());
+			infobuff.append("\nREFERENCE DIR2: " + testcase.getRefDir2());
+			infobuff.append("\nREFERENCE FILE1: " + testcase.getRefFile1());
+			infobuff.append("\nREFERENCE FILE2: " + testcase.getRefFile2());			
+			//infobuff.append("\n\n(Checking disabled)");
+		} else if("FlowType".equals(nodetype)){
+			FlowType flow = (FlowType)node.getJaxbObject();
+			infobuff.append("\nNODE TYPE: \t" + nodetype);
+			infobuff.append("\nDESCRIPTION: " + flow.getDescription());
+			infobuff.append("\nTYPE: \t" + flow.getType());
+			infobuff.append("\nNAME: \t" + flow.getName());
+			infobuff.append("\nIN CHANNEL: \t" + flow.getInChannel());
+			infobuff.append("\nOUT CHANNEL: \t" + flow.getOutChannel());
+			infobuff.append("\nOPERATIONS: #" + flow.getOperation().size());
+		} else if("OperationType".equals(nodetype)){
+			OperationType oper = (OperationType)node.getJaxbObject();
+			infobuff.append("\nNODE TYPE: \t" + nodetype);
+			infobuff.append("\nDESCRIPTION: " + oper.getDescription());
+			infobuff.append("\nTYPE: \t" + oper.getType());
+			infobuff.append("\nNAME: \t" + oper.getName());
+			infobuff.append("\nPARAMETER 1: \t" + oper.getPar1());
+			infobuff.append("\nPARAMETER 2: \t" + oper.getPar2());
+			infobuff.append("\nRETURN: " + oper.getReturn());
 		} else {			
-			this.selectedTaskflowObject = null;
-			this.selectedTaskflowIndex = -1;
-			infobuff.append("\n(" + index + ") NODE TYPE: \t" + nodetype);
-			infobuff.append("\n\n(Checking disabled)");
+			infobuff.append("\nNODE TYPE: \t" + nodetype);
+			//infobuff.append("\n\n(Checking disabled)");
 		}
 	
 		return infobuff.toString();
