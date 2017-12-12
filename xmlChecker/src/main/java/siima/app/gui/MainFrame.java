@@ -834,6 +834,8 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 			// Computing difference
 			// Displaying difference results in Result tab
 			
+			appControl.compareSolutionFiles();
+			
 			txtrConsoleOutput.append(newline + "LOG: COMPARING STUDENT SOLUTION WITH REFERENCE: ");
 			txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
 						

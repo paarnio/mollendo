@@ -522,5 +522,13 @@ public class TaskCycleProcessor {
 		return trans_ctrl;
 	}
 
+	public TextCompareController getCompare_ctrl() {
+		return compare_ctrl;
+	}
+
+	public TxtFileReadOper getRead_oper() {
+		return read_oper;
+	}
+
 	
 }

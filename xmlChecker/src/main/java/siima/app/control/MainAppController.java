@@ -24,6 +24,7 @@ import siima.app.model.TaskFlowMetaData;
 import siima.app.model.tree.ElementModel;
 import siima.app.model.tree.ElementNode;
 import siima.app.model.tree.ElementTree;
+import siima.app.operator.TxtFileReadOper;
 import siima.model.jaxb.checker.student.ExerciseType;
 import siima.model.jaxb.checker.student.StudentType;
 import siima.model.jaxb.checker.taskflow.CheckerTaskFlowType;
@@ -52,6 +53,8 @@ public class MainAppController {
 	private int selectedTaskflowIndex = -1;
 	private String selectedStuSolutionObject;
 	private String selectedRefSolutionObject;
+	
+	private TxtFileReadOper read_oper = new TxtFileReadOper();
 	
 	public MainAppController(MainFrame viewFrame) {
 		this.viewFrame = viewFrame; // if needed
@@ -141,6 +144,36 @@ public class MainAppController {
 		}
 	
 	}
+	
+	
+	public void compareSolutionFiles(){
+		//TODO:
+		boolean oper_ok = true;
+		StringBuffer operErrorBuffer;
+		System.out.println("..compareSolutionFiles():");	
+		taskCycleProcessor.getRead_oper().setOperErrorBuffer(new StringBuffer());
+		
+		String stuZipFilePath = "data/project_U1_sub1/submit/Round_U1_sub1_100000.zip";
+		String stuFilePathInZip = "Round_U1/U1E1_1/src/CDcatalog_X_hidden.xml";
+		String refZipFilePath = "data/project_U1_sub1/submit/Round_U1_sub1_reference.zip";
+		String refFilePathInZip = "Round_U1/U1E1_1/test/CDcatalog_3_hidden.xml";
+		System.out.println("???? ReadTxtContent from TXT file: " + stuFilePathInZip);
+		String stuTxtContent = taskCycleProcessor.getRead_oper().readTxtFile(stuZipFilePath, stuFilePathInZip);
+		String refTxtContent = taskCycleProcessor.getRead_oper().readTxtFile(refZipFilePath, refFilePathInZip);	
+		
+		System.out.println("???? Comaparing TxtContents: ");
+		String result = "EQUAL";
+		taskCycleProcessor.getCompare_ctrl().setUp(); 													
+		boolean isequal = taskCycleProcessor.getCompare_ctrl().compareTextLines(stuTxtContent, refTxtContent);
+		if(!isequal){
+			operErrorBuffer = taskCycleProcessor.getCompare_ctrl().getFilteredResults("DELETE", 0, 100); //minLength, cutLength
+			result = "NOT-EQUAL";
+			oper_ok = false;
+		} 
+		System.out.println("====== COMPARE RESULT: " + result + "============\n");
+		
+	}
+	
 	
 	public String getSelectedStudentInfo(){
 		//TODO: 
