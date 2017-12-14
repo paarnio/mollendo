@@ -34,6 +34,10 @@ public class TaskCycleProcessor {
 	private String projectHome;
 	private TaskFlowMetaData taskFlowMetaData;
 	private CheckerTaskFlowType currentTaskflow;
+	
+	private String studentZipFolder;
+	private String referenceZipFolder;
+	private String refzip;
 	//private List<StudentExercise> studentsExerciseData;
 	
 	private StudentJaxbContainer studentContainer;
@@ -144,6 +148,11 @@ public class TaskCycleProcessor {
 		this.excel_mng.openResultsExcel();
 		this.projectHome = projectHome;
 		this.taskFlowMetaData = taskFlowMD;
+		
+		this.studentZipFolder= this.projectHome + "/" + taskFlowMetaData.getStudentZipFileFolder(); //"data/zips/RoundU1/";
+		this.referenceZipFolder= this.projectHome + "/" + taskFlowMetaData.getReferenceZipFileFolder(); //"data/zips/RoundU1/";
+		this.refzip = taskFlowMetaData.getReferenceZipFile();
+		
 		this.currentTaskflow = currentTaskflow;
 		//this.studentsExerciseData = readStudentBaseData();
 		//TODO: NEW
@@ -157,9 +166,10 @@ public class TaskCycleProcessor {
 		 */
 		logger.log(Level.INFO, "Entering: " + getClass().getName() + " method: runTaskCycles()");
 		boolean oper_ok = true;
-		String taskFlowXmlFile = this.projectHome + "/" + taskFlowMetaData.getTaskFlowXmlFile();
+		//NEEDED??String taskFlowXmlFile = this.projectHome + "/" + taskFlowMetaData.getTaskFlowXmlFile();
+		
 		//List<String> zips = readSubmitZipNames(); //zipFilesSheet);
-		System.out.println("???? runTaskCycles(): taskFlowXmlFile: " + taskFlowXmlFile );
+		//System.out.println("???? runTaskCycles(): taskFlowXmlFile: " + taskFlowXmlFile );
 		List<TestCaseType> testcases = readTestCases(); //taskFlowXmlFile);
 		//TODO:NEW Reading the base info of all students
 		//List<StudentExercise> allStudents = readStudentBaseData();
@@ -277,9 +287,9 @@ public class TaskCycleProcessor {
 						System.out.println("          Operation (Param:Value) (" + paramlist.get(0) + ":" + valuelist.get(0) + ")");
 					}
 					
-					String refzip = taskFlowMetaData.getReferenceZipFile(); // "RoundU1_sub2_reference.zip"; // reference Zip file
-					String studentZipFolder= this.projectHome + "/" + taskFlowMetaData.getStudentZipFileFolder(); //"data/zips/RoundU1/";
-					String referenceZipFolder= this.projectHome + "/" + taskFlowMetaData.getReferenceZipFileFolder(); //"data/zips/RoundU1/";
+					//String refzip = taskFlowMetaData.getReferenceZipFile(); // "RoundU1_sub2_reference.zip"; // reference Zip file
+					//String studentZipFolder= this.projectHome + "/" + taskFlowMetaData.getStudentZipFileFolder(); //"data/zips/RoundU1/";
+					//String referenceZipFolder= this.projectHome + "/" + taskFlowMetaData.getReferenceZipFileFolder(); //"data/zips/RoundU1/";
 					String zippath1 = null;
 					String zippath2 = null;
 					

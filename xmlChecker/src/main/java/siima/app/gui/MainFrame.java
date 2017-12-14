@@ -501,6 +501,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		rightTopLeftTextArea = new JTextArea();
 		rightTopLeftTextArea.setRows(30);
 		rightTopLeftTextArea.setColumns(300);
+		rightTopLeftTextArea.setLineWrap(true);
 		rightTopLeftTextArea.setText("-------------rightTopLeftTextArea-------------\n");
 		
 		rightTopLeftScrollPane.setViewportView(rightTopLeftTextArea);
@@ -530,6 +531,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		rightTopRightTextArea = new JTextArea();
 		rightTopRightTextArea.setRows(30);
 		rightTopRightTextArea.setColumns(300);
+		rightTopRightTextArea.setLineWrap(true);
 		rightTopRightTextArea.setText("-------------rightTopRightTextArea-------------\n");
 		
 		rightTopRightScrollPane.setViewportView(rightTopRightTextArea);
@@ -665,6 +667,16 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		rightmostBottomButtonPanel.add(btnShowSelectedStudentButton);
 		
 	}
+	
+	
+	public void displaySolutionCompareResults(String studentSolution, String referenceSolution, String differences){
+		
+		rightTopLeftTextArea.setText(studentSolution);
+		rightTopRightTextArea.setText(referenceSolution);
+		txtrResultOutput.setText(differences);
+	
+	}
+	
 
 	public int getSelectedStudentTableRow(){
 		int selectedfirstrow = this.studentTablePanel.getSelectedFirstRow();

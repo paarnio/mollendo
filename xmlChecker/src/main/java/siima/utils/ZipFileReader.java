@@ -135,12 +135,14 @@ public class ZipFileReader {
 	}
 
 	public StringBuilder getTxtFiles(InputStream in) {
+		//TODO: test adding \n
 		StringBuilder out = new StringBuilder();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 		String line;
 		try {
 			while ((line = reader.readLine()) != null) {
-				out.append(line);
+				//TEST
+				out.append(line + "\n"); //out.append(line);
 			}
 		} catch (IOException e) {
 			// do something, probably not a text file

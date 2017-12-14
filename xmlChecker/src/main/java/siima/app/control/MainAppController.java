@@ -98,7 +98,7 @@ public class MainAppController {
 	public void invokeCheckingProcess(){
 				
 		if(runConditions()){
-			taskCycleProcessor.initProcessor(this.projectHome, taskFlowMetaDataList.get(selectedTaskflowIndex), excel_mng, selectedTaskflowObject, studentContainer);
+			taskCycleProcessor.initProcessor(this.projectHome, taskFlowMetaDataList.get(this.selectedTaskflowIndex), excel_mng, selectedTaskflowObject, studentContainer);
 			taskCycleProcessor.runTaskCycles();
 		
 		}
@@ -146,34 +146,62 @@ public class MainAppController {
 	}
 	
 	
-	public void compareSolutionFiles(){
-		//TODO:
+	public void compareSolutionFiles() {
+		// TODO:
 		boolean oper_ok = true;
-		StringBuffer operErrorBuffer;
-		System.out.println("..compareSolutionFiles():");	
+		StringBuffer operErrorBuffer = new StringBuffer();
+		System.out.println("..compareSolutionFiles():");
 		taskCycleProcessor.getRead_oper().setOperErrorBuffer(new StringBuffer());
+
+		// String stuZipFilePath =
+		// "data/project_U1_sub1/submit/Round_U1_sub1_100000.zip";
+		//String refZipFilePath = "data/project_U1_sub1/submit/Round_U1_sub1_reference.zip";
+		String studentZipFolder= this.projectHome + "/" + taskFlowMetaDataList.get(this.selectedTaskflowIndex).getStudentZipFileFolder(); //"data/zips/RoundU1/";
+		String stuZipFilePath = studentZipFolder + getSelectedStudentZipFile();
+		String referenceZipFolder= this.projectHome + "/" + taskFlowMetaDataList.get(this.selectedTaskflowIndex).getReferenceZipFileFolder(); //"data/zips/RoundU1/";		
+		String refzipFile = taskFlowMetaDataList.get(this.selectedTaskflowIndex).getReferenceZipFile();
+		String refZipFilePath = referenceZipFolder + refzipFile;
 		
-		String stuZipFilePath = "data/project_U1_sub1/submit/Round_U1_sub1_100000.zip";
-		String stuFilePathInZip = "Round_U1/U1E1_1/src/CDcatalog_X_hidden.xml";
-		String refZipFilePath = "data/project_U1_sub1/submit/Round_U1_sub1_reference.zip";
-		String refFilePathInZip = "Round_U1/U1E1_1/test/CDcatalog_3_hidden.xml";
-		System.out.println("???? ReadTxtContent from TXT file: " + stuFilePathInZip);
-		String stuTxtContent = taskCycleProcessor.getRead_oper().readTxtFile(stuZipFilePath, stuFilePathInZip);
-		String refTxtContent = taskCycleProcessor.getRead_oper().readTxtFile(refZipFilePath, refFilePathInZip);	
-		
-		System.out.println("???? Comaparing TxtContents: ");
-		String result = "EQUAL";
-		taskCycleProcessor.getCompare_ctrl().setUp(); 													
-		boolean isequal = taskCycleProcessor.getCompare_ctrl().compareTextLines(stuTxtContent, refTxtContent);
-		if(!isequal){
-			operErrorBuffer = taskCycleProcessor.getCompare_ctrl().getFilteredResults("DELETE", 0, 100); //minLength, cutLength
-			result = "NOT-EQUAL";
-			oper_ok = false;
-		} 
-		System.out.println("====== COMPARE RESULT: " + result + "============\n");
-		
+		if ((stuZipFilePath != null) && (!"null".equals(stuZipFilePath))) {
+			String stuFilePathInZip = (String) this.selectedStuSolutionObject; //"Round_U1/U1E1_1/src/CDcatalog_X_hidden.xml";
+			String refFilePathInZip = (String) this.selectedRefSolutionObject; //"Round_U1/U1E1_1/test/CDcatalog_3_hidden.xml";
+			System.out.println("???? ReadTxtContent from TXT file: " + stuFilePathInZip);
+			String stuTxtContent = taskCycleProcessor.getRead_oper().readTxtFile(stuZipFilePath, stuFilePathInZip);
+			String refTxtContent = taskCycleProcessor.getRead_oper().readTxtFile(refZipFilePath, refFilePathInZip);
+
+			System.out.println("???? Comaparing TxtContents: ");
+			String result = "EQUAL";
+			taskCycleProcessor.getCompare_ctrl().setUp();
+			boolean isequal = taskCycleProcessor.getCompare_ctrl().compareTextLines(stuTxtContent, refTxtContent);
+			if (!isequal) {
+				operErrorBuffer = taskCycleProcessor.getCompare_ctrl().getFilteredResults("DELETE", 0, 100); // minLength,
+																												// cutLength
+				result = "NOT-EQUAL";
+				oper_ok = false;
+			}
+			System.out.println("====== COMPARE RESULT: " + result + "============\n");
+			if(isequal) operErrorBuffer.append("EQUAL");
+			this.viewFrame.displaySolutionCompareResults(stuTxtContent, refTxtContent, operErrorBuffer.toString()); //("STUDENT", "REFERENCE", "DIFFERENCE");
+		}
+
 	}
 	
+	public String getSelectedStudentZipFile(){
+		
+		//Call MainFrame method getSelectedStudentTableRow()
+		//Selected row from StudenttablePanel
+		StringBuffer infobuff = new StringBuffer();		
+		int studentRowIdx = this.viewFrame.getSelectedStudentTableRow();
+		if(studentRowIdx>=0){
+			List<StudentType> students = this.studentContainer.getStudents();
+			StudentType student = students.get(studentRowIdx);
+			infobuff.append(student.getSubmitZip());
+		}
+		
+		System.out.println("???????? Selected student row index: " + studentRowIdx);
+		
+		return infobuff.toString();
+	}
 	
 	public String getSelectedStudentInfo(){
 		//TODO: 
@@ -258,11 +286,15 @@ public class MainAppController {
 			infobuff.append("\nPARAMETER 2: \t" + oper.getPar2());
 			infobuff.append("\nRETURN: " + oper.getReturn());
 		} else if("StuSolution".equals(nodetype)){
+			ElementNode parentTaskflowNode = node.getParent();
+			CheckerTaskFlowType parenttaskflow = (CheckerTaskFlowType)parentTaskflowNode.getJaxbObject();
+			this.selectedTaskflowObject = parenttaskflow;
+			this.selectedTaskflowIndex = parentTaskflowNode.getIndexOfChild(node);
 			String stusol = (String)node.getJaxbObject();
 			this.selectedStuSolutionObject = stusol;
-			int stusolidx = node.getParent().getIndexOfChild(node);
+			int stusolidx = parentTaskflowNode.getIndexOfChild(node);
 			//Next child should be RefSolution
-			ElementNode refsolnode = node.getParent().getChildAt(stusolidx+1);
+			ElementNode refsolnode = parentTaskflowNode.getChildAt(stusolidx+1);
 			if("RefSolution".equals(refsolnode.getNodetype())){
 				String refsol = (String)refsolnode.getJaxbObject();
 				this.selectedRefSolutionObject = refsol;
@@ -270,6 +302,7 @@ public class MainAppController {
 			
 			infobuff.append("\nNODE TYPE: \t" + nodetype);
 			infobuff.append("\nSTUDENT SOLUTION: " + stusol);
+			infobuff.append("\nPARENT TASKFLOW: " + (this.selectedTaskflowIndex + 1));
 			
 		} else {			
 			infobuff.append("\nNODE TYPE: \t" + nodetype);
