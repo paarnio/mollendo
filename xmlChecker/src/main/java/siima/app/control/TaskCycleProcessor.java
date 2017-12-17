@@ -160,6 +160,23 @@ public class TaskCycleProcessor {
 		this.students = studentContainer.getStudents();
 	}
 	
+	public void runTestCaseForOneStudent(int testCaseIdx, int studentIdx) {
+		//TODO:
+		logger.log(Level.INFO, "Entering: " + getClass().getName() + " method: runTestCaseForOneStudent()");
+		boolean oper_ok = true;
+		//Selected testcase
+		List<TestCaseType> testcases = new ArrayList<TestCaseType>();
+		TestCaseType onetestcase = readTestCases().get(testCaseIdx);
+		testcases.add(onetestcase);
+		//Selected Student
+		List<String> studentzips= new ArrayList<String>();
+		StudentType student = this.students.get(studentIdx);
+		String szip = student.getSubmitZip();
+		studentzips.add(szip);
+		//Running 
+		this.runTaskCycles(testcases, studentzips);
+	}
+	
 	public void runTaskCycles() {
 		/*
 		 * 

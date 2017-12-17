@@ -106,6 +106,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 	private JMenuItem mntmExit;
 	private JMenuItem mntmInvoke;
 	private JMenuItem mntmCompareSol;
+	private JMenuItem mntmSingleTestCase;
 	
 	private JMenuItem mntmInvokeTransform;
 	private JMenuItem mntmSetTransformContext;
@@ -284,7 +285,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		JMenu mnView = new JMenu("View");
 		menuBar.add(mnView);
 
-		mntmShowResults = new JMenuItem("Show Results");
+		mntmShowResults = new JMenuItem("Display Student info");
 		mntmShowResults.addActionListener(this); // See: method											// actionPerformed(ActionEvent arg0)
 		mnView.add(mntmShowResults);
 		mntmShowResults.setEnabled(false);	
@@ -316,6 +317,10 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		mnStudent.add(mntmCompareSol);
 		mntmCompareSol.setEnabled(true);	
 		
+		mntmSingleTestCase = new JMenuItem("Run TestCase For Student");
+		mntmSingleTestCase.addActionListener(this); // See: method											// actionPerformed(ActionEvent arg0)
+		mnStudent.add(mntmSingleTestCase);
+		mntmSingleTestCase.setEnabled(true);
 		
 		
 		/* ************************
@@ -624,8 +629,8 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		JPanel rightmostBottomPanel = new JPanel();
 		RightmostSideVerticalSplitPane.setRightComponent(rightmostBottomPanel);
 		GridBagLayout gbl_rightmostBottomPanel = new GridBagLayout();
-		gbl_rightmostBottomPanel.columnWidths = new int[] { 0, 0 };
-		gbl_rightmostBottomPanel.rowHeights = new int[] { 0, 0, 0 };
+		gbl_rightmostBottomPanel.columnWidths = new int[] { 300, 0 };
+		gbl_rightmostBottomPanel.rowHeights = new int[] { 100, 0, 0 };
 		gbl_rightmostBottomPanel.columnWeights = new double[] { 1.0, Double.MIN_VALUE };
 		gbl_rightmostBottomPanel.rowWeights = new double[] { 1.0, 0.2, Double.MIN_VALUE };
 		rightmostBottomPanel.setLayout(gbl_rightmostBottomPanel);
@@ -838,24 +843,34 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 			txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
 						
 		} else	if (arg0.getSource() == mntmCompareSol) {
-			//TODO: Difference of selected students solution with the reference solution
+			/*TODO: Difference of selected students solution with the reference solution
 			// One Student have to be selected from Student table and
 			// stuSolution have to be selected from TaskFlow tree
 			// Displaying student file content in: rightTopLeftTextArea
 			// Displaying reference file content in: rightTopRightTextArea
 			// Computing difference
 			// Displaying difference results in Result tab
-			
+			*/
 			appControl.compareSolutionFiles();
 			
 			txtrConsoleOutput.append(newline + "LOG: COMPARING STUDENT SOLUTION WITH REFERENCE: ");
 			txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
 						
+		} else	if (arg0.getSource() == mntmSingleTestCase) {
+		   /* Running a selected testCase for a single selected student
+			* One Student have to be selected from Student table and
+			* testCase have to be selected from TaskFlow tree
+			* Displaying testcase's student flow results in: rightTopLeftTextArea
+			* Displaying testcase's reference flow results in: rightTopRightTextArea
+			* Displaying merge flow's difference results in Result tab
+			*/
+			appControl.invokeSelectedTestCaseForStudent();
+			
+			txtrConsoleOutput.append(newline + "LOG: RUNNING THE SELECTED TESTCASE FOR THE SELECTED STUDENT: ");
+			txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
+						
 		}
 		
-		
-		
-	
 		
 		
 		/* OLD From ERAmlHandler project

@@ -51,8 +51,11 @@ public class MainAppController {
 	private List<TaskFlowMetaData> taskFlowMetaDataList;
 	private CheckerTaskFlowType selectedTaskflowObject;
 	private int selectedTaskflowIndex = -1;
+	private int selectedTestCaseIndex = -1;
 	private String selectedStuSolutionObject;
 	private String selectedRefSolutionObject;
+	private int selectedStudentIndex = -1;
+	private String selectedStudentZipFile;
 	
 	private TxtFileReadOper read_oper = new TxtFileReadOper();
 	
@@ -145,9 +148,39 @@ public class MainAppController {
 	
 	}
 	
+	public void invokeSelectedTestCaseForStudent(){
+		// TODO:
+		/* Running a selected testCase for a single selected student
+		* One Student have to be selected from Student table and
+		* testCase have to be selected from TaskFlow tree
+		* Displaying testcase's student flow results in: rightTopLeftTextArea
+		* Displaying testcase's reference flow results in: rightTopRightTextArea
+		* Displaying merge flow's difference results in Result tab
+		*/
+		if (runConditions()) {
+			if ((this.selectedTaskflowObject != null) && (this.selectedTaskflowIndex >= 0)
+					&& (this.selectedTestCaseIndex >= 0) && (this.selectedStudentIndex >= 0)) {
+				taskCycleProcessor.initProcessor(this.projectHome, taskFlowMetaDataList.get(this.selectedTaskflowIndex), excel_mng, selectedTaskflowObject, studentContainer);
+				taskCycleProcessor.runTestCaseForOneStudent(this.selectedTestCaseIndex, this.selectedStudentIndex);
+				System.out.println("???TODO: RUN SELECTED TESTCASE: " + (selectedTestCaseIndex + 1)
+						+ " FOR SELECTED STUDENT: " + (selectedStudentIndex + 1));
+			} else {
+				System.out.println("?? TESTCASE OR STUDENT NOT SELECTED ??");
+			}
+
+		}
+	}
+	
 	
 	public void compareSolutionFiles() {
-		// TODO:
+		/*TODO: Difference of selected students solution with the reference solution
+		// One Student have to be selected from Student table and
+		// stuSolution have to be selected from TaskFlow tree
+		// Displaying student file content in: rightTopLeftTextArea
+		// Displaying reference file content in: rightTopRightTextArea
+		// Computing difference
+		// Displaying difference results in Result tab
+		*/
 		boolean oper_ok = true;
 		StringBuffer operErrorBuffer = new StringBuffer();
 		System.out.println("..compareSolutionFiles():");
@@ -157,7 +190,7 @@ public class MainAppController {
 		// "data/project_U1_sub1/submit/Round_U1_sub1_100000.zip";
 		//String refZipFilePath = "data/project_U1_sub1/submit/Round_U1_sub1_reference.zip";
 		String studentZipFolder= this.projectHome + "/" + taskFlowMetaDataList.get(this.selectedTaskflowIndex).getStudentZipFileFolder(); //"data/zips/RoundU1/";
-		String stuZipFilePath = studentZipFolder + getSelectedStudentZipFile();
+		String stuZipFilePath = studentZipFolder + this.selectedStudentZipFile; //getSelectedStudentZipFile();
 		String referenceZipFolder= this.projectHome + "/" + taskFlowMetaDataList.get(this.selectedTaskflowIndex).getReferenceZipFileFolder(); //"data/zips/RoundU1/";		
 		String refzipFile = taskFlowMetaDataList.get(this.selectedTaskflowIndex).getReferenceZipFile();
 		String refZipFilePath = referenceZipFolder + refzipFile;
@@ -186,7 +219,7 @@ public class MainAppController {
 
 	}
 	
-	public String getSelectedStudentZipFile(){
+/*	public String getSelectedStudentZipFile(){
 		
 		//Call MainFrame method getSelectedStudentTableRow()
 		//Selected row from StudenttablePanel
@@ -201,12 +234,14 @@ public class MainAppController {
 		System.out.println("???????? Selected student row index: " + studentRowIdx);
 		
 		return infobuff.toString();
-	}
+	} */
 	
 	public String getSelectedStudentInfo(){
 		//TODO: 
 		//Call MainFrame method getSelectedStudentTableRow()
 		//Selected row from StudenttablePanel
+		this.selectedStudentZipFile=null;
+		this.selectedStudentIndex=-1;
 		StringBuffer infobuff = new StringBuffer();		
 		int studentRowIdx = this.viewFrame.getSelectedStudentTableRow();
 		if(studentRowIdx>=0){
@@ -217,6 +252,8 @@ public class MainAppController {
 			infobuff.append("\nFIRST NAME: \t" + student.getFirstname());
 			infobuff.append("\nSTUDENT ID: \t" + student.getStudentId());
 			infobuff.append("\nSUBMIT ZIP: \t" + student.getSubmitZip());
+			this.selectedStudentZipFile=student.getSubmitZip();
+			this.selectedStudentIndex=studentRowIdx;
 		}
 		
 		System.out.println("???????? Selected student row index: " + studentRowIdx);
@@ -229,6 +266,7 @@ public class MainAppController {
 		StringBuffer infobuff = new StringBuffer();
 		this.selectedTaskflowObject = null;
 		this.selectedTaskflowIndex = -1;
+		this.selectedTestCaseIndex = -1;
 		this.selectedStuSolutionObject = null;
 		this.selectedRefSolutionObject = null;
 		
@@ -266,7 +304,14 @@ public class MainAppController {
 			infobuff.append("\nREFERENCE DIR2: " + testcase.getRefDir2());
 			infobuff.append("\nREFERENCE FILE1: " + testcase.getRefFile1());
 			infobuff.append("\nREFERENCE FILE2: " + testcase.getRefFile2());			
-			//infobuff.append("\n\n(Checking disabled)");
+			
+			this.selectedTestCaseIndex = testcase.getNumber().intValue()-1;
+			//Selected TestCase's parent is a TakFlow
+			ElementNode parentTaskflowNode = node.getParent();
+			CheckerTaskFlowType parenttaskflow = (CheckerTaskFlowType)parentTaskflowNode.getJaxbObject();
+			this.selectedTaskflowObject = parenttaskflow;
+			this.selectedTaskflowIndex = parentTaskflowNode.getParent().getIndexOfChild(parentTaskflowNode);
+			infobuff.append("\nPARENT TASKFLOW: " + (this.selectedTaskflowIndex + 1));
 		} else if("FlowType".equals(nodetype)){
 			FlowType flow = (FlowType)node.getJaxbObject();
 			infobuff.append("\nNODE TYPE: \t" + nodetype);
@@ -289,7 +334,7 @@ public class MainAppController {
 			ElementNode parentTaskflowNode = node.getParent();
 			CheckerTaskFlowType parenttaskflow = (CheckerTaskFlowType)parentTaskflowNode.getJaxbObject();
 			this.selectedTaskflowObject = parenttaskflow;
-			this.selectedTaskflowIndex = parentTaskflowNode.getIndexOfChild(node);
+			this.selectedTaskflowIndex = parentTaskflowNode.getParent().getIndexOfChild(parentTaskflowNode);
 			String stusol = (String)node.getJaxbObject();
 			this.selectedStuSolutionObject = stusol;
 			int stusolidx = parentTaskflowNode.getIndexOfChild(node);
