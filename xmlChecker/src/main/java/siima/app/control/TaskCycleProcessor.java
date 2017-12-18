@@ -16,6 +16,7 @@ import siima.app.model.StudentJaxbContainer;
 
 import siima.app.model.TaskFlowJaxbContainer;
 import siima.app.model.TaskFlowMetaData;
+import siima.app.model.TriptychContent;
 import siima.app.operator.TxtFileReadOper;
 import siima.app.operator.XMLValidationCheck;
 import siima.app.operator.XMLWellFormedCheck;
@@ -30,10 +31,17 @@ import siima.utils.Testing_diff_match_patch;
 
 public class TaskCycleProcessor {
 	private static final Logger logger=Logger.getLogger(TaskCycleProcessor.class.getName());
+	
 	private String studentDataExcel; // = "data/excel/students.xlsx";
 	private String projectHome;
+	private int currentTaskflowIndex;
 	private TaskFlowMetaData taskFlowMetaData;
 	private CheckerTaskFlowType currentTaskflow;
+	//For single testcase single student run
+	private boolean singleStudentRun = false;
+	private int singleStudentTestCaseIdx = -1;
+	private int singleStudentIdx = -1;
+	private TriptychContent singleStudentCompareResults;
 	
 	private String studentZipFolder;
 	private String referenceZipFolder;
@@ -142,11 +150,13 @@ public class TaskCycleProcessor {
 		return value;
 	}
 	
-	public void initProcessor(String projectHome, TaskFlowMetaData taskFlowMD, ExcelMng excel_mng, CheckerTaskFlowType currentTaskflow, StudentJaxbContainer studentContainer) {
+	public void initProcessor(String projectHome, int selectedTaskflowIndex, TaskFlowMetaData taskFlowMD, CheckerTaskFlowType currentTaskflow, StudentJaxbContainer studentContainer, ExcelMng excel_mng) {
 		//Excel MainInfo contains file paths relative to project home
+		//this.singleStudentRun = false;
 		this.excel_mng = excel_mng;
 		this.excel_mng.openResultsExcel();
 		this.projectHome = projectHome;
+		this.currentTaskflowIndex = selectedTaskflowIndex;
 		this.taskFlowMetaData = taskFlowMD;
 		
 		this.studentZipFolder= this.projectHome + "/" + taskFlowMetaData.getStudentZipFileFolder(); //"data/zips/RoundU1/";
@@ -161,8 +171,14 @@ public class TaskCycleProcessor {
 	}
 	
 	public void runTestCaseForOneStudent(int testCaseIdx, int studentIdx) {
-		//TODO:
+		/*
+		 * Processing one testcase for one student only
+		 */
 		logger.log(Level.INFO, "Entering: " + getClass().getName() + " method: runTestCaseForOneStudent()");
+		this.singleStudentRun = true;
+		this.singleStudentTestCaseIdx = testCaseIdx;
+		this.singleStudentIdx = studentIdx;
+		
 		boolean oper_ok = true;
 		//Selected testcase
 		List<TestCaseType> testcases = new ArrayList<TestCaseType>();
@@ -179,9 +195,13 @@ public class TaskCycleProcessor {
 	
 	public void runTaskCycles() {
 		/*
-		 * 
+		 * Processing solutions of all the students
 		 */
 		logger.log(Level.INFO, "Entering: " + getClass().getName() + " method: runTaskCycles()");
+		this.singleStudentRun = false;
+		this.singleStudentTestCaseIdx = -1;
+		this.singleStudentIdx = -1;
+		
 		boolean oper_ok = true;
 		//NEEDED??String taskFlowXmlFile = this.projectHome + "/" + taskFlowMetaData.getTaskFlowXmlFile();
 		
@@ -230,6 +250,9 @@ public class TaskCycleProcessor {
 			testcaseResults = new ArrayList<String>();	
 			operationErrors = new ArrayList<String>();
 			testcasePoints = new ArrayList<String>();
+			//For single Student testcase run
+			String singleStuRefCompareStr1 = null;
+			String singleStuRefCompareStr2 = null;
 		/* --- TestCase Loop --- */
 		testcase_ok = true;
 		int testcasecount=0;
@@ -238,6 +261,7 @@ public class TaskCycleProcessor {
 			checkResultBuffer = new StringBuffer();
 			dirList = new ArrayList<String>();
 			fileList = new ArrayList<String>();
+						
 			System.out.println("--+ TestCase Loop #" + testcasecount);
 			
 			String sdir1= tcase.getStuDir1();
@@ -433,6 +457,11 @@ public class TaskCycleProcessor {
 								arg1str = getChannelStringValue(par1);
 								arg2str = getChannelStringValue(par2);
 								
+								if(this.singleStudentRun){
+									singleStuRefCompareStr1 = arg1str;
+									singleStuRefCompareStr2 = arg2str;
+								}
+								
 								String result = "EQUAL";
 								compare_ctrl.setUp();															
 								boolean isequal = compare_ctrl.compareTextLines(arg1str, arg2str);
@@ -464,21 +493,48 @@ public class TaskCycleProcessor {
 							if("referenceFlow".equals(flowType)) refFlow_ok = false;
 							if("mergeFlow".equals(flowType)) merFlow_ok = false;
 						}
-					} // Operation loop
-				} // Flow loop
-			String points = tcase.getPoints();		
-			testcaseResults.add("RESULT(" + submitcnt + ") TCASE(" + testcasecount + ")  FLOW(" + stuFlow_ok + ") MSG(" + checkResultBuffer.toString() + ")");
-			if((stuFlow_ok)&&(merFlow_ok)) testcasePoints.add(points); //TODO points as string
+					} // End Operation loop ---
+				} // End Flow loop ---
+				String points = tcase.getPoints();		
+				testcaseResults.add("RESULT(" + submitcnt + ") TCASE(" + testcasecount + ")  FLOW(" + stuFlow_ok + ") MSG(" + checkResultBuffer.toString() + ")");
+				if((stuFlow_ok)&&(merFlow_ok)) testcasePoints.add(points); //TODO points as string
 				else testcasePoints.add("0");
-			}// TestCase Loop ---
-		setStudentData(submitcnt, testcasecount, testcaseResults, operationErrors, testcasePoints);
-		writeSubmitTestCaseResults(submitcnt, testcasecount, testcaseResults, operationErrors, testcasePoints);
-		}//Student zip loop	---	
-		writeAllResultsAndCloseExcel(true); 
+			}// End TestCase Loop ---
+			if(!this.singleStudentRun){
+				setStudentResultsData(submitcnt, testcasecount, testcaseResults, operationErrors, testcasePoints);
+				writeSubmitTestCaseResults(submitcnt, testcasecount, testcaseResults, operationErrors, testcasePoints);
+			} else { //singleStudentRun
+				displaySingleStudentRunResults(singleStuRefCompareStr1, singleStuRefCompareStr2, testcaseResults, operationErrors, testcasePoints);
+			}
+		}//End Student zip loop	---	
+		if(!this.singleStudentRun) writeAllResultsAndCloseExcel(true); 
 	 
 	}
 	
-	public void setStudentData(int submitcnt, int testcasecount, List<String> tcResults, List<String> operErrors, List<String> tcPoints){
+	public void displaySingleStudentRunResults(String singleStuRefCompareStr1, String singleStuRefCompareStr2, List<String> tcResults, List<String> operErrors, List<String> tcPoints){
+		//this.singleStudentTestCaseIdx;
+		//this.singleStudentIdx;
+		String title = "Single Student Single TestCase Run:";
+		String meta = "Taskflow no: " + (this.currentTaskflowIndex+1) + " testcase no: " + (this.singleStudentTestCaseIdx+1) + " student no: " + (this.singleStudentIdx+1);
+		
+		System.out.println("???displaySingleStudentRunResults(): " + meta);	
+		System.out.println("???displaySingleStudentRunResults(): results #: " + tcResults.size() + " errors #: " + operErrors.size() + " points #: " + tcPoints.size());	
+	
+		TriptychContent compareResults = new TriptychContent();
+		compareResults.setStudentContent(singleStuRefCompareStr1);
+		compareResults.setReferenceContent(singleStuRefCompareStr2);
+		StringBuffer results= new StringBuffer();
+		results.append(title);
+		results.append("\n" + meta);
+		if((tcResults!=null)&&(tcResults.size()>0))results.append("\n" + tcResults.get(0).toString());
+		if((operErrors!=null)&&(operErrors.size()>0))results.append("\n" + operErrors.get(0).toString());
+		if((tcPoints!=null)&&(tcPoints.size()>0))results.append("\n" + tcPoints.get(0).toString());
+		compareResults.setCompareResult(results.toString());
+		setSingleStudentCompareResults(compareResults);
+	}
+	
+	public void setStudentResultsData(int submitcnt, int testcasecount, List<String> tcResults, List<String> operErrors, List<String> tcPoints){
+		//TODO: this.currentTaskflowIndex
 		//Saving results to Student's ExerciseType object
 		int studentIdx = submitcnt-1;
 		//StudentType student = studentContainer.getStudent(studentIdx);
@@ -555,6 +611,14 @@ public class TaskCycleProcessor {
 
 	public TxtFileReadOper getRead_oper() {
 		return read_oper;
+	}
+
+	public TriptychContent getSingleStudentCompareResults() {
+		return singleStudentCompareResults;
+	}
+
+	public void setSingleStudentCompareResults(TriptychContent singleStudentCompareResults) {
+		this.singleStudentCompareResults = singleStudentCompareResults;
 	}
 
 	

@@ -21,6 +21,7 @@ import siima.app.gui.MainFrame;
 import siima.app.model.StudentJaxbContainer;
 import siima.app.model.TaskFlowJaxbContainer;
 import siima.app.model.TaskFlowMetaData;
+import siima.app.model.TriptychContent;
 import siima.app.model.tree.ElementModel;
 import siima.app.model.tree.ElementNode;
 import siima.app.model.tree.ElementTree;
@@ -101,7 +102,8 @@ public class MainAppController {
 	public void invokeCheckingProcess(){
 				
 		if(runConditions()){
-			taskCycleProcessor.initProcessor(this.projectHome, taskFlowMetaDataList.get(this.selectedTaskflowIndex), excel_mng, selectedTaskflowObject, studentContainer);
+			
+			taskCycleProcessor.initProcessor(this.projectHome, this.selectedTaskflowIndex, taskFlowMetaDataList.get(this.selectedTaskflowIndex), selectedTaskflowObject, studentContainer, excel_mng);
 			taskCycleProcessor.runTaskCycles();
 		
 		}
@@ -158,12 +160,14 @@ public class MainAppController {
 		* Displaying merge flow's difference results in Result tab
 		*/
 		if (runConditions()) {
-			if ((this.selectedTaskflowObject != null) && (this.selectedTaskflowIndex >= 0)
-					&& (this.selectedTestCaseIndex >= 0) && (this.selectedStudentIndex >= 0)) {
-				taskCycleProcessor.initProcessor(this.projectHome, taskFlowMetaDataList.get(this.selectedTaskflowIndex), excel_mng, selectedTaskflowObject, studentContainer);
+			if ((this.selectedTestCaseIndex >= 0) && (this.selectedStudentIndex >= 0)) {
+				taskCycleProcessor.initProcessor(this.projectHome, this.selectedTaskflowIndex, taskFlowMetaDataList.get(this.selectedTaskflowIndex), selectedTaskflowObject, studentContainer, excel_mng);
 				taskCycleProcessor.runTestCaseForOneStudent(this.selectedTestCaseIndex, this.selectedStudentIndex);
 				System.out.println("???TODO: RUN SELECTED TESTCASE: " + (selectedTestCaseIndex + 1)
 						+ " FOR SELECTED STUDENT: " + (selectedStudentIndex + 1));
+				TriptychContent displaycontent = taskCycleProcessor.getSingleStudentCompareResults();
+				if(displaycontent!=null)this.viewFrame.displaySolutionCompareResults(displaycontent);
+				
 			} else {
 				System.out.println("?? TESTCASE OR STUDENT NOT SELECTED ??");
 			}
@@ -214,7 +218,11 @@ public class MainAppController {
 			}
 			System.out.println("====== COMPARE RESULT: " + result + "============\n");
 			if(isequal) operErrorBuffer.append("EQUAL");
-			this.viewFrame.displaySolutionCompareResults(stuTxtContent, refTxtContent, operErrorBuffer.toString()); //("STUDENT", "REFERENCE", "DIFFERENCE");
+			TriptychContent displaycontent = new TriptychContent();
+			displaycontent.setStudentContent(stuTxtContent);
+			displaycontent.setReferenceContent(refTxtContent);
+			displaycontent.setCompareResult(operErrorBuffer.toString());
+			this.viewFrame.displaySolutionCompareResults(displaycontent); //("STUDENT", "REFERENCE", "DIFFERENCE");
 		}
 
 	}
@@ -306,7 +314,7 @@ public class MainAppController {
 			infobuff.append("\nREFERENCE FILE2: " + testcase.getRefFile2());			
 			
 			this.selectedTestCaseIndex = testcase.getNumber().intValue()-1;
-			//Selected TestCase's parent is a TakFlow
+			//Selected TestCase's parent is a TaskFlow
 			ElementNode parentTaskflowNode = node.getParent();
 			CheckerTaskFlowType parenttaskflow = (CheckerTaskFlowType)parentTaskflowNode.getJaxbObject();
 			this.selectedTaskflowObject = parenttaskflow;

@@ -20,6 +20,7 @@ import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
 
 import siima.app.control.MainAppController;
+import siima.app.model.TriptychContent;
 
 //X import siima.app.control.MainAppController;
 //X import siima.app.model.tree.ElementModel;
@@ -187,7 +188,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 	 */
 	public MainFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1000, 600); //(100, 100, 450, 300);
+		setBounds(100, 100, 1100, 600); //(100, 100, 450, 300);
 		setTitle("XML-Checker");
 
 		this.appControl = new MainAppController(this); //(this);
@@ -353,7 +354,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		JPanel topLeftPanel = new JPanel();
 		LeftVerticalSplitPane.setLeftComponent(topLeftPanel);
 		GridBagLayout gbl_topLeftPanel = new GridBagLayout();
-		gbl_topLeftPanel.columnWidths = new int[] { 300, 0 };
+		gbl_topLeftPanel.columnWidths = new int[] { 250, 0 };
 		gbl_topLeftPanel.rowHeights = new int[] { 10, 300, 0, 0 };//{ 50, 200, 0, 0 };
 		gbl_topLeftPanel.columnWeights = new double[] { 1.0, Double.MIN_VALUE };
 		gbl_topLeftPanel.rowWeights = new double[] { 0.5, 1.0, 0.5, Double.MIN_VALUE };//{ 1.0, 1.0, 1.0, Double.MIN_VALUE };
@@ -396,8 +397,8 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		JPanel bottomLeftPanel = new JPanel();
 		LeftVerticalSplitPane.setRightComponent(bottomLeftPanel);
 		GridBagLayout gbl_bottomLeftPanel = new GridBagLayout();
-		gbl_bottomLeftPanel.columnWidths = new int[] { 0, 0 };
-		gbl_bottomLeftPanel.rowHeights = new int[] { 0, 0, 0 };
+		gbl_bottomLeftPanel.columnWidths = new int[] { 250, 0 };
+		gbl_bottomLeftPanel.rowHeights = new int[] { 100, 20, 0 };
 		gbl_bottomLeftPanel.columnWeights = new double[] { 1.0, Double.MIN_VALUE };
 		gbl_bottomLeftPanel.rowWeights = new double[] { 1.0, 0.2, Double.MIN_VALUE };
 		bottomLeftPanel.setLayout(gbl_bottomLeftPanel);
@@ -490,7 +491,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		rightTopVerticalSplitPane.setLeftComponent(rightTopLeftPanel);
 		
 		GridBagLayout gbl_rightTopLeftPanel = new GridBagLayout();
-		gbl_rightTopLeftPanel.columnWidths = new int[] { 300, 0 };
+		gbl_rightTopLeftPanel.columnWidths = new int[] { 250, 0 };
 		gbl_rightTopLeftPanel.rowHeights = new int[] { 300, 0 };//{ 50, 200, 0, 0 };
 		gbl_rightTopLeftPanel.columnWeights = new double[] { 1.0, Double.MIN_VALUE };
 		gbl_rightTopLeftPanel.rowWeights = new double[] { 1.0, Double.MIN_VALUE };//{ 1.0, 1.0, 1.0, Double.MIN_VALUE };
@@ -505,7 +506,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 
 		rightTopLeftTextArea = new JTextArea();
 		rightTopLeftTextArea.setRows(30);
-		rightTopLeftTextArea.setColumns(300);
+		rightTopLeftTextArea.setColumns(250);
 		rightTopLeftTextArea.setLineWrap(true);
 		rightTopLeftTextArea.setText("-------------rightTopLeftTextArea-------------\n");
 		
@@ -519,7 +520,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		rightTopVerticalSplitPane.setRightComponent(rightTopRightPanel);
 		
 		GridBagLayout gbl_right_top_right_panel = new GridBagLayout();
-		gbl_right_top_right_panel.columnWidths = new int[] { 300, 0 };
+		gbl_right_top_right_panel.columnWidths = new int[] { 250, 0 };
 		gbl_right_top_right_panel.rowHeights = new int[] { 300, 0 };//{ 50, 200, 0, 0 };
 		gbl_right_top_right_panel.columnWeights = new double[] { 1.0, Double.MIN_VALUE };
 		gbl_right_top_right_panel.rowWeights = new double[] { 1.0, Double.MIN_VALUE };
@@ -535,7 +536,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 
 		rightTopRightTextArea = new JTextArea();
 		rightTopRightTextArea.setRows(30);
-		rightTopRightTextArea.setColumns(300);
+		rightTopRightTextArea.setColumns(250);
 		rightTopRightTextArea.setLineWrap(true);
 		rightTopRightTextArea.setText("-------------rightTopRightTextArea-------------\n");
 		
@@ -549,7 +550,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		JPanel bottom_right_panel = new JPanel();
 		rightVerticalSplitPane.setRightComponent(bottom_right_panel);
 		GridBagLayout gbl_bottom_right_panel = new GridBagLayout();
-		gbl_bottom_right_panel.columnWidths = new int[] {10, 620, 10, 0};
+		gbl_bottom_right_panel.columnWidths = new int[] {10, 500, 10, 0};
 		gbl_bottom_right_panel.rowHeights = new int[] {5, 20, 5, 5};
 		gbl_bottom_right_panel.columnWeights = new double[]{0.0, 1.0, 0.1, Double.MIN_VALUE};
 		gbl_bottom_right_panel.rowWeights = new double[]{0.0, 1.0, 0.0, Double.MIN_VALUE};
@@ -629,7 +630,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		JPanel rightmostBottomPanel = new JPanel();
 		RightmostSideVerticalSplitPane.setRightComponent(rightmostBottomPanel);
 		GridBagLayout gbl_rightmostBottomPanel = new GridBagLayout();
-		gbl_rightmostBottomPanel.columnWidths = new int[] { 300, 0 };
+		gbl_rightmostBottomPanel.columnWidths = new int[] { 250, 0 };
 		gbl_rightmostBottomPanel.rowHeights = new int[] { 100, 0, 0 };
 		gbl_rightmostBottomPanel.columnWeights = new double[] { 1.0, Double.MIN_VALUE };
 		gbl_rightmostBottomPanel.rowWeights = new double[] { 1.0, 0.2, Double.MIN_VALUE };
@@ -674,14 +675,25 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 	}
 	
 	
-	public void displaySolutionCompareResults(String studentSolution, String referenceSolution, String differences){
+	public void displaySolutionCompareResults(TriptychContent comparisonResults){
+		/*
+		 * Displaying Student's string, Reference string and comparison results
+		 * at three Triptych windows
+		 * 
+		 */
+		rightTopLeftTextArea.setText(comparisonResults.getStudentContent());
+		rightTopRightTextArea.setText(comparisonResults.getReferenceContent());
+		txtrResultOutput.setText(comparisonResults.getCompareResult());
+	
+	}
+	
+/*	public void displaySolutionCompareResults(String studentSolution, String referenceSolution, String differences){
 		
 		rightTopLeftTextArea.setText(studentSolution);
 		rightTopRightTextArea.setText(referenceSolution);
 		txtrResultOutput.setText(differences);
 	
-	}
-	
+	} */
 
 	public int getSelectedStudentTableRow(){
 		int selectedfirstrow = this.studentTablePanel.getSelectedFirstRow();
