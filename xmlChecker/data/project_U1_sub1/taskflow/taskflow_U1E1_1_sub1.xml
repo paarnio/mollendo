@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- taskflow3_U1E1_1_sub1.xml validated by testcases3.xsd
+ taskflow3_U1E1_1_sub1.xml validated by taskflow5.xsd
 -->
 <checkerTaskFlow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="taskflow4.xsd">
   <round>U1</round>
   <exercise>U1E1_1</exercise>
   <description>Validation tests in Round_U1</description>
+  <stuSolution>Round_U1/U1E1_1/src/CDcatalog_X_hidden.xml</stuSolution>
+  <refSolution>Round_U1/U1E1_1/test/CDcatalog_3_hidden.xml</refSolution>
   <stuZip>./data/zips/Round_U1_tests/Round_U1_sub1_</stuZip>
   <refZip>./data/zips/Round_U1_tests/Round_U1_sub1_reference.zip</refZip>
    <testCase number="1">
@@ -67,64 +69,4 @@
 	  <!--comment>Taskflow comment1</comment-->
 	</flow>
   </testCase>
-  <!--testCase number="2">
-	<description>The first testcase</description>
-    <points>10</points>
-    <stuDir1>Round_U3/U3E1_1/test/</stuDir1>
-	<stuFile1>books_schema_hidden.xsd</stuFile1>
-	<stuFile2>books_hidden.xml</stuFile2>
-	<refDir1>RoundU3/exU3E1_1/test/</refDir1>
-	<refFile1>books_schema_hidden.xsd</refFile1>
-	<refFile2>books_hidden.xml</refFile2>
-	<comment>Testcase comment</comment>
-	<flow>
-	  <description>The student flow</description>
-	  <type>studentFlow</type>
-	  <name>studentFlow1</name>
-	  <inChannel>inC001</inChannel>
-	  <outChannel>stuC001</outChannel>
-	  <operation>
-	    <type>XSDValidation</type>
-        <name>XSDValidation1</name>
-		<par1>refDir1/refFile1</par1>
-        <par2>stuDir1/stuFile2</par2>
-		<return>stuC001</return>
-	    <comment>XSDValidation</comment>
-      </operation>
-	  <comment>Taskflow comment1</comment>
-	</flow>
-	<flow>
-	  <description>The reference flow</description>
-	  <type>referenceFlow</type>
-	  <name>referenceFlow1</name>
-	  <inChannel>inC011</inChannel>
-	  <outChannel>refC001</outChannel>
-	  <operation>
-	    <type>XSDValidation</type>
-        <name>XSDValidation1</name>
-		<par1>refDir1/refFile1</par1>
-        <par2>refDir1/refFile2</par2>
-		<return>refC001</return>
-	    <comment>XSDValidation</comment>
-      </operation>
-	  <comment>Taskflow comment2</comment>
-	</flow>
-  	<flow>
-	  <description>Merging student and reference flow</description>
-	  <type>mergeFlow</type>
-	  <name>mergeFlow1</name>
-	  <inChannel>outC002</inChannel>
-	  <inChannel>outC012</inChannel>
-	  <outChannel>merC001</outChannel>
-	  <operation>
-	    <type>StringCompare</type>
-        <name>StringCompare1</name>
-        <par1>refC001</par1>
-        <par2>stuC001</par2>
-		<return>merC001</return>
-	    <comment>Comparing student and reference flow outputs</comment>
-      </operation>
-	  <comment>Taskflow comment3</comment>
-	</flow>
-  </testCase -->
 </checkerTaskFlow>

@@ -1,6 +1,7 @@
 package siima.app.gui;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.EventQueue;
@@ -15,7 +16,11 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.Document;
+import javax.swing.text.Highlighter;
+import javax.swing.text.Highlighter.HighlightPainter;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
 
@@ -507,7 +512,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		rightTopLeftTextArea = new JTextArea();
 		rightTopLeftTextArea.setRows(30);
 		rightTopLeftTextArea.setColumns(250);
-		rightTopLeftTextArea.setLineWrap(true);
+		rightTopLeftTextArea.setLineWrap(false); //(true);
 		rightTopLeftTextArea.setText("-------------rightTopLeftTextArea-------------\n");
 		
 		rightTopLeftScrollPane.setViewportView(rightTopLeftTextArea);
@@ -537,7 +542,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		rightTopRightTextArea = new JTextArea();
 		rightTopRightTextArea.setRows(30);
 		rightTopRightTextArea.setColumns(250);
-		rightTopRightTextArea.setLineWrap(true);
+		rightTopRightTextArea.setLineWrap(false);//(true);
 		rightTopRightTextArea.setText("-------------rightTopRightTextArea-------------\n");
 		
 		rightTopRightScrollPane.setViewportView(rightTopRightTextArea);
@@ -672,6 +677,22 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		});
 		rightmostBottomButtonPanel.add(btnShowSelectedStudentButton);
 		
+		JButton btnUpdateStudentTable = new JButton("Update Table");
+		btnUpdateStudentTable.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				List<List<Object>> studentRowsList =  appControl.getStudentDataForTableRows();				
+				int rowidx = 0;
+				for(List<Object> rowData : studentRowsList){
+					studentTablePanel.setOrAddStudentTableRow(rowidx,rowData);
+					rowidx++;
+				}			
+				txtrConsoleOutput.append(newline + "LOG: UPDATING RESULTS IN THE STUDENTS TABLE: ");
+				txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
+			}
+		});
+		rightmostBottomButtonPanel.add(btnUpdateStudentTable);
+		
+		
 	}
 	
 	
@@ -684,9 +705,50 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		rightTopLeftTextArea.setText(comparisonResults.getStudentContent());
 		rightTopRightTextArea.setText(comparisonResults.getReferenceContent());
 		txtrResultOutput.setText(comparisonResults.getCompareResult());
-	
+		//TODO: TEST highlighting
+		//https://stackoverflow.com/questions/20341719/how-to-highlight-a-single-word-in-a-jtextarea
+		try {
+			Highlighter highlighter = rightTopLeftTextArea.getHighlighter();
+			HighlightPainter painter = new DefaultHighlighter.DefaultHighlightPainter(Color.pink);
+
+			int p0 = comparisonResults.getStudentContent().indexOf("?xml version");
+			int p1 = 0;
+			if (p0 >= 0) {
+				p1 = p0 + "?xml version".length();
+				highlighter.addHighlight(p0, p1, painter);
+			}
+			
+			//Going through all DEL Strings
+			String stucontent = comparisonResults.getStudentContent();
+			String stusubstr = stucontent.substring(0);
+			String results = comparisonResults.getCompareResult();
+			String[] deletes = results.split("DEL\\(#");
+			int loc0 = 0;
+			int loc1 = 0;
+			if(deletes.length>0){
+				for(int i=0; i< deletes.length;i++ ){
+					
+					String[] delpred = deletes[i].split("#\\)");
+					String delstr = delpred[0];
+					p0 = stusubstr.indexOf(delstr);					
+					if (p0 >= 0) {
+						loc0 = loc0 + p0;
+						loc1 = loc0 + delstr.length();
+						highlighter.addHighlight(loc0, loc1, painter);
+						stusubstr = stusubstr.substring(p0 + delstr.length()-1); //-1?
+					}
+				}			
+				
+			}
+
+		} catch (BadLocationException e) {
+			e.printStackTrace();
+		}
+
+		bottomRightTabbedPane.setSelectedIndex(1);
+
 	}
-	
+
 /*	public void displaySolutionCompareResults(String studentSolution, String referenceSolution, String differences){
 		
 		rightTopLeftTextArea.setText(studentSolution);
@@ -754,11 +816,20 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 				mainOpenFile = fileChooser.getSelectedFile();
 				System.out.println("-- Opened file: " + mainOpenFile.getPath());
 				
+				//Application Initialization
 				appControl.openProjectExcel(mainOpenFile);
+				//Displaying TaskFlow tree
 				JTree elementTree = appControl.getTaskFlowsTree();
 				if (elementTree != null)
 					this.getHierarchyTreeScrollPane().setViewportView(elementTree);
-											
+				//Displaying Student Table
+				List<List<Object>> studentRowsList =  appControl.getStudentDataForTableRows();				
+				int rowidx = 0;
+				for(List<Object> rowData : studentRowsList){
+					studentTablePanel.setOrAddStudentTableRow(rowidx,rowData);
+					rowidx++;
+				}
+				
 				String dir = mainOpenFile.getParent();
 				this.eraProjectHomeDirectory = dir;
 				this.latestOpenedFolder = dir;

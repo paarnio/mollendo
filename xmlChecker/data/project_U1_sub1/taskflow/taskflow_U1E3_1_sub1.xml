@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- taskflow3_U1E3_1_sub1.xml validated by testcases3.xsd
+ taskflow3_U1E3_1_sub1.xml validated by taskflow5.xsd
 -->
 <checkerTaskFlow>
   <round>U1</round>
   <exercise>U1E3_1</exercise>
   <description></description>
+  <stuSolution>Round_U1/U1E3_1/src/plant_catalog_X_hidden.xsl</stuSolution>
+  <refSolution>Round_U1/U1E3_1/test/plant_catalog_hidden.xsl</refSolution>
   <stuZip>./data/zips/Round_U1_sub1_</stuZip>
   <refZip>./data/zips/Round_U1_sub1_reference.zip</refZip>
   <testCase number="1">

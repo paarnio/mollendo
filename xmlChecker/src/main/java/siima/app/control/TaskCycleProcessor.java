@@ -466,7 +466,7 @@ public class TaskCycleProcessor {
 								compare_ctrl.setUp();															
 								boolean isequal = compare_ctrl.compareTextLines(arg1str, arg2str);
 								if(!isequal){
-									operErrorBuffer = compare_ctrl.getFilteredResults("DELETE", 0, 100); //minLength, cutLength
+									operErrorBuffer = compare_ctrl.getFilteredResults("ALL", 0, 100); //DELETE_INSERT minLength, cutLength
 									result = "NOT-EQUAL";
 									oper_ok = false;
 								} 

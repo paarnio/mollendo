@@ -25,37 +25,48 @@ public class TextCompareController {
 	private diff_match_patch.Operation INSERT = diff_match_patch.Operation.INSERT;
 
 	private LinkedList<Diff> textDiffsList;
-	
-	  protected void setUp() {
-	    // Create an instance of the diff_match_patch object.
-	    dmp = new diff_match_patch();
-	  }
 
-	  public StringBuffer getFilteredResults(String filtDiffOper, int minLength, int cutLength){
-		  /*
-		   * filtDiffOper e.g. "DELETE"
-		   */
-		  StringBuffer diffResultBuf = new StringBuffer();;
-		  diffResultBuf.append("TEXT COMPARE:");
-		  for (Diff diff : this.textDiffsList){
-			  Operation op = diff.operation;
-			  String txt = diff.text;
-			  if(filtDiffOper!=null){
-			  if(filtDiffOper.equalsIgnoreCase(op.name())){
-				  if(txt.length()>=minLength){
-					  String cutText = txt;
-					  if(txt.length()>cutLength)
-						  cutText = txt.substring(0, cutLength);				  
-					diffResultBuf.append("DEL:(" + cutText + ")");
-					//System.out.println("getFilteredResults(): op: " + op.name() + " diff.text: " + txt);
-				  }
-			  }
-			  }
-		  }
-		  	  
-		  return diffResultBuf;
-	  }
-	  
+	protected void setUp() {
+		// Create an instance of the diff_match_patch object.
+		dmp = new diff_match_patch();
+	}
+
+	public StringBuffer getFilteredResults(String filtDiffOper, int minLength, int cutLength) {
+		/*
+		 * filtDiffOper e.g. DELETE | EQUAL | INSERT | DELETE_INSERT | ALL
+		 * NOTE: ignoring space char differences
+		 */
+		StringBuffer diffResultBuf = new StringBuffer();
+		
+		diffResultBuf.append("TEXT COMPARE:");
+		for (Diff diff : this.textDiffsList) {
+			Operation op = diff.operation;
+			String txt = diff.text;
+			String prefix="?";
+			if("DELETE".equals(op.name()))prefix="DEL(#";
+			if("INSERT".equals(op.name()))prefix="INS(#";
+			if("EQUAL".equals(op.name()))prefix="EQU(#";
+			if (filtDiffOper != null) {
+				if ((filtDiffOper.equalsIgnoreCase(op.name())) || (filtDiffOper.equalsIgnoreCase("ALL"))
+						|| (filtDiffOper.contains(op.name()))) {
+					if (txt.length() >= minLength) {
+						String cutText = txt;					
+						
+						if (!" ".equals(cutText)) {//ignore space
+							if (txt.length() > cutLength)
+								cutText = txt.substring(0, cutLength);
+							
+							diffResultBuf.append("\n" + prefix + cutText + "#)");
+
+						}
+					}
+				}
+			}
+		}
+
+		return diffResultBuf;
+	}
+
 	  public boolean compareTextLines(String textlines1, String textlines2){
 		  logger.log(Level.INFO, "Entering: " + getClass().getName() + " method: compareTextLines()");
 		  boolean isequal = true;
