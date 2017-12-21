@@ -43,9 +43,9 @@ public class TextCompareController {
 			Operation op = diff.operation;
 			String txt = diff.text;
 			String prefix="?";
-			if("DELETE".equals(op.name()))prefix="DEL(#";
-			if("INSERT".equals(op.name()))prefix="INS(#";
-			if("EQUAL".equals(op.name()))prefix="EQU(#";
+			if("DELETE".equals(op.name()))prefix="DEL#(";
+			if("INSERT".equals(op.name()))prefix="INS#(";
+			if("EQUAL".equals(op.name()))prefix="EQU#(";
 			if (filtDiffOper != null) {
 				if ((filtDiffOper.equalsIgnoreCase(op.name())) || (filtDiffOper.equalsIgnoreCase("ALL"))
 						|| (filtDiffOper.contains(op.name()))) {
@@ -56,7 +56,7 @@ public class TextCompareController {
 							if (txt.length() > cutLength)
 								cutText = txt.substring(0, cutLength);
 							
-							diffResultBuf.append("\n" + prefix + cutText + "#)");
+							diffResultBuf.append(prefix + cutText + ")#");
 
 						}
 					}

@@ -699,43 +699,115 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 	public void displaySolutionCompareResults(TriptychContent comparisonResults){
 		/*
 		 * Displaying Student's string, Reference string and comparison results
-		 * at three Triptych windows
+		 * at three Triptych windows.
 		 * 
+		 *  HIGHLIGHTING DELETE PARTS IN STUDENT SOLUTION
+		 *  HIGHLIGHTING INSERT PARTS IN REFERENCE SOLUTION
+		 *  
+		 *  EQUAL PARTS ARE NOT HIGHLIGHTED
 		 */
 		rightTopLeftTextArea.setText(comparisonResults.getStudentContent());
 		rightTopRightTextArea.setText(comparisonResults.getReferenceContent());
 		txtrResultOutput.setText(comparisonResults.getCompareResult());
-		//TODO: TEST highlighting
+		//highlighting
 		//https://stackoverflow.com/questions/20341719/how-to-highlight-a-single-word-in-a-jtextarea
 		try {
-			Highlighter highlighter = rightTopLeftTextArea.getHighlighter();
-			HighlightPainter painter = new DefaultHighlighter.DefaultHighlightPainter(Color.pink);
-
-			int p0 = comparisonResults.getStudentContent().indexOf("?xml version");
-			int p1 = 0;
-			if (p0 >= 0) {
-				p1 = p0 + "?xml version".length();
-				highlighter.addHighlight(p0, p1, painter);
-			}
+			Highlighter stuHighlighter = rightTopLeftTextArea.getHighlighter();
+			HighlightPainter stuPainter = new DefaultHighlighter.DefaultHighlightPainter(Color.pink);
 			
+			Highlighter refHighlighter = rightTopRightTextArea.getHighlighter();
+			HighlightPainter refPainter = new DefaultHighlighter.DefaultHighlightPainter(Color.yellow);
+
+		
 			//Going through all DEL Strings
 			String stucontent = comparisonResults.getStudentContent();
-			String stusubstr = stucontent.substring(0);
+			String refcontent = comparisonResults.getReferenceContent();
+			//String stusubstr =stucontent;
 			String results = comparisonResults.getCompareResult();
-			String[] deletes = results.split("DEL\\(#");
-			int loc0 = 0;
-			int loc1 = 0;
-			if(deletes.length>0){
-				for(int i=0; i< deletes.length;i++ ){
+			String[] diffstrs = results.split("\\)#");//("DEL\\(#");
+			int stuJump = 0;
+			int stuloc0 = 0;
+			int stuloc1 = 0;
+			int refJump = 0;
+			int refloc0 = 0;
+			int refloc1 = 0;
+			String fraqstr = "";
+			boolean isDelFraq = false;
+			boolean isEquFraq = false;
+			boolean isInsFraq = false;
+			
+			System.out.println("???? diffstrs.length: " + diffstrs.length);
+			if(diffstrs.length>0){
+				for (int i = 0; i < diffstrs.length; i++) {
+					isDelFraq = false;
+					isEquFraq = false;
+					isInsFraq = false;
+					//System.out.println("???? diffstrs.length: " + diffstrs.length);
+					if (diffstrs[i].startsWith("DEL#")) {
+						isDelFraq = true;
+						String[] pred = diffstrs[i].split("DEL#\\(");// ("#\\)");
+						fraqstr = pred[1];
+						System.out.println("???? DEL STR: " + fraqstr);
+					} else if (diffstrs[i].startsWith("EQU#")) {
+						isEquFraq = true;
+						String[] pred = diffstrs[i].split("EQU#\\(");// ("#\\)");
+						fraqstr = pred[1];
+						System.out.println("???? EQU STR: " + fraqstr);
+					} else if (diffstrs[i].startsWith("INS#")) {
+						isInsFraq = true;
+						String[] pred = diffstrs[i].split("INS#\\(");// ("#\\)");
+						fraqstr = pred[1];
+						System.out.println("???? INS STR: " + fraqstr);
+					}
 					
-					String[] delpred = deletes[i].split("#\\)");
-					String delstr = delpred[0];
-					p0 = stusubstr.indexOf(delstr);					
-					if (p0 >= 0) {
-						loc0 = loc0 + p0;
-						loc1 = loc0 + delstr.length();
-						highlighter.addHighlight(loc0, loc1, painter);
-						stusubstr = stusubstr.substring(p0 + delstr.length()-1); //-1?
+					/*
+					 * HIGHLIGHTING DELETE PARTS IN STUDENT SOLUTION
+					 */
+					
+					
+					if (isDelFraq || isEquFraq) { // For Student solution
+						int stuP0 = stucontent.indexOf(fraqstr, stuJump);
+						System.out.println("???? P0: " + stuP0);
+						if (stuP0 >= 0) {
+							stuloc0 = stuP0;
+							stuloc1 = stuloc0 + fraqstr.length();
+							System.out.println("???? loc0: " + stuloc0);
+							System.out.println("???? loc1: " + stuloc1);
+							if (isDelFraq) { // HIghlighting DEL parts in
+												// student solution
+								stuHighlighter.addHighlight(stuloc0, stuloc1, stuPainter);
+								System.out.println("????DEL loc0: " + stuloc0);
+								System.out.println("????DEL loc1: " + stuloc1);
+
+							}
+							stuJump = stuP0 + fraqstr.length();
+
+						}
+					}
+					/*
+					 * HIGHLIGHTING INSERT PARTS IN REFERENCE SOLUTION
+					 */
+					
+					if(isInsFraq||isEquFraq){//For Reference solution
+						int refP0 = refcontent.indexOf(fraqstr, refJump);
+						System.out.println("???? REF P0: " + refP0);
+						if (refP0 >= 0) {
+							refloc0 = refP0;
+							refloc1 = refloc0 + fraqstr.length();
+							System.out.println("???? REF loc0: " + refloc0);
+							System.out.println("???? REF loc1: " + refloc1);
+							if (isInsFraq) { // HIghlighting INS parts in
+												// reference solution
+								refHighlighter.addHighlight(refloc0, refloc1, refPainter);
+								System.out.println("???? REF loc0: " + refloc0);
+								System.out.println("???? REF loc1: " + refloc1);
+
+							}
+							refJump = refP0 + fraqstr.length();
+
+						}
+						
+						
 					}
 				}			
 				
@@ -744,7 +816,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		} catch (BadLocationException e) {
 			e.printStackTrace();
 		}
-
+	
 		bottomRightTabbedPane.setSelectedIndex(1);
 
 	}

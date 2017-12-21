@@ -100,6 +100,28 @@ public class Testing_diff_match_patch {
 		String pattern = "modern";
 		int len = pattern.length();
 		System.out.println("--MAIN: " + mydmp.textlines1.substring(idx, idx+len-1));
+		
+		
+		//TEST: Splitting string
+		String diffline = "DEL#(£)#EQU#(Price>8.90</)#DEL#(£)#";
+		
+		System.out.println("--MAIN: " + mydmp.textlines1.substring(idx, idx+len-1));
+		String[] diffstrs = diffline.split("\\)#");//("DEL\\(#");
+	
+		System.out.println("???? diffstrs.length: " + diffstrs.length);
+		if(diffstrs.length>0){
+			for(int i=0; i< diffstrs.length;i++ ){
+				System.out.println("???? diffstrs[i]: " + diffstrs[i]);
+				
+				if(diffstrs[i].startsWith("DEL#")){
+					String[] delpred = diffstrs[i].split("DEL#\\(");//("#\\)");
+					String delstr = delpred[1];
+					
+					System.out.println("???? DEL STR: " + delstr);
+				}
+			}
+		}
+		
 	}
 
 }
