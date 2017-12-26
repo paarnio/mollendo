@@ -166,6 +166,34 @@ public class MainAppController {
 				System.out.println("???TODO: RUN SELECTED TESTCASE: " + (selectedTestCaseIndex + 1)
 						+ " FOR SELECTED STUDENT: " + (selectedStudentIndex + 1));
 				TriptychContent displaycontent = taskCycleProcessor.getSingleStudentCompareResults();
+				//Moving the text before the EQU# DEL# INS# parts at the end of the result string
+				String compare_res = displaycontent.getCompareResult();
+				int minx = -1;
+				int eix = compare_res.indexOf("EQU#");
+				int dix = compare_res.indexOf("DEL#");
+				int iix = compare_res.indexOf("INS#");
+				
+				//Search for the min index value that is >=0
+				if(eix>=0){
+					if(eix<=dix) minx = eix;
+					else if(dix>=0) minx = dix;			
+					if((iix>=0)&&(iix<minx)) minx = iix;					
+				} else if(dix>=0){
+					if(dix<=iix) minx = dix;
+					else if(iix>=0) minx = iix;				
+				}  else if(iix>=0){
+					minx = iix;
+				}
+				String diff_part ="";
+				String prefix_part ="";
+				
+				if(minx>=0){
+					diff_part = compare_res.substring(minx);
+					prefix_part = compare_res.substring(0,minx);
+					//Moving prefix part to the end of the string
+					displaycontent.setCompareResult(diff_part + prefix_part);
+				}
+				
 				if(displaycontent!=null)this.viewFrame.displaySolutionCompareResults(displaycontent);
 				
 			} else {

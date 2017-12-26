@@ -38,7 +38,7 @@ public class TextCompareController {
 		 */
 		StringBuffer diffResultBuf = new StringBuffer();
 		
-		diffResultBuf.append("TEXT COMPARE:");
+		//diffResultBuf.append("TEXT COMPARE:");
 		for (Diff diff : this.textDiffsList) {
 			Operation op = diff.operation;
 			String txt = diff.text;
