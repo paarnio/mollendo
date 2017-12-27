@@ -7,8 +7,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
@@ -405,9 +407,9 @@ public class TaskFlowJaxbContainer {
 	                                    "]:" + ve.getMessage());
 	                            // ignore warnings
 	                            if (ve.getSeverity() != ValidationEvent.WARNING) {
-	                                logger.log(Level.SEVERE, msgbuff.toString());
+	                                logger.log(Level.ERROR, msgbuff.toString());
 	                            } else {
-	                            	logger.log(Level.WARNING, msgbuff.toString());
+	                            	logger.log(Level.WARN, msgbuff.toString());
 	                            }
 	                            return true;
 	                        }
@@ -415,7 +417,7 @@ public class TaskFlowJaxbContainer {
 	                );
 	            } catch (org.xml.sax.SAXException se) {
 	                //System.out.println("Unable to validate due to following error.");
-	                logger.log(Level.SEVERE, se.getMessage());
+	                logger.log(Level.ERROR, se.getMessage());
 	                se.printStackTrace();
 	            }
 	            // Unmarshalling main taskflow file

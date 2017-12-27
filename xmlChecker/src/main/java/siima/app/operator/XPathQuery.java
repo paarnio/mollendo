@@ -10,8 +10,10 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -96,23 +98,23 @@ public class XPathQuery {
 			
 		} catch (FileNotFoundException e) {
 			operErrorBuffer.append("CLASS:" + getClass().getName() + "(exc1) ERROR:" + e.getMessage());
-			logger.log(Level.SEVERE,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
 			e.printStackTrace();
 		} catch (ParserConfigurationException e) {
 			operErrorBuffer.append("CLASS:" + getClass().getName() + "(exc2) ERROR:" + e.getMessage());
-			logger.log(Level.SEVERE,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
 			e.printStackTrace();
 		} catch (SAXException e) {
 			operErrorBuffer.append("CLASS:" + getClass().getName() + "(exc3) ERROR:" + e.getMessage());
-			logger.log(Level.SEVERE,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
 			e.printStackTrace();
 		} catch (IOException e) {
 			operErrorBuffer.append("CLASS:" + getClass().getName() + "(exc4) ERROR:" + e.getMessage());
-			logger.log(Level.SEVERE,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
 			e.printStackTrace();
 		} catch (XPathExpressionException e) {
 			operErrorBuffer.append("CLASS:" + getClass().getName() + "(exc5) ERROR:" + e.getMessage());
-			logger.log(Level.SEVERE,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
 			e.printStackTrace();
 		}
 		

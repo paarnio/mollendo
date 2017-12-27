@@ -736,7 +736,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 			boolean isEquFraq = false;
 			boolean isInsFraq = false;
 			
-			System.out.println("???? diffstrs.length: " + diffstrs.length);
+			System.out.println("???? displaySolutionCompareResults(): diffstrs.length: " + diffstrs.length);
 			if(diffstrs.length>0){
 				for (int i = 0; i < diffstrs.length; i++) {
 					isDelFraq = false;
@@ -747,17 +747,17 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 						isDelFraq = true;
 						String[] pred = diffstrs[i].split("DEL#\\(");// ("#\\)");
 						fraqstr = pred[1];
-						System.out.println("???? DEL STR: " + fraqstr);
+						//System.out.println("???? DEL STR: " + fraqstr);
 					} else if (diffstrs[i].startsWith("EQU#")) {
 						isEquFraq = true;
 						String[] pred = diffstrs[i].split("EQU#\\(");// ("#\\)");
 						fraqstr = pred[1];
-						System.out.println("???? EQU STR: " + fraqstr);
+						//System.out.println("???? EQU STR: " + fraqstr);
 					} else if (diffstrs[i].startsWith("INS#")) {
 						isInsFraq = true;
 						String[] pred = diffstrs[i].split("INS#\\(");// ("#\\)");
 						fraqstr = pred[1];
-						System.out.println("???? INS STR: " + fraqstr);
+						//System.out.println("???? INS STR: " + fraqstr);
 					}
 					
 					/*
@@ -767,17 +767,17 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 					
 					if (isDelFraq || isEquFraq) { // For Student solution
 						int stuP0 = stucontent.indexOf(fraqstr, stuJump);
-						System.out.println("???? P0: " + stuP0);
+						//System.out.println("???? P0: " + stuP0);
 						if (stuP0 >= 0) {
 							stuloc0 = stuP0;
 							stuloc1 = stuloc0 + fraqstr.length();
-							System.out.println("???? loc0: " + stuloc0);
-							System.out.println("???? loc1: " + stuloc1);
+							//System.out.println("???? loc0: " + stuloc0);
+							//System.out.println("???? loc1: " + stuloc1);
 							if (isDelFraq) { // HIghlighting DEL parts in
 												// student solution
 								stuHighlighter.addHighlight(stuloc0, stuloc1, stuPainter);
-								System.out.println("????DEL loc0: " + stuloc0);
-								System.out.println("????DEL loc1: " + stuloc1);
+								//System.out.println("????DEL loc0: " + stuloc0);
+								//System.out.println("????DEL loc1: " + stuloc1);
 
 							}
 							stuJump = stuP0 + fraqstr.length();
@@ -790,17 +790,17 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 					
 					if(isInsFraq||isEquFraq){//For Reference solution
 						int refP0 = refcontent.indexOf(fraqstr, refJump);
-						System.out.println("???? REF P0: " + refP0);
+						//System.out.println("???? REF P0: " + refP0);
 						if (refP0 >= 0) {
 							refloc0 = refP0;
 							refloc1 = refloc0 + fraqstr.length();
-							System.out.println("???? REF loc0: " + refloc0);
-							System.out.println("???? REF loc1: " + refloc1);
+							//System.out.println("???? REF loc0: " + refloc0);
+							//System.out.println("???? REF loc1: " + refloc1);
 							if (isInsFraq) { // HIghlighting INS parts in
 												// reference solution
 								refHighlighter.addHighlight(refloc0, refloc1, refPainter);
-								System.out.println("???? REF loc0: " + refloc0);
-								System.out.println("???? REF loc1: " + refloc1);
+								//System.out.println("???? REF loc0: " + refloc0);
+								//System.out.println("???? REF loc1: " + refloc1);
 
 							}
 							refJump = refP0 + fraqstr.length();

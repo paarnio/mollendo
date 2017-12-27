@@ -15,7 +15,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
+//import java.util.logging.Logger;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import siima.app.gui.MainFrame;
 import siima.app.model.StudentJaxbContainer;
@@ -67,6 +69,7 @@ public class MainAppController {
 	}
 
 	public void openProjectExcel(File project_xlsx ){
+		logger.info("openProjectExcel() Opening Project Excel: ");
 		boolean ok = true;
 		this.projectExcelFile = project_xlsx.getAbsolutePath();
 		this.projectHome = project_xlsx.getParent();
@@ -100,7 +103,7 @@ public class MainAppController {
 	}
 	
 	public void invokeCheckingProcess(){
-				
+		logger.log(Level.INFO,"invokeCheckingProcess()");		
 		if(runConditions()){
 			
 			taskCycleProcessor.initProcessor(this.projectHome, this.selectedTaskflowIndex, taskFlowMetaDataList.get(this.selectedTaskflowIndex), selectedTaskflowObject, studentContainer, excel_mng);
@@ -133,6 +136,7 @@ public class MainAppController {
 		 * See: project ERAmlHandler
 		 * 
 		 */
+		logger.log(Level.INFO,"buildJaxbModel()");
 		//ElementTree
 		// Example file: "data/caex_exs/RunningExample_SimpleIH.aml"
 		Path path = Paths.get(xmlfile);
@@ -151,14 +155,14 @@ public class MainAppController {
 	}
 	
 	public void invokeSelectedTestCaseForStudent(){
-		// TODO:
 		/* Running a selected testCase for a single selected student
 		* One Student have to be selected from Student table and
-		* testCase have to be selected from TaskFlow tree
+		* one testCase have to be selected from TaskFlow tree
 		* Displaying testcase's student flow results in: rightTopLeftTextArea
 		* Displaying testcase's reference flow results in: rightTopRightTextArea
 		* Displaying merge flow's difference results in Result tab
 		*/
+		logger.log(Level.INFO,"invokeSelectedTestCaseForStudent()");
 		if (runConditions()) {
 			if ((this.selectedTestCaseIndex >= 0) && (this.selectedStudentIndex >= 0)) {
 				taskCycleProcessor.initProcessor(this.projectHome, this.selectedTaskflowIndex, taskFlowMetaDataList.get(this.selectedTaskflowIndex), selectedTaskflowObject, studentContainer, excel_mng);
@@ -205,17 +209,18 @@ public class MainAppController {
 	
 	
 	public void compareSolutionFiles() {
-		/*TODO: Difference of selected students solution with the reference solution
+		/* Difference of selected students solution with the reference solution
 		// One Student have to be selected from Student table and
-		// stuSolution have to be selected from TaskFlow tree
+		// one stuSolution have to be selected from TaskFlow tree
 		// Displaying student file content in: rightTopLeftTextArea
 		// Displaying reference file content in: rightTopRightTextArea
 		// Computing difference
 		// Displaying difference results in Result tab
 		*/
+		logger.log(Level.INFO,"compareSolutionFiles()");
 		boolean oper_ok = true;
 		StringBuffer operErrorBuffer = new StringBuffer();
-		System.out.println("..compareSolutionFiles():");
+		//System.out.println("..compareSolutionFiles():");
 		taskCycleProcessor.getRead_oper().setOperErrorBuffer(new StringBuffer());
 
 		// String stuZipFilePath =
@@ -230,11 +235,12 @@ public class MainAppController {
 		if ((stuZipFilePath != null) && (!"null".equals(stuZipFilePath))) {
 			String stuFilePathInZip = (String) this.selectedStuSolutionObject; //"Round_U1/U1E1_1/src/CDcatalog_X_hidden.xml";
 			String refFilePathInZip = (String) this.selectedRefSolutionObject; //"Round_U1/U1E1_1/test/CDcatalog_3_hidden.xml";
-			System.out.println("???? ReadTxtContent from TXT file: " + stuFilePathInZip);
+			logger.log(Level.INFO,"compareSolutionFiles(): Student's solution in zip:" + stuFilePathInZip);
+			//System.out.println("???? ReadTxtContent from TXT file: " + stuFilePathInZip);
 			String stuTxtContent = taskCycleProcessor.getRead_oper().readTxtFile(stuZipFilePath, stuFilePathInZip);
 			String refTxtContent = taskCycleProcessor.getRead_oper().readTxtFile(refZipFilePath, refFilePathInZip);
 
-			System.out.println("???? Comaparing TxtContents: ");
+			//System.out.println("???? Comaparing TxtContents: ");
 			String result = "EQUAL";
 			taskCycleProcessor.getCompare_ctrl().setUp();
 			boolean isequal = taskCycleProcessor.getCompare_ctrl().compareTextLines(stuTxtContent, refTxtContent);
@@ -244,7 +250,8 @@ public class MainAppController {
 				result = "NOT-EQUAL";
 				oper_ok = false;
 			}
-			System.out.println("====== COMPARE RESULT: " + result + "============\n");
+			logger.log(Level.INFO,"compareSolutionFiles(): Compare Result:" + result);
+			//System.out.println("====== COMPARE RESULT: " + result + "============\n");
 			if(isequal) operErrorBuffer.append("EQUAL");
 			TriptychContent displaycontent = new TriptychContent();
 			displaycontent.setStudentContent(stuTxtContent);
@@ -273,7 +280,6 @@ public class MainAppController {
 	} */
 	
 	public String getSelectedStudentInfo(){
-		//TODO: 
 		//Call MainFrame method getSelectedStudentTableRow()
 		//Selected row from StudenttablePanel
 		this.selectedStudentZipFile=null;
@@ -291,14 +297,15 @@ public class MainAppController {
 			this.selectedStudentZipFile=student.getSubmitZip();
 			this.selectedStudentIndex=studentRowIdx;
 		}
-		
-		System.out.println("???????? Selected student row index: " + studentRowIdx);
+		logger.log(Level.INFO,"getSelectedStudentInfo(): Selected student row index: " + studentRowIdx);
+		//System.out.println("???????? Selected student row index: " + studentRowIdx);
 		
 		return infobuff.toString();
 	}
 	
 	
 	public String getSelectedElementInfo(){
+		logger.log(Level.INFO,"getSelectedElementInfo()");
 		StringBuffer infobuff = new StringBuffer();
 		this.selectedTaskflowObject = null;
 		this.selectedTaskflowIndex = -1;
@@ -394,7 +401,7 @@ public class MainAppController {
 	}
 	
 	public void serializeResultsToXML(String filePath){
-		
+		logger.log(Level.INFO,"serializeResultsToXML()");
 		studentContainer.serializeToXML(filePath);
 		
 	}
@@ -405,6 +412,7 @@ public class MainAppController {
 		 * All String type
 		 * Note: points of one Exercise is the sum(testcase points)
 		 */
+		logger.log(Level.INFO,"getStudentDataForTableRows()");
 		List<List<Object>> studentRowsList = new ArrayList<List<Object>>();
 		int exerCount = 6;
 		List<StudentType> students = this.studentContainer.getStudents();

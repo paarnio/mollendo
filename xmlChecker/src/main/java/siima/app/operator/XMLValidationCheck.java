@@ -16,8 +16,11 @@ package siima.app.operator;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
 import java.util.zip.ZipFile;
 
 import javax.xml.XMLConstants;
@@ -68,7 +71,7 @@ public class XMLValidationCheck {
 			}
 		
 		} catch (IOException e) {
-			logger.log(Level.SEVERE,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
 			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessage());
 			e.printStackTrace();
 			return false;
@@ -84,14 +87,14 @@ public class XMLValidationCheck {
 			Validator validator = schema.newValidator();
 			validator.validate(xmlSource);
 		} catch (SAXException e) {
-			logger.log(Level.SEVERE, "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR, "MSG:\n" + e.getMessage());
 			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessage());
 			System.out.println("Exception: " + e.getMessage());
 			// e.printStackTrace();
 			return false;
 
 		} catch (IOException e) {
-			logger.log(Level.SEVERE, "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR, "MSG:\n" + e.getMessage());
 			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessage());
 			System.out.println("Exception: " + e.getMessage());
 			// e.printStackTrace();
@@ -111,14 +114,14 @@ public class XMLValidationCheck {
             validator.validate(new StreamSource(new File(xmlPath)));
             ok = true;
         } catch (SAXException e) {
-			logger.log(Level.SEVERE, "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR, "MSG:\n" + e.getMessage());
 			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessage());
 			System.out.println("Exception: " + e.getMessage());
 			// e.printStackTrace();
 			return false;
 
 		} catch (IOException e) {
-			logger.log(Level.SEVERE, "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR, "MSG:\n" + e.getMessage());
 			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessage());
 			System.out.println("Exception: " + e.getMessage());
 			// e.printStackTrace();

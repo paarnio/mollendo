@@ -29,8 +29,10 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import javax.xml.transform.Result;
 import javax.xml.transform.Source;
@@ -140,7 +142,7 @@ public class XSLTransformer {
 			}
 			
 		} catch (IOException e) {
-			logger.log(Level.SEVERE, "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR, "MSG:\n" + e.getMessage());
 			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessage());
 			//e.printStackTrace();
 			ok = false;
@@ -173,12 +175,12 @@ public class XSLTransformer {
 			transformer.transform(xmlSource, result);
 			ok = true;
 		} catch (TransformerConfigurationException e) {
-			logger.log(Level.SEVERE, "MSG&LOC:\n" + e.getMessageAndLocation());
+			logger.log(Level.ERROR, "MSG&LOC:\n" + e.getMessageAndLocation());
 			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessageAndLocation());
 			//e.printStackTrace();
 			ok = false;
 		} catch (TransformerException e) {
-			logger.log(Level.SEVERE, "MSG&LOC:\n" + e.getMessageAndLocation());
+			logger.log(Level.ERROR, "MSG&LOC:\n" + e.getMessageAndLocation());
 			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessageAndLocation());
 			//e.printStackTrace();
 			ok = false;
@@ -202,7 +204,7 @@ public class XSLTransformer {
 			template = factory.newTemplates(xslSource);
 			if(template!=null)ok = true;
 		} catch (TransformerConfigurationException e) {
-			logger.log(Level.SEVERE, "MSG&LOC:\n" + e.getMessageAndLocation());
+			logger.log(Level.ERROR, "MSG&LOC:\n" + e.getMessageAndLocation());
 			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessageAndLocation());
 			//System.out.println("MyLog ERROR: XSLTransformer: createNewTemplate() MSG&LOC:\n" + e.getMessageAndLocation());
 			//e.printStackTrace();

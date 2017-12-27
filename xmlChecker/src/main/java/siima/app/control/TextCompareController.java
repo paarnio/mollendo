@@ -5,11 +5,10 @@
 package siima.app.control;
 
 import java.util.LinkedList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-//import org.apache.log4j.Level;
-//import org.apache.log4j.Logger;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import siima.app.operator.XMLValidationCheck;
 import siima.utils.diff_match_patch;

@@ -12,8 +12,11 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
 import java.util.zip.ZipFile;
 
 import javax.xml.stream.XMLInputFactory;
@@ -54,17 +57,17 @@ public class XMLWellFormedCheck {
 			ok = true;
 
 		} catch (FileNotFoundException e) {
-			logger.log(Level.SEVERE,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
 			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessage());
 			ok = false;
 			e.printStackTrace();
 		} catch (XMLStreamException e) {			
-			logger.log(Level.SEVERE,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
 			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessage());
 			ok = false;
 			//e.printStackTrace();		
 		} catch (IOException e) {
-			logger.log(Level.SEVERE,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
 			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessage());
 			ok = false;
 			e.printStackTrace();
@@ -93,17 +96,17 @@ public class XMLWellFormedCheck {
 			ok = true;
 
 		} catch (FileNotFoundException e) {
-			logger.log(Level.SEVERE,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
 			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessage());
 			ok = false;
 			e.printStackTrace();
 		} catch (XMLStreamException e) {			
-			logger.log(Level.SEVERE,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
 			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessage());
 			ok = false;
 			//e.printStackTrace();		
 		} catch (IOException e) {
-			logger.log(Level.SEVERE,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
 			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessage());
 			ok = false;
 			e.printStackTrace();

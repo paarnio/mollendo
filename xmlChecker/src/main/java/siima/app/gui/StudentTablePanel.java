@@ -56,7 +56,7 @@ public class StudentTablePanel extends JPanel
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
  
         table = new JTable(new MyTableModel());
-        table.setPreferredScrollableViewportSize(new Dimension(500, 70));
+        table.setPreferredScrollableViewportSize(new Dimension(400, 300)); //(500, 70)
         table.setFillsViewportHeight(true);
         table.getSelectionModel().addListSelectionListener(new RowListener());
         table.getColumnModel().getSelectionModel().

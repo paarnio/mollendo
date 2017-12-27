@@ -16,8 +16,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import java.util.zip.ZipFile;
 
 import siima.app.operator.XSLTransformer;
@@ -87,7 +89,7 @@ public class TransformController {
 			invokeXSLTransform(outputstream, params, values);
 			ok = true;
 		} catch (FileNotFoundException e) {
-			logger.log(Level.SEVERE, "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR, "MSG:\n" + e.getMessage());
 			ok = false;
 			//e.printStackTrace();
 		}
@@ -130,7 +132,7 @@ public class TransformController {
 				}
 			}
 		} catch (IOException e) {
-			logger.log(Level.SEVERE, "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR, "MSG:\n" + e.getMessage());
 			e.printStackTrace();
 			ok = false;
 		}
@@ -190,7 +192,7 @@ public class TransformController {
 			}
 
 		} catch (IOException e) {
-			logger.log(Level.SEVERE, "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR, "MSG:\n" + e.getMessage());
 			e.printStackTrace();
 			ok = false;
 		}
