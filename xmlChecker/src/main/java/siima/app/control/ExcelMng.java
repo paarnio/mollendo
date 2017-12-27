@@ -67,6 +67,7 @@ public class ExcelMng {
 	}
 	
 	public List<StudentType> readStudentsBaseData(){
+		logger.log(Level.INFO,"readStudentsBaseData()");
 		this.ex2s.setSheetind(this.ex2s.getSheetIndex(mainInfoSheet));
 		int colIdx = 1;
 		
@@ -100,6 +101,7 @@ public class ExcelMng {
 	}
 	
 	public void readTaskFlowMainInfo(){
+		logger.log(Level.INFO,"readTaskFlowMainInfo()");
 		//String taskFlowXmlFile = null;
 		this.ex2s.setSheetind(this.ex2s.getSheetIndex(mainInfoSheet));
 		int colIdx = 1;
@@ -153,6 +155,7 @@ public class ExcelMng {
 		 String taskFlowMetaId = this.ex2s.getCellValue(colIdx+1, rowIdx);
 		 taskFlowMD.setTaskFlowMetaId(taskFlowMetaId);
 		}
+		logger.log(Level.INFO,"readTaskFlowMainInfo():taskFlowId: " + taskFlowMD.getTaskFlowMetaId());
 		//System.out.println("???MAININFO taskFlowId: " + taskFlowMD.getTaskFlowMetaId());
 		
 		
@@ -162,6 +165,7 @@ public class ExcelMng {
 		 this.taskFlowXmlFile = this.ex2s.getCellValue(colIdx+1, rowIdx);
 		 taskFlowMD.setTaskFlowXmlFile(this.taskFlowXmlFile);
 		}
+		logger.log(Level.INFO,"readTaskFlowMainInfo():taskFlowXmlFile: " + taskFlowXmlFile);
 		//System.out.println("???MAININFO taskFlowXmlFile: " + taskFlowXmlFile);
 		
 		searchKey = "ZipFilesSheet";
@@ -180,6 +184,7 @@ public class ExcelMng {
 			 taskFlowMD.setZipFileCount(this.submitZipCount);
 		 }
 		}
+		logger.log(Level.INFO,"readTaskFlowMainInfo():submitZipCount: " + submitZipCount);
 		
 		searchKey = "StudentZipFileFolder";
 		rowIdx = this.ex2s.searchString(searchKey, colIdx, this.mainInfoKeyFirstRow, this.mainInfoKeyLastRow);
@@ -187,14 +192,16 @@ public class ExcelMng {
 		 this.studentZipFileFolder = this.ex2s.getCellValue(colIdx+1, rowIdx);
 		 taskFlowMD.setStudentZipFileFolder(this.studentZipFileFolder);
 		}
+		logger.log(Level.INFO,"readTaskFlowMainInfo():studentZipFileFolder: " + studentZipFileFolder);
+		
 		searchKey = "ReferenceZipFileFolder";
 		rowIdx = this.ex2s.searchString(searchKey, colIdx, this.mainInfoKeyFirstRow, this.mainInfoKeyLastRow);
 		if(rowIdx>=0){
 		 this.referenceZipFileFolder = this.ex2s.getCellValue(colIdx+1, rowIdx);
 		 taskFlowMD.setReferenceZipFileFolder(this.referenceZipFileFolder);
 		}
-		
-		System.out.println("???MAININFO referenceZipFileFolder: " + referenceZipFileFolder);
+		logger.log(Level.INFO,"readTaskFlowMainInfo():referenceZipFileFolder: " + referenceZipFileFolder);	
+		//System.out.println("???MAININFO referenceZipFileFolder: " + referenceZipFileFolder);
 		
 		searchKey = "ReferenceZipFile";
 		rowIdx = this.ex2s.searchString(searchKey, colIdx, this.mainInfoKeyFirstRow, this.mainInfoKeyLastRow);
@@ -202,7 +209,8 @@ public class ExcelMng {
 		 this.referenceZipFile = this.ex2s.getCellValue(colIdx+1, rowIdx);
 		 taskFlowMD.setReferenceZipFile(this.referenceZipFile);
 		}
-		System.out.println("???MAININFO referenceZipFile: " + referenceZipFile);
+		logger.log(Level.INFO,"readTaskFlowMainInfo():referenceZipFile: " + referenceZipFile);	
+		//System.out.println("???MAININFO referenceZipFile: " + referenceZipFile);
 		
 		searchKey = "ResultsSheet";
 		rowIdx = this.ex2s.searchString(searchKey, colIdx, this.mainInfoKeyFirstRow, this.mainInfoKeyLastRow);
@@ -213,8 +221,8 @@ public class ExcelMng {
 		
 		this.taskFlowMetaDataList.add(taskFlowMD);
 		} // end for
-		
-		System.out.println("???MAININFO taskFlowMetaDataList: size: " + taskFlowMetaDataList.size());
+		logger.log(Level.INFO,"readTaskFlowMainInfo():taskFlowMetaDataList:size: " + taskFlowMetaDataList.size());	
+		//System.out.println("???MAININFO taskFlowMetaDataList: size: " + taskFlowMetaDataList.size());
 	}
 	public List<String> readStudentSurname(){ //TaskFlowMetaData taskFlowMD){
 		/*
@@ -278,6 +286,7 @@ public class ExcelMng {
 		/* Writing all the testcase results of one student submit 
 		 * into the students row in excel file 
 		 */
+		logger.log(Level.INFO,"writeTestcaseResults()");
 		//System.out.println("??????? ResultsSheet()" + taskFlowMD.getResultsSheet());
 		int sheetidx = this.ex2s.getSheetIndex(taskFlowMD.getResultsSheet()); //this.resultsSheet);
 		this.ex2s.setSheetind(sheetidx);
@@ -290,6 +299,7 @@ public class ExcelMng {
 		/* Writing all the operation error messages of one student submit 
 		 * into the students row in excel file 
 		 */
+		logger.log(Level.INFO,"writeOperErrorMsgs()");
 		int sheetidx = this.ex2s.getSheetIndex(taskFlowMD.getResultsSheet()); //this.resultsSheet);
 		this.ex2s.setSheetind(sheetidx);
 		this.ex2s.writeStringListToColumnOrRowField(true,sheetidx, this.errorMsgFirstCol, this.errorMsgFirstRow + submitCount -1, results, true);				
