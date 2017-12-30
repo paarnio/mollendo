@@ -245,7 +245,7 @@ public class MainAppController {
 			taskCycleProcessor.getCompare_ctrl().setUp();
 			boolean isequal = taskCycleProcessor.getCompare_ctrl().compareTextLines(stuTxtContent, refTxtContent);
 			if (!isequal) {
-				operErrorBuffer = taskCycleProcessor.getCompare_ctrl().getFilteredResults("ALL", 0, 1000); // DELETE_INSERT minLength, cutLength
+				operErrorBuffer = taskCycleProcessor.getCompare_ctrl().getFilteredResults("ALL", 0, 1000, null); // DELETE_INSERT minLength, cutLength
 																												
 				result = "NOT-EQUAL";
 				oper_ok = false;

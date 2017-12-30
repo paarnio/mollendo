@@ -34,7 +34,6 @@ import org.xml.sax.SAXException;
 
 
 public class XPathQuery {
-	//TODO:
 	private static final Logger logger=Logger.getLogger(XPathQuery.class.getName());
 	private StringBuffer operErrorBuffer = new StringBuffer();
 	

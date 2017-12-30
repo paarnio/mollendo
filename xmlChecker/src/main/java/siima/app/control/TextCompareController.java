@@ -30,10 +30,12 @@ public class TextCompareController {
 		dmp = new diff_match_patch();
 	}
 
-	public StringBuffer getFilteredResults(String filtDiffOper, int minLength, int cutLength) {
+	public StringBuffer getFilteredResults(String filtDiffOper, int minLength, int cutLength, String ignore) {
 		/*
 		 * filtDiffOper e.g. DELETE | EQUAL | INSERT | DELETE_INSERT | ALL
-		 * NOTE: ignoring space char differences
+		 * NOTE:  e.g.  if ignore =" " single space char differences ignored
+		 * 
+		 * Output pattern: "DEL#(delete this text fraq)#EQU#(this text fraq is equal)#INS#(insert this fraq)#..
 		 */
 		StringBuffer diffResultBuf = new StringBuffer();
 		
@@ -51,11 +53,10 @@ public class TextCompareController {
 					if (txt.length() >= minLength) {
 						String cutText = txt;					
 						
-						if (!" ".equals(cutText)) {//ignore space
+						if((ignore==null)||(!ignore.equals(cutText))) {//ignore e.g. space
 							if (txt.length() > cutLength)
-								cutText = txt.substring(0, cutLength);
-							
-							diffResultBuf.append(prefix + cutText + ")#");
+								cutText = txt.substring(0, cutLength);							
+								diffResultBuf.append(prefix + cutText + ")#");
 
 						}
 					}

@@ -173,7 +173,7 @@ public class TaskCycleProcessor {
 		/*
 		 * Processing one testcase for one student only
 		 */
-		logger.log(Level.INFO, "Entering: " + getClass().getName() + " method: runTestCaseForOneStudent()");
+		logger.log(Level.INFO, "Entering: " + getClass().getName() + " method: runTestCaseForOneStudent() FOR ONE STUDENT");
 		this.singleStudentRun = true;
 		this.singleStudentTestCaseIdx = testCaseIdx;
 		this.singleStudentIdx = studentIdx;
@@ -196,7 +196,7 @@ public class TaskCycleProcessor {
 		/*
 		 * Processing solutions of all the students
 		 */
-		logger.log(Level.INFO, "Entering: " + getClass().getName() + " method: runTaskCycles()");
+		logger.log(Level.INFO, "Entering: " + getClass().getName() + " method: runTaskCycles() FOR ALL STUDENTS");
 		this.singleStudentRun = false;
 		this.singleStudentTestCaseIdx = -1;
 		this.singleStudentIdx = -1;
@@ -243,6 +243,8 @@ public class TaskCycleProcessor {
 		/* --- Student Submit Loop --- */
 		for (String zip : zips) {
 			submitcnt++;
+			logger.log(Level.INFO, "runTaskCycles(): === NEXT STUDENT ===");
+			logger.log(Level.INFO, "runTaskCycles(): --+ Student (" + submitcnt + ") ");
 			System.out.println("\n-----------------------------------");
 			System.out.println("+ Submit Loop #" + submitcnt);
 			System.out.println("  Submit zip: " + zip);
@@ -257,6 +259,7 @@ public class TaskCycleProcessor {
 		int testcasecount=0;
 		for (TestCaseType tcase : testcases) {
 			testcasecount++;
+			logger.log(Level.INFO, "runTaskCycles(): --+ Student (" + submitcnt + ") --+ TestCase (" + testcasecount + ")");
 			checkResultBuffer = new StringBuffer();
 			dirList = new ArrayList<String>();
 			fileList = new ArrayList<String>();
@@ -308,6 +311,7 @@ public class TaskCycleProcessor {
 				oper_ok = true;
 				List<OperationType> operations = flow.getOperation();
 				for (OperationType oper : operations) {
+					logger.log(Level.INFO, "runTaskCycles(): --+ Student (" + submitcnt + ") --+ TestCase (" + testcasecount + ") --+ FlowType (" + flow.getType() + ") --+ Operation (" + oper.getName() + ")");
 					System.out.println("--+--+--+ Operation Loop --- ");
 					System.out.println("          Operation type: " + oper.getType());
 					System.out.println("          Operation name: " + oper.getName());
@@ -437,7 +441,7 @@ public class TaskCycleProcessor {
 		
 							
 						} else if("mergeFlow".equals(flowType)){
-							
+							logger.log(Level.INFO, "runTaskCycles(): --+ Student (" + submitcnt + ") --+ TestCase (" + testcasecount + ") --+ Operation (" + oper.getName() + ")");
 							System.out.println("\n==================================");
 							System.out.println(".............mergeFlow ...........");
 							System.out.println("..................................\n");
@@ -465,15 +469,15 @@ public class TaskCycleProcessor {
 								compare_ctrl.setUp();															
 								boolean isequal = compare_ctrl.compareTextLines(arg1str, arg2str);
 								if(!isequal){
-									operErrorBuffer = compare_ctrl.getFilteredResults("ALL", 0, 1000); //DELETE_INSERT minLength, cutLength
+									operErrorBuffer = compare_ctrl.getFilteredResults("ALL", 0, 1000, " "); //DELETE_INSERT minLength, cutLength, ignore
 									result = "NOT-EQUAL";
 									oper_ok = false;
 								} 
 								System.out.println("====== MERGE RESULT: " + result + "============\n");	
 								setChannelStringValue(returnChannel, result);
-								checkResultBuffer.append("TESTCASE(" + testcasecount + "):" + result + "\n");
+								checkResultBuffer.append("OPER_STD:TCASE(" + testcasecount + "):" + result + "\n");
 								} else { // stuFlow or refFlow not succesfull
-									checkResultBuffer.append("TESTCASE(" + testcasecount + "):" + "NOT-COMPARED" + "\n");
+									checkResultBuffer.append("OPER_STD:TCASE(" + testcasecount + "):" + "NOT-COMPARED" + "\n");
 								}
 							}
 								break;
@@ -485,17 +489,18 @@ public class TaskCycleProcessor {
 							
 						}
 						if(operErrorBuffer.length()>0)
-							operationErrors.add("ERROR: SUBMIT(" + submitcnt + ") TESTCASE(" + testcasecount + ") MSG:(" + operErrorBuffer.toString() + ")");
+							operationErrors.add("OPER_ERR:STU(" + submitcnt + ") TCASE(" + testcasecount + ") MSG:(" + operErrorBuffer.toString() + ")");
 						/* Flow success ? */
 						if(!oper_ok){
 							if("studentFlow".equals(flowType)) stuFlow_ok = false;
 							if("referenceFlow".equals(flowType)) refFlow_ok = false;
 							if("mergeFlow".equals(flowType)) merFlow_ok = false;
 						}
+						logger.log(Level.INFO, "runTaskCycles(): --+ Student (" + submitcnt + ") --+ TestCase (" + testcasecount + ") --+ FlowType (" + flow.getType() + ") --+ Operation (" + oper.getName() + "): SUCCESS(" + oper_ok + ")");
 					} // End Operation loop ---
 				} // End Flow loop ---
 				String points = tcase.getPoints();		
-				testcaseResults.add("RESULT(" + submitcnt + ") TCASE(" + testcasecount + ")  FLOW(" + stuFlow_ok + ") MSG(" + checkResultBuffer.toString() + ")");
+				testcaseResults.add("STD:STU(" + submitcnt + ") TCASE(" + testcasecount + ")  FLOW(" + stuFlow_ok + ") MSG(" + checkResultBuffer.toString() + ")");
 				if((stuFlow_ok)&&(merFlow_ok)) testcasePoints.add(points); //TODO points as string
 				else testcasePoints.add("0");
 			}// End TestCase Loop ---
