@@ -218,7 +218,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		mnFile.add(mntmOpen);
 		mntmOpen.setEnabled(true);	
 		
-		//TODO: Do not use this
+		//TODO: Do not use this (might corrupt the excel)
 		mntmSave = new JMenuItem("Save and Close Project Excel ");
 		mntmSave.addActionListener(this);// See: method											// actionPerformed(ActionEvent arg0)
 		mnFile.add(mntmSave);
