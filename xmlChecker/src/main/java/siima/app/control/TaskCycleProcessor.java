@@ -468,11 +468,19 @@ public class TaskCycleProcessor {
 								String result = "EQUAL";
 								compare_ctrl.setUp();															
 								boolean isequal = compare_ctrl.compareTextLines(arg1str, arg2str);
-								if(!isequal){
-									operErrorBuffer = compare_ctrl.getFilteredResults("ALL", 0, 1000, " "); //DELETE_INSERT minLength, cutLength, ignore
-									result = "NOT-EQUAL";
-									oper_ok = false;
-								} 
+									if (!isequal) {
+										/*
+										 * filtDiffOper e.g. DELETE | EQUAL |
+										 * INSERT | DELETE_INSERT | ALL 
+										 * NOTE:
+										 * e.g. if ignore =" " single space char
+										 * differences ignored 
+										 * Parameters: (filtDiffOper, minLength, cutLength, ignore)
+										 */
+										operErrorBuffer = compare_ctrl.getFilteredResults("ALL", 0, 1000, " ");
+										result = "NOT-EQUAL";
+										oper_ok = false;
+									}
 								System.out.println("====== MERGE RESULT: " + result + "============\n");	
 								setChannelStringValue(returnChannel, result);
 								checkResultBuffer.append("OPER_STD:TCASE(" + testcasecount + "):" + result + "\n");
