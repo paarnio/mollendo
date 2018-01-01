@@ -489,7 +489,7 @@ public class TaskCycleProcessor {
 							
 						}
 						if(operErrorBuffer.length()>0)
-							operationErrors.add("OPER_ERR:STU(" + submitcnt + ") TCASE(" + testcasecount + ") MSG:(" + operErrorBuffer.toString() + ")");
+							operationErrors.add("OPER_ERR:STU(" + submitcnt + "):TCASE(" + testcasecount + "):MSG:(" + operErrorBuffer.toString() + ")");
 						/* Flow success ? */
 						if(!oper_ok){
 							if("studentFlow".equals(flowType)) stuFlow_ok = false;

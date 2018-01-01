@@ -143,7 +143,7 @@ public class XSLTransformer {
 			
 		} catch (IOException e) {
 			logger.log(Level.ERROR, "MSG:\n" + e.getMessage());
-			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessage());
+			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessage());
 			//e.printStackTrace();
 			ok = false;
 		}
@@ -176,12 +176,12 @@ public class XSLTransformer {
 			ok = true;
 		} catch (TransformerConfigurationException e) {
 			logger.log(Level.ERROR, "MSG&LOC:\n" + e.getMessageAndLocation());
-			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessageAndLocation());
+			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessageAndLocation());
 			//e.printStackTrace();
 			ok = false;
 		} catch (TransformerException e) {
 			logger.log(Level.ERROR, "MSG&LOC:\n" + e.getMessageAndLocation());
-			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessageAndLocation());
+			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessageAndLocation());
 			//e.printStackTrace();
 			ok = false;
 		}
@@ -205,7 +205,7 @@ public class XSLTransformer {
 			if(template!=null)ok = true;
 		} catch (TransformerConfigurationException e) {
 			logger.log(Level.ERROR, "MSG&LOC:\n" + e.getMessageAndLocation());
-			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessageAndLocation());
+			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessageAndLocation());
 			//System.out.println("MyLog ERROR: XSLTransformer: createNewTemplate() MSG&LOC:\n" + e.getMessageAndLocation());
 			//e.printStackTrace();
 			ok=false;

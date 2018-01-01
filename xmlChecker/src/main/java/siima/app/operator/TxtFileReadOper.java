@@ -18,7 +18,7 @@ public class TxtFileReadOper {
 	public String readTxtFile(String zipFilePath, String txtFilePathInZip){
 		logger.log(Level.INFO, "Entering: " + getClass().getName() + " method: readTxtFile()");	
 		String txt = zipper.readTxtFile(zipFilePath, txtFilePathInZip);		
-		if(txt==null) operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + "?NA?");
+		if(txt==null) operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + "?NA?");
 		return txt;
 	}
 

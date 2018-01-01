@@ -72,7 +72,7 @@ public class XMLValidationCheck {
 		
 		} catch (IOException e) {
 			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
-			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessage());
+			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessage());
 			e.printStackTrace();
 			return false;
 		}
@@ -88,14 +88,14 @@ public class XMLValidationCheck {
 			validator.validate(xmlSource);
 		} catch (SAXException e) {
 			logger.log(Level.ERROR, "MSG:\n" + e.getMessage());
-			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessage());
+			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessage());
 			System.out.println("Exception: " + e.getMessage());
 			// e.printStackTrace();
 			return false;
 
 		} catch (IOException e) {
 			logger.log(Level.ERROR, "MSG:\n" + e.getMessage());
-			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessage());
+			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessage());
 			System.out.println("Exception: " + e.getMessage());
 			// e.printStackTrace();
 			return false;
@@ -115,14 +115,14 @@ public class XMLValidationCheck {
             ok = true;
         } catch (SAXException e) {
 			logger.log(Level.ERROR, "MSG:\n" + e.getMessage());
-			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessage());
+			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessage());
 			System.out.println("Exception: " + e.getMessage());
 			// e.printStackTrace();
 			return false;
 
 		} catch (IOException e) {
 			logger.log(Level.ERROR, "MSG:\n" + e.getMessage());
-			operErrorBuffer.append("CLASS:" + getClass().getName() + " ERROR:" + e.getMessage());
+			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessage());
 			System.out.println("Exception: " + e.getMessage());
 			// e.printStackTrace();
 			return false;
