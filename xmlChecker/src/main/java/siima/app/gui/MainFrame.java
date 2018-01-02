@@ -746,17 +746,17 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 					if (diffstrs[i].startsWith("DEL#")) {
 						isDelFraq = true;
 						String[] pred = diffstrs[i].split("DEL#\\(");// ("#\\)");
-						fraqstr = pred[1];
+						if(pred.length>1) fraqstr = pred[1];
 						//System.out.println("???? DEL STR: " + fraqstr);
 					} else if (diffstrs[i].startsWith("EQU#")) {
 						isEquFraq = true;
 						String[] pred = diffstrs[i].split("EQU#\\(");// ("#\\)");
-						fraqstr = pred[1];
+						if(pred.length>1) fraqstr = pred[1];
 						//System.out.println("???? EQU STR: " + fraqstr);
 					} else if (diffstrs[i].startsWith("INS#")) {
 						isInsFraq = true;
 						String[] pred = diffstrs[i].split("INS#\\(");// ("#\\)");
-						fraqstr = pred[1];
+						if(pred.length>1) fraqstr = pred[1];
 						//System.out.println("???? INS STR: " + fraqstr);
 					}
 					
