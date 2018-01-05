@@ -111,6 +111,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 	
 	private JMenuItem mntmExit;
 	private JMenuItem mntmInvoke;
+	private JMenuItem mntmCheckSolExist;
 	private JMenuItem mntmCompareSol;
 	private JMenuItem mntmSingleTestCase;
 	
@@ -317,8 +318,13 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		
 		JMenu mnStudent = new JMenu("Student");
 		menuBar.add(mnStudent);
-
-		mntmCompareSol = new JMenuItem("Compare Solution");
+		
+		mntmCheckSolExist = new JMenuItem("Check Existence of Solutions");
+		mntmCheckSolExist.addActionListener(this); // See: method											// actionPerformed(ActionEvent arg0)
+		mnStudent.add(mntmCheckSolExist);
+		mntmCheckSolExist.setEnabled(true);
+		
+		mntmCompareSol = new JMenuItem("Compare One Solution");
 		mntmCompareSol.addActionListener(this); // See: method											// actionPerformed(ActionEvent arg0)
 		mnStudent.add(mntmCompareSol);
 		mntmCompareSol.setEnabled(true);	
@@ -995,6 +1001,20 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 			}
 			
 			txtrConsoleOutput.append(newline + "LOG: DISPLAYING RESULTS IN THE STUDENTS TABLE: ");
+			txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
+						
+		} else	if (arg0.getSource() == mntmCheckSolExist) {
+			/* Checking existence of zips and files in zips for all students
+			 * NOTE: StuSolution of some TaskFlows must be selected (Select Button) before running this command
+			 */
+			txtrConsoleOutput.append(newline + "LOG: CHECKING EXISTENCE OF SOLUTION ZIPS AND FILES OF ALL STUDENTS");
+			txtrConsoleOutput.append(newline + "LOG: --- NOTE: stuSolution has to be selected before this command!");
+			boolean allexist = appControl.checkFileExistenceInZip();			
+			
+			if(!allexist) {
+				txtrConsoleOutput.append(newline + "LOG: --- ??? SOME SOLUTIONS MISSING ??? ---");
+				txtrConsoleOutput.append(newline + "LOG: --- ??? DO NOT RUN TASKFLOWS ??? ---");
+			}
 			txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
 						
 		} else	if (arg0.getSource() == mntmCompareSol) {

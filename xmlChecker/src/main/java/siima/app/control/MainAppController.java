@@ -69,7 +69,8 @@ public class MainAppController {
 	}
 
 	public void openProjectExcel(File project_xlsx ){
-		logger.info("openProjectExcel() Opening Project Excel: ");
+		logger.info("======================================================");
+		logger.info("=====  openProjectExcel() Opening Project Excel  =====");
 		boolean ok = true;
 		this.projectExcelFile = project_xlsx.getAbsolutePath();
 		this.projectHome = project_xlsx.getParent();
@@ -205,6 +206,41 @@ public class MainAppController {
 			}
 
 		}
+	}
+	
+	public boolean checkFileExistenceInZip(){
+		/*
+		 * TODO: Should be done for all students
+		 */
+		logger.log(Level.INFO, "" + getClass().getSimpleName() + " checkFileExistenceInZip()");
+		boolean check_ok = true;
+		StringBuffer operErrorBuffer = new StringBuffer();
+		taskCycleProcessor.getRead_oper().setOperErrorBuffer(new StringBuffer());
+		
+		List<StudentType> students = studentContainer.getStudents();		
+		String studentZipFolder= this.projectHome + "/" + taskFlowMetaDataList.get(this.selectedTaskflowIndex).getStudentZipFileFolder(); //"data/zips/RoundU1/";
+		int stucnt=0;
+		for(StudentType stu : students){
+			stucnt++;
+			String stuZipFile = stu.getSubmitZip();
+			String stuZipFilePath = studentZipFolder + stuZipFile;
+		
+			if ((stuZipFilePath != null) && (!"null".equals(stuZipFilePath))) {
+				String stuFilePathInZip = (String) this.selectedStuSolutionObject; // "Round_U1/U1E1_1/src/CDcatalog.xml";
+				boolean exists = taskCycleProcessor.getRead_oper().checkFileExistenceInZip(stuZipFilePath,
+						stuFilePathInZip);
+				if (!exists) {
+					operErrorBuffer = taskCycleProcessor.getRead_oper().getOperErrorBuffer();
+					System.out.println("???checkFileExistenceInZip():" + operErrorBuffer.toString());
+					check_ok = false;
+					logger.log(Level.INFO,
+							"" + getClass().getSimpleName()
+									+ "checkFileExistenceInZip(): Student's (" + stucnt + ") solution NOT EXISTS:"
+									+ stuFilePathInZip + " in zip:" + stuZipFilePath + " EXISTS(false)");
+				}
+			}
+		}
+		return check_ok;
 	}
 	
 	

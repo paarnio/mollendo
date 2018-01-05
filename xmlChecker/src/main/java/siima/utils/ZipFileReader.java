@@ -51,9 +51,9 @@ public class ZipFileReader {
 		InputStream inputstream = null;
 		try {
 			ZipEntry entry = zip.getEntry(fullPathInZip);
-			System.out.println("?????ZFREADER(): fullPathInZip: " + fullPathInZip + " entry: " + entry);
-			if((fileExt==null)||(entry.getName().endsWith(fileExt))) {
-				inputstream = zip.getInputStream(zip.getEntry(fullPathInZip));
+			//System.out.println("?????ZipFileReader: readInputStreamFromZipFile(): fullPathInZip: " + fullPathInZip + " entry: " + entry);
+			if((entry!=null)&&((fileExt==null)||(entry.getName().endsWith(fileExt)))) {
+				inputstream = zip.getInputStream(entry);
 			}
 		} catch (IOException e) {			
 			e.printStackTrace();
@@ -96,6 +96,32 @@ public class ZipFileReader {
 		}
 		return null;
 	}
+	
+	public boolean checkPathExistenceInZip(String zipFilePath, String fullPathInZip) {
+		/*
+		 * TODO: Checking if solution file exists and packed correctly
+		 * 
+		 **/
+		boolean entryExists = false;
+		ZipFile zip;
+
+		try {
+			zip = new ZipFile(zipFilePath);
+			ZipEntry entry = zip.getEntry(fullPathInZip);
+			if ((entry != null)) {
+				entryExists = true;
+			} else {
+				System.out.println("?????ZipFileReader: checkPathExistenceInZipFile():ERROR: PathInZip: " + fullPathInZip
+						+ " DOES NOT EXIST");
+			}
+		} catch (IOException e) {
+			System.out.println("?????ZipFileReader: checkPathExistenceInZipFile():ERROR: zipFilePath: " + zipFilePath
+					+ "  DOES NOT EXIST:" + e.getMessage());
+			//e.printStackTrace();
+		}
+		return entryExists;
+	}
+	
 	
 	public void readAndCheckZipFileContent(ZipFile zip) { // orig. readZipFile
 		/* Goes through all directories and files
