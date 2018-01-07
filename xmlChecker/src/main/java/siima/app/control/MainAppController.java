@@ -469,7 +469,7 @@ public class MainAppController {
 					//Exercise points = sum(testcase points)
 					Integer exPoints = 0;
 					for(Integer tcp : testcasepoints){
-						exPoints =+ tcp;
+						exPoints = exPoints + tcp;
 					}
 					tableRow.add(exPoints.toString());
 					totalPoints = totalPoints + exPoints;
@@ -484,6 +484,12 @@ public class MainAppController {
 		
 		return studentRowsList;
 	}
+	
+	public void setResultsWriteOption(boolean toResultExcel){
+		logger.log(Level.INFO,"setResultsWriteOption()");
+		this.taskCycleProcessor.setWriteToStudentExcel(toResultExcel);
+	}
+	
 	
 	/*
 	 *  GETTERS SETTERS

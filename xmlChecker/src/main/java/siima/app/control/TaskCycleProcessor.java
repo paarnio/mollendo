@@ -32,6 +32,7 @@ public class TaskCycleProcessor {
 	private static final Logger logger=Logger.getLogger(TaskCycleProcessor.class.getName());
 	
 	private String studentDataExcel; // = "data/excel/students.xlsx";
+	private boolean writeToStudentExcel = false;
 	private String projectHome;
 	private int currentTaskflowIndex;
 	private TaskFlowMetaData taskFlowMetaData;
@@ -514,7 +515,8 @@ public class TaskCycleProcessor {
 			}// End TestCase Loop ---
 			if(!this.singleStudentRun){
 				setStudentResultsData(submitcnt, testcasecount, testcaseResults, operationErrors, testcasePoints);
-				writeSubmitTestCaseResults(submitcnt, testcasecount, testcaseResults, operationErrors, testcasePoints);
+				if(this.writeToStudentExcel)
+					writeSubmitTestCaseResults(submitcnt, testcasecount, testcaseResults, operationErrors, testcasePoints);
 			} else { //singleStudentRun
 				displaySingleStudentRunResults(singleStuRefCompareStr1, singleStuRefCompareStr2, testcaseResults, operationErrors, testcasePoints);
 			}
@@ -631,6 +633,14 @@ public class TaskCycleProcessor {
 
 	public void setSingleStudentCompareResults(TriptychContent singleStudentCompareResults) {
 		this.singleStudentCompareResults = singleStudentCompareResults;
+	}
+
+	public boolean isWriteToStudentExcel() {
+		return writeToStudentExcel;
+	}
+
+	public void setWriteToStudentExcel(boolean writeToStudentExcel) {
+		this.writeToStudentExcel = writeToStudentExcel;
 	}
 
 	

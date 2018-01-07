@@ -43,6 +43,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.nio.file.Path;
@@ -57,11 +59,11 @@ import javax.swing.JTextField;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JEditorPane;
 
 
-public class MainFrame extends JFrame implements ActionListener { // TreeSelectionListener
-																	// {
+public class MainFrame extends JFrame implements ActionListener, ItemListener { 
 	public String eraProjectHomeDirectory = ".";
 	public String latestOpenedFolder = ".";
 	private final static String newline="\n";
@@ -115,6 +117,9 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 	private JMenuItem mntmCompareSol;
 	private JMenuItem mntmSingleTestCase;
 	
+	private JCheckBoxMenuItem mntmCbResToExcel;
+	private JCheckBoxMenuItem mntmCbMenuItem2;
+	/*
 	private JMenuItem mntmInvokeTransform;
 	private JMenuItem mntmSetTransformContext;
 	private JMenuItem mntmGenOntologyModel;
@@ -143,7 +148,7 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 	private JRadioButtonMenuItem rbMenuItem4;
 	private JRadioButtonMenuItem rbMenuItem5;
 	private JRadioButtonMenuItem rbMenuItem6;
-	
+	*/
 	//For Search CSMCommand block
 	private JTextField textField1;
 	private JTextField textField2;
@@ -307,13 +312,25 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		menuBar.add(mnPros);
 
 		mntmInvoke = new JMenuItem("Invoke Processor");
-		mntmInvoke.addActionListener(this); // See: method											// actionPerformed(ActionEvent arg0)
+		mntmInvoke.addActionListener(this);
 		mnPros.add(mntmInvoke);
-		mntmInvoke.setEnabled(false);	
+		mntmInvoke.setEnabled(false);
+		
+		//a group of check box menu items
+		mnPros.addSeparator();
+		mntmCbResToExcel = new JCheckBoxMenuItem("Results to Project Excel");
+		mntmCbResToExcel.addItemListener(this);
+		//mntmCbResToExcel.setMnemonic(KeyEvent.VK_C);
+		mnPros.add(mntmCbResToExcel);
+
+		mntmCbMenuItem2 = new JCheckBoxMenuItem("Another CheckBox");
+		mntmCbMenuItem2.addItemListener(this);
+		//mntmCbMenuItem2.setMnemonic(KeyEvent.VK_H);
+		mnPros.add(mntmCbMenuItem2);
 		
 		/*
 		 * Student Menu
-		 * TODO:
+		 * 
 		 */
 		
 		JMenu mnStudent = new JMenu("Student");
@@ -880,6 +897,25 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 		return hierarchyTreeScrollPane5;
 	}
 
+	@Override
+	public void itemStateChanged(ItemEvent e) {
+		// NEW
+		boolean selected = false;
+		if(e.getStateChange() == ItemEvent.SELECTED) selected = true;
+		else selected = false;
+		
+		if (e.getSource() == mntmCbResToExcel) {		
+			appControl.setResultsWriteOption(selected);;			
+			txtrConsoleOutput.append(newline + "LOG: CHECKBOX mntmCbResToExcel: STATE CHANGED TO: SELECTED=" + selected);
+			txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());		
+		} else 	if (e.getSource() == mntmCbMenuItem2) {			
+			//appControl.TODO();			
+			txtrConsoleOutput.append(newline + "LOG: CHECKBOX mntmCbMenuItem2: STATE CHANGED TO: SELECTED=" + selected);
+			txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());		
+		}
+		
+	}
+	
 	//@Override
 	public void actionPerformed(ActionEvent arg0) {
 		if (arg0.getSource() == mntmOpen) {
@@ -1707,6 +1743,8 @@ public class MainFrame extends JFrame implements ActionListener { // TreeSelecti
 	public JTextArea getBottomLeftTextArea() {
 		return bottomLeftTextArea;
 	}
+
+
 
 	/*private void addLabelTextRows(JLabel[] labels, JTextField[] textFields, GridBagLayout gridbag,
 			Container container) {
