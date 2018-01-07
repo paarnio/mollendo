@@ -67,4 +67,24 @@
 	  <!--comment>Taskflow comment1</comment-->
 	</flow>
   </testCase>
+  <testCase number="2">
+	<description>TESTING DirectStringOutOper. Enables to add points without any solution checking (No student or reference flow  needed)</description>
+    <points>33</points>
+    <stuDir1>Round_U1/U1E1_1/src/</stuDir1>
+	<stuFile1>CDcatalog_X_hidden.xml</stuFile1>
+	<refDir1>Round_U1/U1E1_1/test/</refDir1>
+	<refFile1>CDcatalog_3_hidden.xml</refFile1>
+  	<flow>
+	  <description>Merging student and reference flow</description>
+	  <type>mergeFlow</type>
+	  <name>mergeFlow2</name>
+	  <operation>
+	    <type>DirectStringOutOper</type>
+        <name>DirectStringOutOper1</name>
+        <par1>THIS IS PAR1 DIRECT OUT MESSAGE: giving 33 free points for everybody!</par1>
+        <par2>null</par2>
+		<return>merC002</return>
+      </operation>
+	</flow>
+  </testCase>
 </checkerTaskFlow>

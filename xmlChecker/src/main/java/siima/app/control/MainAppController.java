@@ -210,39 +210,44 @@ public class MainAppController {
 	
 	public boolean checkFileExistenceInZip(){
 		/*
-		 * TODO: Should be done for all students
+		 * Solution existence check done for all students
 		 */
 		logger.log(Level.INFO, "" + getClass().getSimpleName() + " checkFileExistenceInZip()");
 		boolean check_ok = true;
 		StringBuffer operErrorBuffer = new StringBuffer();
 		taskCycleProcessor.getRead_oper().setOperErrorBuffer(new StringBuffer());
 		
-		List<StudentType> students = studentContainer.getStudents();		
-		String studentZipFolder= this.projectHome + "/" + taskFlowMetaDataList.get(this.selectedTaskflowIndex).getStudentZipFileFolder(); //"data/zips/RoundU1/";
-		int stucnt=0;
-		for(StudentType stu : students){
-			stucnt++;
-			String stuZipFile = stu.getSubmitZip();
-			String stuZipFilePath = studentZipFolder + stuZipFile;
-		
-			if ((stuZipFilePath != null) && (!"null".equals(stuZipFilePath))) {
-				String stuFilePathInZip = (String) this.selectedStuSolutionObject; // "Round_U1/U1E1_1/src/CDcatalog.xml";
-				boolean exists = taskCycleProcessor.getRead_oper().checkFileExistenceInZip(stuZipFilePath,
-						stuFilePathInZip);
-				if (!exists) {
-					operErrorBuffer = taskCycleProcessor.getRead_oper().getOperErrorBuffer();
-					System.out.println("???checkFileExistenceInZip():" + operErrorBuffer.toString());
-					check_ok = false;
-					logger.log(Level.INFO,
-							"" + getClass().getSimpleName()
-									+ "checkFileExistenceInZip(): Student's (" + stucnt + ") solution NOT EXISTS:"
-									+ stuFilePathInZip + " in zip:" + stuZipFilePath + " EXISTS(false)");
+		String stuFilePathInZip = (String) this.selectedStuSolutionObject; // "Round_U1/U1E1_1/src/CDcatalog.xml";
+		if (stuFilePathInZip != null) {
+			List<StudentType> students = studentContainer.getStudents();
+			String studentZipFolder = this.projectHome + "/"
+					+ taskFlowMetaDataList.get(this.selectedTaskflowIndex).getStudentZipFileFolder(); // "data/zips/RoundU1/";
+			int stucnt = 0;
+			for (StudentType stu : students) {
+				stucnt++;
+				String stuZipFile = stu.getSubmitZip();
+				String stuZipFilePath = studentZipFolder + stuZipFile;
+
+				if ((stuZipFilePath != null) && (!"null".equals(stuZipFilePath))) {
+					boolean exists = taskCycleProcessor.getRead_oper().checkFileExistenceInZip(stuZipFilePath,
+							stuFilePathInZip);
+					if (!exists) {
+						operErrorBuffer = taskCycleProcessor.getRead_oper().getOperErrorBuffer();
+						System.out.println("???checkFileExistenceInZip():" + operErrorBuffer.toString());
+						check_ok = false;
+						logger.log(Level.INFO,"checkFileExistenceInZip(): Student's (" + stucnt
+										+ ") solution NOT EXISTS:" + stuFilePathInZip + " in zip:" + stuZipFilePath
+										+ " EXISTS(false)");
+					}
 				}
 			}
+		} else {
+			logger.log(Level.INFO,"checkFileExistenceInZip(): stuSolution NOT SELECTED??");
+			check_ok = false;
+			System.out.println("???? stuSolution NOT SELECTED: Select it and run checkFileExistenceInZip() again! "); 
 		}
 		return check_ok;
 	}
-	
 	
 	public void compareSolutionFiles() {
 		/* Difference of selected students solution with the reference solution

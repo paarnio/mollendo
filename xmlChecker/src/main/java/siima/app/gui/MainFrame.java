@@ -1049,7 +1049,10 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 			
 			if(!allexist) {
 				txtrConsoleOutput.append(newline + "LOG: --- ??? SOME SOLUTIONS MISSING ??? ---");
+				txtrConsoleOutput.append(newline + "LOG: --- ??? OR stuSolution NOT SELECTED ??? ---");
 				txtrConsoleOutput.append(newline + "LOG: --- ??? DO NOT RUN TASKFLOWS ??? ---");
+			} else {
+				txtrConsoleOutput.append(newline + "LOG: --- ALL SOLUTIONS EXIST!! ---");
 			}
 			txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
 						

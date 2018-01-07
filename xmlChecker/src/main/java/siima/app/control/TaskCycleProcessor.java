@@ -437,7 +437,10 @@ public class TaskCycleProcessor {
 								}
 								
 							}
-							break;
+								break;
+							default:
+				                System.out.println("????Invalid operation type: " + operationType);
+				                break;
 							}
 		
 							
@@ -488,12 +491,21 @@ public class TaskCycleProcessor {
 								} else { // stuFlow or refFlow not succesfull
 									checkResultBuffer.append("OPER_STD:TCASE(" + testcasecount + "):" + "NOT-COMPARED" + "\n");
 								}
+							} //case
+								break;
+							case "DirectStringOutOper": { //Only Merge flow needed
+								System.out.println("................directStringOutOper ");
+								String result = "DIRECT_OUT:" + par1;
+								oper_ok = true;
+								System.out.println("====== DIRECT STRING RESULT: " + result + "============\n");	
+								setChannelStringValue(returnChannel, result);
+								checkResultBuffer.append("OPER_STD:TCASE(" + testcasecount + "):" + result + "\n");
 							}
 								break;
-							case "NA": {
-								System.out.println("................NA??? ");
-							}
-								break;
+							default:
+				                System.out.println("????Invalid operation type: " + operationType);
+				                break;
+							
 							}
 							
 						}
