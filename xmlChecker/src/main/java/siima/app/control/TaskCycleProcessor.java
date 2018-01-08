@@ -390,7 +390,7 @@ public class TaskCycleProcessor {
 								}
 							}
 								break;
-							case "XSDValidation": { //TODO: Test with other zipset
+							case "XSDValidation": { 
 								System.out.println("................ XSDValidation ");
 								//oper_ok = true;
 								valid_oper.setOperErrorBuffer(new StringBuffer());
@@ -481,7 +481,10 @@ public class TaskCycleProcessor {
 										 * differences ignored 
 										 * Parameters: (filtDiffOper, minLength, cutLength, ignore)
 										 */
-										operErrorBuffer = compare_ctrl.getFilteredResults("ALL", 0, 1000, " ");
+										if((this.singleStudentRun)||(!this.writeToStudentExcel))
+											operErrorBuffer = compare_ctrl.getFilteredResults("ALL", 0, 1000, " ");
+										else
+											operErrorBuffer = compare_ctrl.getFilteredResults("DELETE_INSERT", 0, 1000, " ");
 										result = "NOT-EQUAL";
 										oper_ok = false;
 									}
@@ -491,7 +494,7 @@ public class TaskCycleProcessor {
 								} else { // stuFlow or refFlow not succesfull
 									checkResultBuffer.append("OPER_STD:TCASE(" + testcasecount + "):" + "NOT-COMPARED" + "\n");
 								}
-							} //case
+							}
 								break;
 							case "DirectStringOutOper": { //Only Merge flow needed
 								System.out.println("................directStringOutOper ");

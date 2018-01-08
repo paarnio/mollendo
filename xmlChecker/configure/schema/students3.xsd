@@ -1,0 +1,56 @@
+<!-- students2.xsd -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!-- students3.xsd version=3 2018-01-08 feedback added -->
+<!-- v3: exerciseType: added feedback for teacher's textual feedback comment-->
+<!-- v3: exerciseType: added name. NOTE that attribute 'exerciseId' is used as required identifier-->
+<!-- v2: studentSubmits defined as the root element-->
+  <xsd:annotation>
+    <xsd:documentation xml:lang="en">
+	students3.xsd : XML checker student info schema for siima.model.jaxb.checker.student  
+    </xsd:documentation>
+  </xsd:annotation>
+
+  <xsd:element name="studentSubmits"> <!-- type="studentSubmitsType"/-->
+	<xsd:annotation>
+		<xsd:documentation>Root-element of the student schema. </xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexType> <!-- name="studentSubmitsType"-->
+		<xsd:sequence>
+		<xsd:element name="description" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		<!--xsd:element name="round" type="xsd:string" minOccurs="0" maxOccurs="1"/-->
+		<!--xsd:element name="submitId" type="xsd:string" minOccurs="0" maxOccurs="1"/-->
+		<xsd:element name="referenceZip" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		<xsd:element name="student" type="studentType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="submitId" type="xsd:string"/><!-- e.g. U1_sub2 -->
+	</xsd:complexType>
+  </xsd:element>
+  
+   <xsd:complexType name="studentType">
+    <xsd:sequence>
+	  <xsd:element name="surname" type="xsd:string"/>
+	  <xsd:element name="firstname" type="xsd:string"/>
+	  <xsd:element name="round" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="submitZip" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <xsd:element name="exercise" type="exerciseType" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attribute name="studentId" type="xsd:string"/>
+  </xsd:complexType>
+  
+  <xsd:complexType name="exerciseType">
+    <xsd:sequence>
+	  <!-- v3: added name. NOTE that attribute 'exerciseId' is used as required identifier-->
+	  <xsd:element name="name" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <xsd:element name="description" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <xsd:element name="round" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <xsd:element name="pointsOfTestCases" type="xsd:int" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element name="resultsOfTestCases" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+	  <xsd:element name="errorsOfTestCases" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+	   <!-- v3: added feedback for teacher's textual feedback comment-->
+	  <xsd:element name="feedback" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+    <xsd:attribute name="exerciseId" type="xsd:string"/>
+  </xsd:complexType>
+  
+</xsd:schema>
+
