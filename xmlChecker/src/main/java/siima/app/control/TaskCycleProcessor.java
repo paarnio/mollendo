@@ -381,12 +381,13 @@ public class TaskCycleProcessor {
 									System.out.println("                 resultfile: " + resultFilePath);
 								*/
 									
-								//OPTION Results to String
-								ByteArrayOutputStream resultOutputStream = new ByteArrayOutputStream();
-								String retStr = trans_ctrl.runTransformToString(resultOutputStream,  paramlist, valuelist);			
-								setChannelStringValue(returnChannel, retStr);
+									//OPTION Results to String
+									ByteArrayOutputStream resultOutputStream = new ByteArrayOutputStream();
+									String retStr = trans_ctrl.runTransformToString(resultOutputStream,  paramlist, valuelist);			
+									setChannelStringValue(returnChannel, retStr);
 								} else {
-								operErrorBuffer = trans_ctrl.getOperErrorBuffer();
+									setChannelStringValue(returnChannel, "XSLT_ERROR");
+									operErrorBuffer = trans_ctrl.getOperErrorBuffer();
 								}
 							}
 								break;
@@ -438,6 +439,15 @@ public class TaskCycleProcessor {
 								
 							}
 								break;
+							case "DirectStringOutOper": { //e.g. DIRECT_OUT:'WELLFORMED'
+								System.out.println("................directStringOutOper ");
+								String result = "" + par1;
+								oper_ok = true;
+								//System.out.println("====== DIRECT STRING OUT: " + result + "============\n");	
+								setChannelStringValue(returnChannel, result);
+								checkResultBuffer.append("OPER_STD:TCASE(" + testcasecount + "):DIRECT_OUT:(" + result + ")\n");
+							}
+								break;
 							default:
 				                System.out.println("????Invalid operation type: " + operationType);
 				                break;
@@ -445,7 +455,7 @@ public class TaskCycleProcessor {
 		
 							
 						} else if("mergeFlow".equals(flowType)){
-							logger.log(Level.INFO, "runTaskCycles(): --+ Student (" + submitcnt + ") --+ TestCase (" + testcasecount + ") --+ Operation (" + oper.getName() + ")");
+							logger.log(Level.INFO, "runTaskCycles(): --+ Student (" + submitcnt + ") --+ TestCase (" + testcasecount + ") --+ MERGE:Operation (" + oper.getName() + ")");
 							System.out.println("\n==================================");
 							System.out.println(".............mergeFlow ...........");
 							System.out.println("..................................\n");
@@ -454,9 +464,7 @@ public class TaskCycleProcessor {
 							String operationType = oper.getType();
 							
 							switch (operationType) {
-							case "StringCompare": { 
-								
-								if(stuFlow_ok && refFlow_ok){//compare only successful flows
+							case "StringCompare": {
 								System.out.println("................ StringCompare ");
 								String arg1str = null;
 								String arg2str = null;
@@ -470,17 +478,12 @@ public class TaskCycleProcessor {
 								}
 								
 								String result = "EQUAL";
-								compare_ctrl.setUp();															
-								boolean isequal = compare_ctrl.compareTextLines(arg1str, arg2str);
-									if (!isequal) {
-										/*
-										 * filtDiffOper e.g. DELETE | EQUAL |
-										 * INSERT | DELETE_INSERT | ALL 
-										 * NOTE:
-										 * e.g. if ignore =" " single space char
-										 * differences ignored 
-										 * Parameters: (filtDiffOper, minLength, cutLength, ignore)
-										 */
+								compare_ctrl.setUp();	
+								
+								if((stuFlow_ok && refFlow_ok)||(this.singleStudentRun)){//compare only successful flows in all students case
+									boolean isequal = compare_ctrl.compareTextLines(arg1str, arg2str);
+									if (!isequal) {									
+										//Parameters: (filtDiffOper, minLength, cutLength, ignore)									 
 										if((this.singleStudentRun)||(!this.writeToStudentExcel))
 											operErrorBuffer = compare_ctrl.getFilteredResults("ALL", 0, 1000, " ");
 										else
@@ -488,21 +491,21 @@ public class TaskCycleProcessor {
 										result = "NOT-EQUAL";
 										oper_ok = false;
 									}
-								System.out.println("====== MERGE RESULT: " + result + "============\n");	
-								setChannelStringValue(returnChannel, result);
-								checkResultBuffer.append("OPER_STD:TCASE(" + testcasecount + "):" + result + "\n");
+									System.out.println("====== MERGE RESULT: " + result + "============\n");	
+									setChannelStringValue(returnChannel, result);
+									checkResultBuffer.append("OPER_STD:TCASE(" + testcasecount + "):MERGE:RESULT(" + result + ")\n");
 								} else { // stuFlow or refFlow not succesfull
-									checkResultBuffer.append("OPER_STD:TCASE(" + testcasecount + "):" + "NOT-COMPARED" + "\n");
+									checkResultBuffer.append("OPER_STD:TCASE(" + testcasecount + "):MERGE:RESULT(" + "NOT-COMPARED" + ")\n");
 								}
 							}
 								break;
-							case "DirectStringOutOper": { //Only Merge flow needed
+							case "DirectStringOutOper": { //If this oper in Merge flow, stu and ref flows not needed
 								System.out.println("................directStringOutOper ");
-								String result = "DIRECT_OUT:" + par1;
+								String result = "" + par1;
 								oper_ok = true;
-								System.out.println("====== DIRECT STRING RESULT: " + result + "============\n");	
+								//System.out.println("====== DIRECT STRING OUT: " + result + "============\n");	
 								setChannelStringValue(returnChannel, result);
-								checkResultBuffer.append("OPER_STD:TCASE(" + testcasecount + "):" + result + "\n");
+								checkResultBuffer.append("OPER_STD:TCASE(" + testcasecount + "):MERGE:DIRECT_OUT:(" + result + ")\n");
 							}
 								break;
 							default:
@@ -537,7 +540,8 @@ public class TaskCycleProcessor {
 			}
 		}//End Student zip loop	---	
 		if(!this.singleStudentRun) writeAllResultsAndCloseExcel(true); 
-	 
+		logger.log(Level.INFO, "runTaskCycles(): ==== ALL STUDENT SUBMITS (#" + submitcnt + ") PROSESSED ===");
+		logger.log(Level.INFO, "runTaskCycles(): ==== FINISH ===");
 	}
 	
 	public void displaySingleStudentRunResults(String singleStuRefCompareStr1, String singleStuRefCompareStr2, List<String> tcResults, List<String> operErrors, List<String> tcPoints){

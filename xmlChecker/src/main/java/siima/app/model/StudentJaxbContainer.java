@@ -36,7 +36,7 @@ import siima.model.jaxb.checker.taskflow.CheckerTaskFlowType;
 
 public class StudentJaxbContainer {
 	private static final Logger logger=Logger.getLogger(StudentJaxbContainer.class.getName());
-	private static String STUDENT_SCHEMA ="configure/schema/students2.xsd";
+	private static String STUDENT_SCHEMA ="configure/schema/students3.xsd";
 	private ExcelMng excelMng;
 	private List<StudentType> students;
 	private StudentSubmits studentSubmits;
