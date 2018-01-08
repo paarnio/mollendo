@@ -21,9 +21,9 @@
 	<!--refFile2></refFile2-->
 	<!--comment>Testcase comment</comment-->
 	<flow>
-	  <description>The student flow</description>
 	  <type>studentFlow</type>
 	  <name>studentFlow1</name>
+	  <description>The student flow</description>
 	  <!--inChannel>inC001</inChannel-->
 	  <!--outChannel>stuC002</outChannel-->
 	  <operation>
@@ -32,14 +32,13 @@
         <par1>stuDir1/stuFile1</par1>
         <!--par2>refDir1/refFile2</par2-->
 		<return>stuC002</return>
-	    <comment>XMLWellFormed operation comment1</comment>
       </operation>
 	  <!--comment>Taskflow comment1</comment-->
 	</flow>
 	<flow>
-	  <description>The reference flow</description>
 	  <type>referenceFlow</type>
 	  <name>referenceFlow1</name>
+	  <description>The reference flow</description>
 	  <!--inChannel>inC011</inChannel-->
 	  <!--outChannel>refC002</outChannel-->
 	  <operation>
@@ -48,14 +47,13 @@
         <par1>refDir1/refFile1</par1>
         <!--par2>refDir1/refFile2</par2-->
 		<return>refC002</return>
-	    <comment>XMLWellFormed operation comment2</comment>
       </operation>
 	  <!--comment>Taskflow comment1</comment-->
 	</flow>
   	<flow>
-	  <description>Merging student and reference flow</description>
 	  <type>mergeFlow</type>
 	  <name>mergeFlow2</name>
+	  <description>Merging student and reference flow</description>
 	  <inChannel>inC002</inChannel>
 	  <outChannel>outC012</outChannel>
 	  <operation>
@@ -64,7 +62,6 @@
         <par1>refC002</par1>
         <par2>stuC002</par2>
 		<return>merC002</return>
-	    <comment>Comparing student and reference flow outputs</comment>
       </operation>
 	  <!--comment>Taskflow comment1</comment-->
 	</flow>

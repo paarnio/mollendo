@@ -1,4 +1,4 @@
-<!-- students2.xsd -->
+<!-- students3.xsd -->
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 <!-- students3.xsd version=3 2018-01-08 feedback added -->
 <!-- v3: exerciseType: added feedback for teacher's textual feedback comment-->

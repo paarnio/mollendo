@@ -21,9 +21,9 @@
 	<!--refFile2></refFile2-->
 	<!--comment>Testcase comment</comment-->
 	<flow>
-	  <description>The student flow</description>
 	  <type>studentFlow</type>
 	  <name>studentFlow1</name>
+	  <description>The student flow</description>
 	  <!--inChannel>inC001</inChannel-->
 	  <!--outChannel>stuC002</outChannel-->
 	  <operation>
@@ -37,9 +37,9 @@
 	  <!--comment>Taskflow comment1</comment-->
 	</flow>
 	<flow>
-	  <description>The reference flow</description>
 	  <type>referenceFlow</type>
 	  <name>referenceFlow1</name>
+	  <description>The reference flow</description>
 	  <!--inChannel>inC011</inChannel-->
 	  <!--outChannel>refC002</outChannel-->
 	  <operation>
@@ -53,9 +53,9 @@
 	  <!--comment>Taskflow comment1</comment-->
 	</flow>
   	<flow>
-	  <description>Merging student and reference flow</description>
 	  <type>mergeFlow</type>
 	  <name>mergeFlow2</name>
+	  <description>Merging student and reference flow</description>
 	  <inChannel>outC002</inChannel>
 	  <outChannel>merC002</outChannel>
 	  <operation>
