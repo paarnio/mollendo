@@ -71,7 +71,7 @@ public class XMLValidationCheck {
 			}
 		
 		} catch (IOException e) {
-			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:" + e.getMessage());
 			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessage());
 			e.printStackTrace();
 			return false;
@@ -87,14 +87,14 @@ public class XMLValidationCheck {
 			Validator validator = schema.newValidator();
 			validator.validate(xmlSource);
 		} catch (SAXException e) {
-			logger.log(Level.ERROR, "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR, "MSG:" + e.getMessage());
 			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessage());
 			System.out.println("Exception: " + e.getMessage());
 			// e.printStackTrace();
 			return false;
 
 		} catch (IOException e) {
-			logger.log(Level.ERROR, "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR, "MSG:" + e.getMessage());
 			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessage());
 			System.out.println("Exception: " + e.getMessage());
 			// e.printStackTrace();
@@ -114,14 +114,14 @@ public class XMLValidationCheck {
             validator.validate(new StreamSource(new File(xmlPath)));
             ok = true;
         } catch (SAXException e) {
-			logger.log(Level.ERROR, "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR, "MSG:" + e.getMessage());
 			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessage());
 			System.out.println("Exception: " + e.getMessage());
 			// e.printStackTrace();
 			return false;
 
 		} catch (IOException e) {
-			logger.log(Level.ERROR, "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR, "MSG:" + e.getMessage());
 			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessage());
 			System.out.println("Exception: " + e.getMessage());
 			// e.printStackTrace();

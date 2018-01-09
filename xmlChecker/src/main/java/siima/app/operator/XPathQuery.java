@@ -97,23 +97,23 @@ public class XPathQuery {
 			
 		} catch (FileNotFoundException e) {
 			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":(exc1)ERROR:" + e.getMessage());
-			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:" + e.getMessage());
 			e.printStackTrace();
 		} catch (ParserConfigurationException e) {
 			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":(exc2)ERROR:" + e.getMessage());
-			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:" + e.getMessage());
 			e.printStackTrace();
 		} catch (SAXException e) {
 			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":(exc3)ERROR:" + e.getMessage());
-			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:" + e.getMessage());
 			e.printStackTrace();
 		} catch (IOException e) {
 			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":(exc4)ERROR:" + e.getMessage());
-			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:" + e.getMessage());
 			e.printStackTrace();
 		} catch (XPathExpressionException e) {
 			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":(exc5)ERROR:" + e.getMessage());
-			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:" + e.getMessage());
 			e.printStackTrace();
 		}
 		

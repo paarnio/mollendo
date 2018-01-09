@@ -57,17 +57,17 @@ public class XMLWellFormedCheck {
 			ok = true;
 
 		} catch (FileNotFoundException e) {
-			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:" + e.getMessage());
 			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessage());
 			ok = false;
 			e.printStackTrace();
 		} catch (XMLStreamException e) {			
-			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:" + e.getMessage());
 			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessage());
 			ok = false;
 			//e.printStackTrace();		
 		} catch (IOException e) {
-			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:" + e.getMessage());
 			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessage());
 			ok = false;
 			e.printStackTrace();
@@ -96,17 +96,17 @@ public class XMLWellFormedCheck {
 			ok = true;
 
 		} catch (FileNotFoundException e) {
-			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:" + e.getMessage());
 			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessage());
 			ok = false;
 			e.printStackTrace();
 		} catch (XMLStreamException e) {			
-			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:" + e.getMessage());
 			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessage());
 			ok = false;
 			//e.printStackTrace();		
 		} catch (IOException e) {
-			logger.log(Level.ERROR,  "MSG:\n" + e.getMessage());
+			logger.log(Level.ERROR,  "MSG:" + e.getMessage());
 			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessage());
 			ok = false;
 			e.printStackTrace();
