@@ -224,7 +224,7 @@ public class TaskCycleProcessor {
 	
 	private void runTaskCycles(List<TestCaseType> testcases, List<String> zips) {
 		/*
-		 *  TODO: read reference files from a reference ZIP
+		 *  read reference files from a reference ZIP
 		 */
 		logger.log(Level.INFO, "Entering: " + getClass().getName() + " method: runTaskCycles()");
 		boolean testcase_ok = true;
@@ -445,7 +445,7 @@ public class TaskCycleProcessor {
 								oper_ok = true;
 								//System.out.println("====== DIRECT STRING OUT: " + result + "============\n");	
 								setChannelStringValue(returnChannel, result);
-								checkResultBuffer.append("OPER_STD:TCASE(" + testcasecount + "):DIRECT_OUT:(" + result + ")\n");
+								checkResultBuffer.append("OPER_STD:DIRECT_OUT:(" + result + ")\n");
 							}
 								break;
 							default:
@@ -488,14 +488,14 @@ public class TaskCycleProcessor {
 											operErrorBuffer = compare_ctrl.getFilteredResults("ALL", 0, 1000, " ");
 										else
 											operErrorBuffer = compare_ctrl.getFilteredResults("DELETE_INSERT", 0, 1000, " ");
-										result = "NOT-EQUAL";
+										result = "NON-EQUAL";
 										oper_ok = false;
 									}
 									System.out.println("====== MERGE RESULT: " + result + "============\n");	
 									setChannelStringValue(returnChannel, result);
-									checkResultBuffer.append("OPER_STD:TCASE(" + testcasecount + "):MERGE:RESULT(" + result + ")\n");
+									checkResultBuffer.append("OPER_STD:MERGE:RESULT(" + result + ")\n");
 								} else { // stuFlow or refFlow not succesfull
-									checkResultBuffer.append("OPER_STD:TCASE(" + testcasecount + "):MERGE:RESULT(" + "NOT-COMPARED" + ")\n");
+									checkResultBuffer.append("OPER_STD:MERGE:RESULT(" + "NOT-COMPARED" + ")\n");
 								}
 							}
 								break;
@@ -505,7 +505,7 @@ public class TaskCycleProcessor {
 								oper_ok = true;
 								//System.out.println("====== DIRECT STRING OUT: " + result + "============\n");	
 								setChannelStringValue(returnChannel, result);
-								checkResultBuffer.append("OPER_STD:TCASE(" + testcasecount + "):MERGE:DIRECT_OUT:(" + result + ")\n");
+								checkResultBuffer.append("OPER_STD:MERGE:DIRECT_OUT:(" + result + ")\n");
 							}
 								break;
 							default:
@@ -516,7 +516,7 @@ public class TaskCycleProcessor {
 							
 						}
 						if(operErrorBuffer.length()>0)
-							operationErrors.add("OPER_ERR:STU(" + submitcnt + "):TCASE(" + testcasecount + "):MSG:(" + operErrorBuffer.toString() + ")");
+							operationErrors.add("ERR:ST(" + submitcnt + "):TC(" + testcasecount + "):MSG:(" + operErrorBuffer.toString() + ")");
 						/* Flow success ? */
 						if(!oper_ok){
 							if("studentFlow".equals(flowType)) stuFlow_ok = false;
@@ -527,7 +527,7 @@ public class TaskCycleProcessor {
 					} // End Operation loop ---
 				} // End Flow loop ---
 				String points = tcase.getPoints();		
-				testcaseResults.add("STD:STU(" + submitcnt + ") TCASE(" + testcasecount + ")  FLOW(" + stuFlow_ok + ") MSG(" + checkResultBuffer.toString() + ")");
+				testcaseResults.add("STD:ST(" + submitcnt + "):TC(" + testcasecount + "):FL(" + stuFlow_ok + "):MSG(" + checkResultBuffer.toString() + ")");
 				if((stuFlow_ok)&&(merFlow_ok)) testcasePoints.add(points); //TODO points as string
 				else testcasePoints.add("0");
 			}// End TestCase Loop ---

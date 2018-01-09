@@ -378,6 +378,7 @@ public class MainAppController {
 			TestCaseType testcase = (TestCaseType)node.getJaxbObject();
 			infobuff.append("\nNODE TYPE: \t" + nodetype);
 			infobuff.append("\nNUMBER: \t" + testcase.getNumber());
+			infobuff.append("\nNAME: " + testcase.getName());
 			infobuff.append("\nDESCRIPTION: " + testcase.getDescription());
 			infobuff.append("\nPOINTS: \t" + testcase.getPoints());
 			infobuff.append("\nSTUDENT DIR1: " + testcase.getStuDir1());
@@ -399,18 +400,18 @@ public class MainAppController {
 		} else if("FlowType".equals(nodetype)){
 			FlowType flow = (FlowType)node.getJaxbObject();
 			infobuff.append("\nNODE TYPE: \t" + nodetype);
-			infobuff.append("\nDESCRIPTION: " + flow.getDescription());
 			infobuff.append("\nTYPE: \t" + flow.getType());
 			infobuff.append("\nNAME: \t" + flow.getName());
+			infobuff.append("\nDESCRIPTION: " + flow.getDescription());
 			infobuff.append("\nIN CHANNEL: \t" + flow.getInChannel());
 			infobuff.append("\nOUT CHANNEL: \t" + flow.getOutChannel());
 			infobuff.append("\nOPERATIONS: #" + flow.getOperation().size());
 		} else if("OperationType".equals(nodetype)){
 			OperationType oper = (OperationType)node.getJaxbObject();
 			infobuff.append("\nNODE TYPE: \t" + nodetype);
-			infobuff.append("\nDESCRIPTION: " + oper.getDescription());
 			infobuff.append("\nTYPE: \t" + oper.getType());
 			infobuff.append("\nNAME: \t" + oper.getName());
+			infobuff.append("\nDESCRIPTION: " + oper.getDescription());
 			infobuff.append("\nPARAMETER 1: \t" + oper.getPar1());
 			infobuff.append("\nPARAMETER 2: \t" + oper.getPar2());
 			infobuff.append("\nRETURN: " + oper.getReturn());
