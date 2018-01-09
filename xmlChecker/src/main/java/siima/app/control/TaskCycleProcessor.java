@@ -445,7 +445,7 @@ public class TaskCycleProcessor {
 								oper_ok = true;
 								//System.out.println("====== DIRECT STRING OUT: " + result + "============\n");	
 								setChannelStringValue(returnChannel, result);
-								checkResultBuffer.append("OPER_STD:DIRECT_OUT:(" + result + ")\n");
+								//checkResultBuffer.append("OPER_STD:DIRECT_OUT:(" + result + ")");
 							}
 								break;
 							default:
@@ -493,9 +493,9 @@ public class TaskCycleProcessor {
 									}
 									System.out.println("====== MERGE RESULT: " + result + "============\n");	
 									setChannelStringValue(returnChannel, result);
-									checkResultBuffer.append("OPER_STD:MERGE:RESULT(" + result + ")\n");
+									checkResultBuffer.append("OPER_STD:MERGE:RESULT(" + result + ")");
 								} else { // stuFlow or refFlow not succesfull
-									checkResultBuffer.append("OPER_STD:MERGE:RESULT(" + "NOT-COMPARED" + ")\n");
+									checkResultBuffer.append("OPER_STD:MERGE:RESULT(" + "NOT-COMPARED" + ")");
 								}
 							}
 								break;
@@ -505,7 +505,7 @@ public class TaskCycleProcessor {
 								oper_ok = true;
 								//System.out.println("====== DIRECT STRING OUT: " + result + "============\n");	
 								setChannelStringValue(returnChannel, result);
-								checkResultBuffer.append("OPER_STD:MERGE:DIRECT_OUT:(" + result + ")\n");
+								checkResultBuffer.append("OPER_STD:MERGE:DIRECT_OUT:(" + result + ")");
 							}
 								break;
 							default:
