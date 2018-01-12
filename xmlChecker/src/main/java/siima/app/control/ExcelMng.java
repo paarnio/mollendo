@@ -45,11 +45,12 @@ public class ExcelMng {
 	private String referenceZipFile;
 	
 	private String resultsSheet;
+	//Cells reserved for 20 testcases: 20 points, 20 results, 20 errors
 	private int resultFirstCol = 6;
 	private int resultFirstRow = 10;
-	private int pointsFirstCol = 16; //+10
+	private int pointsFirstCol = 26; //+20
 	private int pointsFirstRow = 10;
-	private int errorMsgFirstCol = 26; //+10
+	private int errorMsgFirstCol = 46; //+20
 	private int errorMsgFirstRow = 10;
 	
 	//NEW
