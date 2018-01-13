@@ -329,6 +329,8 @@ public class MainAppController {
 		this.selectedStudentIndex=-1;
 		StringBuffer infobuff = new StringBuffer();		
 		int studentRowIdx = this.viewFrame.getSelectedStudentTableRow();
+		int studentColIdx = this.viewFrame.getSelectedStudentTableCol(); 
+		
 		if(studentRowIdx>=0){
 			List<StudentType> students = this.studentContainer.getStudents();
 			StudentType student = students.get(studentRowIdx);
@@ -339,6 +341,21 @@ public class MainAppController {
 			infobuff.append("\nSUBMIT ZIP: \t" + student.getSubmitZip());
 			this.selectedStudentZipFile=student.getSubmitZip();
 			this.selectedStudentIndex=studentRowIdx;
+			if(studentColIdx>=4){//If >=4 exercise is selected
+				int exerciseIdx = studentColIdx - 4;
+				List<ExerciseType> exes = student.getExercise();				
+				if(exes.size()>=exerciseIdx+1){
+					ExerciseType selEx = exes.get(exerciseIdx);
+					String excode = selEx.getExerciseId();
+					String feedback = selEx.getFeedback();
+					List<Integer> tcPoints = selEx.getPointsOfTestCases();
+					infobuff.append("\n--------------------------------\n");
+					infobuff.append("\n\tEXERCISE(" + (exerciseIdx+1) + "): " + excode + "\n\tTCPOINTS:");
+					for(Integer point : tcPoints) infobuff.append(" " + point);
+					infobuff.append("\n\tFEEDBACK(" + (exerciseIdx+1) + "): " + feedback);
+				}
+			}
+			
 		}
 		logger.log(Level.INFO,"getSelectedStudentInfo(): Selected student row index: " + studentRowIdx);
 		//System.out.println("???????? Selected student row index: " + studentRowIdx);

@@ -29,7 +29,8 @@ public class StudentTablePanel extends JPanel
     //VPA:
     private int selectedFirstRow=-1;
     private int selectedLastRow=-1;
- 
+    private int selectedFirstCol=-1;
+    private int selectedLastCol=-1;
     
     public int getSelectedFirstRow() {
 		return selectedFirstRow;
@@ -47,10 +48,28 @@ public class StudentTablePanel extends JPanel
 		this.selectedLastRow = selectedLastRow;
 	}
 
+	
+	public int getSelectedFirstCol() {
+		return selectedFirstCol;
+	}
+
+	public void setSelectedFirstCol(int selectedFirstCol) {
+		this.selectedFirstCol = selectedFirstCol;
+	}
+
+	public int getSelectedLastCol() {
+		return selectedLastCol;
+	}
+
+	public void setSelectedLastCol(int selectedLastCol) {
+		this.selectedLastCol = selectedLastCol;
+	}
+	
+	
 	/*
 	 * Constructor
 	 */
-	
+
 	public StudentTablePanel() {
         super();
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -159,8 +178,9 @@ public class StudentTablePanel extends JPanel
         
         //VPA ADDIN
         setSelectedFirstRow(-1); //clear
-        
-        
+        setSelectedLastRow(-1); //clear
+        setSelectedFirstCol(-1); //clear
+        setSelectedLastCol(-1); //clear
     }
  
     private void outputSelection() {
@@ -168,8 +188,7 @@ public class StudentTablePanel extends JPanel
                     table.getSelectionModel().getLeadSelectionIndex(),
                     table.getColumnModel().getSelectionModel().
                         getLeadSelectionIndex()));
-        output.append("Rows:");
-        
+        output.append("Rows:");       
         boolean firstRow = true;
         for (int c : table.getSelectedRows()) {
             output.append(String.format(" %d", c));
@@ -179,8 +198,13 @@ public class StudentTablePanel extends JPanel
             firstRow = false;
         }
         output.append(". Columns:");
+        boolean firstCol = true;
         for (int c : table.getSelectedColumns()) {
             output.append(String.format(" %d", c));
+          //VPA:
+            if(firstCol) setSelectedFirstCol(c);
+            setSelectedLastCol(c);
+            firstCol = false;
         }
         output.append(".\n");
     }

@@ -702,19 +702,6 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		gbc_rightmostBottomButtonPanel.gridx = 0;
 		gbc_rightmostBottomButtonPanel.gridy = 1;
 		rightmostBottomPanel.add(rightmostBottomButtonPanel, gbc_rightmostBottomButtonPanel);
-
-		JButton btnShowSelectedStudentButton = new JButton("Select Student");
-		btnShowSelectedStudentButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				//int tabnumber = tabbedPane.getSelectedIndex();
-				//this.studentTablePanel.
-				String info = appControl.getSelectedStudentInfo(); 			
-				rightmostBottomTextArea.setText(info);
-				//boolean runEnabled = appControl.runConditions();
-				//if(runEnabled) btnInvokeButton.setEnabled(true);
-			}
-		});
-		rightmostBottomButtonPanel.add(btnShowSelectedStudentButton);
 		
 		JButton btnUpdateStudentTable = new JButton("Update Table");
 		btnUpdateStudentTable.addActionListener(new ActionListener() {
@@ -730,6 +717,36 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 			}
 		});
 		rightmostBottomButtonPanel.add(btnUpdateStudentTable);
+
+		JButton btnShowSelectedStudentButton = new JButton("Select Student");
+		btnShowSelectedStudentButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				//int tabnumber = tabbedPane.getSelectedIndex();
+				//this.studentTablePanel.
+				String info = appControl.getSelectedStudentInfo(); 			
+				rightmostBottomTextArea.setText(info);
+				//rightmostBottomTextArea.append("\nFEEDBACK:");
+				//boolean runEnabled = appControl.runConditions();
+				//if(runEnabled) btnInvokeButton.setEnabled(true);
+			}
+		});
+		rightmostBottomButtonPanel.add(btnShowSelectedStudentButton);
+		
+		JButton btnSaveFeedbackTextButton = new JButton("Save Feedback Msg");
+		btnSaveFeedbackTextButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				//int tabnumber = tabbedPane.getSelectedIndex();
+				//this.studentTablePanel.
+				//String info = appControl.getSelectedStudentInfo(); 			
+				String stuText = rightmostBottomTextArea.getText();
+				String[] strs = stuText.split("FEEDBACK");
+				System.out.println("??????? Contains Feedback Msg" + strs[strs.length-1] );
+				//boolean runEnabled = appControl.runConditions();stuText
+				//if(runEnabled) btnInvokeButton.setEnabled(true);
+			}
+		});
+		rightmostBottomButtonPanel.add(btnSaveFeedbackTextButton);
+		
 		
 		
 	}
@@ -873,6 +890,10 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		return selectedfirstrow;
 	}
 	
+	public int getSelectedStudentTableCol(){
+		int selectedfirstcol = this.studentTablePanel.getSelectedFirstCol();
+		return selectedfirstcol;
+	}
 	
 	public String getEraProjectHomeDirectory() {
 		return eraProjectHomeDirectory;
