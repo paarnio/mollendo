@@ -28,6 +28,7 @@ import siima.app.model.tree.ElementModel;
 import siima.app.model.tree.ElementNode;
 import siima.app.model.tree.ElementTree;
 import siima.app.operator.TxtFileReadOper;
+import siima.app.xaddon.ContextXSLTransform;
 import siima.model.jaxb.checker.student.ExerciseType;
 import siima.model.jaxb.checker.student.StudentType;
 import siima.model.jaxb.checker.taskflow.CheckerTaskFlowType;
@@ -40,12 +41,13 @@ public class MainAppController {
 	private String projectExcelFile = "data/project_U1_sub1/students_U1.xlsx";
 	private String projectHome;
 	private MainFrame viewFrame;
-	private TaskFlowJaxbContainer graphbuilder;
-	
-	private StudentJaxbContainer studentContainer;
-	
+	private TaskFlowJaxbContainer graphbuilder;	
+	private StudentJaxbContainer studentContainer;	
 	private TaskCycleProcessor taskCycleProcessor;
 	private ExcelMng excel_mng;
+	//New Addon
+	private ContextXSLTransform contextXsltAddon = new ContextXSLTransform();
+	
 	
 	// TREE:TaskFlows Hierarchy
 	public ElementTree taskFlowsTree;
@@ -495,6 +497,24 @@ public class MainAppController {
 		logger.log(Level.INFO,"setResultsWriteOption()");
 		this.taskCycleProcessor.setWriteToStudentExcel(toResultExcel);
 	}
+	
+	/*
+	 * ADDONS
+	 * 
+	 */
+	
+	public void invokeXslContextTransform() {
+
+		this.contextXsltAddon.doSpecificTransform("contextSrc2Trout", null, null);
+		logger.info("invokeXslContextTransform()");
+	}
+
+	public void initXslContext(File[] xslContextfiles) {
+
+		this.contextXsltAddon.setXslContex(xslContextfiles);
+		logger.info("initXslContext()");
+	}
+
 	
 	
 	/*

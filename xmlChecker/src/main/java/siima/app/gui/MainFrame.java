@@ -119,9 +119,10 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 	
 	private JCheckBoxMenuItem mntmCbResToExcel;
 	private JCheckBoxMenuItem mntmCbMenuItem2;
-	/*
+	
 	private JMenuItem mntmInvokeTransform;
 	private JMenuItem mntmSetTransformContext;
+	/*
 	private JMenuItem mntmGenOntologyModel;
 	private JMenuItem mntmNewProject;
 	private JMenuItem mntmSaveProjectAs;
@@ -265,10 +266,7 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		mnFile.add(mntmSaveResults);
 		mntmSaveResults.setEnabled(false);
 		*/
-		mntmSaveResultsAsXML = new JMenuItem("Save Results As XML...");
-		mntmSaveResultsAsXML.addActionListener(this);
-		mnFile.add(mntmSaveResultsAsXML);
-		mntmSaveResultsAsXML.setEnabled(true);
+		
 	
 		/*
 		mnFile.addSeparator();
@@ -289,18 +287,6 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		});
 		mnFile.add(mntmExit);
 
-		/*
-		 * View Menu
-		 * 
-		 */
-		
-		JMenu mnView = new JMenu("View");
-		menuBar.add(mnView);
-
-		mntmShowResults = new JMenuItem("Display Student info");
-		mntmShowResults.addActionListener(this); // See: method											// actionPerformed(ActionEvent arg0)
-		mnView.add(mntmShowResults);
-		mntmShowResults.setEnabled(false);	
 		
 		
 		/*
@@ -351,6 +337,36 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		mnStudent.add(mntmSingleTestCase);
 		mntmSingleTestCase.setEnabled(true);
 		
+		/*
+		 * View/Results Menu
+		 * 
+		 */
+		
+		JMenu mnView = new JMenu("Results");
+		menuBar.add(mnView);
+
+		mntmShowResults = new JMenuItem("Update Student table");
+		mntmShowResults.addActionListener(this); // See: method											// actionPerformed(ActionEvent arg0)
+		mnView.add(mntmShowResults);
+		mntmShowResults.setEnabled(false);
+		
+		mntmSaveResultsAsXML = new JMenuItem("Save Results As XML...");
+		mntmSaveResultsAsXML.addActionListener(this);
+		mnView.add(mntmSaveResultsAsXML);
+		mntmSaveResultsAsXML.setEnabled(true);
+		
+		mnView.addSeparator();
+		//NEW SUBMENU
+		JMenu submenu = new JMenu("Transform Context");
+		mntmSetTransformContext = new JMenuItem("Set Context...");
+		mntmSetTransformContext.addActionListener(this);
+		submenu.add(mntmSetTransformContext);
+
+		mntmInvokeTransform = new JMenuItem("Run Transform");
+		mntmInvokeTransform.addActionListener(this);
+		submenu.add(mntmInvokeTransform);
+
+		mnView.add(submenu);
 		
 		/* ************************
 		 * 
@@ -1083,7 +1099,45 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 			txtrConsoleOutput.append(newline + "LOG: RUNNING THE SELECTED TESTCASE FOR THE SELECTED STUDENT: ");
 			txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
 						
+		} else if (arg0.getSource() == mntmInvokeTransform) {
+			appControl.invokeXslContextTransform();
+			System.out.println("-- invokeXslContextTransform()! ");
+			//-- Console Printing
+			txtrConsoleOutput.append(newline + "LOG: XSL TRANSFORM INVOKED!");
+			txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
+	
+	} else if (arg0.getSource() == mntmSetTransformContext) {
+		fileChooser.setDialogTitle("SELECT XSL TRANSFORM CONTEXT FILES (xsl,xml/aml,trout)");
+		
+		if(!".".equals(eraProjectHomeDirectory))
+			fileChooser.setCurrentDirectory(new File(this.eraProjectHomeDirectory));
+		else fileChooser.setCurrentDirectory(new File(this.latestOpenedFolder));
+		
+		fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		fileChooser.setMultiSelectionEnabled(true);
+		fileChooser.setSelectedFiles(new File[]{new File("")});
+		
+		int retVal = fileChooser.showOpenDialog(MainFrame.this);
+		if (retVal == JFileChooser.APPROVE_OPTION) {
+			System.out.println("GUIFrame: Open OK pressed");
+
+			File[] files = fileChooser.getSelectedFiles();
+			System.out.println("-- TRANSFORM CONTEXT files selected: # " + files.length);
+			this.appControl.initXslContext(files);
+			String dir = files[0].getParent();
+			System.out.println("-- TRANSFORM CONTEXT parent folder: " + dir);
+			this.latestOpenedFolder = dir;
+			//-- Console Printing
+			txtrConsoleOutput.append(newline + "LOG: XSL TRANSFORM CONTEXT FILES SELECTED: (DIR: " + dir + ")");
+			txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
+
+		} else {
+			System.out.println("Frame: No Xsl context files selected!");
 		}
+		fileChooser.setSelectedFile(new File(""));
+		fileChooser.setMultiSelectionEnabled(false);
+
+	}
 		
 		
 		
@@ -1505,45 +1559,7 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 			txtrResultOutput.setCaretPosition(txtrResultOutput.getText().length());
 			bottomRightTabbedPane.setEnabledAt(1, true);
 	
-		} else if (arg0.getSource() == mntmInvokeTransform) {
-				appControl.invokeXslContextTransform();
-				System.out.println("-- invokeXslContextTransform()! ");
-				//-- Console Printing
-				txtrConsoleOutput.append(newline + "LOG: XSL TRANSFORM INVOKED!");
-				txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
-		
-		} else if (arg0.getSource() == mntmSetTransformContext) {
-			fileChooser.setDialogTitle("SELECT XSL TRANSFORM CONTEXT FILES (xsl,xml/aml,trout)");
-			
-			if(!".".equals(eraProjectHomeDirectory))
-				fileChooser.setCurrentDirectory(new File(this.eraProjectHomeDirectory));
-			else fileChooser.setCurrentDirectory(new File(this.latestOpenedFolder));
-			
-			fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-			fileChooser.setMultiSelectionEnabled(true);
-			fileChooser.setSelectedFiles(new File[]{new File("")});
-			
-			int retVal = fileChooser.showOpenDialog(MainFrame.this);
-			if (retVal == JFileChooser.APPROVE_OPTION) {
-				System.out.println("GUIFrame: Open OK pressed");
-
-				File[] files = fileChooser.getSelectedFiles();
-				System.out.println("-- TRANSFORM CONTEXT files selected: # " + files.length);
-				this.appControl.initXslContext(files);
-				String dir = files[0].getParent();
-				System.out.println("-- TRANSFORM CONTEXT parent folder: " + dir);
-				this.latestOpenedFolder = dir;
-				//-- Console Printing
-				txtrConsoleOutput.append(newline + "LOG: XSL TRANSFORM CONTEXT FILES SELECTED: (DIR: " + dir + ")");
-				txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
-
-			} else {
-				System.out.println("Frame: No Xsl context files selected!");
-			}
-			fileChooser.setSelectedFile(new File(""));
-			fileChooser.setMultiSelectionEnabled(false);
-
-		} else 	if (arg0.getSource() == mntmConfigureSchema) {
+		}  else 	if (arg0.getSource() == mntmConfigureSchema) {
 			fileChooser.setDialogTitle("SELECT XML VALIDATIN SCHEMA FILE");
 			fileChooser.setSelectedFile(new File(""));
 			fileChooser.setCurrentDirectory(new File(this.eraProjectHomeDirectory + "/configure"));
