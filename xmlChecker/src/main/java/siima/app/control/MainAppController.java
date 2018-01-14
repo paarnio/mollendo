@@ -322,6 +322,28 @@ public class MainAppController {
 		return infobuff.toString();
 	} */
 	
+	
+	public void setStudentExFeedback(String feedback){
+		//TODO:
+		int studentRowIdx = this.viewFrame.getSelectedStudentTableRow();
+		int studentColIdx = this.viewFrame.getSelectedStudentTableCol(); 
+		
+		if(studentRowIdx>=0){
+			List<StudentType> students = this.studentContainer.getStudents();
+			StudentType student = students.get(studentRowIdx);
+			if(studentColIdx>=4){//If >=4 exercise is selected
+				int exerciseIdx = studentColIdx - 4;
+				List<ExerciseType> exes = student.getExercise();				
+				if(exes.size()>=exerciseIdx+1){
+					ExerciseType selEx = exes.get(exerciseIdx);
+					selEx.setFeedback(feedback);
+				}
+			}
+		}
+		
+		
+	}
+	
 	public String getSelectedStudentInfo(){
 		//Call MainFrame method getSelectedStudentTableRow()
 		//Selected row from StudenttablePanel
