@@ -260,7 +260,8 @@ public class TaskCycleProcessor {
 		int testcasecount=0;
 		for (TestCaseType tcase : testcases) {
 			testcasecount++;
-			logger.log(Level.INFO, "runTaskCycles(): --+ Student (" + submitcnt + ") --+ TestCase (" + testcasecount + ")");
+			String tcname = tcase.getName();
+			logger.log(Level.INFO, "runTaskCycles(): --+ Student (" + submitcnt + ") --+ TestCase (" + testcasecount + "):TCName(" + tcname + ")");
 			checkResultBuffer = new StringBuffer();
 			dirList = new ArrayList<String>();
 			fileList = new ArrayList<String>();
@@ -527,7 +528,7 @@ public class TaskCycleProcessor {
 					} // End Operation loop ---
 				} // End Flow loop ---
 				String points = tcase.getPoints();		
-				testcaseResults.add("STD:ST(" + submitcnt + "):TC(" + testcasecount + "):FL(" + stuFlow_ok + "):MSG(" + checkResultBuffer.toString() + ")");
+				testcaseResults.add("STD:ST(" + submitcnt + "):TC(" + testcasecount + ":" + tcname + "):FL(" + stuFlow_ok + "):MSG(" + checkResultBuffer.toString() + ")");
 				if((stuFlow_ok)&&(merFlow_ok)) testcasePoints.add(points); //TODO points as string
 				else testcasePoints.add("0");
 			}// End TestCase Loop ---

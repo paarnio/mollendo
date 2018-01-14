@@ -737,10 +737,12 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 			public void actionPerformed(ActionEvent arg0) {
 				//int tabnumber = tabbedPane.getSelectedIndex();
 				//this.studentTablePanel.
-				//String info = appControl.getSelectedStudentInfo(); 			
-				String stuText = rightmostBottomTextArea.getText();
-				String[] strs = stuText.split("FEEDBACK");
-				System.out.println("??????? Contains Feedback Msg" + strs[strs.length-1] );
+				//String info = appControl.getSelectedStudentInfo();
+				String stuText ="";
+				stuText = rightmostBottomTextArea.getText();
+				String[] txtparts = stuText.split("FEEDBACK");
+				appControl.setStudentExFeedback(txtparts[txtparts.length-1]);
+				System.out.println("??????? Contains Feedback Msg" + txtparts[txtparts.length-1] );
 				//boolean runEnabled = appControl.runConditions();stuText
 				//if(runEnabled) btnInvokeButton.setEnabled(true);
 			}

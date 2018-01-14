@@ -54,6 +54,10 @@ public class StudentJaxbContainer {
 		this.students = this.excelMng.readStudentsBaseData();
 		this.studentSubmits = new StudentSubmits();
 		this.studentSubmits.getStudent().addAll(students);
+		/*TODO: */
+		this.studentSubmits.setSubmitId("???");
+		this.studentSubmits.setDescription("???");
+		this.studentSubmits.setReferenceZip("???");
 		
 		return students;
 	}
@@ -134,10 +138,11 @@ public class StudentJaxbContainer {
 		 * unable to marshal type "siima.model.jaxb.checker.student.StudentSubmitsType" 
 		 * as an element because it is missing an @XmlRootElement annotation]
 		 */
-		StudentSubmits rootObject =  new StudentSubmits();
-		rootObject.setSubmitId("U1_sub1");
-		rootObject.getStudent().addAll(getStudents());
+		/*StudentSubmits rootObject =  new StudentSubmits();
+		rootObject.setSubmitId("U1_sub1");//TODO:???
+		rootObject.getStudent().addAll(getStudents()); */
 		
+		StudentSubmits rootObject =  this.studentSubmits;
 		JAXBContext context;
 
 		try {
