@@ -70,13 +70,20 @@ public class MainAppController {
 		
 	}
 
-	public void openProjectExcel(File project_xlsx ){
+	public boolean loadStudentDataFromXMLFile(File studentXML){
+		//NEW:
+		Path path = studentXML.toPath(); 
+		boolean ok = this.studentContainer.unmarshalStudentSubmitsType(path);
+		return ok;
+	}
+	
+	public void openProjectExcel(File project_xlsx, boolean loadStudentData ){
 		logger.info("======================================================");
 		logger.info("=====  openProjectExcel() Opening Project Excel  =====");
 		boolean ok = true;
 		this.projectExcelFile = project_xlsx.getAbsolutePath();
 		this.projectHome = project_xlsx.getParent();
-		this.initApplication();
+		this.initApplication(loadStudentData);
 		System.out.println("===HOME=== " + this.projectHome);
 		//return ok;
 	}
@@ -86,11 +93,15 @@ public class MainAppController {
 		excel_mng.saveAndCloseResultsExcel(true);
 	}
 	
-	public void initApplication(){
+	public void initApplication(boolean loadStudentData){
+		/* IF loadStudentData == true: Student data is read from project excel
+		 * IF loadStudentData == false: Student data can be later read from 
+		 * earlier Student Results xml files by unmarshalling.
+		 */
 		
 		excel_mng = new ExcelMng(this.projectExcelFile);
 		this.studentContainer = new StudentJaxbContainer(excel_mng);
-		this.studentContainer.readStudentBaseData();
+		if(loadStudentData) this.studentContainer.readStudentBaseData();
 		
 		this.taskFlowMetaDataList = excel_mng.getTaskFlowMetaDataList();
 		taskCycleProcessor = new TaskCycleProcessor(); //this.projectExcel);

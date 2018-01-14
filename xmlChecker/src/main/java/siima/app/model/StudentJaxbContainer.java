@@ -161,12 +161,13 @@ public class StudentJaxbContainer {
 		return true;
 	}
 	
-	public StudentSubmits unmarshalStudentSubmitsType(Path path) {
+	public boolean unmarshalStudentSubmitsType(Path path) {
 		/*
 		 * FROM: \git\valle-de-luna\ERAmlHandler JaxbContainer.java
 		 */
-		StudentSubmits unmarshalledSubmitsRootObject = null;
+		//StudentSubmits unmarshalledSubmitsRootObject = null;
 		//setTaskFlowFilePath(path); //latest loaded caex file
+		boolean ok = false;
 		JAXBContext context;
 		Schema schema;
 		
@@ -207,20 +208,24 @@ public class StudentJaxbContainer {
 	                logger.log(Level.ERROR, se.getMessage());
 	                se.printStackTrace();
 	            }
-	            // Unmarshalling main taskflow file
-	            //taskflowRootObject = 
-	            JAXBElement tfelem = (JAXBElement) u.unmarshal(Paths.get(path.toUri()).toFile());
-	            unmarshalledSubmitsRootObject = (StudentSubmits) tfelem.getValue();
-	            logger.log(Level.INFO, "loadData(): StudentSubmits RootObject created by unmarshalling the main student submits xml file!");
-	            
+	            // TODO: (MAY BE xml schema root element defined incorrectly: Unmarshalling 
+	            // " java.lang.ClassCastException: siima.model.jaxb.checker.student.StudentSubmits cannot be cast to javax.xml.bind.JAXBElement
+	           // JAXBElement tfelem = (JAXBElement) u.unmarshal(Paths.get(path.toUri()).toFile());
+	           // this.studentSubmits = (StudentSubmits) tfelem.getValue();
+	            //unmarshalledSubmitsRootObject = (StudentSubmits) tfelem.getValue();
+	            this.studentSubmits = (StudentSubmits) u.unmarshal(Paths.get(path.toUri()).toFile());
+	            ok = true;
+	            logger.log(Level.INFO, "loadData(): StudentSubmits RootObject created by unmarshalling student submits xml file (e.g. earlier check results xml");
+	            //TODO
+	            this.students = this.studentSubmits.getStudent();
 	            
 		} catch (JAXBException e) {
 
 			e.printStackTrace();
-			return null;
+			
 		}
 
-		return unmarshalledSubmitsRootObject;
+		return ok;
 
 	}
 

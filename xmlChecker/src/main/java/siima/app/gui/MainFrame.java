@@ -71,6 +71,8 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 	private JFileChooser fileChooser;
 	private JSplitPane m_contentPane;
 	private JMenuItem mntmOpen;
+	private JMenuItem mntmOpenWithout;
+	private JMenuItem mntmLoadStudentData;
 	private JMenuItem mntmOpenTaskFlow;
 	private JMenu newProjectVersionSubmenu;
 
@@ -223,13 +225,23 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		mntmOpen = new JMenuItem("Open Project Excel");
 		mntmOpen.addActionListener(this); // See: method											// actionPerformed(ActionEvent arg0)
 		mnFile.add(mntmOpen);
-		mntmOpen.setEnabled(true);	
+		mntmOpen.setEnabled(true);
+		
+		mntmOpenWithout = new JMenuItem("Open Project Excel Without Student Data");
+		mntmOpenWithout.addActionListener(this); // See: method											// actionPerformed(ActionEvent arg0)
+		mnFile.add(mntmOpenWithout);
+		mntmOpenWithout.setEnabled(true);	
+		
+		mntmLoadStudentData = new JMenuItem("Load Student XML Data");
+		mntmLoadStudentData.addActionListener(this); // See: method											// actionPerformed(ActionEvent arg0)
+		mnFile.add(mntmLoadStudentData);
+		mntmLoadStudentData.setEnabled(true);
 		
 		//TODO: Do not use this (might corrupt the excel)
 		mntmSave = new JMenuItem("Save and Close Project Excel ");
 		mntmSave.addActionListener(this);// See: method											// actionPerformed(ActionEvent arg0)
 		mnFile.add(mntmSave);
-		mntmSave.setEnabled(false);
+		mntmSave.setEnabled(false); //Not in use
 		
 		mnFile.addSeparator();
 
@@ -970,7 +982,8 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 				System.out.println("-- Opened file: " + mainOpenFile.getPath());
 				
 				//Application Initialization
-				appControl.openProjectExcel(mainOpenFile);
+				// reading also student data from project excel
+				appControl.openProjectExcel(mainOpenFile, true); 
 				//Displaying TaskFlow tree
 				JTree elementTree = appControl.getTaskFlowsTree();
 				if (elementTree != null)
@@ -995,6 +1008,80 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 				txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
 				
 				
+
+			} else {
+				System.out.println("Frame: No Open File Selected!");
+			}
+
+		} else if (arg0.getSource() == mntmOpenWithout) {
+			fileChooser.setDialogTitle("OPEN PROJECT EXCEL FILE: LOAD NO STUDENT DATA");
+			fileChooser.setSelectedFile(new File(""));
+			fileChooser.setCurrentDirectory(new File(this.eraProjectHomeDirectory));
+			int retVal = fileChooser.showOpenDialog(MainFrame.this);
+
+			if (retVal == JFileChooser.APPROVE_OPTION) {
+				System.out.println("GUIFrame: Open OK pressed");
+				mainOpenFile = fileChooser.getSelectedFile();
+				System.out.println("-- Opened file: " + mainOpenFile.getPath());				
+				//Application Initialization
+				// NO student data from project excel
+				appControl.openProjectExcel(mainOpenFile, false); 
+				//Displaying TaskFlow tree
+				JTree elementTree = appControl.getTaskFlowsTree();
+				if (elementTree != null)
+					this.getHierarchyTreeScrollPane().setViewportView(elementTree);
+				/* NOT NOW: Displaying Student Table
+				List<List<Object>> studentRowsList =  appControl.getStudentDataForTableRows();				
+				int rowidx = 0;
+				for(List<Object> rowData : studentRowsList){
+					studentTablePanel.setOrAddStudentTableRow(rowidx,rowData);
+					rowidx++;
+				} */
+				
+				String dir = mainOpenFile.getParent();
+				this.eraProjectHomeDirectory = dir;
+				this.latestOpenedFolder = dir;
+				// -- Enabling other menuitems
+				mntmInvoke.setEnabled(true);
+				//mntmSave.setEnabled(true); //do not use this
+				mntmShowResults.setEnabled(true);
+				// -- Console Printing ---				
+				txtrConsoleOutput.append(newline + "LOG: PROJECT EXCEL FILE OPENED: " + mainOpenFile.getName() + " - NO STUDENT DATA LOADED");
+				txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());				
+
+			} else {
+				System.out.println("Frame: No Open File Selected!");
+			}
+
+		} else if (arg0.getSource() == mntmLoadStudentData) {
+			fileChooser.setDialogTitle("OPEN STUDENT DATA XML FILE");
+			fileChooser.setSelectedFile(new File(""));
+			fileChooser.setCurrentDirectory(new File(this.eraProjectHomeDirectory)); // + "/data"));
+			int retVal = fileChooser.showOpenDialog(MainFrame.this);
+
+			if (retVal == JFileChooser.APPROVE_OPTION) {
+				System.out.println("GUIFrame: Open OK pressed");
+				File studentXMLFile = fileChooser.getSelectedFile();
+				System.out.println("-- Opened file: " + studentXMLFile.getPath());		
+				boolean ok = appControl.loadStudentDataFromXMLFile(studentXMLFile);
+				
+				/*  NOW: Displaying Student Table */
+				if (ok) {
+					List<List<Object>> studentRowsList = appControl.getStudentDataForTableRows();
+					int rowidx = 0;
+					for (List<Object> rowData : studentRowsList) {
+						studentTablePanel.setOrAddStudentTableRow(rowidx, rowData);
+						rowidx++;
+					}
+				}
+		
+				String dir = studentXMLFile.getParent();
+				this.latestOpenedFolder = dir;
+				// -- Enabling other menuitems
+				//mntmSave.setEnabled(true);
+				// -- Console Printing ---				
+				txtrConsoleOutput.append(newline + "LOG: STUDENT XML DATA LOADED: " + studentXMLFile.getName());
+				txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
 
 			} else {
 				System.out.println("Frame: No Open File Selected!");
