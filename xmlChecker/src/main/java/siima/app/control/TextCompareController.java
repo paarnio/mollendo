@@ -68,11 +68,15 @@ public class TextCompareController {
 	}
 
 	  public boolean compareTextLines(String textlines1, String textlines2){
-		  logger.log(Level.INFO, "Entering: " + getClass().getName() + " method: compareTextLines()");
-		  boolean isequal = true;
-		  
-		  isequal = runDiffMain(textlines1, textlines2);
-		  
+		  logger.log(Level.INFO, "Entering: method: compareTextLines()");
+		  boolean isequal = false;
+		  if((textlines1!=null)&&(textlines2!=null)&&(!textlines1.isEmpty())&&(!textlines2.isEmpty())){			 
+			  isequal = runDiffMain(textlines1, textlines2);			  
+		  } else {
+			  System.out.println("??????compareTextLines() ERROR: textlines1(" + textlines1 + ") textlines2(" + textlines2 + ")");
+			  logger.log(Level.ERROR, "method:compareTextLines():One of the textlines is NULL or EMPTY. Cannot be compared!"); 
+		  }
+	
 		  return isequal;
 	  }
 	  
@@ -87,9 +91,13 @@ public class TextCompareController {
 		   *  Diff(Operation.EQUAL, " world.")}
 		   * which means: delete "Hello", add "Goodbye" and keep " world."
 		   */
-		  logger.log(Level.INFO, "Entering: " + getClass().getName() + " method: runDiffMain()");
-			
+		  logger.log(Level.INFO, "Entering: method: runDiffMain()");			
 		  boolean isequal = true;
+		  
+		  if((textlines1==null)||(textlines2==null)||(textlines1.isEmpty())||(textlines2.isEmpty())){
+			  logger.log(Level.ERROR, "method:runDiffMain():One of the textlines is NULL or EMPTY. Cannot be compared!"); 
+			  
+		  }
 		  //System.out.println("\n---TextCompareController: runDiffMain()");
 		  LinkedList<Diff> diffslist = dmp.diff_main(textlines1, textlines2);
 		  dmp.diff_cleanupSemantic(diffslist);

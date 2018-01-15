@@ -38,7 +38,7 @@ public class TaskCycleProcessor {
 	private TaskFlowMetaData taskFlowMetaData;
 	private CheckerTaskFlowType currentTaskflow;
 	//For single testcase single student run
-	private boolean singleStudentRun = false;
+	private boolean singleStudentRun_MODE = false;
 	private int singleStudentTestCaseIdx = -1;
 	private int singleStudentIdx = -1;
 	private TriptychContent singleStudentCompareResults;
@@ -175,7 +175,7 @@ public class TaskCycleProcessor {
 		 * Processing one testcase for one student only
 		 */
 		logger.log(Level.INFO, "Entering: " + getClass().getName() + " method: runTestCaseForOneStudent() FOR ONE STUDENT");
-		this.singleStudentRun = true;
+		this.singleStudentRun_MODE = true;
 		this.singleStudentTestCaseIdx = testCaseIdx;
 		this.singleStudentIdx = studentIdx;
 		
@@ -198,7 +198,7 @@ public class TaskCycleProcessor {
 		 * Processing solutions of all the students
 		 */
 		logger.log(Level.INFO, "Entering: " + getClass().getName() + " method: runTaskCycles() FOR ALL STUDENTS");
-		this.singleStudentRun = false;
+		this.singleStudentRun_MODE = false;
 		this.singleStudentTestCaseIdx = -1;
 		this.singleStudentIdx = -1;
 		
@@ -473,7 +473,7 @@ public class TaskCycleProcessor {
 								arg1str = getChannelStringValue(par1);
 								arg2str = getChannelStringValue(par2);
 								
-								if(this.singleStudentRun){
+								if(this.singleStudentRun_MODE){
 									singleStuRefCompareStr1 = arg1str;
 									singleStuRefCompareStr2 = arg2str;
 								}
@@ -481,11 +481,11 @@ public class TaskCycleProcessor {
 								String result = "EQUAL";
 								compare_ctrl.setUp();	
 								
-								if((stuFlow_ok && refFlow_ok)||(this.singleStudentRun)){//compare only successful flows in all students case
+								if((stuFlow_ok && refFlow_ok)||(this.singleStudentRun_MODE)){//compare only successful flows in all students case
 									boolean isequal = compare_ctrl.compareTextLines(arg1str, arg2str);
 									if (!isequal) {									
 										//Parameters: (filtDiffOper, minLength, cutLength, ignore)									 
-										if((this.singleStudentRun)||(!this.writeToStudentExcel))
+										if((this.singleStudentRun_MODE)||(!this.writeToStudentExcel))
 											operErrorBuffer = compare_ctrl.getFilteredResults("ALL", 0, 1000, " ");
 										else
 											operErrorBuffer = compare_ctrl.getFilteredResults("DELETE_INSERT", 0, 1000, " ");
@@ -532,7 +532,7 @@ public class TaskCycleProcessor {
 				if((stuFlow_ok)&&(merFlow_ok)) testcasePoints.add(points); //TODO points as string
 				else testcasePoints.add("0");
 			}// End TestCase Loop ---
-			if(!this.singleStudentRun){
+			if(!this.singleStudentRun_MODE){
 				setStudentResultsData(submitcnt, testcasecount, testcaseResults, operationErrors, testcasePoints);
 				if(this.writeToStudentExcel)
 					writeSubmitTestCaseResults(submitcnt, testcasecount, testcaseResults, operationErrors, testcasePoints);
@@ -540,7 +540,7 @@ public class TaskCycleProcessor {
 				displaySingleStudentRunResults(singleStuRefCompareStr1, singleStuRefCompareStr2, testcaseResults, operationErrors, testcasePoints);
 			}
 		}//End Student zip loop	---	
-		if(!this.singleStudentRun) writeAllResultsAndCloseExcel(true); 
+		if(!this.singleStudentRun_MODE) writeAllResultsAndCloseExcel(true); 
 		logger.log(Level.INFO, "runTaskCycles(): ==== ALL STUDENT SUBMITS (#" + submitcnt + ") PROSESSED ===");
 		logger.log(Level.INFO, "runTaskCycles(): ==== FINISH ===");
 	}

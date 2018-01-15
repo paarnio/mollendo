@@ -715,20 +715,7 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		gbc_rightmostBottomButtonPanel.gridy = 1;
 		rightmostBottomPanel.add(rightmostBottomButtonPanel, gbc_rightmostBottomButtonPanel);
 		
-		JButton btnUpdateStudentTable = new JButton("Update Table");
-		btnUpdateStudentTable.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				List<List<Object>> studentRowsList =  appControl.getStudentDataForTableRows();				
-				int rowidx = 0;
-				for(List<Object> rowData : studentRowsList){
-					studentTablePanel.setOrAddStudentTableRow(rowidx,rowData);
-					rowidx++;
-				}			
-				txtrConsoleOutput.append(newline + "LOG: UPDATING RESULTS IN THE STUDENTS TABLE: ");
-				txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
-			}
-		});
-		rightmostBottomButtonPanel.add(btnUpdateStudentTable);
+	
 
 		JButton btnShowSelectedStudentButton = new JButton("Select Student");
 		btnShowSelectedStudentButton.addActionListener(new ActionListener() {
@@ -761,7 +748,20 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		});
 		rightmostBottomButtonPanel.add(btnSaveFeedbackTextButton);
 		
-		
+		JButton btnUpdateStudentTable = new JButton("Update Table");
+		btnUpdateStudentTable.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				List<List<Object>> studentRowsList =  appControl.getStudentDataForTableRows();				
+				int rowidx = 0;
+				for(List<Object> rowData : studentRowsList){
+					studentTablePanel.setOrAddStudentTableRow(rowidx,rowData);
+					rowidx++;
+				}			
+				txtrConsoleOutput.append(newline + "LOG: UPDATING RESULTS IN THE STUDENTS TABLE: ");
+				txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
+			}
+		});
+		rightmostBottomButtonPanel.add(btnUpdateStudentTable);
 		
 	}
 	
@@ -834,7 +834,7 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 					 * HIGHLIGHTING DELETE PARTS IN STUDENT SOLUTION
 					 */
 					
-					
+					if(stucontent!=null){
 					if (isDelFraq || isEquFraq) { // For Student solution
 						int stuP0 = stucontent.indexOf(fraqstr, stuJump);
 						//System.out.println("???? P0: " + stuP0);
@@ -854,10 +854,13 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 
 						}
 					}
+					} else {
+						System.out.println("???? displaySolutionCompareResults(): stucontent is NULL ");
+					}
 					/*
 					 * HIGHLIGHTING INSERT PARTS IN REFERENCE SOLUTION
 					 */
-					
+					if(refcontent!=null){
 					if(isInsFraq||isEquFraq){//For Reference solution
 						int refP0 = refcontent.indexOf(fraqstr, refJump);
 						//System.out.println("???? REF P0: " + refP0);
@@ -878,6 +881,9 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 						}
 						
 						
+					}
+					} else {
+						System.out.println("???? displaySolutionCompareResults(): refcontent is NULL ?? ");
 					}
 				}			
 				
