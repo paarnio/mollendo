@@ -153,6 +153,7 @@ public class TaskCycleProcessor {
 	public void initProcessor(String projectHome, int selectedTaskflowIndex, TaskFlowMetaData taskFlowMD, CheckerTaskFlowType currentTaskflow, StudentJaxbContainer studentContainer, ExcelMng excel_mng) {
 		//Excel MainInfo contains file paths relative to project home
 		//this.singleStudentRun = false;
+		logger.log(Level.INFO, "Entering: method: initProcessor()");
 		this.excel_mng = excel_mng;
 		this.excel_mng.openResultsExcel();
 		this.projectHome = projectHome;
@@ -168,13 +169,14 @@ public class TaskCycleProcessor {
 		//TODO: NEW
 		this.studentContainer = studentContainer;
 		this.students = studentContainer.getStudents();
+		logger.log(Level.INFO, "************ TASKFLOW/EXERCISE: " + this.currentTaskflow.getExercise() + " CHECKING INITIALIZED **********");
 	}
 	
 	public void runTestCaseForOneStudent(int testCaseIdx, int studentIdx) {
 		/*
 		 * Processing one testcase for one student only
 		 */
-		logger.log(Level.INFO, "Entering: " + getClass().getName() + " method: runTestCaseForOneStudent() FOR ONE STUDENT");
+		logger.log(Level.INFO, "Entering: method: runTestCaseForOneStudent() FOR ONE STUDENT");
 		this.singleStudentRun_MODE = true;
 		this.singleStudentTestCaseIdx = testCaseIdx;
 		this.singleStudentIdx = studentIdx;
@@ -226,7 +228,7 @@ public class TaskCycleProcessor {
 		/*
 		 *  read reference files from a reference ZIP
 		 */
-		logger.log(Level.INFO, "Entering: " + getClass().getName() + " method: runTaskCycles()");
+		logger.log(Level.INFO, "Entering: method: runTaskCycles()");
 		boolean testcase_ok = true;
 		boolean stuFlow_ok = true;
 		boolean refFlow_ok = true;
@@ -384,10 +386,16 @@ public class TaskCycleProcessor {
 									
 									//OPTION Results to String
 									ByteArrayOutputStream resultOutputStream = new ByteArrayOutputStream();
-									String retStr = trans_ctrl.runTransformToString(resultOutputStream,  paramlist, valuelist);			
-									setChannelStringValue(returnChannel, retStr);
+									String retStr = trans_ctrl.runTransformToString(resultOutputStream,  paramlist, valuelist);
+									if(retStr!=null){
+										setChannelStringValue(returnChannel, retStr);
+									} else {
+										setChannelStringValue(returnChannel, "XSLT_ERROR");
+										operErrorBuffer = trans_ctrl.getOperErrorBuffer();
+										oper_ok = false;
+									}
 								} else {
-									setChannelStringValue(returnChannel, "XSLT_ERROR");
+									setChannelStringValue(returnChannel, "XSLT_PREPARE_ERROR");
 									operErrorBuffer = trans_ctrl.getOperErrorBuffer();
 								}
 							}
@@ -495,8 +503,10 @@ public class TaskCycleProcessor {
 									System.out.println("====== MERGE RESULT: " + result + "============\n");	
 									setChannelStringValue(returnChannel, result);
 									checkResultBuffer.append("OPER_STD:MERGE:RESULT(" + result + ")");
-								} else { // stuFlow or refFlow not succesfull
-									checkResultBuffer.append("OPER_STD:MERGE:RESULT(" + "NOT-COMPARED" + ")");
+								} else if((!stuFlow_ok)&&(refFlow_ok)){ // stuFlow not succesfull
+									checkResultBuffer.append("OPER_STD:MERGE:RESULT(" + "NOT-COMPARED-STUFLOW-ERROR" + ")");
+								} else if(!refFlow_ok){ // refFlow not succesfull
+									checkResultBuffer.append("OPER_STD:MERGE:RESULT(" + "NOT-COMPARED-REFFLOW-ERROR" + ")");
 								}
 							}
 								break;
