@@ -385,6 +385,11 @@ public class MainAppController {
 					infobuff.append("\n--------------------------------\n");
 					infobuff.append("\n\tEXERCISE(" + (exerciseIdx+1) + "): " + excode + "\n\tTCPOINTS:");
 					for(Integer point : tcPoints) infobuff.append(" " + point);
+					
+					List<String> errors = selEx.getErrorsOfTestCases();
+					infobuff.append("\n\tERRORS:");
+					for(String errmsg : errors) infobuff.append("\n\t" + errmsg + "");
+					
 					infobuff.append("\n\tFEEDBACK(" + (exerciseIdx+1) + "): " + feedback);
 				}
 			}
@@ -552,6 +557,54 @@ public class MainAppController {
 	 * ADDONS
 	 * 
 	 */
+	
+	public boolean invokeSpecificTransform(String transformtype, File[] files) {
+		/*
+		 * Implemented specific transform types:"results2csv"; "results2students"; 
+		 * Implemented generic transform: "contextSrc2Trout"
+		 * 
+		 */
+		boolean ok = false;
+		String sourcefile=null; //xml-file
+		String troutfile=null; //output file .trout/.csv
+		
+		if(files.length>1){
+			File file1 = files[0];
+			File file2 = files[1];
+			String file1path = file1.getAbsolutePath();
+			String file2path = file2.getAbsolutePath();
+			if(file1path.endsWith("xml")) {
+				sourcefile = file1path;
+				troutfile = file2path;
+			} else if(file2path.endsWith("xml")) {
+				sourcefile = file2path;
+				troutfile = file1path;
+			}
+		} else if(files.length==1){
+			File file1 = files[0];
+			String file1path = file1.getAbsolutePath();
+			if(file1path.endsWith("xml")) {
+				sourcefile = file1path;
+				String newoutfile = sourcefile.substring(0,sourcefile.length()-4);
+				if("results2csv".equalsIgnoreCase(transformtype))
+					newoutfile = newoutfile + "_csv.csv";
+				else if("results2students".equalsIgnoreCase(transformtype))
+					newoutfile = newoutfile + "_xml.trout";
+				else if("contextSrc2Trout".equalsIgnoreCase(transformtype))
+					newoutfile = newoutfile + ".trout";
+				troutfile = newoutfile;
+			}
+		}
+		
+		if((sourcefile!=null)&&(troutfile!=null)){
+			this.contextXsltAddon.doSpecificTransform(transformtype, sourcefile, troutfile);
+			ok = true;
+		}
+		
+		return ok;
+		
+	}
+	
 	
 	public void invokeXslContextTransform() {
 

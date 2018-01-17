@@ -124,6 +124,8 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 	
 	private JMenuItem mntmInvokeTransform;
 	private JMenuItem mntmSetTransformContext;
+	private JMenuItem mntmResultsToCsv;
+	private JMenuItem mntmResultsToStudentsXml;
 	/*
 	private JMenuItem mntmGenOntologyModel;
 	private JMenuItem mntmNewProject;
@@ -227,7 +229,9 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		mnFile.add(mntmOpen);
 		mntmOpen.setEnabled(true);
 		
-		mntmOpenWithout = new JMenuItem("Open Project Excel Without Student Data");
+		mnFile.addSeparator();
+		
+		mntmOpenWithout = new JMenuItem("Open Project Excel without Student Data");
 		mntmOpenWithout.addActionListener(this); // See: method											// actionPerformed(ActionEvent arg0)
 		mnFile.add(mntmOpenWithout);
 		mntmOpenWithout.setEnabled(true);	
@@ -235,7 +239,9 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		mntmLoadStudentData = new JMenuItem("Load Student XML Data");
 		mntmLoadStudentData.addActionListener(this); // See: method											// actionPerformed(ActionEvent arg0)
 		mnFile.add(mntmLoadStudentData);
-		mntmLoadStudentData.setEnabled(true);
+		mntmLoadStudentData.setEnabled(false);
+		
+		mnFile.addSeparator();
 		
 		//TODO: Do not use this (might corrupt the excel)
 		mntmSave = new JMenuItem("Save and Close Project Excel ");
@@ -243,7 +249,6 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		mnFile.add(mntmSave);
 		mntmSave.setEnabled(false); //Not in use
 		
-		mnFile.addSeparator();
 
 		mntmOpenTaskFlow = new JMenuItem("Open TaskFlow File...");
 		mntmOpenTaskFlow.addActionListener(this);
@@ -369,12 +374,24 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		
 		mnView.addSeparator();
 		//NEW SUBMENU
-		JMenu submenu = new JMenu("Transform Context");
+		JMenu submenu = new JMenu("Transform");
+		
+		mntmResultsToCsv = new JMenuItem("Transform To CSV (.csv/.trout) ...");
+		mntmResultsToCsv.addActionListener(this);
+		submenu.add(mntmResultsToCsv);
+		
+		mntmResultsToStudentsXml = new JMenuItem("Transform To Students XML (.trout) ...");
+		mntmResultsToStudentsXml.addActionListener(this);
+		submenu.add(mntmResultsToStudentsXml);
+		
+		
+		submenu.addSeparator();
+		
 		mntmSetTransformContext = new JMenuItem("Set Context...");
 		mntmSetTransformContext.addActionListener(this);
 		submenu.add(mntmSetTransformContext);
 
-		mntmInvokeTransform = new JMenuItem("Run Transform");
+		mntmInvokeTransform = new JMenuItem("Run Context Transform");
 		mntmInvokeTransform.addActionListener(this);
 		submenu.add(mntmInvokeTransform);
 
@@ -1048,9 +1065,11 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 				this.eraProjectHomeDirectory = dir;
 				this.latestOpenedFolder = dir;
 				// -- Enabling other menuitems
-				mntmInvoke.setEnabled(true);
+				mntmLoadStudentData.setEnabled(true);
+				//mntmInvoke.setEnabled(true);
+				//mntmShowResults.setEnabled(true);
 				//mntmSave.setEnabled(true); //do not use this
-				mntmShowResults.setEnabled(true);
+				
 				// -- Console Printing ---				
 				txtrConsoleOutput.append(newline + "LOG: PROJECT EXCEL FILE OPENED: " + mainOpenFile.getName() + " - NO STUDENT DATA LOADED");
 				txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());				
@@ -1083,8 +1102,8 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		
 				String dir = studentXMLFile.getParent();
 				this.latestOpenedFolder = dir;
-				// -- Enabling other menuitems
-				//mntmSave.setEnabled(true);
+				mntmInvoke.setEnabled(true);
+				mntmShowResults.setEnabled(true);
 				// -- Console Printing ---				
 				txtrConsoleOutput.append(newline + "LOG: STUDENT XML DATA LOADED: " + studentXMLFile.getName());
 				txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
@@ -1253,11 +1272,74 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		fileChooser.setSelectedFile(new File(""));
 		fileChooser.setMultiSelectionEnabled(false);
 
+	} else if (arg0.getSource() == mntmResultsToCsv) {
+		fileChooser.setDialogTitle("SELECT XSL TRANSFORM SOURCE XML FILE (.xml) AND OUTPUT FILE (.trout/.csv)");
+		
+		if(!".".equals(eraProjectHomeDirectory))
+			fileChooser.setCurrentDirectory(new File(this.eraProjectHomeDirectory));
+		else fileChooser.setCurrentDirectory(new File(this.latestOpenedFolder));
+		
+		fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		fileChooser.setMultiSelectionEnabled(true);
+		fileChooser.setSelectedFiles(new File[]{new File("")});
+		
+		int retVal = fileChooser.showOpenDialog(MainFrame.this);
+		if (retVal == JFileChooser.APPROVE_OPTION) {
+			System.out.println("GUIFrame: Open OK pressed");
+
+			File[] files = fileChooser.getSelectedFiles();
+			System.out.println("-- TRANSFORM SOURCE AND OUTPUT files selected: # " + files.length);
+			boolean ok = this.appControl.invokeSpecificTransform("results2csv",files);
+			String dir = files[0].getParent();
+			System.out.println("-- TRANSFORM CONTEXT parent folder: " + dir);
+			this.latestOpenedFolder = dir;
+			//-- Console Printing
+			txtrConsoleOutput.append(newline + "LOG: TRANSFORM RESULTS2CSV SUCCESS(" + ok + ") FILES IN DIR:" + dir + "");
+			txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
+
+		} else {
+			System.out.println("Frame: No XML/CSV/TROUT files selected!");
+		}
+		fileChooser.setSelectedFile(new File(""));
+		fileChooser.setMultiSelectionEnabled(false);
+
+	} else if (arg0.getSource() == mntmResultsToStudentsXml) {
+		fileChooser.setDialogTitle("SELECT XSL TRANSFORM SOURCE XML FILE (.xml) AND OUTPUT FILE (.trout)");
+		
+		if(!".".equals(eraProjectHomeDirectory))
+			fileChooser.setCurrentDirectory(new File(this.eraProjectHomeDirectory));
+		else fileChooser.setCurrentDirectory(new File(this.latestOpenedFolder));
+		
+		fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		fileChooser.setMultiSelectionEnabled(true);
+		fileChooser.setSelectedFiles(new File[]{new File("")});
+		
+		int retVal = fileChooser.showOpenDialog(MainFrame.this);
+		if (retVal == JFileChooser.APPROVE_OPTION) {
+			System.out.println("GUIFrame: Open OK pressed");
+
+			File[] files = fileChooser.getSelectedFiles();
+			System.out.println("-- TRANSFORM SOURCE AND OUTPUT files selected: # " + files.length);
+			boolean ok = this.appControl.invokeSpecificTransform("results2students",files);
+			String dir = files[0].getParent();
+			System.out.println("-- TRANSFORM CONTEXT parent folder: " + dir);
+			this.latestOpenedFolder = dir;
+			//-- Console Printing
+			txtrConsoleOutput.append(newline + "LOG: TRANSFORM RESULTS2STUDENTS SUCCESS(" + ok + ") FILES IN DIR:" + dir + "");
+			txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
+
+		} else {
+			System.out.println("Frame: No XML/CSV/TROUT files selected!");
+		}
+		fileChooser.setSelectedFile(new File(""));
+		fileChooser.setMultiSelectionEnabled(false);
+
 	}
 		
 		
 		
-		/* OLD From ERAmlHandler project
+		
+		/* OLD From ERAmlHandler project (results2students)
 		 * For File Open and Save action dialogs AND For mntmGenerateJmonkey AND
 		 * for mntmLoadRules AND mntmInvokeReasoner AND mntmSaveResultModels AND
 		 * mntmCaexToAsp AND mntmConfigureSchema AND mntmSetTransformContext AND

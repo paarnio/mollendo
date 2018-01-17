@@ -31,20 +31,20 @@ public class ContextXSLTransform {
 
 	public void doSpecificTransform(String transformtype, String sourcefile, String troutfile) {
 		/*
-		 * Implemented specific transform types:"caex2jmonkey"; "caex2aspfacts"; 
+		 * Implemented specific transform types:"results2csv"; "results2students"; 
 		 * Implemented generic transform: "contextSrc2Trout"
 		 * 
 		 */
 		System.out.println("-XSLTransform: doTransform(): " + transformtype);
 
-		String caex2jmonkey_xsl = "configure/xslt/CaexLego2monkey3.xsl";
-		String caex2aspfacts_xsl = "configure/xslt/Caex2AspFacts.xsl";
+		String results2csv_xsl = "configure/xslt/results2mc_csv.xsl";
+		String results2students_xsl = "configure/xslt/results2students_xml.xsl";
 		Source xslstream = null;
 
-		if ("caex2jmonkey".equalsIgnoreCase(transformtype)) {
-			xslstream = new StreamSource(caex2jmonkey_xsl);
-		} else if ("caex2aspfacts".equalsIgnoreCase(transformtype)) {
-			xslstream = new StreamSource(caex2aspfacts_xsl);
+		if ("results2csv".equalsIgnoreCase(transformtype)) {
+			xslstream = new StreamSource(results2csv_xsl);
+		} else if ("results2students".equalsIgnoreCase(transformtype)) {
+			xslstream = new StreamSource(results2students_xsl);
 		} else if ("contextSrc2Trout".equalsIgnoreCase(transformtype)) {
 			sourcefile = this.getXslContextSrcFile();
 			troutfile = this.getXslContextTroutFile();
