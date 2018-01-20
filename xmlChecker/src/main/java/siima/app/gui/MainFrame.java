@@ -62,6 +62,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JEditorPane;
 
+import static javax.swing.ScrollPaneConstants.*;
 
 public class MainFrame extends JFrame implements ActionListener, ItemListener { 
 	public String eraProjectHomeDirectory = ".";
@@ -572,6 +573,7 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		
 		//2018-01-20 line number ruler text area
 		JScrollPane lineNrRulerScrollPane = new JScrollPane();
+		lineNrRulerScrollPane.setHorizontalScrollBarPolicy(HORIZONTAL_SCROLLBAR_NEVER);
 		GridBagConstraints gbc_lineNrRulerScrollPane = new GridBagConstraints();
 		gbc_lineNrRulerScrollPane.fill = GridBagConstraints.BOTH;
 		gbc_lineNrRulerScrollPane.gridx = 0;
@@ -584,7 +586,9 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		lineRulerTextArea.setLineWrap(false); //(true);
 		lineRulerTextArea.setText("  1:\n  2:\n  3:\n  4:\n  5:\n  6:\n  7:\n  8:\n  9:\n 10:\n"
 				+ " 11:\n 12:\n 13:\n 14:\n 15:\n 16:\n 17:\n 18:\n 19:\n 20:\n"
-				+ " 21:\n 22:\n 23:\n 24:\n 25:\n 26:\n 27:\n 28:\n 29:\n 30:");
+				+ " 21:\n 22:\n 23:\n 24:\n 25:\n 26:\n 27:\n 28:\n 29:\n 30:\n");
+				//+ " 31:\n 32:\n 33:\n 34:\n 35:\n 36:\n 37:\n 38:\n 39:\n 40:\n");
+		lineRulerTextArea.setCaretPosition(HORIZONTAL_SCROLLBAR_NEVER);
 		
 		lineNrRulerScrollPane.setViewportView(lineRulerTextArea);
 		//TODO: How to set bar position? lineNrRulerScrollPane.getViewport().setLocation(0,0);
