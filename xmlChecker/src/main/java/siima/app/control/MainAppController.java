@@ -221,12 +221,13 @@ public class MainAppController {
 		}
 	}
 	
-	public boolean checkFileExistenceInZip(){
+	public List<Integer> checkFileExistenceInZip(){
 		/*
 		 * Solution existence check done for all students
 		 */
 		logger.log(Level.INFO, "" + getClass().getSimpleName() + " checkFileExistenceInZip()");
 		boolean check_ok = true;
+		List<Integer> zipProblems = new ArrayList<Integer>();
 		StringBuffer operErrorBuffer = new StringBuffer();
 		taskCycleProcessor.getRead_oper().setOperErrorBuffer(new StringBuffer());
 		
@@ -248,6 +249,7 @@ public class MainAppController {
 						operErrorBuffer = taskCycleProcessor.getRead_oper().getOperErrorBuffer();
 						System.out.println("???checkFileExistenceInZip():" + operErrorBuffer.toString());
 						check_ok = false;
+						zipProblems.add(Integer.valueOf(stucnt));
 						logger.log(Level.INFO,"checkFileExistenceInZip(): Student's (" + stucnt
 										+ ") solution NOT EXISTS:" + stuFilePathInZip + " in zip:" + stuZipFilePath
 										+ " EXISTS(false)");
@@ -259,7 +261,7 @@ public class MainAppController {
 			check_ok = false;
 			System.out.println("???? stuSolution NOT SELECTED: Select it and run checkFileExistenceInZip() again! "); 
 		}
-		return check_ok;
+		return zipProblems;
 	}
 	
 	public void compareSolutionFiles() {

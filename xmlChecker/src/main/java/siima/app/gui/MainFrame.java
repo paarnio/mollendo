@@ -1220,12 +1220,13 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 			 */
 			txtrConsoleOutput.append(newline + "LOG: CHECKING EXISTENCE OF SOLUTION ZIPS AND FILES OF ALL STUDENTS");
 			txtrConsoleOutput.append(newline + "LOG: --- NOTE: stuSolution has to be selected before this command!");
-			boolean allexist = appControl.checkFileExistenceInZip();			
+			List<Integer> zipProblems = appControl.checkFileExistenceInZip();			
 			
-			if(!allexist) {
+			if((zipProblems!=null)&&(!zipProblems.isEmpty())) {
 				txtrConsoleOutput.append(newline + "LOG: --- ??? SOME SOLUTIONS MISSING ??? ---");
-				txtrConsoleOutput.append(newline + "LOG: --- ??? OR stuSolution NOT SELECTED ??? ---");
-				txtrConsoleOutput.append(newline + "LOG: --- ??? DO NOT RUN TASKFLOWS ??? ---");
+				txtrConsoleOutput.append(newline + "LOG: --- ??? OR stuSolution NOT SELECTED ??? ---" + newline + "PROBLEMS WITH [");
+				for(Integer zipn : zipProblems) txtrConsoleOutput.append(" " + zipn);
+				txtrConsoleOutput.append("]" + newline + "LOG: --- ??? DO NOT RUN TASKFLOWS ??? ---");
 			} else {
 				txtrConsoleOutput.append(newline + "LOG: --- ALL SOLUTIONS EXIST!! ---");
 			}
