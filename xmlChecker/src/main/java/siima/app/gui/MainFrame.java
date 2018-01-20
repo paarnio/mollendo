@@ -564,16 +564,36 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		rightTopVerticalSplitPane.setLeftComponent(rightTopLeftPanel);
 		
 		GridBagLayout gbl_rightTopLeftPanel = new GridBagLayout();
-		gbl_rightTopLeftPanel.columnWidths = new int[] { 250, 0 };
-		gbl_rightTopLeftPanel.rowHeights = new int[] { 300, 0 };//{ 50, 200, 0, 0 };
-		gbl_rightTopLeftPanel.columnWeights = new double[] { 1.0, Double.MIN_VALUE };
+		gbl_rightTopLeftPanel.columnWidths = new int[] {5, 250, 0 }; //NEW 5,250,0 old(250,0)
+		gbl_rightTopLeftPanel.rowHeights = new int[] { 300, 0 };//{ 300,0 };
+		gbl_rightTopLeftPanel.columnWeights = new double[] {0.05, 1.0, Double.MIN_VALUE };
 		gbl_rightTopLeftPanel.rowWeights = new double[] { 1.0, Double.MIN_VALUE };//{ 1.0, 1.0, 1.0, Double.MIN_VALUE };
 		rightTopLeftPanel.setLayout(gbl_rightTopLeftPanel);
-
+		
+		//2018-01-20 line number ruler text area
+		JScrollPane lineNrRulerScrollPane = new JScrollPane();
+		GridBagConstraints gbc_lineNrRulerScrollPane = new GridBagConstraints();
+		gbc_lineNrRulerScrollPane.fill = GridBagConstraints.BOTH;
+		gbc_lineNrRulerScrollPane.gridx = 0;
+		gbc_lineNrRulerScrollPane.gridy = 0;
+		rightTopLeftPanel.add(lineNrRulerScrollPane, gbc_lineNrRulerScrollPane);
+		
+		JTextArea lineRulerTextArea = new JTextArea();
+		lineRulerTextArea.setRows(30);
+		lineRulerTextArea.setColumns(5);
+		lineRulerTextArea.setLineWrap(false); //(true);
+		lineRulerTextArea.setText("  1:\n  2:\n  3:\n  4:\n  5:\n  6:\n  7:\n  8:\n  9:\n 10:\n"
+				+ " 11:\n 12:\n 13:\n 14:\n 15:\n 16:\n 17:\n 18:\n 19:\n 20:\n"
+				+ " 21:\n 22:\n 23:\n 24:\n 25:\n 26:\n 27:\n 28:\n 29:\n 30:");
+		
+		lineNrRulerScrollPane.setViewportView(lineRulerTextArea);
+		//TODO: How to set bar position? lineNrRulerScrollPane.getViewport().setLocation(0,0);
+		
+		// Student text scroll pane
 		JScrollPane rightTopLeftScrollPane = new JScrollPane();
 		GridBagConstraints gbc_rightTopLeftScrollPane = new GridBagConstraints();
 		gbc_rightTopLeftScrollPane.fill = GridBagConstraints.BOTH;
-		gbc_rightTopLeftScrollPane.gridx = 0;
+		gbc_rightTopLeftScrollPane.gridx = 1; //New 1 old(0)
 		gbc_rightTopLeftScrollPane.gridy = 0;
 		rightTopLeftPanel.add(rightTopLeftScrollPane, gbc_rightTopLeftScrollPane);
 
@@ -703,7 +723,7 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		JPanel rightmostBottomPanel = new JPanel();
 		RightmostSideVerticalSplitPane.setRightComponent(rightmostBottomPanel);
 		GridBagLayout gbl_rightmostBottomPanel = new GridBagLayout();
-		gbl_rightmostBottomPanel.columnWidths = new int[] { 250, 0 };
+		gbl_rightmostBottomPanel.columnWidths = new int[] { 200, 0 };
 		gbl_rightmostBottomPanel.rowHeights = new int[] { 100, 0, 0 };
 		gbl_rightmostBottomPanel.columnWeights = new double[] { 1.0, Double.MIN_VALUE };
 		gbl_rightmostBottomPanel.rowWeights = new double[] { 1.0, 0.2, Double.MIN_VALUE };
