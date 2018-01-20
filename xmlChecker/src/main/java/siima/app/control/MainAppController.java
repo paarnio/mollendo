@@ -382,15 +382,15 @@ public class MainAppController {
 					String excode = selEx.getExerciseId();
 					String feedback = selEx.getFeedback();
 					List<Integer> tcPoints = selEx.getPointsOfTestCases();
-					infobuff.append("\n--------------------------------\n");
-					infobuff.append("\n\tEXERCISE(" + (exerciseIdx+1) + "): " + excode + "\n\tTCPOINTS:");
+					infobuff.append("\n--------------------------------");
+					infobuff.append("\nEXERCISE(" + (exerciseIdx+1) + "): " + excode + "\nTCPOINTS:");
 					for(Integer point : tcPoints) infobuff.append(" " + point);
 					
 					List<String> errors = selEx.getErrorsOfTestCases();
-					infobuff.append("\n\tERRORS:");
-					for(String errmsg : errors) infobuff.append("\n\t" + errmsg + "");
+					infobuff.append("\nERRORS:");
+					for(String errmsg : errors) infobuff.append("\n" + errmsg + "");
 					
-					infobuff.append("\n\tFEEDBACK(" + (exerciseIdx+1) + "): " + feedback);
+					infobuff.append("\nFEEDBACK(" + (exerciseIdx+1) + "): " + feedback);
 				}
 			}
 			
