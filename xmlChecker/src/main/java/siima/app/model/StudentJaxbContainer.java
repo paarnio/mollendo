@@ -54,10 +54,10 @@ public class StudentJaxbContainer {
 		this.students = this.excelMng.readStudentsBaseData();
 		this.studentSubmits = new StudentSubmits();
 		this.studentSubmits.getStudent().addAll(students);
-		/*TODO: */
-		this.studentSubmits.setSubmitId("???");
-		this.studentSubmits.setDescription("???");
-		this.studentSubmits.setReferenceZip("???");
+		/* NEW: */
+		this.studentSubmits.setSubmitId(this.excelMng.readHeaderSubmitId());
+		this.studentSubmits.setDescription(this.excelMng.readHeaderSubmitDescription());
+		this.studentSubmits.setReferenceZip(this.excelMng.readHeaderReferenceZipName());
 		
 		return students;
 	}

@@ -37,8 +37,15 @@ public class ExcelMng {
 	public String taskFlowXmlFile;
 	public String zipFilesSheet;
 	
+	//Submit header data
+	private int submitHeaderCol = 2;
+	private int submitIdRow = 1;
+	private int submitDescriptionRow = 2;
+	private int submitRefZipRow = 3;
+	
 	private int submitZipCol = 4;
 	private int submitZipFirstRow = 10;
+	
 	private int submitZipCount = 0; //read from MainInfo Sheet
 	private String studentZipFileFolder;
 	private String referenceZipFileFolder;
@@ -283,6 +290,35 @@ public class ExcelMng {
 		
 		return zips;
 	}
+	
+	/*
+	 *  NEW 2018-01-21
+	 *  Submit header data
+	 */
+	
+	public String readHeaderSubmitId(){
+		/*
+		 * Submit header data:
+			submitHeaderCol = 2;
+			submitIdRow = 1;
+			submitDescriptionRow = 2;
+			submitRefZipRow = 3;
+		 */
+
+		return this.ex2s.getCellValue(submitHeaderCol, submitIdRow);
+	}
+	
+	public String readHeaderSubmitDescription(){
+		
+		return this.ex2s.getCellValue(submitHeaderCol, submitDescriptionRow);
+	}
+	
+	public String readHeaderReferenceZipName(){
+		
+		return this.ex2s.getCellValue(submitHeaderCol, submitRefZipRow);
+	}
+	
+	
 	public void writeTestcaseResults(List<String> results, List<String> tcPoints, int submitCount, TaskFlowMetaData taskFlowMD){
 		/* Writing all the testcase results of one student submit 
 		 * into the students row in excel file 
