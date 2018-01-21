@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!-- taskflow7.xsd version=7 2018-01-21 --> 
+<!-- v7: new operation option opt-element added -->
+<!-- taskflow6.xsd version=6 2018-01-08 --> 
+<!-- UPDATE: element name="name" type="xsd:string" 
+	added for checkerTaskFlowType and testCaseType -->
+<!-- v6: description element new location -->	
+  <xsd:annotation>
+    <xsd:documentation xml:lang="en">
+	 2018-01-08 taskflow6.xsd : XML checker taskflow schema for siima.model.jaxb.checker.taskflow  
+    </xsd:documentation>
+  </xsd:annotation>
+
+  <xsd:element name="checkerTaskFlow" type="checkerTaskFlowType"/>
+
+  <xsd:complexType name="checkerTaskFlowType">
+    <xsd:sequence>
+	  <xsd:element name="round" type="xsd:string"/>
+	  <xsd:element name="exercise" type="xsd:string"/>
+	   <!-- v6 added: name optional-->
+	  <xsd:element name="name" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <xsd:element name="description" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <!-- v5 added: Solution file path in zip -->
+	  <xsd:element name="stuSolution" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <xsd:element name="refSolution" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <!-- submitted zip file path containing solution file -->
+      <xsd:element name="stuZip" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <xsd:element name="refZip" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <xsd:element name="testCase" type="testCaseType" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element name="comment" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+    <!--xsd:attribute name="defDate" type="xsd:date"/-->
+  </xsd:complexType>
+
+  <xsd:complexType name="testCaseType">
+    <xsd:sequence>
+	   <!-- v6 added: name optional-->
+	  <xsd:element name="name" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <xsd:element name="description" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <xsd:element name="points" type="xsd:string"/>
+      <xsd:element name="stuDir1" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <xsd:element name="stuDir2" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="stuFile1" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <xsd:element name="stuFile2" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="refDir1" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <xsd:element name="refDir2" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="refFile1" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <xsd:element name="refFile2" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="flow" type="flowType" minOccurs="0" maxOccurs="unbounded"/>
+	  <xsd:element name="comment" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+	<xsd:attribute name="number" type="xsd:int"/>
+  </xsd:complexType>
+  
+  <xsd:complexType name="flowType">
+    <xsd:sequence>	  
+	  <xsd:element name="type" type="xsd:string"/>
+      <xsd:element name="name" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <!-- v6: new location -->
+	  <xsd:element name="description" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <xsd:element name="inChannel" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <xsd:element name="outChannel" type="xsd:string"  minOccurs="0" maxOccurs="1"/>
+	  <xsd:element name="operation" type="operationType" minOccurs="0" maxOccurs="unbounded"/>
+	  <xsd:element name="comment" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	 </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="operationType">
+    <xsd:sequence>
+	  <xsd:element name="type" type="xsd:string"/>
+      <xsd:element name="name" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <!-- v6: new location -->
+	  <xsd:element name="description" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <xsd:element name="par1" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <xsd:element name="par2" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <xsd:element name="paramValueList" type="paramValueListType" minOccurs="0" maxOccurs="1"/>
+	  <!-- v7: new operation option element opt -->
+	  <xsd:element name="opt" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <xsd:element name="return" type="xsd:string"/>
+	  <xsd:element name="comment" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	 </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="paramValueListType">
+    <xsd:sequence>
+	  <xsd:element name="paramList" type="paramlistType" minOccurs="1" maxOccurs="1"/>
+	  <xsd:element name="valueList" type="valuelistType" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+	
+   <xsd:simpleType name="paramlistType">
+    <xsd:list itemType="xsd:string"/>
+  </xsd:simpleType>
+  
+  <xsd:simpleType name="valuelistType">
+    <xsd:list itemType="xsd:string"/>
+  </xsd:simpleType>
+  
+</xsd:schema>
+
