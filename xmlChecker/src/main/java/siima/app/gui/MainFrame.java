@@ -1052,6 +1052,7 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 				mntmShowResults.setEnabled(true);
 				// -- Console Printing ---				
 				txtrConsoleOutput.append(newline + "LOG: PROJECT EXCEL FILE OPENED: " + mainOpenFile.getName());
+				txtrConsoleOutput.append(newline + "--- WITH: STUDENT BASE INFO" );
 				txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
 				
 				
@@ -1061,7 +1062,7 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 			}
 
 		} else if (arg0.getSource() == mntmOpenWithout) {
-			fileChooser.setDialogTitle("OPEN PROJECT EXCEL FILE: LOAD NO STUDENT DATA");
+			fileChooser.setDialogTitle("OPEN PROJECT EXCEL FILE: WITHOUT STUDENT DATA");
 			fileChooser.setSelectedFile(new File(""));
 			fileChooser.setCurrentDirectory(new File(this.eraProjectHomeDirectory));
 			int retVal = fileChooser.showOpenDialog(MainFrame.this);
@@ -1077,13 +1078,6 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 				JTree elementTree = appControl.getTaskFlowsTree();
 				if (elementTree != null)
 					this.getHierarchyTreeScrollPane().setViewportView(elementTree);
-				/* NOT NOW: Displaying Student Table
-				List<List<Object>> studentRowsList =  appControl.getStudentDataForTableRows();				
-				int rowidx = 0;
-				for(List<Object> rowData : studentRowsList){
-					studentTablePanel.setOrAddStudentTableRow(rowidx,rowData);
-					rowidx++;
-				} */
 				
 				String dir = mainOpenFile.getParent();
 				this.eraProjectHomeDirectory = dir;
@@ -1096,6 +1090,7 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 				
 				// -- Console Printing ---				
 				txtrConsoleOutput.append(newline + "LOG: PROJECT EXCEL FILE OPENED: " + mainOpenFile.getName() + " - NO STUDENT DATA LOADED");
+				txtrConsoleOutput.append(newline + "--- NEXT: Select File/Load Student XML Data - TO LOAD EXISTING STUDENT DATA WITH RESULTS (results.xml)");
 				txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());				
 
 			} else {
