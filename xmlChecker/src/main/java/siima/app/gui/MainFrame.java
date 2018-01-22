@@ -1053,6 +1053,7 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 				// -- Console Printing ---				
 				txtrConsoleOutput.append(newline + "LOG: PROJECT EXCEL FILE OPENED: " + mainOpenFile.getName());
 				txtrConsoleOutput.append(newline + "--- WITH: STUDENT BASE INFO" );
+				txtrConsoleOutput.append(newline + "--- NEXT: RUN STUDENT ZIP EXISTENCE CHECK! (Menu/Student/Existence check" );
 				txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
 				
 				
@@ -1125,6 +1126,7 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 				mntmShowResults.setEnabled(true);
 				// -- Console Printing ---				
 				txtrConsoleOutput.append(newline + "LOG: STUDENT XML DATA LOADED: " + studentXMLFile.getName());
+				//txtrConsoleOutput.append(newline + "--- NEXT: RUN STUDENT ZIP EXISTENCE CHECK! (Menu/Student/Existence check" );
 				txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
 
 			} else {
