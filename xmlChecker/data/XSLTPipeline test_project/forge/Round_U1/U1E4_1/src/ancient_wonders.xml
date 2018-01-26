@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!-- U1E3: Students' version of ancient_wonders.xml to query against with XPath. -->
+
+<ancient_wonders>
+	<wonder id="01">
+		<name language="English">Great Pyramid of Giza</name>
+		<location>Giza, Egypt</location>
+		<height units="feet">455</height>
+		<history>
+			<year_built era="BC">2570</year_built>
+			<story>
+        It is believed to have taken 20 years and as many as 100,000 workers to complete the Great Pyramid.<para/>
+				There is much speculation about the construction methodologies and intentions of the pyramid, including references to the moon, the Orion constellation, continental gravity, and more.<para/>
+				What is known, however, is that the four sides of the base are more than 700 feet long, and differ in length by no more than 8 inches.
+      </story>
+		</history>
+		<main_image file="pyramid.jpg" w="528" h="349"/>
+		<source sectionid="123" newspaperid="71"/>
+		<source sectionid="21" newspaperid="42"/>
+	</wonder>
+	
+	<wonder id="02">
+		<name language="English">Hanging Gardens of Babylon</name>
+		<location>Al Hillah, Iraq</location>
+		<height units="feet">0</height>
+		<history>
+			<year_built era="BC">600</year_built>
+			<year_destroyed era="BC">226</year_destroyed>
+			<how_destroyed>earthquake</how_destroyed>
+			<story>
+        The first and most interesting fact about the gardens is that there is significant controversy about whether the gardens existed at all.<para/>
+				Regardless of the final outcome, it is interesting to note that the imagination of the poets and ancient historians have created one of the Wonders of the World.
+      </story>
+		</history>
+		<main_image file="gardens.jpg" w="528" h="349"/>
+		<source sectionid="11" newspaperid="24"/>
+		<source sectionid="18" newspaperid="151"/>
+	</wonder>
+	
+	<wonder id="03">
+		<name language="English">Statue of Zeus at Olympia</name>
+		<name language="Greek">Δίας μυθολογία</name>
+		<location>Olympia, Greece</location>
+		<height units="meter">13</height>
+		<history>
+			<year_built era="BC">430</year_built>
+			<year_destroyed era="AD">426</year_destroyed>
+			<how_destroyed>fire</how_destroyed>
+			<story>
+				Carved from ivory, on a throne of cedarwood, the statue was created by the Greek sculptor Phidias around 430 BC.<para/>
+				In 426 AD, the temple was destroyed and many historians believe that the statue was destroyed at that time.<para/>
+				Although many copies of the statue were made during its 800+ year lifespan, none are known to have survived.
+			</story>
+		</history>
+		<main_image file="zeus.jpg" w="528" h="349"/>
+	</wonder>
+	
+	<wonder id="04">
+		<name language="English">Lighthouse of Alexandria</name>
+		<name language="Greek">ὁ Φάρος τῆς Ἀλεξανδρείας</name>
+		<location>Alexandria, Egypt</location>
+		<height units="feet">384</height>
+		<history>
+			<year_built era="BC">280</year_built>
+			<year_destroyed era="AD">1323</year_destroyed>
+			<how_destroyed>earthquake</how_destroyed>
+			<story>
+        Located on the island of Pharos in the harbor of Alexandria, the lighthouse may be the most famous lighthouse in history. The lighthouse was very different than modern lighthouses in that it was built in three stages, all sloping inward.<para/>
+				The Lighthouse of Alexandria was so famous in ancient times that the island on which it stood, Pharos, became the root word for lighthouse in many languages (for example, "phare" in French).
+      </story>
+		</history>
+		<main_image file="lighthouse.jpg" w="528" h="349"/>
+		<source sectionid="112" newspaperid="53"/>
+	</wonder>
+	
+	<wonder id="05">
+		<name language="English">Mausoleum at Halicarnassus</name>
+		<name language="Greek">Μαυσωλεῖον Ἁλικαρνασσεύς</name>
+		<location>Bodrum, Turkey</location>
+		<height units="feet">135</height>
+		<history>
+			<year_built era="BC">352</year_built>
+			<year_destroyed era="AD">1404</year_destroyed>
+			<how_destroyed>earthquake</how_destroyed>
+			<story>
+				The monument was built as a tomb for Mausolus, a governor in the Persian Empire. Sparing no expense, his widowed wife Artemisia (who was also his sister as was considered customary) commissioned well-known Greek architects and artists to design the tomb.<para/>
+				The monument stood for nearly 17 centuries and was eventually destroyed by a series of earthquakes. And, like the Lighthouse of Alexandria, the tomb was so famous that Mausolus's name has become the root word for large tombs in many languages (for example, "mausoleo" in Spanish).</story>
+		</history>
+		<main_image file="mausoleum.jpg" w="528" h="349"/>
+		<source sectionid="141" newspaperid="21"/>
+		<source sectionid="2" newspaperid="19"/>
+	</wonder>
+</ancient_wonders>

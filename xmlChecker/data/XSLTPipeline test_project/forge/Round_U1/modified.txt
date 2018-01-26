@@ -1,0 +1,22 @@
+
+ADDED ERRORS IN STUDENT ZIPS 100000-100003
+
+U1E1_1 100000: X=3: src/CDcatalog_X_hidden.xml (correct)
+U1E1_1 100001: X=1: src/CDcatalog_X_hidden.xml
+U1E1_1 100002: X=2: src/CDcatalog_X_hidden.xml
+U1E1_1 100003: X=3: src/CDcatalog_X_hidden.xml (correct)
+
+U1E2_1 100000: X=4: production_line_vX_hidden.xml (correct)
+U1E2_1 100001: X=1: production_line_vX_hidden.xml
+U1E2_1 100002: X=2: production_line_vX_hidden.xml
+U1E2_1 100003: X=3: production_line_vX_hidden.xml
+
+U1E3_1 100000: X:all correct: plant_catalog_X_hidden.xsl (correct)
+U1E3_1 100001: X:1.kysymys incorrect: plant_catalog_X_hidden.xsl
+U1E3_1 100002: X:2.kysymys incorrect: plant_catalog_X_hidden.xsl
+U1E3_1 100003: X:3.kysymys incorrect: plant_catalog_X_hidden.xsl
+
+U1E4_1 100000: X:all correct: ancient_wonders_X_hidden.xsl(correct)
+U1E4_1 100001: X:1.kysymys incorrect: ancient_wonders_X_hidden.xsl
+U1E4_1 100002: X:2.kysymys incorrect: ancient_wonders_X_hidden.xsl
+U1E4_1 100003: X:3.kysymys incorrect: ancient_wonders_X_hidden.xsl

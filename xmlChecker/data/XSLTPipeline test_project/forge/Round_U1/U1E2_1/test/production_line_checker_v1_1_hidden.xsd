@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<!-- 2017 production_line_checker_v1_1_hidden.xsd -->
+<!-- XSD Document for checking phase 1 (vaihe1) of XML document: production_line_v1_hidden.xml -->
+<!-- Main element structure: Only units and modules. No attributes -->
+<!--Global element definitions -->
+<xs:element name="workstation"/>
+<xs:element name="starter_module"/>
+<xs:element name="lift_module"/>	
+
+
+<!-- Structural definition -->	
+	<xs:complexType name="unitType">
+		<xs:choice>
+			<!-- xs:element defaults to: minOccurs="1" maxOccurs="1" -->
+			<xs:element ref="workstation"/>
+			<xs:element ref="starter_module"/>
+			<xs:element ref="lift_module"/>
+		</xs:choice>
+		<xs:anyAttribute processContents="skip"/>
+	</xs:complexType>
+
+
+	<xs:element name="production_line">
+		<xs:complexType>
+			<xs:sequence>
+  			<xs:element name="unit" type="unitType" minOccurs="4" maxOccurs="4"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

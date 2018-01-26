@@ -1,0 +1,29 @@
+<!-- Create a valid production_line.xml document following the instructions of U1E2_1 -->
+
+<!-- Huom: muista tallettaa tiedosto UTF-8 formaatissa: Encode in UTF-8 (without BOM)-->
+<!-- Huom: Tehtävän vaihe 4: lisää seuraavat tekstisisällöt description ja name elementeille: -->
+<!-- lift_module1 name: Päätynostin PN1
+		description: Nostaa paletin alakuljettimelta ylös Starter-moduulille 
+		conveyor1 description: Palettikuljetin (ala)
+		conveyor2 description: Palettikuljetin (ylä)
+		conveyor3 description: Palettikuljetin (hissitaso)		
+		-->
+<!-- starter_module name: Starter-moduuli ST1
+		description: Jakaa paletit kolmelle kuljettimelle 
+		conveyor1 description: Palettikuljetin (keski)
+		conveyor2 description: Palettikuljetin (syöttö1)
+		conveyor3 description: Palettikuljetin (syöttö2)		
+		-->		
+<!-- workstation name: Työasema TA1
+		description: Sisältää vasemman ja oikean työpisteen 
+		conveyor1 description: Palettikuljetin (keski)
+		conveyor2 description: Palettikuljetin (vasen)
+		conveyor3 description: Palettikuljetin (oikea)		
+		-->
+<!-- lift_module2 name: Päätynostin PN2
+		description: Laskee paletin ylhäältä alas paluukuljettimelle 
+		conveyor1 description: Palettikuljetin (ala)
+		conveyor2 description: Palettikuljetin (ylä)
+		conveyor3 description: Palettikuljetin (hissitaso)		
+		-->
+		

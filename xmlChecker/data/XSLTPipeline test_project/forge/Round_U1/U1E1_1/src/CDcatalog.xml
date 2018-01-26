@@ -1,0 +1,55 @@
+<!-- This CDcatalog.xml file is not well-formed xml-document -->
+<!-- Fix the errors and make it a well-formed xml-document following the instructions of U1E1_1 -->
+<!-- Note: Encoding should be converted to UTF-8 (without BOM) -->
+  <CATALOG/>
+  <CD>
+    <Title>The very best of</Title>
+	Info: A collection record :info
+    <Artist>
+	<First name>Cat</First name>
+	<Last name>Stevens</Last name>
+	</Artist>	
+    <Country>UK</Country>
+    <Company>Island</Company>
+    <£Price>8.90</£Price>
+	<$Price>12.90</$Price>
+    <1Year>1990</1Year>
+   <2Year>1998</2Year>	   
+  </CD>
+  <CD>
+    <Title>Stop</Title>
+    <Artist>Sam Brown
+	<artist>David Bovie
+	</Artist>
+	</artist>
+    <Country>UK</Country>
+    <Company>A and M</Company>
+    <price>8.90</price>
+    <Year>1988</Year>
+  </CD>
+   <CD>
+    <Title>Pavarotti Gala Concert</Title>
+	Info: A live recording :info
+    <Artist>
+	Luciano Pavarotti
+	</Artist><Country>UK</Country>
+    <Rec.Company>DECCA</Rec.Company> London Studios.
+    <Price>9.90£</Price>
+    <Year>The first publishing year is unknown(<1939).</Year>
+	<Year>The latest edition 1960 </Year>
+  </CD>
+   <CD>
+    <Title>Roadrunner</Title>
+	Info: Studio recording :info
+    <Artist>
+	Hurriganes
+	</Artist><Country>Finland</Country>
+    <Rec+Company>Marcus Music-studios</Rec+Company> London Studios.
+    <a-placeholder-for-PRICE>
+    <Year>album released by the Finnish rock band Hurriganes in 1974</Year>
+	<Year>The latest edition 1960 </Year>
+  </CD>
+ 
+ 
+ 
+ 

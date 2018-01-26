@@ -28,6 +28,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 //import java.util.logging.Level;
 //import java.util.logging.Logger;
@@ -61,6 +62,10 @@ public class XSLTransformer {
 	//XML InputStream saved to a Byte Array and ByteArrayInputStream
 	private byte[] xmlInputBytes;	
 	private ByteArrayInputStream xmlBAInputStream;
+	
+	//Intermediate XSL Transform XML results saved to a Byte Array and ByteArrayInputStream
+	private byte[] xmlTransformResultBytes;
+	private ByteArrayInputStream xmlTransformResultInputStream;
 	
 	private Templates template;	
 	private Transformer transformer;
@@ -149,6 +154,43 @@ public class XSLTransformer {
 		}
 		return ok;
 	}
+	
+	/* TODO: NEW 2018-01-26 Saving XSL Result OutputStream (XML) into byte array */
+	public boolean saveTransformResultAsByteArray(OutputStream xslresult, String XSL_or_XML){
+	/* Param xsl_or_xml allowed values: "XSL" OR "XML"
+	 * https://stackoverflow.com/questions/26960997/convert-outputstream-to-bytearrayoutputstream
+	 * TOIMIIKO???	
+	 */
+		logger.log(Level.INFO, "Entering:  method: saveOutputStreamAsByteArray()");
+		//operErrorBuffer = new StringBuffer();
+		boolean ok = false;
+		//try {
+			ByteArrayOutputStream baos = (ByteArrayOutputStream) xslresult;
+			//org.apache.commons.io.IOUtils.copy(xslinput, baos);
+		
+			if("XSL".equalsIgnoreCase(XSL_or_XML)){
+				//XSL NOT allowed. XML expected
+				logger.log(Level.INFO, "ERROR: saveOutputStreamAsByteArray() Saving XSLT result XML output: So XSL_or_XML should be 'XML' But it is : " + XSL_or_XML);
+				//this.xslInputBytes = baos.toByteArray();
+				ok = false;
+			} else if("XML".equalsIgnoreCase(XSL_or_XML)){
+				this.xmlTransformResultBytes = baos.toByteArray();
+				this.xmlTransformResultInputStream = new ByteArrayInputStream(this.xmlTransformResultBytes);
+				ok = true;
+				String str = new String(this.xmlTransformResultBytes); //Arrays.toString(this.xmlTransformResultBytes);
+				System.out.println("?????????????? SAVED XSLT RESULT AS BYTE ARRAY ?????????\n" + str);
+				System.out.println("\n?????????????? WAS IT OK ?????????");
+			}
+			
+		/*} catch (IOException e) {
+			logger.log(Level.ERROR, "MSG:" + e.getMessage());
+			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessage());
+			//e.printStackTrace();
+			ok = false;
+		}*/
+		return ok;
+	}
+	
 	
 	
 	public boolean invokeXSLTransform(OutputStream outputstream, List<String> params, List<String> values) {

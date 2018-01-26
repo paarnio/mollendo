@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<!-- 2017 production_line_checker_v3_1_hidden.xsd -->
+<!-- XSD Document for checking phase 3 (vaihe3) of XML document: production_line_v3_hidden.xml -->
+<!-- Main element structure with type- AND OTHER attributes required-->
+<!-- Not yet required: name and description elements -->
+
+<!-- Global element definitions -->
+<xs:element name="crossing"/>
+<xs:element name="name"/>
+<xs:element name="description"/>
+
+<!-- Non-module type element definitions. -->
+
+<!-- "Sub-module" level element definitions. -->
+<xs:element name="conveyor">	
+	<xs:complexType>
+		<xs:choice minOccurs="0" maxOccurs="2">
+			<xs:element ref="description"/>
+		</xs:choice>
+		<xs:attribute name="type" use="required"/>
+		<xs:attribute name="feed" use="required"/>
+		<!--xs:anyAttribute processContents="skip"/-->
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="sensor">	
+	<xs:complexType>
+		<xs:choice minOccurs="0" maxOccurs="2">
+			<xs:element ref="description"/>
+		</xs:choice>
+		<!--xs:anyAttribute processContents="skip"/-->
+		<xs:attribute name="type" use="required"/>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="chassis">	
+	<xs:complexType>
+		<!-- prev: choice min=1, max=1 -->
+		<xs:sequence>
+			<xs:element ref="sensor"/>
+		</xs:sequence>
+		<!--xs:anyAttribute processContents="skip"/-->
+		<xs:attribute name="type" use="required"/>
+		<xs:attribute name="width" use="required"/>
+		<xs:attribute name="height" use="required"/>
+		<xs:attribute name="length" use="required"/>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="lifter_shelf">	
+	<xs:complexType>
+		<!-- prev: choice min=1, max=2 -->
+		<xs:all>
+			<xs:element ref="conveyor"/>
+		</xs:all>
+		<xs:anyAttribute processContents="skip"/>
+	</xs:complexType>
+</xs:element>
+
+<!-- Module level element definitions. -->
+<xs:element name="workstation">
+	<xs:complexType>
+        <!-- min=3 to not require name/description. -->
+		<xs:choice minOccurs="3" maxOccurs="10">
+			<xs:element ref="conveyor" minOccurs="3" maxOccurs="3"/>
+			<xs:element ref="crossing" minOccurs="3" maxOccurs="3"/>
+			<xs:element ref="sensor" minOccurs="2" maxOccurs="2"/>
+			<xs:element ref="name"/>
+			<xs:element ref="description"/>
+		</xs:choice>
+		<!--xs:anyAttribute processContents="skip"/-->
+		<xs:attribute name="modID" use="required"/>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="starter_module">
+	<xs:complexType>
+        <!-- min=3 to not require name/description. -->
+		<xs:choice minOccurs="3" maxOccurs="10">
+			<xs:element ref="conveyor" minOccurs="3" maxOccurs="3"/>
+			<xs:element ref="crossing" minOccurs="3" maxOccurs="3"/>
+			<xs:element ref="sensor" minOccurs="2" maxOccurs="2"/>
+			<xs:element ref="name"/>
+			<xs:element ref="description"/>
+		</xs:choice>
+		<!--xs:anyAttribute processContents="skip"/-->
+		<xs:attribute name="modID" use="required"/>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="lift_module">
+	<xs:complexType>
+		<!-- min=4 to not require name/description. -->
+		<xs:choice minOccurs="4" maxOccurs="10">
+			<xs:element ref="conveyor" minOccurs="2" maxOccurs="2"/>
+			<xs:element ref="lifter_shelf"/>
+			<xs:element ref="chassis"/>
+			<xs:element ref="sensor"/>
+			<xs:element ref="name"/>
+			<xs:element ref="description"/>
+		</xs:choice>
+		<!--xs:anyAttribute processContents="skip"/-->
+		<xs:attribute name="modID" use="required"/>
+	</xs:complexType>
+</xs:element>
+	
+<!-- Base structural definition -->
+	<xs:complexType name="unitType">
+		<xs:sequence>
+			<xs:group ref="unit_parts"/>
+		</xs:sequence>
+		<xs:anyAttribute processContents="skip"/>
+	</xs:complexType>
+
+	<xs:group name="unit_parts">
+		<xs:choice>
+			<!-- xs:element defaults to: minOccurs="1" maxOccurs="1" -->
+			<xs:element ref="workstation"/>
+			<xs:element ref="starter_module"/>
+			<xs:element ref="lift_module"/>
+		</xs:choice>
+	</xs:group>
+
+
+	<xs:element name="production_line">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="unit" type="unitType" minOccurs="4" maxOccurs="4"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

@@ -1,0 +1,214 @@
+testcases:
+  tests:
+  - points:
+      - 'u1e4P.1'
+      - 'u1e4P.2'
+    description: "U1E4_xpath_test1"
+    student_run:
+      test_file: ancient_wonders.xml
+      xml_folder: src/
+      xsd_folder: src/
+      ancient_wonders: ancient_wonders.xsl
+    solution_run:
+      test_file: ancient_wonders_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+      ancient_wonders: ancient_wonders_hidden.xsl
+    command:
+      - xmlstarlet
+      - tr
+      - "%{xsd_folder}%{ancient_wonders}"
+      - -s
+      - kysymys=11
+      - "%{xml_folder}%{test_file}"
+  - points:
+      - 'u1e4P.3'
+      - 'u1e4P.4'
+    description: "U1E4_xpath_test2"
+    student_run:
+      test_file: ancient_wonders.xml
+      xml_folder: src/
+      xsd_folder: src/
+      ancient_wonders: ancient_wonders.xsl
+    solution_run:
+      test_file: ancient_wonders_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+      ancient_wonders: ancient_wonders_hidden.xsl
+    command:
+      - xmlstarlet
+      - tr
+      - "%{xsd_folder}%{ancient_wonders}"
+      - -s
+      - kysymys=12
+      - "%{xml_folder}%{test_file}"
+  - points:
+      - 'u1e4P.5'
+      - 'u1e4P.6'
+    description: "U1E4_xpath_test3"
+    student_run:
+      test_file: ancient_wonders.xml
+      xml_folder: src/
+      xsd_folder: src/
+      ancient_wonders: ancient_wonders.xsl
+    solution_run:
+      test_file: ancient_wonders_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+      ancient_wonders: ancient_wonders_hidden.xsl
+    command:
+      - xmlstarlet
+      - tr
+      - "%{xsd_folder}%{ancient_wonders}"
+      - -s
+      - kysymys=13
+      - "%{xml_folder}%{test_file}"
+  - points:
+      - 'u1e4P.7'
+      - 'u1e4P.8'
+    description: "U1E4_xpath_test4"
+    student_run:
+      test_file: ancient_wonders.xml
+      xml_folder: src/
+      xsd_folder: src/
+      ancient_wonders: ancient_wonders.xsl
+    solution_run:
+      test_file: ancient_wonders_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+      ancient_wonders: ancient_wonders_hidden.xsl
+    command:
+      - xmlstarlet
+      - tr
+      - "%{xsd_folder}%{ancient_wonders}"
+      - -s
+      - kysymys=14
+      - "%{xml_folder}%{test_file}"
+  - points:
+      - 'u1e4P.9'
+      - 'u1e4P.10'
+    description: "U1E4_xpath_test5"
+    student_run:
+      test_file: ancient_wonders.xml
+      xml_folder: src/
+      xsd_folder: src/
+      ancient_wonders: ancient_wonders.xsl
+    solution_run:
+      test_file: ancient_wonders_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+      ancient_wonders: ancient_wonders_hidden.xsl
+    command:
+      - xmlstarlet
+      - tr
+      - "%{xsd_folder}%{ancient_wonders}"
+      - -s
+      - kysymys=15
+      - "%{xml_folder}%{test_file}"
+  - points:
+      - 'u1e4P.11'
+      - 'u1e4P.12'
+    description: "U1E4_xpath_test6"
+    student_run:
+      test_file: ancient_wonders.xml
+      xml_folder: src/
+      xsd_folder: src/
+      ancient_wonders: ancient_wonders.xsl
+    solution_run:
+      test_file: ancient_wonders_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+      ancient_wonders: ancient_wonders_hidden.xsl
+    command:
+      - xmlstarlet
+      - tr
+      - "%{xsd_folder}%{ancient_wonders}"
+      - -s
+      - kysymys=16
+      - "%{xml_folder}%{test_file}"
+  - points:
+      - 'u1e4P.13'
+      - 'u1e4P.14'
+    description: "U1E4_xpath_test7"
+    student_run:
+      test_file: ancient_wonders.xml
+      xml_folder: src/
+      xsd_folder: src/
+      ancient_wonders: ancient_wonders.xsl
+    solution_run:
+      test_file: ancient_wonders_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+      ancient_wonders: ancient_wonders_hidden.xsl
+    command:
+      - xmlstarlet
+      - tr
+      - "%{xsd_folder}%{ancient_wonders}"
+      - -s
+      - kysymys=17
+      - "%{xml_folder}%{test_file}"
+  - points:
+      - 'u1e4P.15'
+      - 'u1e4P.16'
+    description: "U1E4_xpath_test8"
+    student_run:
+      test_file: ancient_wonders.xml
+      xml_folder: src/
+      xsd_folder: src/
+      ancient_wonders: ancient_wonders.xsl
+    solution_run:
+      test_file: ancient_wonders_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+      ancient_wonders: ancient_wonders_hidden.xsl
+    command:
+      - xmlstarlet
+      - tr
+      - "%{xsd_folder}%{ancient_wonders}"
+      - -s
+      - kysymys=18
+      - "%{xml_folder}%{test_file}"
+  - points:
+      - 'u1e4P.17'
+      - 'u1e4P.18'
+    description: "U1E4_xpath_test9"
+    student_run:
+      test_file: ancient_wonders.xml
+      xml_folder: src/
+      xsd_folder: src/
+      ancient_wonders: ancient_wonders.xsl
+    solution_run:
+      test_file: ancient_wonders_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+      ancient_wonders: ancient_wonders_hidden.xsl
+    command:
+      - xmlstarlet
+      - tr
+      - "%{xsd_folder}%{ancient_wonders}"
+      - -s
+      - kysymys=19
+      - "%{xml_folder}%{test_file}"
+  - points:
+      - 'u1e4P.19'
+      - 'u1e4P.20'
+    description: "U1E4_xpath_test10"
+    student_run:
+      test_file: ancient_wonders.xml
+      xml_folder: src/
+      xsd_folder: src/
+      ancient_wonders: ancient_wonders.xsl
+    solution_run:
+      test_file: ancient_wonders_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+      ancient_wonders: ancient_wonders_hidden.xsl
+    command:
+      - xmlstarlet
+      - tr
+      - "%{xsd_folder}%{ancient_wonders}"
+      - -s
+      - kysymys=20
+      - "%{xml_folder}%{test_file}"
+
+ 

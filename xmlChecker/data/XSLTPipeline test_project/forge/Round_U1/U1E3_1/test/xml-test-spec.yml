@@ -1,0 +1,214 @@
+testcases:
+  tests:
+  - points:
+      - 'u1e3P.1'
+      - 'u1e3P.2'
+    description: "U1E3_xpath_test1"
+    student_run:
+      test_file: plant_catalog.xml
+      xml_folder: src/
+      xsd_folder: src/
+      plant_catalog: plant_catalog.xsl
+    solution_run:
+      test_file: plant_catalog_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+      plant_catalog: plant_catalog_hidden.xsl
+    command:
+      - xmlstarlet
+      - tr
+      - "%{xsd_folder}%{plant_catalog}"
+      - -s
+      - kysymys=1
+      - "%{xml_folder}%{test_file}"
+  - points:
+      - 'u1e3P.3'
+      - 'u1e3P.4'
+    description: "U1E3_xpath_test2"
+    student_run:
+      test_file: plant_catalog.xml
+      xml_folder: src/
+      xsd_folder: src/
+      plant_catalog: plant_catalog.xsl
+    solution_run:
+      test_file: plant_catalog_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+      plant_catalog: plant_catalog_hidden.xsl
+    command:
+      - xmlstarlet
+      - tr
+      - "%{xsd_folder}%{plant_catalog}"
+      - -s
+      - kysymys=2
+      - "%{xml_folder}%{test_file}"
+  - points:
+      - 'u1e3P.5'
+      - 'u1e3P.6'
+    description: "U1E3_xpath_test3"
+    student_run:
+      test_file: plant_catalog.xml
+      xml_folder: src/
+      xsd_folder: src/
+      plant_catalog: plant_catalog.xsl
+    solution_run:
+      test_file: plant_catalog_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+      plant_catalog: plant_catalog_hidden.xsl
+    command:
+      - xmlstarlet
+      - tr
+      - "%{xsd_folder}%{plant_catalog}"
+      - -s
+      - kysymys=3
+      - "%{xml_folder}%{test_file}"
+  - points:
+      - 'u1e3P.7'
+      - 'u1e3P.8'
+    description: "U1E3_xpath_test4"
+    student_run:
+      test_file: plant_catalog.xml
+      xml_folder: src/
+      xsd_folder: src/
+      plant_catalog: plant_catalog.xsl
+    solution_run:
+      test_file: plant_catalog_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+      plant_catalog: plant_catalog_hidden.xsl
+    command:
+      - xmlstarlet
+      - tr
+      - "%{xsd_folder}%{plant_catalog}"
+      - -s
+      - kysymys=4
+      - "%{xml_folder}%{test_file}"
+  - points:
+      - 'u1e3P.9'
+      - 'u1e3P.10'
+    description: "U1E3_xpath_test5"
+    student_run:
+      test_file: plant_catalog.xml
+      xml_folder: src/
+      xsd_folder: src/
+      plant_catalog: plant_catalog.xsl
+    solution_run:
+      test_file: plant_catalog_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+      plant_catalog: plant_catalog_hidden.xsl
+    command:
+      - xmlstarlet
+      - tr
+      - "%{xsd_folder}%{plant_catalog}"
+      - -s
+      - kysymys=5
+      - "%{xml_folder}%{test_file}"
+  - points:
+      - 'u1e3P.11'
+      - 'u1e3P.12'
+    description: "U1E3_xpath_test6"
+    student_run:
+      test_file: plant_catalog.xml
+      xml_folder: src/
+      xsd_folder: src/
+      plant_catalog: plant_catalog.xsl
+    solution_run:
+      test_file: plant_catalog_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+      plant_catalog: plant_catalog_hidden.xsl
+    command:
+      - xmlstarlet
+      - tr
+      - "%{xsd_folder}%{plant_catalog}"
+      - -s
+      - kysymys=6
+      - "%{xml_folder}%{test_file}"
+  - points:
+      - 'u1e3P.13'
+      - 'u1e3P.14'
+    description: "U1E3_xpath_test7"
+    student_run:
+      test_file: plant_catalog.xml
+      xml_folder: src/
+      xsd_folder: src/
+      plant_catalog: plant_catalog.xsl
+    solution_run:
+      test_file: plant_catalog_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+      plant_catalog: plant_catalog_hidden.xsl
+    command:
+      - xmlstarlet
+      - tr
+      - "%{xsd_folder}%{plant_catalog}"
+      - -s
+      - kysymys=7
+      - "%{xml_folder}%{test_file}"
+  - points:
+      - 'u1e3P.15'
+      - 'u1e3P.16'
+    description: "U1E3_xpath_test8"
+    student_run:
+      test_file: plant_catalog.xml
+      xml_folder: src/
+      xsd_folder: src/
+      plant_catalog: plant_catalog.xsl
+    solution_run:
+      test_file: plant_catalog_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+      plant_catalog: plant_catalog_hidden.xsl
+    command:
+      - xmlstarlet
+      - tr
+      - "%{xsd_folder}%{plant_catalog}"
+      - -s
+      - kysymys=8
+      - "%{xml_folder}%{test_file}"
+  - points:
+      - 'u1e3P.17'
+      - 'u1e3P.18'
+    description: "U1E3_xpath_test9"
+    student_run:
+      test_file: plant_catalog.xml
+      xml_folder: src/
+      xsd_folder: src/
+      plant_catalog: plant_catalog.xsl
+    solution_run:
+      test_file: plant_catalog_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+      plant_catalog: plant_catalog_hidden.xsl
+    command:
+      - xmlstarlet
+      - tr
+      - "%{xsd_folder}%{plant_catalog}"
+      - -s
+      - kysymys=9
+      - "%{xml_folder}%{test_file}"
+  - points:
+      - 'u1e3P.19'
+      - 'u1e3P.20'
+    description: "U1E3_xpath_test10"
+    student_run:
+      test_file: plant_catalog.xml
+      xml_folder: src/
+      xsd_folder: src/
+      plant_catalog: plant_catalog.xsl
+    solution_run:
+      test_file: plant_catalog_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+      plant_catalog: plant_catalog_hidden.xsl
+    command:
+      - xmlstarlet
+      - tr
+      - "%{xsd_folder}%{plant_catalog}"
+      - -s
+      - kysymys=10
+      - "%{xml_folder}%{test_file}"
+
+ 

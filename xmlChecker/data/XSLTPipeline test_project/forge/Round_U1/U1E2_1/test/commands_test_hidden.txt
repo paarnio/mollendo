@@ -1,0 +1,92 @@
+XMLStarlet komentotestausta
+============================
+2016-12-21 for 2017
+
+XMLStarlet folder: C:\Users\vpaarnio\SpecialPrograms\xml\xmlstarlet-1.6.1
+
+(HUOM: --err pitää olla eri paikoissa noissa kahdessa eri komennossa:)
+(HUOM: tulokset kahteen eri tiedostoon 1>./output1.txt 2>./output2.txt
+
+
+well-formed
+===========
+./xml val -w --err  ./work/2017/Round_U1/U1E2_1/test/production_line_hidden.xml
+
+
+
+Validate
+=========
+>./xml val --err --xsd  ./work/2017/Round_U1/U1E2_1/test/production_line_checker1_hidden.xsd ./work/2017/Round_U1/U1E2_1/test/production_line_hidden.xml 1>./output1.txt 2>./output2.txt
+------------------------------
+
+
+TESTATAAN OHJEEN 4 VAIHETTA
+ 
+============================================================
+
+HUOM jokaisen vaiheen xsd tarkistimen täytyy hyväksyä myös 
+ylemmän ja täydellisen vaiheen v4 ratkaisu: XML:production_line_hidden.xml
+
+
+Validate phase 1
+=================
+XML:production_line_v1_hidden.xml
+1. XSD:production_line_checker_v1_1_hidden.xsd
+2. XSD:production_line_checker_v1_2_hidden.xsd
+
+>./xml val --err --xsd  ./work/2017/Round_U1/U1E2_1/test/production_line_checker_v1_1_hidden.xsd ./work/2017/Round_U1/U1E2_1/test/production_line_v1_hidden.xml 1>./output1.txt 2>./output2.txt
+
+
+Validate phase 2
+=================
+XML:production_line_v2_hidden.xml
+1. XSD:production_line_checker_v2_1_hidden.xsd
+
+>./xml val --err --xsd  ./work/2017/Round_U1/U1E2_1/test/production_line_checker_v2_1_hidden.xsd ./work/2017/Round_U1/U1E2_1/test/production_line_v2_hidden.xml 1>./output1.txt 2>./output2.txt
+
+
+
+Validate phase 3
+=================
+XML:production_line_v3_hidden.xml
+1. XSD:production_line_checker_v3_1_hidden.xsd
+
+>./xml val --err --xsd  ./work/2017/Round_U1/U1E2_1/test/production_line_checker_v3_1_hidden.xsd ./work/2017/Round_U1/U1E2_1/test/production_line_v3_hidden.xml 1>./output1.txt 2>./output2.txt
+
+Validate phase 4
+=================
+1. XML:production_line_v4_hidden.xml
+2. XML:production_line_hidden.xml
+
+1. XSD:production_line_checker_v4_1_hidden.xsd
+
+>./xml val --err --xsd  ./work/2017/Round_U1/U1E2_1/test/production_line_checker_v4_1_hidden.xsd ./work/2017/Round_U1/U1E2_1/test/production_line_v4_hidden.xml 1>./output1.txt 2>./output2.txt
+
+---------------------
+TOIMII: <!-- NOTE: Checking uniqueness of the @modID value!! TOIMII -->
+
+	<xs:element name="production_line">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="unit" type="unitType" minOccurs="4" maxOccurs="4"/>
+			</xs:sequence>
+		</xs:complexType>
+
+		<!-- NOTE: Checking uniqueness of the @modID value!! TOIMII -->
+=>	    <xs:unique name="modIDsUnique">
+=>               <xs:selector xpath="unit/*"/>
+=>                 <xs:field xpath="@modID"/>
+=>            </xs:unique>
+	</xs:element>
+
+--- TEST:
+
+./xml : ./work/2017/Round_U1/U1E2_1/test/production_line_v4_hidden.xml:81.22: Element 'starter_module': Duplicate key-s
+equence ['SM001'] in unique identity-constraint 'modIDsUnique'.
+At line:1 char:1
++ ./xml val --err --xsd  ./work/2017/Round_U1/U1E2_1/test/production_li ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (./work/2017/Rou...'modIDsUnique'.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+

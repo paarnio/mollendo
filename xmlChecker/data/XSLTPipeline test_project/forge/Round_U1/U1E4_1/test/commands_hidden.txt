@@ -1,0 +1,42 @@
+XMLStarlet komentoja U1E4
+====================
+Näitä XMLStarlet-komentoja voit hyödyntää ratkaisusi tarkistamiseen 
+ennen kuin lataat sen TMC:hen.
+Huom:
+----
+Cmd.exe konsolissa komento alkaa aina muodossa xml 
+PowerShell.exe konsolissa komento alkaa aina muodossa ./xml
+HUOM:
+----
+Ohjelman tulostukset (1. ohjelman tulos; 2. virhetulostus) 
+saat kahteen eri tiedostoon kirjoittamalla komennon loppuun 
+1>./stdout.txt 2>./stderr.txt)
+------------------------------
+
+XSLT-tiedostoon ancient_wonders_hidden.xsl kirjoitettujen XPath lausekkeiden testaus.
+XPath kyselyt kohdistuvat ancient_wonders_hidden.xml dokumentiin.
+(Ks. XMLStarlet/doc/XMLStarlet-ug.pdf sivu 7 (sel), sivu 13 (tr))
+
+Select commands (hidden)
+===============
+Seuraava komento tulostaa XPath lausekkeen ("lainausmerkkien välissä") 
+palauttamien elementtien arvon eli tekstisisällön (value-of)(Ei siis itse elementtejä) 
+(Ks. XMLStarlet/doc/XMLStarlet-ug.pdf sivu 7 (sel))
+xmlstarlet-1.6.1>./xml sel -t -v "//main_image/@*" ./work/2017/Round_U1/U1E4_1/test/ancient_wonders_hidden.xml
+
+11)//main_image/@*
+12)/
+13)/ancient_wonders/wonder[./history/year_destroyed/@era='BC']/.
+
+
+
+Transform commands: (test folder)
+================================
+(Ks. XMLStarlet/doc/XMLStarlet-ug.pdf sivu 13 (tr))
+HUOM: Nämä xslt-muunnokset eivät tulosta XPath lausekkeiden vastauksia 
+vaan jonkin tunnisteen ko. tulossolmuista (esim. elementin id:n tai tekstisisällön).
+
+HUOM: Pane komennossa kysymys-parametrin arvoksi testattavan lausekkeen numero (esim. kysymys=11)
+xmlstarlet-1.6.1>./xml tr ./work/2017/Round_U1/U1E4_1/test/ancient_wonders_hidden.xsl -s kysymys=11 ./work/2017/Round_U1/U1E4_1/test/ancient_wonders_hidden.xml
+
+

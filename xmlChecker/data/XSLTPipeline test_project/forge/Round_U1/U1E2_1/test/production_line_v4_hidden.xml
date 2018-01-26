@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- NOTE:2017 encoding encode UTF-8 -->
+<production_line>
+<!-- XML document: production_line_v4_hidden.xml for checking phase 4 (vaihe4) -->
+<!-- ALL element structure with type- and OTHER attributes -->	
+
+<!-- TODO: description ja name elementtien tekstisisällöt: -->
+<!-- lift_module1 name: Päätynostin PN1
+		description: Nostaa paletin alakuljettimelta ylös Starter-moduulille 
+		conveyor1 description: Palettikuljetin (ala)
+		conveyor2 description: Palettikuljetin (ylä)
+		conveyor3 description: Palettikuljetin (hissitaso)		
+		-->
+<!-- starter_module name: Starter-moduuli ST1
+		description: Jakaa paletit kolmelle kuljettimelle 
+		conveyor1 description: Palettikuljetin (keski)
+		conveyor2 description: Palettikuljetin (syöttö1)
+		conveyor3 description: Palettikuljetin (syöttö2)		
+		-->		
+<!-- workstation name: Työasema TA1
+		description: Sisältää vasemman ja oikean työpisteen 
+		conveyor1 description: Palettikuljetin (keski)
+		conveyor2 description: Palettikuljetin (vasen)
+		conveyor3 description: Palettikuljetin (oikea)		
+		-->
+<!-- lift_module2 name: Päätynostin PN2
+		description: Laskee paletin ylhäältä alas paluukuljettimelle 
+		conveyor1 description: Palettikuljetin (ala)
+		conveyor2 description: Palettikuljetin (ylä)
+		conveyor3 description: Palettikuljetin (hissitaso)		
+		-->
+		
+		
+   <unit>
+   <!-- TEST UNIQUENES of @modID po. LM001-->
+    <lift_module modID="LM001">
+      <name>Päätynostin PN1</name>
+      <description lang="fi">Nostaa paletin alakuljettimelta ylös Starter-moduulille</description>
+      <conveyor type="BELT" feed="in">
+        <description lang="fi">Palettikuljetin (ala)</description>
+      </conveyor>
+      <conveyor type="BELT" feed="out">
+        <description lang="fi">Palettikuljetin (ylä)</description>
+      </conveyor>
+      <lifter_shelf>
+        <conveyor feed="in_out" type="BAND">
+          <description lang="fi">Palettikuljetin (hissitaso)</description>
+        </conveyor>
+      </lifter_shelf>
+      <chassis type="SAFETY" width="500" height="1200" length="700">
+        <sensor type="OPTIC">
+        </sensor>
+      </chassis>
+	  <sensor type="INDUCTIVE">
+      </sensor>
+	  <sensor type="OPTIC">
+      </sensor>
+    </lift_module>
+  </unit>
+
+  <unit>
+    <starter_module modID="SM001">
+      <name>Starter-moduuli ST1</name>
+      <description lang="fi">Jakaa paletit kolmelle kuljettimelle</description>
+      <conveyor type="BELT" feed="forward">
+        <description lang="fi">Palettikuljetin (keski)</description>
+      </conveyor>
+      <conveyor type="BELT" feed="forward">
+        <description lang="fi">Palettikuljetin (syöttö1)</description>
+      </conveyor>
+      <conveyor type="BELT" feed="forward">
+        <description lang="fi">Palettikuljetin (syöttö2)</description>
+      </conveyor>
+      <crossing/>
+      <crossing/>
+      <crossing/>
+      <sensor type="INDUCTIVE">
+      </sensor>
+      <sensor type="OPTIC">
+      </sensor>
+    </starter_module>
+  </unit>
+
+  <unit>
+    <workstation modID="WM001">
+      <name>Työasema TA1</name>
+      <description lang="fi">Sisältää vasemman ja oikean työpisteen</description>
+      <conveyor type="BELT" feed="forward">
+        <description lang="fi">Palettikuljetin (keski)</description>
+      </conveyor>
+      <conveyor type="BELT" feed="forward">
+        <description lang="fi">Palettikuljetin (vasen)</description>
+      </conveyor>
+      <conveyor type="BELT" feed="forward">
+        <description lang="fi">Palettikuljetin (oikea)</description>
+      </conveyor>
+      <crossing/>
+      <crossing/>
+      <crossing/>
+      <sensor type="INDUCTIVE">
+      </sensor>
+      <sensor type="OPTIC">
+      </sensor>
+    </workstation>
+  </unit>
+
+  <unit>
+    <lift_module modID="LM002">
+      <name>Päätynostin PN2</name>
+      <description lang="fi">Laskee paletin ylhäältä alas paluukuljettimelle</description>
+      <conveyor type="BELT" feed="out">
+        <description lang="fi">Palettikuljetin (ala)</description>     
+      </conveyor>
+      <conveyor type="BELT" feed="in">
+        <description lang="fi">Palettikuljetin (ylä)</description>
+      </conveyor>
+      <lifter_shelf>
+        <conveyor type="BELT" feed="in_out">
+          <description lang="fi">Palettikuljetin (hissitaso)</description>
+        </conveyor>
+      </lifter_shelf>
+      <chassis type="SAFETY" width="500" height="1200" length="700">
+        <sensor type="OPTIC">
+        </sensor>
+      </chassis>
+	  <sensor type="INDUCTIVE">
+      </sensor>
+	  <sensor type="OPTIC">
+      </sensor>
+    </lift_module>
+  </unit>
+
+</production_line>

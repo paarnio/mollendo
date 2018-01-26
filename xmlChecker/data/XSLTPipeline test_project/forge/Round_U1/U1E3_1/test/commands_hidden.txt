@@ -1,0 +1,45 @@
+XMLStarlet komentoja
+====================
+Näitä XMLStarlet-komentoja voit hyödyntää ratkaisusi tarkistamiseen 
+ennen kuin lataat sen TMC:hen.
+Huom:
+----
+Cmd.exe konsolissa komento alkaa aina muodossa xml 
+PowerShell.exe konsolissa komento alkaa aina muodossa ./xml
+HUOM:
+----
+Ohjelman tulostukset (1. ohjelman tulos; 2. virhetulostus) 
+saat kahteen eri tiedostoon kirjoittamalla komennon loppuun 
+1>./stdout.txt 2>./stderr.txt)
+------------------------------
+
+XSLT-tiedostoon plant_catalog.xsl kirjoitettujen XPath lausekkeiden testaus.
+XPath kyselyt kohdistuvat plant_catalog.xml dokumentiin.
+(Ks. XMLStarlet/doc/XMLStarlet-ug.pdf sivu 7 (sel), sivu 13 (tr))
+
+Select commands (hidden)
+===============
+Seuraava komento tulostaa XPath lausekkeen ("lainausmerkkien välissä") 
+palauttamien elementtien arvon eli tekstisisällön (value-of)(Ei siis itse elementtejä) 
+(Ks. XMLStarlet/doc/XMLStarlet-ug.pdf sivu 7 (sel))
+xmlstarlet-1.6.1>./xml sel -t -v "/CATALOG/Plant[position()=last()]/Botanical/text()" ./work/2017/Round_U1/U1E3_1/test/plant_catalog_hidden.xml
+
+1)/
+2)/CATALOG
+3)/CATALOG/*
+4)/CATALOG/*/*
+5)/CATALOG/Plant[3]/Common/text()
+6)/CATALOG/Plant[position()=last()]/Botanical/text()
+
+9)/CATALOG/Plant[Zone='Annual']/Zone/preceding-sibling::*
+
+Transform commands: (test folder)
+================================
+(Ks. XMLStarlet/doc/XMLStarlet-ug.pdf sivu 13 (tr))
+HUOM: Nämä xslt-muunnokset eivät tulosta XPath lausekkeiden vastauksia 
+vaan jonkin tunnisteen ko. tulossolmuista (esim. elementin id:n tai tekstisisällön).
+
+HUOM: Pane komennossa kysymys-parametrin arvoksi testattavan lausekkeen numero (esim. kysymys=1)
+xmlstarlet-1.6.1>./xml tr ./work/2017/Round_U1/U1E3_1/test/plant_catalog_hidden.xsl -s kysymys=1 ./work/2017/Round_U1/U1E3_1/test/plant_catalog_hidden.xml
+
+

@@ -1,0 +1,26 @@
+testcases:
+  tests:
+  - points:
+      - 'u1e1P.1'
+      - 'u1e1P.2'
+      - 'u1e1P.3'
+      - 'u1e1P.4'
+      - 'u1e1P.5'
+      - 'u1e1P.6'
+      - 'u1e1P.7'
+      - 'u1e1P.8'
+      - 'u1e1P.9'	  
+      - 'u1e1P.10'
+    description: "wellformedtest"
+    student_run:
+      test_file: "CDcatalog.xml"
+      xml_folder: "src/"
+    solution_run:
+      test_file: "CDcatalog_hidden.xml"
+      xml_folder: "test/"
+    command:
+      - xmlstarlet
+      - val
+      - --well-formed
+      - --err
+      - "%{xml_folder}%{test_file}"

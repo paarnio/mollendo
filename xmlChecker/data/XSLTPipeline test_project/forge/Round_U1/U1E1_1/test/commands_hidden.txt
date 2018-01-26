@@ -1,0 +1,78 @@
+﻿XMLStarlet komentoja
+====================
+Näitä XMLStarlet-komentoja voit hyödyntää ratkaisusi tarkistamiseen 
+ennen kuin lataat sen TMC:hen.
+Huom:
+----
+Cmd.exe konsolissa komento alkaa aina muodossa xml 
+PowerShell.exe konsolissa komento alkaa aina muodossa ./xml
+HUOM:
+----
+Ohjelman tulostukset (1. ohjelman tulos; 2. virhetulostus) 
+saat kahteen eri tiedostoon kirjoittamalla komennon loppuun 
+1>./stdout.txt 2>./stderr.txt)
+------------------------------
+
+CDcatalog.xml dokumentin oikeamuotoisuuden (well-formed) tarkistaminen 
+
+well-formed check command:
+=========================
+xmlstarlet-1.6.1>./xml val -w --err  ./work/2017/Round_U1/U1E1_1/src/CDcatalog.xml
+
+
+========================00
+HIDDEN TESTS
+
+CDcatalog_1_hidden.xml
+----------------------
+
+./xml val -w --err  ./work/2017/Round_U1/U1E1_1/test/CDcatalog_1_hidden.xml
+
+-----
+./xml : ./work/2017/Round_U1/U1E1_1/test/CDcatalog_0_hidden.xml:6.1: Extra content at the end of the document
+At line:1 char:1
++ ./xml val -w --err  ./work/2017/Round_U1/U1E1_1/test/CDcatalog_0_hidd ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (./work/2017/Rou...of the document:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  <CD>
+  ^
+------
+
+./xml : ./work/2017/Round_U1/U1E1_1/test/CDcatalog_1_hidden.xml:15.12: Specification mandate value for attribute name
+At line:1 char:1
++ ./xml val -w --err  ./work/2017/Round_U1/U1E1_1/test/CDcatalog_1_hidd ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (./work/2017/Rou... attribute name:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+    <First name>Cat</First name>
+
+-------
+CDcatalog_2_hidden.xml
+
+./xml : ./work/2017/Round_U1/U1E1_1/test/CDcatalog_2_hidden.xml:19.11: Specification mandate value for attribute name
+At line:1 char:1
++ ./xml val -w --err  ./work/2017/Round_U1/U1E1_1/test/CDcatalog_2_hidd ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (./work/2017/Rou... attribute name:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+    <Last name>Stevens</Last name>
+
+-------
+ <┬úPrice>8.90</┬úPrice>
+     ^
+-------
+ <1Year>1990</1Year>
+     ^
+-------
+</Artist>
+             ^
+-------
+<Year>The first publishing year is unknown(<1939).</Year>
+-------
+<Rec+Company>Marcus Music-studios</Rec+Company> London Studios.
+        ^
+

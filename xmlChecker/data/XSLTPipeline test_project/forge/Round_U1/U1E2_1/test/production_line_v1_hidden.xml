@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<production_line>
+<!-- NOTE:2017 encoding encode UTF-8 -->
+<!-- XML document: production_line_v1_hidden.xml for checking phase 1 (vaihe1) -->
+<!-- Main element structure. No attributes -->
+	
+   <unit>
+    <lift_module>
+      <conveyor></conveyor>
+      <conveyor></conveyor>
+      <lifter_shelf>
+        <conveyor></conveyor>
+      </lifter_shelf>
+      <chassis>
+        <sensor></sensor>
+      </chassis>
+	  <sensor></sensor>
+	  <sensor></sensor>
+    </lift_module>
+  </unit>
+
+  <unit>
+    <starter_module>
+      <conveyor></conveyor>
+      <conveyor></conveyor>
+      <conveyor></conveyor>
+      <crossing/>
+      <crossing/>
+      <crossing/>
+      <sensor>
+      </sensor>
+      <sensor>
+      </sensor>
+    </starter_module>
+  </unit>
+
+  <unit>
+    <workstation>
+      <conveyor></conveyor>
+      <conveyor></conveyor>
+      <conveyor></conveyor>
+      <crossing/>
+      <crossing/>
+      <crossing/>
+      <sensor></sensor>
+      <sensor></sensor>
+    </workstation>
+  </unit>
+
+  <unit>
+    <lift_module>
+      <conveyor></conveyor>
+      <conveyor></conveyor>
+      <lifter_shelf>
+        <conveyor></conveyor>
+      </lifter_shelf>
+      <chassis>
+        <sensor></sensor>
+      </chassis>
+	  <sensor></sensor>
+	  <sensor></sensor>
+    </lift_module>
+  </unit>
+
+</production_line>

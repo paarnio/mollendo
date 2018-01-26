@@ -214,6 +214,10 @@ public class TransformController {
 			ok = xslTransformer.invokeXSLTransform(outputstream, params, values);
 		}
 		if(!ok) operErrorBuffer.append(xslTransformer.getOperErrorBuffer());
+		
+		//TODO:?????? TEST
+		if(ok) xslTransformer.saveTransformResultAsByteArray(outputstream, "XML");
+		
 		return ok;
 	}
 	

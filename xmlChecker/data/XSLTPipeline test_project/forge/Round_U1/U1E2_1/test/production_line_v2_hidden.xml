@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<production_line>
+<!-- NOTE:2017 encoding encode UTF-8 -->
+<!-- XML document: production_line_v2_hidden.xml for checking phase 2 (vaihe2) -->
+<!-- Main element structure with type-attributes -->	
+		
+   <unit>
+    <lift_module>   
+      <conveyor type="BELT"></conveyor>
+      <conveyor type="BELT"></conveyor>
+      <lifter_shelf>
+        <conveyor type="BAND">
+        </conveyor>
+      </lifter_shelf>
+      <chassis type="SAFETY">
+        <sensor type="OPTIC"></sensor>
+      </chassis>
+	   <sensor type="INDUCTIVE"></sensor>
+	   <sensor type="OPTIC"></sensor>
+    </lift_module>
+  </unit>
+
+  <unit>
+    <starter_module>
+      <conveyor type="BELT">
+      </conveyor>
+      <conveyor type="BELT">
+      </conveyor>
+      <conveyor type="BELT">
+      </conveyor>
+      <crossing/>
+      <crossing/>
+      <crossing/>
+      <sensor type="INDUCTIVE">
+      </sensor>
+      <sensor type="OPTIC">
+      </sensor>
+    </starter_module>
+  </unit>
+
+  <unit>
+    <workstation>
+      <conveyor type="BELT">
+      </conveyor>
+      <conveyor type="BELT">
+      </conveyor>
+      <conveyor type="BELT">
+      </conveyor>
+      <crossing/>
+      <crossing/>
+      <crossing/>
+      <sensor type="INDUCTIVE">
+      </sensor>
+      <sensor type="OPTIC">
+      </sensor>
+    </workstation>
+  </unit>
+
+  <unit>
+    <lift_module modID="LM002">
+     <conveyor type="BELT"></conveyor>
+      <conveyor type="BELT"></conveyor>
+      <lifter_shelf>
+        <conveyor type="BAND">
+        </conveyor>
+      </lifter_shelf>
+      <chassis type="SAFETY">
+        <sensor type="OPTIC"></sensor>
+      </chassis>
+	   <sensor type="INDUCTIVE"></sensor>
+	   <sensor type="OPTIC"></sensor>
+    </lift_module>
+  </unit>
+
+</production_line>

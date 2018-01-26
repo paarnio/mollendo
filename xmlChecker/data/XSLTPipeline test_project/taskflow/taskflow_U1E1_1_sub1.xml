@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ taskflow3_U1E1_1_sub1.xml validated by taskflow5.xsd
+-->
+<checkerTaskFlow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="taskflow4.xsd">
+  <round>U1</round>
+  <exercise>U1E1_1</exercise>
+  <description>Validation tests in Round_U1</description>
+  <stuSolution>Round_U1/U1E1_1/src/CDcatalog_X_hidden.xml</stuSolution>
+  <refSolution>Round_U1/U1E1_1/test/CDcatalog_3_hidden.xml</refSolution>
+  <stuZip>./data/zips/Round_U1_tests/Round_U1_sub1_</stuZip>
+  <refZip>./data/zips/Round_U1_tests/Round_U1_sub1_reference.zip</refZip>
+   <testCase number="1">
+	<description>NOTE: test-folder. The Well Formed testcase</description>
+    <points>100</points>
+    <stuDir1>Round_U1/U1E1_1/src/</stuDir1>
+	<stuFile1>CDcatalog_X_hidden.xml</stuFile1>
+	<!--stuFile2></stuFile2-->
+	<refDir1>Round_U1/U1E1_1/test/</refDir1>
+	<refFile1>CDcatalog_3_hidden.xml</refFile1>
+	<!--refFile2></refFile2-->
+	<!--comment>Testcase comment</comment-->
+	<flow>
+	  <type>studentFlow</type>
+	  <name>studentFlow1</name>
+	  <description>The student flow</description>
+	  <!--inChannel>inC001</inChannel-->
+	  <!--outChannel>stuC002</outChannel-->
+	  <operation>
+	    <type>XMLWellFormed</type>
+        <name>XMLWellFormed1</name>
+        <par1>stuDir1/stuFile1</par1>
+        <!--par2>refDir1/refFile2</par2-->
+		<return>stuC002</return>
+      </operation>
+	  <!--comment>Taskflow comment1</comment-->
+	</flow>
+	<flow>
+	  <type>referenceFlow</type>
+	  <name>referenceFlow1</name>
+	  <description>The reference flow</description>
+	  <!--inChannel>inC011</inChannel-->
+	  <!--outChannel>refC002</outChannel-->
+	  <operation>
+	    <type>XMLWellFormed</type>
+        <name>XMLWellFormed1</name>
+        <par1>refDir1/refFile1</par1>
+        <!--par2>refDir1/refFile2</par2-->
+		<return>refC002</return>
+      </operation>
+	  <!--comment>Taskflow comment1</comment-->
+	</flow>
+  	<flow>
+	  <type>mergeFlow</type>
+	  <name>mergeFlow2</name>
+	  <description>Merging student and reference flow</description>
+	  <inChannel>inC002</inChannel>
+	  <outChannel>outC012</outChannel>
+	  <operation>
+	    <type>StringCompare</type>
+        <name>StringCompare1</name>
+        <par1>refC002</par1>
+        <par2>stuC002</par2>
+		<return>merC002</return>
+      </operation>
+	  <!--comment>Taskflow comment1</comment-->
+	</flow>
+  </testCase>
+</checkerTaskFlow>

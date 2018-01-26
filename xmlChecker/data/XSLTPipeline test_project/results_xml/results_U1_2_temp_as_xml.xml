@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<studentSubmits submitId="U1_sub1">
+    <student studentId="100000">
+        <surname>item2</surname>
+        <firstname>item3</firstname>
+        <submitZip>Round_U1_sub1_100000.zip</submitZip>
+        <exercise exerciseId="U1E1_1">
+            <pointsOfTestCases>100</pointsOfTestCases>
+            <resultsOfTestCases>STD:STU(1) TCASE(1)  FLOW(true) MSG(OPER_STD:TCASE(1):EQUAL
+)</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U1E2_1">
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>20</pointsOfTestCases>
+            <pointsOfTestCases>30</pointsOfTestCases>
+            <pointsOfTestCases>40</pointsOfTestCases>
+            <pointsOfTestCases>50</pointsOfTestCases>
+            <pointsOfTestCases>60</pointsOfTestCases>
+            <resultsOfTestCases>STD:STU(1) TCASE(1)  FLOW(true) MSG(OPER_STD:TCASE(1):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(1) TCASE(2)  FLOW(true) MSG(OPER_STD:TCASE(2):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(1) TCASE(3)  FLOW(true) MSG(OPER_STD:TCASE(3):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(1) TCASE(4)  FLOW(true) MSG(OPER_STD:TCASE(4):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(1) TCASE(5)  FLOW(true) MSG(OPER_STD:TCASE(5):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(1) TCASE(6)  FLOW(true) MSG(OPER_STD:TCASE(6):EQUAL
+)</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U1E3_1">
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>20</pointsOfTestCases>
+            <pointsOfTestCases>30</pointsOfTestCases>
+            <pointsOfTestCases>40</pointsOfTestCases>
+            <pointsOfTestCases>50</pointsOfTestCases>
+            <resultsOfTestCases>STD:STU(1) TCASE(1)  FLOW(true) MSG(OPER_STD:TCASE(1):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(1) TCASE(2)  FLOW(true) MSG(OPER_STD:TCASE(2):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(1) TCASE(3)  FLOW(true) MSG(OPER_STD:TCASE(3):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(1) TCASE(4)  FLOW(true) MSG(OPER_STD:TCASE(4):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(1) TCASE(5)  FLOW(true) MSG(OPER_STD:TCASE(5):EQUAL
+)</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U1EX_X">
+            <pointsOfTestCases>100</pointsOfTestCases>
+            <resultsOfTestCases>STD:STU(1) TCASE(1)  FLOW(true) MSG(OPER_STD:TCASE(1):EQUAL
+)</resultsOfTestCases>
+        </exercise>
+    </student>
+    <student studentId="100001">
+        <surname>item3</surname>
+        <firstname>item4</firstname>
+        <submitZip>Round_U1_sub1_100001.zip</submitZip>
+        <exercise exerciseId="U1E1_1">
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:STU(2) TCASE(1)  FLOW(false) MSG(OPER_STD:TCASE(1):NOT-COMPARED
+)</resultsOfTestCases>
+            <errorsOfTestCases>OPER_ERR:STU(2):TCASE(1):MSG:(OPER:XMLWellFormedCheck:ERROR:ParseError at [row,col]:[15,13]
+Message: Attribute name "name" associated with an element type "First" must be followed by the ' = ' character.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U1E2_1">
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>20</pointsOfTestCases>
+            <pointsOfTestCases>30</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:STU(2) TCASE(1)  FLOW(true) MSG(OPER_STD:TCASE(1):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(2) TCASE(2)  FLOW(true) MSG(OPER_STD:TCASE(2):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(2) TCASE(3)  FLOW(true) MSG(OPER_STD:TCASE(3):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(2) TCASE(4)  FLOW(false) MSG(OPER_STD:TCASE(4):NOT-COMPARED
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(2) TCASE(5)  FLOW(false) MSG(OPER_STD:TCASE(5):NOT-COMPARED
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(2) TCASE(6)  FLOW(false) MSG(OPER_STD:TCASE(6):NOT-COMPARED
+)</resultsOfTestCases>
+            <errorsOfTestCases>OPER_ERR:STU(2):TCASE(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>OPER_ERR:STU(2):TCASE(5):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'modID' must appear on element 'lift_module'.)</errorsOfTestCases>
+            <errorsOfTestCases>OPER_ERR:STU(2):TCASE(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'modID' must appear on element 'lift_module'.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U1E3_1">
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>20</pointsOfTestCases>
+            <pointsOfTestCases>30</pointsOfTestCases>
+            <pointsOfTestCases>40</pointsOfTestCases>
+            <pointsOfTestCases>50</pointsOfTestCases>
+            <resultsOfTestCases>STD:STU(2) TCASE(1)  FLOW(true) MSG(OPER_STD:TCASE(1):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(2) TCASE(2)  FLOW(true) MSG(OPER_STD:TCASE(2):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(2) TCASE(3)  FLOW(true) MSG(OPER_STD:TCASE(3):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(2) TCASE(4)  FLOW(true) MSG(OPER_STD:TCASE(4):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(2) TCASE(5)  FLOW(true) MSG(OPER_STD:TCASE(5):EQUAL
+)</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U1EX_X">
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:STU(2) TCASE(1)  FLOW(true) MSG(OPER_STD:TCASE(1):NOT-EQUAL
+)</resultsOfTestCases>
+            <errorsOfTestCases>OPER_ERR:STU(2):TCASE(1):MSG:(EQU#(&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!-- This CDcatalog.xml file is not well-formed xml-document --&gt;
+&lt;!-- Fix the errors and make it a well-formed xml-document following the instructions of U1E1_1 --&gt;
+&lt;!-- Note: Encoding should be UTF-8 (without BOM) --&gt;
+&lt;!-- V1: CDcatalog_1_hidden.xml --&gt;
+&lt;!-- 1: encoding changed to UTF-8 --&gt;
+&lt;!-- 2: xml-declaration added --&gt;
+&lt;!-- 3: Root tags fixed --&gt;
+)#INS#(&lt;!-- V2: CDcatalog_2_hidden.xml --&gt;
+&lt;!-- 1: &lt;First name&gt; fixed &lt;Last name&gt; fixed--&gt;
+&lt;!-- 2: &lt;Â£Price&gt; fixed --&gt;
+&lt;!-- 3: &lt;2Year&gt; fixed --&gt;
+&lt;!-- V3: CDcatalog_3_hidden.xml --&gt;
+&lt;!-- 1: &lt;Artist&gt; &lt;artist&gt; fixed--&gt;
+&lt;!-- 2: (&lt;1939) fixed --&gt;
+&lt;!-- 3: &lt;Rec+Company&gt; fixed --&gt; 
+&lt;!-- 4: &lt;/CD&gt; error due to  &lt;a-placeholder-for-PRICE&gt; fixed --&gt;)#EQU#(
+ &lt;CATALOG&gt;
+  &lt;CD&gt;
+    &lt;Title&gt;The very best of&lt;/Title&gt;
+	Info: A collection record :info
+    &lt;Artist&gt;
+	&lt;First)#INS#(_)#EQU#(name&gt;Cat&lt;/First)#INS#(_)#EQU#(name&gt;
+	&lt;Last)#INS#(_)#EQU#(name&gt;Stevens&lt;/Last)#INS#(_)#EQU#(name&gt;
+	&lt;/Artist&gt;	
+    &lt;Country&gt;UK&lt;/Country&gt;
+    &lt;Company&gt;Island&lt;/Company&gt;
+    &lt;)#DEL#(Â£)#EQU#(Price&gt;8.90&lt;/)#DEL#(Â£)#EQU#(Price&gt;
+	&lt;)#DEL#($)#EQU#(Price&gt;12.90&lt;/)#DEL#($)#EQU#(Price&gt;
+    &lt;)#DEL#(1)#EQU#(Year&gt;1990&lt;/)#DEL#(1)#EQU#(Year&gt;
+)#EQU#(   &lt;)#DEL#(2)#EQU#(Year&gt;1998&lt;/)#DEL#(2)#EQU#(Year&gt;	   
+  &lt;/CD&gt;
+  &lt;CD&gt;
+    &lt;Title&gt;Stop&lt;/Title&gt;
+    &lt;Artist&gt;Sam Brown)#INS#(&lt;/Artist&gt;)#EQU#(
+	&lt;)#DEL#(a)#INS#(A)#EQU#(rtist&gt;David Bovie)#DEL#(
+	)#EQU#(&lt;/Artist&gt;
+)#DEL#(	&lt;/artist&gt;
+)#EQU#(    &lt;Country&gt;UK&lt;/Country&gt;
+    &lt;Company&gt;A and M&lt;/Company&gt;
+    &lt;price&gt;8.90&lt;/price&gt;
+    &lt;Year&gt;1988&lt;/Year&gt;
+  &lt;/CD&gt;
+   &lt;CD&gt;
+    &lt;Title&gt;Pavarotti Gala Concert&lt;/Title&gt;
+	Info: A live recording :info
+    &lt;Artist&gt;
+	Luciano Pavarotti
+	&lt;/Artist&gt;&lt;Country&gt;UK&lt;/Country&gt;
+    &lt;Rec.Company&gt;DECCA&lt;/Rec.Company&gt; London Studios.
+    &lt;Price&gt;9.90Â£&lt;/Price&gt;
+    &lt;Year&gt;The first publishing year is unknown()#DEL#(&lt;)#INS#(&amp;lt;)#EQU#(1939).&lt;/Year&gt;
+	&lt;Year&gt;The latest edition 1960 &lt;/Year&gt;
+  &lt;/CD&gt;
+   &lt;CD&gt;
+    &lt;Title&gt;Roadrunner&lt;/Title&gt;
+	Info: Studio recording :info
+    &lt;Artist&gt;
+	Hurriganes
+	&lt;/Artist&gt;&lt;Country&gt;Finland&lt;/Country&gt;
+    &lt;Rec)#DEL#(+)#INS#(_)#EQU#(Company&gt;Marcus Music-studios&lt;/Rec)#DEL#(+)#INS#(_)#EQU#(Company&gt; London Studios.
+    &lt;)#INS#(!--)#EQU#(a-placeholder-for-PRICE)#INS#(--)#EQU#(&gt;
+    &lt;Year&gt;album released by the Finnish rock band Hurriganes in 1974&lt;/Year&gt;
+	&lt;Year&gt;The latest edition 1960 &lt;/Year&gt;
+  &lt;/CD&gt;
+ &lt;/CATALOG&gt;
+ 
+ 
+ 
+)#)</errorsOfTestCases>
+        </exercise>
+    </student>
+    <student studentId="100002">
+        <surname>item4</surname>
+        <firstname>item5</firstname>
+        <submitZip>Round_U1_sub1_100002.zip</submitZip>
+        <exercise exerciseId="U1E1_1">
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:STU(3) TCASE(1)  FLOW(false) MSG(OPER_STD:TCASE(1):NOT-COMPARED
+)</resultsOfTestCases>
+            <errorsOfTestCases>OPER_ERR:STU(3):TCASE(1):MSG:(OPER:XMLWellFormedCheck:ERROR:ParseError at [row,col]:[32,4]
+Message: The element type "artist" must be terminated by the matching end-tag "&lt;/artist&gt;".)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U1E2_1">
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>20</pointsOfTestCases>
+            <pointsOfTestCases>30</pointsOfTestCases>
+            <pointsOfTestCases>40</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:STU(3) TCASE(1)  FLOW(true) MSG(OPER_STD:TCASE(1):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(3) TCASE(2)  FLOW(true) MSG(OPER_STD:TCASE(2):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(3) TCASE(3)  FLOW(true) MSG(OPER_STD:TCASE(3):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(3) TCASE(4)  FLOW(true) MSG(OPER_STD:TCASE(4):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(3) TCASE(5)  FLOW(false) MSG(OPER_STD:TCASE(5):NOT-COMPARED
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(3) TCASE(6)  FLOW(false) MSG(OPER_STD:TCASE(6):NOT-COMPARED
+)</resultsOfTestCases>
+            <errorsOfTestCases>OPER_ERR:STU(3):TCASE(5):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'modID' must appear on element 'lift_module'.)</errorsOfTestCases>
+            <errorsOfTestCases>OPER_ERR:STU(3):TCASE(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'modID' must appear on element 'lift_module'.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U1E3_1">
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>20</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>40</pointsOfTestCases>
+            <pointsOfTestCases>50</pointsOfTestCases>
+            <resultsOfTestCases>STD:STU(3) TCASE(1)  FLOW(true) MSG(OPER_STD:TCASE(1):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(3) TCASE(2)  FLOW(true) MSG(OPER_STD:TCASE(2):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(3) TCASE(3)  FLOW(true) MSG(OPER_STD:TCASE(3):NOT-EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(3) TCASE(4)  FLOW(true) MSG(OPER_STD:TCASE(4):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(3) TCASE(5)  FLOW(true) MSG(OPER_STD:TCASE(5):EQUAL
+)</resultsOfTestCases>
+            <errorsOfTestCases>OPER_ERR:STU(3):TCASE(3):MSG:(EQU#(&#xD;
+Kysymys 2 &#xD;
+Dokumentin juurielementti:&#xD;
+)#DEL#(01&#xD;
+02&#xD;
+03&#xD;
+04&#xD;
+05)#INS#(CATALOG-A)#EQU#(&#xD;
+***&#xD;
+)#)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U1EX_X">
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:STU(3) TCASE(1)  FLOW(true) MSG(OPER_STD:TCASE(1):NOT-EQUAL
+)</resultsOfTestCases>
+            <errorsOfTestCases>OPER_ERR:STU(3):TCASE(1):MSG:(EQU#(&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!-- This CDcatalog.xml file is not well-formed xml-document --&gt;
+&lt;!-- Fix the errors and make it a well-formed xml-document following the instructions of U1E1_1 --&gt;
+&lt;!-- Note: Encoding should be UTF-8 (without BOM) --&gt;
+&lt;!-- V1: CDcatalog_1_hidden.xml --&gt;
+&lt;!-- 1: encoding changed to UTF-8 --&gt;
+&lt;!-- 2: xml-declaration added --&gt;
+&lt;!-- 3: Root tags fixed --&gt;
+&lt;!-- V2: CDcatalog_2_hidden.xml --&gt;
+&lt;!-- 1: &lt;First name&gt; fixed &lt;Last name&gt; fixed--&gt;
+&lt;!-- 2: &lt;Â£Price&gt; fixed --&gt;
+&lt;!-- 3: &lt;2Year&gt; fixed --&gt;
+)#INS#(&lt;!-- V3: CDcatalog_3_hidden.xml --&gt;
+&lt;!-- 1: &lt;Artist&gt; &lt;artist&gt; fixed--&gt;
+&lt;!-- 2: (&lt;1939) fixed --&gt;
+&lt;!-- 3: &lt;Rec+Company&gt; fixed --&gt; 
+&lt;!-- 4: &lt;/CD&gt; error due to  &lt;a-placeholder-for-PRICE&gt; fixed --&gt;
+)#EQU#( &lt;CATALOG&gt;
+  &lt;CD&gt;
+    &lt;Title&gt;The very best of&lt;/Title&gt;
+	Info: A collection record :info
+    &lt;Artist&gt;
+	&lt;First_name&gt;Cat&lt;/First_name&gt;
+	&lt;Last_name&gt;Stevens&lt;/Last_name&gt;
+	&lt;/Artist&gt;	
+    &lt;Country&gt;UK&lt;/Country&gt;
+    &lt;Company&gt;Island&lt;/Company&gt;
+    &lt;Price&gt;8.90&lt;/Price&gt;
+	&lt;Price&gt;12.90&lt;/Price&gt;
+    &lt;Year&gt;1990&lt;/Year&gt;
+    &lt;Year&gt;1998&lt;/Year&gt;	   
+  &lt;/CD&gt;
+  &lt;CD&gt;
+    &lt;Title&gt;Stop&lt;/Title&gt;
+    &lt;Artist&gt;Sam Brown)#INS#(&lt;/Artist&gt;)#EQU#(
+	&lt;)#DEL#(a)#INS#(A)#EQU#(rtist&gt;David Bovie)#DEL#(
+	)#EQU#(&lt;/Artist&gt;
+)#DEL#(	&lt;/artist&gt;
+)#EQU#(    &lt;Country&gt;UK&lt;/Country&gt;
+    &lt;Company&gt;A and M&lt;/Company&gt;
+    &lt;price&gt;8.90&lt;/price&gt;
+    &lt;Year&gt;1988&lt;/Year&gt;
+  &lt;/CD&gt;
+   &lt;CD&gt;
+    &lt;Title&gt;Pavarotti Gala Concert&lt;/Title&gt;
+	Info: A live recording :info
+    &lt;Artist&gt;
+	Luciano Pavarotti
+	&lt;/Artist&gt;&lt;Country&gt;UK&lt;/Country&gt;
+    &lt;Rec.Company&gt;DECCA&lt;/Rec.Company&gt; London Studios.
+    &lt;Price&gt;9.90Â£&lt;/Price&gt;
+    &lt;Year&gt;The first publishing year is unknown()#DEL#(&lt;)#INS#(&amp;lt;)#EQU#(1939).&lt;/Year&gt;
+	&lt;Year&gt;The latest edition 1960 &lt;/Year&gt;
+  &lt;/CD&gt;
+   &lt;CD&gt;
+    &lt;Title&gt;Roadrunner&lt;/Title&gt;
+	Info: Studio recording :info
+    &lt;Artist&gt;
+	Hurriganes
+	&lt;/Artist&gt;&lt;Country&gt;Finland&lt;/Country&gt;
+    &lt;Rec)#DEL#(+)#INS#(_)#EQU#(Company&gt;Marcus Music-studios&lt;/Rec)#DEL#(+)#INS#(_)#EQU#(Company&gt; London Studios.
+    &lt;)#INS#(!--)#EQU#(a-placeholder-for-PRICE)#INS#(--)#EQU#(&gt;
+    &lt;Year&gt;album released by the Finnish rock band Hurriganes in 1974&lt;/Year&gt;
+	&lt;Year&gt;The latest edition 1960 &lt;/Year&gt;
+  &lt;/CD&gt;
+ &lt;/CATALOG&gt;
+ 
+ 
+ 
+)#)</errorsOfTestCases>
+        </exercise>
+    </student>
+    <student studentId="100003">
+        <surname>item5</surname>
+        <firstname>item6</firstname>
+        <submitZip>Round_U1_sub1_100003.zip</submitZip>
+        <exercise exerciseId="U1E1_1">
+            <pointsOfTestCases>100</pointsOfTestCases>
+            <resultsOfTestCases>STD:STU(4) TCASE(1)  FLOW(true) MSG(OPER_STD:TCASE(1):EQUAL
+)</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U1E2_1">
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>20</pointsOfTestCases>
+            <pointsOfTestCases>30</pointsOfTestCases>
+            <pointsOfTestCases>40</pointsOfTestCases>
+            <pointsOfTestCases>50</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:STU(4) TCASE(1)  FLOW(true) MSG(OPER_STD:TCASE(1):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(4) TCASE(2)  FLOW(true) MSG(OPER_STD:TCASE(2):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(4) TCASE(3)  FLOW(true) MSG(OPER_STD:TCASE(3):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(4) TCASE(4)  FLOW(true) MSG(OPER_STD:TCASE(4):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(4) TCASE(5)  FLOW(true) MSG(OPER_STD:TCASE(5):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(4) TCASE(6)  FLOW(false) MSG(OPER_STD:TCASE(6):NOT-COMPARED
+)</resultsOfTestCases>
+            <errorsOfTestCases>OPER_ERR:STU(4):TCASE(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.b: The content of element 'conveyor' is not complete. One of '{description}' is expected.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U1E3_1">
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>20</pointsOfTestCases>
+            <pointsOfTestCases>30</pointsOfTestCases>
+            <pointsOfTestCases>40</pointsOfTestCases>
+            <pointsOfTestCases>50</pointsOfTestCases>
+            <resultsOfTestCases>STD:STU(4) TCASE(1)  FLOW(true) MSG(OPER_STD:TCASE(1):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(4) TCASE(2)  FLOW(true) MSG(OPER_STD:TCASE(2):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(4) TCASE(3)  FLOW(true) MSG(OPER_STD:TCASE(3):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(4) TCASE(4)  FLOW(true) MSG(OPER_STD:TCASE(4):EQUAL
+)</resultsOfTestCases>
+            <resultsOfTestCases>STD:STU(4) TCASE(5)  FLOW(true) MSG(OPER_STD:TCASE(5):EQUAL
+)</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U1EX_X">
+            <pointsOfTestCases>100</pointsOfTestCases>
+            <resultsOfTestCases>STD:STU(4) TCASE(1)  FLOW(true) MSG(OPER_STD:TCASE(1):EQUAL
+)</resultsOfTestCases>
+        </exercise>
+    </student>
+</studentSubmits>

@@ -1,0 +1,161 @@
+testcases:
+  tests:
+  - points:
+      - 'u1e2P.1'
+      - 'u1e2P.2'
+      - 'u1e2P.3'
+      - 'u1e2P.4'
+      - 'u1e2P.5'
+    description: wellformedtest1
+    student_run:
+      test_file: production_line.xml
+      xml_folder: src/
+    solution_run:
+      test_file: production_line_hidden.xml
+      xml_folder: test/
+    command:
+      - xmlstarlet
+      - val
+      - --well-formed
+      - --err
+      - "%{xml_folder}%{test_file}"
+  - points:
+      - 'u1e2P.6'
+      - 'u1e2P.7'
+      - 'u1e2P.8'
+      - 'u1e2P.9'
+      - 'u1e2P.10'
+      - 'u1e2P.11'
+      - 'u1e2P.12'
+      - 'u1e2P.13'
+      - 'u1e2P.14'
+      - 'u1e2P.15'
+      - 'u1e2P.16'
+    description: phase1_validationtest1
+    student_run:
+      test_file: production_line.xml
+      xml_folder: src/
+      xsd_folder: test/
+    solution_run:
+      test_file: production_line_v1_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+    command:
+      - xmlstarlet
+      - val
+      - --err
+      - --xsd
+      - "%{xsd_folder}production_line_checker_v1_1_hidden.xsd"
+      - "%{xml_folder}%{test_file}"
+  - points:
+      - 'u1e2P.17'
+      - 'u1e2P.18'
+      - 'u1e2P.19'
+      - 'u1e2P.20'
+      - 'u1e2P.21'
+      - 'u1e2P.22'
+      - 'u1e2P.23'
+      - 'u1e2P.24'
+      - 'u1e2P.25'
+      - 'u1e2P.26'
+      - 'u1e2P.27'
+    description: phase1_validationtest2
+    student_run:
+      test_file: production_line.xml
+      xml_folder: src/
+      xsd_folder: test/
+    solution_run:
+      test_file: production_line_v1_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+    command:
+      - xmlstarlet
+      - val
+      - --err
+      - --xsd
+      - "%{xsd_folder}production_line_checker_v1_2_hidden.xsd"
+      - "%{xml_folder}%{test_file}"
+  - points:
+      - 'u1e2P.28'
+      - 'u1e2P.29'
+      - 'u1e2P.30'
+      - 'u1e2P.31'
+      - 'u1e2P.32'
+      - 'u1e2P.33'
+      - 'u1e2P.34'
+      - 'u1e2P.35'
+      - 'u1e2P.36'
+      - 'u1e2P.37'
+      - 'u1e2P.38'
+    description: phase2_validationtest3
+    student_run:
+      test_file: production_line.xml
+      xml_folder: src/
+      xsd_folder: test/
+    solution_run:
+      test_file: production_line_v2_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+    command:
+      - xmlstarlet
+      - val
+      - --err
+      - --xsd
+      - "%{xsd_folder}production_line_checker_v2_1_hidden.xsd"
+      - "%{xml_folder}%{test_file}"
+  - points:
+      - 'u1e2P.39'
+      - 'u1e2P.40'
+      - 'u1e2P.41'
+      - 'u1e2P.42'
+      - 'u1e2P.43'
+      - 'u1e2P.44'
+      - 'u1e2P.45'
+      - 'u1e2P.46'
+      - 'u1e2P.47'
+      - 'u1e2P.48'
+      - 'u1e2P.49'
+    description: phase3_validationtest4
+    student_run:
+      test_file: production_line.xml
+      xml_folder: src/
+      xsd_folder: test/
+    solution_run:
+      test_file: production_line_v3_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+    command:
+      - xmlstarlet
+      - val
+      - --err
+      - --xsd
+      - "%{xsd_folder}production_line_checker_v3_1_hidden.xsd"
+      - "%{xml_folder}%{test_file}"
+  - points:
+      - 'u1e2P.50'
+      - 'u1e2P.51'
+      - 'u1e2P.52'
+      - 'u1e2P.53'
+      - 'u1e2P.54'
+      - 'u1e2P.55'
+      - 'u1e2P.56'
+      - 'u1e2P.57'
+      - 'u1e2P.58'
+      - 'u1e2P.59'
+      - 'u1e2P.60'
+    description: phase4_validationtest5
+    student_run:
+      test_file: production_line.xml
+      xml_folder: src/
+      xsd_folder: test/
+    solution_run:
+      test_file: production_line_v4_hidden.xml
+      xml_folder: test/
+      xsd_folder: test/
+    command:
+      - xmlstarlet
+      - val
+      - --err
+      - --xsd
+      - "%{xsd_folder}production_line_checker_v4_1_hidden.xsd"
+      - "%{xml_folder}%{test_file}"

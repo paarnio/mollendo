@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This CDcatalog.xml file is not well-formed xml-document -->
+<!-- Fix the errors and make it a well-formed xml-document following the instructions of U1E1_1 -->
+<!-- Note: Encoding should be UTF-8 (without BOM) -->
+<!-- V1: CDcatalog_1_hidden.xml -->
+<!-- 1: encoding changed to UTF-8 -->
+<!-- 2: xml-declaration added -->
+<!-- 3: Root tags fixed -->
+<!-- V2: CDcatalog_2_hidden.xml -->
+<!-- 1: <First name> fixed <Last name> fixed-->
+<!-- 2: <£Price> fixed -->
+<!-- 3: <2Year> fixed -->
+<!-- V3: CDcatalog_3_hidden.xml -->
+<!-- 1: <Artist> <artist> fixed-->
+<!-- 2: (<1939) fixed -->
+<!-- 3: <Rec+Company> fixed --> 
+<!-- 4: </CD> error due to  <a-placeholder-for-PRICE> fixed -->
+ <CATALOG>
+  <CD>
+    <Title>The very best of</Title>
+	Info: A collection record :info
+    <Artist>
+	<First_name>Cat</First_name>
+	<Last_name>Stevens</Last_name>
+	</Artist>	
+    <Country>UK</Country>
+    <Company>Island</Company>
+    <Price>8.90</Price>
+	<Price>12.90</Price>
+    <Year>1990</Year>
+    <Year>1998</Year>	   
+  </CD>
+  <CD>
+    <Title>Stop</Title>
+    <Artist>Sam Brown</Artist>
+	<Artist>David Bovie</Artist>
+    <Country>UK</Country>
+    <Company>A and M</Company>
+    <price>8.90</price>
+    <Year>1988</Year>
+  </CD>
+   <CD>
+    <Title>Pavarotti Gala Concert</Title>
+	Info: A live recording :info
+    <Artist>
+	Luciano Pavarotti
+	</Artist><Country>UK</Country>
+    <Rec.Company>DECCA</Rec.Company> London Studios.
+    <Price>9.90£</Price>
+    <Year>The first publishing year is unknown(&lt;1939).</Year>
+	<Year>The latest edition 1960 </Year>
+  </CD>
+   <CD>
+    <Title>Roadrunner</Title>
+	Info: Studio recording :info
+    <Artist>
+	Hurriganes
+	</Artist><Country>Finland</Country>
+    <Rec_Company>Marcus Music-studios</Rec_Company> London Studios.
+    <!--a-placeholder-for-PRICE-->
+    <Year>album released by the Finnish rock band Hurriganes in 1974</Year>
+	<Year>The latest edition 1960 </Year>
+  </CD>
+ </CATALOG>
+ 
+ 
+ 

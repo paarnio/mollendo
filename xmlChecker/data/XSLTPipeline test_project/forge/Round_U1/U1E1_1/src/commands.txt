@@ -1,0 +1,22 @@
+XMLStarlet komentoja
+====================
+Näitä XMLStarlet-komentoja voit hyödyntää ratkaisusi tarkistamiseen 
+ennen kuin lataat sen TMC:hen.
+Huom:
+----
+Cmd.exe konsolissa komento alkaa aina muodossa xml 
+PowerShell.exe konsolissa komento alkaa aina muodossa ./xml
+HUOM:
+----
+Ohjelman tulostukset (1. ohjelman tulos; 2. virhetulostus) 
+saat kahteen eri tiedostoon kirjoittamalla komennon loppuun 
+1>./stdout.txt 2>./stderr.txt)
+------------------------------
+
+CDcatalog.xml dokumentin oikeamuotoisuuden (well-formed) tarkistaminen 
+
+well-formed check command:
+=========================
+xmlstarlet-1.6.1>xml val -w --err  ./work/2017/Round_U1/U1E1_1/src/CDcatalog.xml
+
+
