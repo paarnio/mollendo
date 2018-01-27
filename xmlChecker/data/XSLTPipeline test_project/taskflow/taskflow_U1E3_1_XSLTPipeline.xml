@@ -32,9 +32,7 @@
         <par1>stuDir1/stuFile1</par1>
         <!--par2>refDir1/refFile2</par2-->
 		<return>stuC002</return>
-	    <comment>XMLWellFormed operation comment1</comment>
       </operation>
-	  <!--comment>Taskflow comment1</comment-->
 	</flow>
 	<flow>
 	  <type>referenceFlow</type>
@@ -48,7 +46,6 @@
         <par1>refDir1/refFile1</par1>
         <!--par2>refDir1/refFile2</par2-->
 		<return>refC002</return>
-	    <comment>XMLWellFormed operation comment2</comment>
       </operation>
 	</flow>
   	<flow>
@@ -65,7 +62,6 @@
 		<return>merC002</return>
 	    <comment>Comparing student and reference flow outputs</comment>
       </operation>
-	  <!--comment></comment-->
 	</flow>
   </testCase>
   <testCase number="2">
@@ -82,16 +78,17 @@
 	  <name>studentFlow2</name>
 	  <operation>
 	    <type>XSLTransform</type>
-        <name>XSLTransform With XMLParams</name>
+        <name>Pipeline XSLTransform1</name>
         <par1>stuDir1/stuFile1</par1>
         <par2>refDir1/refFile2</par2>
-		<!-- NEW 
-		<paramValueList>
-		  <paramList>kysymys</paramList>
-		  <valueList>1</valueList>		
-		</paramValueList> -->
+		<return>TO_INTERIM_PIPE</return><!-- NEW  -->
+      </operation>
+	  <operation>
+	    <type>XSLTransform</type>
+        <name>Pipeline XSLTransform2</name>
+        <par1>refDir1:plant_catalog_Pipeline_Transform2_hidden.xsl</par1><!-- NEW  -->
+        <par2>FROM_INTERIM_PIPE</par2><!-- NEW  -->
 		<return>stuC001</return>
-	    <!--comment></comment-->
       </operation>
 	  <comment>Taskflow comment1</comment>
 	</flow>
@@ -102,18 +99,18 @@
 	  <outChannel>refC001</outChannel>
 	  <operation>
 	    <type>XSLTransform</type>
-        <name>XSLTransform With XMLParams</name>
+        <name>Pipeline XSLTransform1</name>
         <par1>refDir1/refFile1</par1>
         <par2>refDir1/refFile2</par2>
-		<!-- NEW 
-		<paramValueList>
-		  <paramList>kysymys</paramList>
-		  <valueList>1</valueList>		
-		</paramValueList> -->
-		<return>refC001</return>
-	    <!--comment></comment-->
+		<return>TO_INTERIM_PIPE</return><!-- NEW  -->
       </operation>
-	  <!--comment></comment-->
+	   <operation>
+	    <type>XSLTransform</type>
+        <name>Pipeline XSLTransform2</name>
+        <par1>refDir1:plant_catalog_Pipeline_Transform2_hidden.xsl</par1><!-- NEW  -->
+        <par2>FROM_INTERIM_PIPE</par2><!-- NEW  -->
+		<return>refC001</return>
+      </operation>
 	</flow>
   	<flow>
 	  <type>mergeFlow</type>
@@ -126,7 +123,6 @@
         <par1>stuC001</par1>
         <par2>refC001</par2>
 		<return>merC001</return>
-	    <comment>Comparing student and reference flow outputs</comment>
       </operation>
 	</flow>
   </testCase>

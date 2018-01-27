@@ -122,30 +122,51 @@ public class TaskCycleProcessor {
 	}
 	
 	public String operParamFilePathValue(String parameter){
-		/* Getting Operation parameter's target value
+		/* 
+		 * Getting Operation parameter's target value
 		 * now only filepath build
-		 * e.g. parameter= 'stuDir1/stuFile1'
+		 * Option1: e.g. parameter= 'stuDir1/stuFile1'
+		 * Option2: e.g. parameter= 'stuDir1:filename.xml' (New: direct file name)
 		 **/
 		String value = null;
-							
-		String[] ppath = parameter.split("/");
-		if(ppath.length>1){ // filepath?
-			String dirKey = ppath[0];
-			String fileKey = ppath[1];
-			System.out.println("          Operation parameter 1 keys: " + dirKey + "/" + fileKey);					
-			Integer dirIdx = dirKeyIndexMap.get(dirKey);
-			Integer fileIdx = fileKeyIndexMap.get(fileKey);
-			System.out.println("          Operation parameter 1 Indexes: " + dirIdx + "/" + fileIdx);	
-			
-			if(dirList.get(dirIdx.intValue()).endsWith("/")){
-				 value = dirList.get(dirIdx.intValue()) + fileList.get(fileIdx.intValue());
-				} else {
-					 value = dirList.get(dirIdx.intValue()) + "/" + fileList.get(fileIdx.intValue());					
-				}
-			
-		} else {// Channel?		
-		}
 		
+		if (!parameter.contains(":")) { // Option1: 'stuDir1/stuFile1'
+			String[] ppath = parameter.split("/");
+			if (ppath.length > 1) { 
+				String dirKey = ppath[0];
+				String fileKey = ppath[1];
+				System.out.println("          Operation parameter OPTION1 keys: " + dirKey + "/" + fileKey);
+				Integer dirIdx = dirKeyIndexMap.get(dirKey);
+				Integer fileIdx = fileKeyIndexMap.get(fileKey);
+				System.out.println("          Operation parameter OPTION1 Indexes: " + dirIdx + "/" + fileIdx);
+
+				if (dirList.get(dirIdx.intValue()).endsWith("/")) {
+					value = dirList.get(dirIdx.intValue()) + fileList.get(fileIdx.intValue());
+				} else {
+					value = dirList.get(dirIdx.intValue()) + "/" + fileList.get(fileIdx.intValue());
+				}
+
+			} 
+		} else {// Option2: 'stuDir1:filename.xml'
+			
+			String[] ppath = parameter.split(":");
+			if (ppath.length > 1) { 
+				String dirKey = ppath[0];
+				String fileName = ppath[1];
+				System.out.println("          Operation parameter OPTION2: (directory key:file name) " + dirKey + ":" + fileName);
+				Integer dirIdx = dirKeyIndexMap.get(dirKey);
+				//Integer fileIdx = fileKeyIndexMap.get(fileKey);
+				//System.out.println("          Operation parameter OPTION2: directory key Index: " + dirIdx);
+
+				if (dirList.get(dirIdx.intValue()).endsWith("/")) {
+					value = dirList.get(dirIdx.intValue()) + fileName;
+				} else {
+					value = dirList.get(dirIdx.intValue()) + "/" + fileName;
+				}
+
+			} 
+			
+		}
 		
 		return value;
 	}
@@ -362,15 +383,24 @@ public class TaskCycleProcessor {
 								//oper_ok = true;
 								trans_ctrl.setOperErrorBuffer(new StringBuffer());
 								
-								//Transformation source files									
-								String fullXSLPathInZip = operParamFilePathValue(par1);
-								String fullXMLPathInZip = operParamFilePathValue(par2);
+								//Transformation source files
+								String fullXSLPathInZip;
+								String fullXMLPathInZip;
 								
-								System.out.println("                 XSL file: " + fullXSLPathInZip);
-								System.out.println("                 XML file: " + fullXMLPathInZip);
-					
-								oper_ok = trans_ctrl.prepareXSLTransformWithImputStreams(zippath1, fullXSLPathInZip, zippath2, fullXMLPathInZip);		
-								if(oper_ok){
+								fullXSLPathInZip = operParamFilePathValue(par1);
+								if(!"FROM_INTERIM_PIPE".equalsIgnoreCase(par2)){
+									fullXMLPathInZip = operParamFilePathValue(par2);						
+									oper_ok = trans_ctrl.prepareXSLTransformWithInputStreams(zippath1, fullXSLPathInZip, zippath2, fullXMLPathInZip);
+									System.out.println("                 XSL file: " + fullXSLPathInZip);
+									System.out.println("                 XML file: " + fullXMLPathInZip);					
+								} else { //FROM_INTERIM_PIPE: Pipelined transform: xml source from pipe
+									oper_ok = trans_ctrl.prepareXSLTransformFromInterimPipe(zippath1, fullXSLPathInZip);
+									System.out.println("                 XSL file: " + fullXSLPathInZip);
+									System.out.println("                 XML source: FROM_INTERIM_PIPE");	
+								}
+								
+								
+								if(oper_ok){ //Runing XSL Transform
 									
 									
 								/* OPTION Results to File 
@@ -386,16 +416,24 @@ public class TaskCycleProcessor {
 									
 									//OPTION Results to String
 									ByteArrayOutputStream resultOutputStream = new ByteArrayOutputStream();
-									String retStr = trans_ctrl.runTransformToString(resultOutputStream,  paramlist, valuelist);
-									if(retStr!=null){
-										setChannelStringValue(returnChannel, retStr);
-									} else {
-										setChannelStringValue(returnChannel, "XSLT_ERROR");
-										operErrorBuffer = trans_ctrl.getOperErrorBuffer();
-										oper_ok = false;
+									
+									if (!"TO_INTERIM_PIPE".equalsIgnoreCase(returnChannel)) {
+										String retStr = trans_ctrl.runTransformToString(resultOutputStream, paramlist,
+												valuelist);
+										if (retStr != null) {
+											setChannelStringValue(returnChannel, retStr);
+										} else {
+											setChannelStringValue(returnChannel, "XSLT_ERROR");
+											operErrorBuffer = trans_ctrl.getOperErrorBuffer();
+											oper_ok = false;
+										}
+									} else { //TO_INTERIM_PIPE: Transform xml result to INTERIM PIPE for the next transform
+										
+										trans_ctrl.runTransformToInterimPipe(resultOutputStream, paramlist, valuelist);
 									}
 								} else {
-									setChannelStringValue(returnChannel, "XSLT_PREPARE_ERROR");
+									if (!"TO_INTERIM_PIPE".equalsIgnoreCase(returnChannel))
+										setChannelStringValue(returnChannel, "XSLT_PREPARE_ERROR");
 									operErrorBuffer = trans_ctrl.getOperErrorBuffer();
 								}
 							}

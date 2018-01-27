@@ -63,7 +63,9 @@ public class XSLTransformer {
 	private byte[] xmlInputBytes;	
 	private ByteArrayInputStream xmlBAInputStream;
 	
-	//Intermediate XSL Transform XML results saved to a Byte Array and ByteArrayInputStream
+	/* PIPE: Intermediate XSL Transform XML results saved 
+	 * to a Byte Array and ByteArrayInputStream
+	 */
 	private byte[] xmlTransformResultBytes;
 	private ByteArrayInputStream xmlTransformResultInputStream;
 	
@@ -125,9 +127,9 @@ public class XSLTransformer {
 	 return requestedInputStream;
 	}
 	
-	/* Saving XSL OR XML InputStream into byte array */
 	public boolean saveInputStreamAsByteArray(InputStream xslinput, String XSL_or_XML){
-	/* Param xsl_or_xml allowed values: "XSL" OR "XML"
+	/* Saving XSL OR XML InputStream into byte array
+	 * Param xsl_or_xml allowed values: "XSL" OR "XML"
 	 * https://stackoverflow.com/questions/9501237/read-stream-twice
 	 * TOIMII	
 	 */
@@ -155,42 +157,35 @@ public class XSLTransformer {
 		return ok;
 	}
 	
-	/* TODO: NEW 2018-01-26 Saving XSL Result OutputStream (XML) into byte array */
-	public boolean saveTransformResultAsByteArray(OutputStream xslresult, String XSL_or_XML){
-	/* Param xsl_or_xml allowed values: "XSL" OR "XML"
+	
+	public boolean saveTransformResultAsByteArray(OutputStream xslResultStream){
+	/* NEW 2018-01-26 Saving Transform pipeline's intermediate result OutputStream (XML/TEXT) into byte array.
+	 * Used for pipelining two transform operation: interim pipe 
+	 * (Not used: Param xsl_or_xml allowed values: "XML" OR "TEXT")
 	 * https://stackoverflow.com/questions/26960997/convert-outputstream-to-bytearrayoutputstream
-	 * TOIMIIKO???	
+	 * TOIMII	
 	 */
 		logger.log(Level.INFO, "Entering:  method: saveOutputStreamAsByteArray()");
-		//operErrorBuffer = new StringBuffer();
+		// operErrorBuffer = new StringBuffer();
 		boolean ok = false;
-		//try {
-			ByteArrayOutputStream baos = (ByteArrayOutputStream) xslresult;
-			//org.apache.commons.io.IOUtils.copy(xslinput, baos);
-		
-			if("XSL".equalsIgnoreCase(XSL_or_XML)){
-				//XSL NOT allowed. XML expected
-				logger.log(Level.INFO, "ERROR: saveOutputStreamAsByteArray() Saving XSLT result XML output: So XSL_or_XML should be 'XML' But it is : " + XSL_or_XML);
-				//this.xslInputBytes = baos.toByteArray();
-				ok = false;
-			} else if("XML".equalsIgnoreCase(XSL_or_XML)){
-				this.xmlTransformResultBytes = baos.toByteArray();
-				this.xmlTransformResultInputStream = new ByteArrayInputStream(this.xmlTransformResultBytes);
-				ok = true;
-				String str = new String(this.xmlTransformResultBytes); //Arrays.toString(this.xmlTransformResultBytes);
-				System.out.println("?????????????? SAVED XSLT RESULT AS BYTE ARRAY ?????????\n" + str);
-				System.out.println("\n?????????????? WAS IT OK ?????????");
-			}
-			
-		/*} catch (IOException e) {
-			logger.log(Level.ERROR, "MSG:" + e.getMessage());
-			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessage());
-			//e.printStackTrace();
+
+		ByteArrayOutputStream baos = (ByteArrayOutputStream) xslResultStream;
+
+		if (xslResultStream != null) {
+			this.xmlTransformResultBytes = baos.toByteArray();
+			this.xmlTransformResultInputStream = new ByteArrayInputStream(this.xmlTransformResultBytes);
+			ok = true;
+			logger.log(Level.INFO, "saveOutputStreamAsByteArray(): XSL Transform's intermediate result saved into ByteArray pipe!");
+			String str = new String(this.xmlTransformResultBytes); // Arrays.toString(this.xmlTransformResultBytes);
+			System.out.println(" ----- XSLT TRANSFORM'S INTERMEDIATE RESULT SAVED AS BYTE ARRAY ------\n" + str);
+			System.out.println("\n--- END PIPE---");
+		} else {
 			ok = false;
-		}*/
+			logger.log(Level.INFO, "ERROR: saveOutputStreamAsByteArray(): Nothing to save: xslResultStream is null");
+		}
+
 		return ok;
-	}
-	
+	}	
 	
 	
 	public boolean invokeXSLTransform(OutputStream outputstream, List<String> params, List<String> values) {
@@ -310,11 +305,30 @@ public class XSLTransformer {
 	}
 
 	/*
-	 * GETTERS AND SETTERS
+	 * GETTERS AND SETTERS AND CLEARERS
 	 */
+	
+	public void clearInterimResultPipe(){
+		//Clear Pipe
+		setXmlTransformResultBytes(null);
+		setXmlTransformResultInputStream(null);
+	}
+	
 	
 	public StringBuffer getOperErrorBuffer() {
 		return operErrorBuffer;
+	}
+
+	public void setXmlTransformResultBytes(byte[] xmlTransformResultBytes) {
+		this.xmlTransformResultBytes = xmlTransformResultBytes;
+	}
+
+	public void setXmlTransformResultInputStream(ByteArrayInputStream xmlTransformResultInputStream) {
+		this.xmlTransformResultInputStream = xmlTransformResultInputStream;
+	}
+
+	public ByteArrayInputStream getXmlTransformResultInputStream() {
+		return xmlTransformResultInputStream;
 	}
 
 	public void setOperErrorBuffer(StringBuffer operErrorBuffer) {
@@ -348,23 +362,5 @@ public class XSLTransformer {
 		  
 	  }
 	  
-		/* REMOVED XSL SPECIFIC METHOD
-		 * Saving XSL InputStream into byte array 
-		 * */
-	/*public void wwwwsaveXslInputStreamAsByteArray(InputStream xslinput){
-		 Replaced by: method:saveInputStreamAsByteArray()
-		 * https://stackoverflow.com/questions/9501237/read-stream-twice
-		 * TOIMII	
-		 
-			try {
-				ByteArrayOutputStream baos = new ByteArrayOutputStream();
-				org.apache.commons.io.IOUtils.copy(xslinput, baos);
-				this.xslInputBytes = baos.toByteArray();
-				
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			
-		}*/
 		
 }

@@ -53,13 +53,34 @@ public class TransformController {
 		/*
 		 * called by TaskCycleProcessor:runTaskCycles()
 		 */
-		logger.log(Level.INFO, "Entering: " + getClass().getName() + " method: runTransformToString()");
+		logger.log(Level.INFO, "Entering: method: runTransformToString()");
 		//operErrorBuffer = new StringBuffer();
 		boolean ok = false;
 		String strResult = null;
 		OutputStream outputstream;
 		
-			ok = invokeXSLTransform(resultOutputStream, params, values);			
+			ok = invokeXSLTransform(resultOutputStream, params, values, false);			
+			if(ok) {
+				strResult = resultOutputStream.toString();
+				//System.out.println("RESULT\n" + strresult);
+			} else {
+				operErrorBuffer.append("*");
+			}
+					
+		return strResult;
+	}
+	
+	public String runTransformToInterimPipe(ByteArrayOutputStream resultOutputStream,  List<String> params, List<String> values ) {
+		/* Running pipelined transform: results saved to interim pipe
+		 * called by TaskCycleProcessor:runTaskCycles()
+		 */
+		logger.log(Level.INFO, "Entering: method: runTransformToInterimPipe()");
+		//operErrorBuffer = new StringBuffer();
+		boolean ok = false;
+		String strResult = null;
+		OutputStream outputstream;
+		
+			ok = invokeXSLTransform(resultOutputStream, params, values, true);			
 			if(ok) {
 				strResult = resultOutputStream.toString();
 				//System.out.println("RESULT\n" + strresult);
@@ -86,7 +107,7 @@ public class TransformController {
 		OutputStream outputstream;
 		try {
 			outputstream = new FileOutputStream(resultFilePath);
-			invokeXSLTransform(outputstream, params, values);
+			invokeXSLTransform(outputstream, params, values, false);
 			ok = true;
 		} catch (FileNotFoundException e) {
 			logger.log(Level.ERROR, "MSG:\n" + e.getMessage());
@@ -149,7 +170,7 @@ public class TransformController {
 	 * @param fullXMLPathInZip
 	 * @return
 	 */
-	public boolean prepareXSLTransformWithImputStreams(String xslZipFilePath,  String fullXSLPathInZip, String xmlZipFilePath, String fullXMLPathInZip) {
+	public boolean prepareXSLTransformWithInputStreams(String xslZipFilePath,  String fullXSLPathInZip, String xmlZipFilePath, String fullXMLPathInZip) {
 		/* IF zipfile and file path in zip is defined, 
 		 * Stream (XSL and XML) is loaded from Zip file. 
 		 * Else IF filepath == null, it's inputStream is loaded 
@@ -200,6 +221,56 @@ public class TransformController {
 		return ok;
 	}
 	
+	public boolean prepareXSLTransformFromInterimPipe(String xslZipFilePath,  String fullXSLPathInZip){ 
+		/* XML source is read from interim ByteArray pipe 
+		 * containing result of the previous XSL transform.
+		 * IF zipfile and file path in zip is defined, 
+		 * XSL Stream is loaded from Zip file. 
+		 * Else IF filepath == null, it's inputStream is loaded 
+		 * from previously saved BAInputStream
+		 * 
+		 * called by TaskCycleProcessor:runTaskCycles()
+		 * */
+		logger.log(Level.INFO, "Entering: method: prepareXSLTransformFromInterimPipe()");
+		logger.log(Level.INFO, "prepareXSLTransformFromInterimPipe() "
+				+ "\n----xslZipFilePath=" + xslZipFilePath + "\n---- fullXSLPathInZip =" + fullXSLPathInZip);
+		boolean ok = false;
+		InputStream xslInputstream;
+		InputStream xmlInputstream;
+	
+		try {
+			
+			// XSL from zipfile (or previously saved ByteArray)
+			if ((xslZipFilePath != null) && (fullXSLPathInZip != null)) {
+				ZipFile xslzip = new ZipFile(xslZipFilePath);
+				xslInputstream = zipper.readInputStreamFromZipFile(fullXSLPathInZip, xslzip, "xsl");
+				if (xslInputstream == null) { // Let's try to find the file from
+												// every directory in zip
+					xslInputstream = zipper.readInputStreamFromZipFile(fullXSLPathInZip, null, xslzip);
+				}
+			} else {				
+				xslInputstream = xslTransformer.getSavedBAInputStream("XSL");
+			}
+			
+			// XML source from ByteArray PIPE containing results of previous transform oper.			
+			xmlInputstream = xslTransformer.getXmlTransformResultInputStream();
+			
+			if(xslInputstream==null) System.out.println("????? prepareXSLTransformFromInterimPipe(): xslInputstream is NULL ???????");
+			if(xmlInputstream==null) System.out.println("????? prepareXSLTransformFromInterimPipe(): xmlInputstream is NULL ???????");
+			
+			if ((xslInputstream != null) && (xmlInputstream != null)) {
+				ok = prepareXSLTransform(xslInputstream, xmlInputstream);				
+			}
+
+		} catch (IOException e) {
+			logger.log(Level.ERROR, "prepareXSLTransformFromInterimPipe() MSG:\n" + e.getMessage());
+			e.printStackTrace();
+			ok = false;
+		}
+		logger.log(Level.INFO, "method: prepareXSLTransformFromInterimPipe() return ok=" + ok);
+		return ok;
+	}
+	
 	/***
 	 * 
 	 * @param outputstream
@@ -207,16 +278,20 @@ public class TransformController {
 	 * @param values
 	 * @return
 	 */
-	public boolean invokeXSLTransform(OutputStream outputstream, List<String> params, List<String> values) {
+	private boolean invokeXSLTransform(OutputStream outputstream, List<String> params, List<String> values, boolean resultToPipe) {
+		logger.log(Level.INFO, "entering method: invokeXSLTransform()");
 		boolean ok = false;
 		xslTransformer.setOperErrorBuffer(new StringBuffer());
 		if(prepared){ 
 			ok = xslTransformer.invokeXSLTransform(outputstream, params, values);
 		}
-		if(!ok) operErrorBuffer.append(xslTransformer.getOperErrorBuffer());
-		
+		if(!ok) operErrorBuffer.append(xslTransformer.getOperErrorBuffer());		
 		//TODO:?????? TEST
-		if(ok) xslTransformer.saveTransformResultAsByteArray(outputstream, "XML");
+		if(resultToPipe && ok){ //Piping interim results
+			xslTransformer.saveTransformResultAsByteArray(outputstream);
+		} else { // Clear interim results pipe
+			//TODO?? xslTransformer.clearInterimResultPipe();			
+		}
 		
 		return ok;
 	}
@@ -284,21 +359,21 @@ public class TransformController {
 			 TransformController ctrl = new TransformController();
 			 /* OPT1: Loading XML & XSL from Zip every time */
 			 //ctrl.loadStreamsFromZipAndPrepare(zipFilePath, directoryInZip, xslfileInZip, xmlfileInZip);
-			 ctrl.prepareXSLTransformWithImputStreams(zipFilePath, fullXSLPathInZip, zipFilePath, fullXMLPathInZip);
+			 ctrl.prepareXSLTransformWithInputStreams(zipFilePath, fullXSLPathInZip, zipFilePath, fullXMLPathInZip);
 			 ctrl.runTransformToFile(resultFilePath1,  null,null);
 			 System.out.println("Option 1: resultfile: " + resultFilePath1);
 			 
 			 /* OPT2: Using the same presaved XSL and Loading XML from Zip every time */
 			 ctrl.loadAndSaveInputStream(zipFilePath, directoryInZip, xslfileInZip, "XSL");
 			 //ctrl.loadXmlStreamFromZipUseStoredXslAndPrepare(zipFilePath, directoryInZip, xmlfileInZip);
-			 ctrl.prepareXSLTransformWithImputStreams(null, null, zipFilePath, fullXMLPathInZip);
+			 ctrl.prepareXSLTransformWithInputStreams(null, null, zipFilePath, fullXMLPathInZip);
 			 
 			 ctrl.runTransformToFile(resultFilePath2,  null,null);
 			 System.out.println("Option 2: resultfile: " + resultFilePath2);
 			 
 			 String resultFilePath22 = "./data/zips/result22.xml";
 			 //ctrl.loadXmlStreamFromZipUseStoredXslAndPrepare(zipFilePath, directoryInZip, xmlfileInZip);
-			 ctrl.prepareXSLTransformWithImputStreams(null, null, zipFilePath, fullXMLPathInZip);
+			 ctrl.prepareXSLTransformWithInputStreams(null, null, zipFilePath, fullXMLPathInZip);
 			 ctrl.runTransformToFile(resultFilePath22,  null,null);
 			
 			 /*
