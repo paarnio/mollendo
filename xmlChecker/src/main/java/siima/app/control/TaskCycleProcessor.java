@@ -340,6 +340,7 @@ public class TaskCycleProcessor {
 					System.out.println("--+--+--+ Operation Loop --- ");
 					System.out.println("          Operation type: " + oper.getType());
 					System.out.println("          Operation name: " + oper.getName());
+					System.out.println("          Operation option: " + oper.getOpt());
 					System.out.println("          Operation return channel: " + oper.getReturn());
 					operErrorBuffer = new StringBuffer();
 					List<String> paramlist = null;
@@ -529,12 +530,18 @@ public class TaskCycleProcessor {
 								
 								if((stuFlow_ok && refFlow_ok)||(this.singleStudentRun_MODE)){//compare only successful flows in all students case
 									boolean isequal = compare_ctrl.compareTextLines(arg1str, arg2str);
-									if (!isequal) {									
+									if (!isequal) {
+										String option = oper.getOpt();
+										
 										//Parameters: (filtDiffOper, minLength, cutLength, ignore)									 
-										if((this.singleStudentRun_MODE)||(!this.writeToStudentExcel))
+										if((this.singleStudentRun_MODE)||((!option.startsWith("-F "))&&((!this.writeToStudentExcel)))) {//||(!this.writeToStudentExcel)){
 											operErrorBuffer = compare_ctrl.getFilteredResults("ALL", 0, 1000, " ");
-										else
-											operErrorBuffer = compare_ctrl.getFilteredResults("DELETE_INSERT", 0, 1000, " ");
+										} else if(option.startsWith("-F ")){ //filter option e.g. '-F DELETE' 
+												String filter = option.substring(3);
+												operErrorBuffer = compare_ctrl.getFilteredResults(filter, 0, 1000, " ");
+										} else { //default filter for all student run when writing results to excel
+												operErrorBuffer = compare_ctrl.getFilteredResults("DELETE_INSERT", 0, 1000, " ");			
+										}
 										result = "NON-EQUAL";
 										oper_ok = false;
 									}
