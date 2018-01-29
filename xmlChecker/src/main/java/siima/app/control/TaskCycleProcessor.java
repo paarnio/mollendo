@@ -532,11 +532,16 @@ public class TaskCycleProcessor {
 									boolean isequal = compare_ctrl.compareTextLines(arg1str, arg2str);
 									if (!isequal) {
 										String option = oper.getOpt();
+										boolean filterOption = false;
+										if(option!=null){
+											if(option.startsWith("-F ")) filterOption = true;
+										} 
+											
 										
 										//Parameters: (filtDiffOper, minLength, cutLength, ignore)									 
-										if((this.singleStudentRun_MODE)||((!option.startsWith("-F "))&&((!this.writeToStudentExcel)))) {//||(!this.writeToStudentExcel)){
+										if((this.singleStudentRun_MODE)||((!filterOption)&&((!this.writeToStudentExcel)))) {//||(!this.writeToStudentExcel)){
 											operErrorBuffer = compare_ctrl.getFilteredResults("ALL", 0, 1000, " ");
-										} else if(option.startsWith("-F ")){ //filter option e.g. '-F DELETE' 
+										} else if(filterOption){ //filter option e.g. '-F DELETE' 
 												String filter = option.substring(3);
 												operErrorBuffer = compare_ctrl.getFilteredResults(filter, 0, 1000, " ");
 										} else { //default filter for all student run when writing results to excel

@@ -177,8 +177,9 @@ public class XSLTransformer {
 			ok = true;
 			logger.log(Level.INFO, "saveOutputStreamAsByteArray(): XSL Transform's intermediate result saved into ByteArray pipe!");
 			String str = new String(this.xmlTransformResultBytes); // Arrays.toString(this.xmlTransformResultBytes);
-			System.out.println(" ----- XSLT TRANSFORM'S INTERMEDIATE RESULT SAVED AS BYTE ARRAY ------\n" + str);
-			System.out.println("\n--- END PIPE---");
+			System.out.println(" ----- XSLT TRANSFORM'S INTERMEDIATE RESULT SAVED AS BYTE ARRAY ------\n");
+			//System.out.println("" + str);
+			//System.out.println("\n--- END PIPE---");
 		} else {
 			ok = false;
 			logger.log(Level.INFO, "ERROR: saveOutputStreamAsByteArray(): Nothing to save: xslResultStream is null");
