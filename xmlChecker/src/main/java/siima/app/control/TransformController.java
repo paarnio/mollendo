@@ -286,11 +286,12 @@ public class TransformController {
 			ok = xslTransformer.invokeXSLTransform(outputstream, params, values);
 		}
 		if(!ok) operErrorBuffer.append(xslTransformer.getOperErrorBuffer());		
-		//TODO:?????? TEST
+		//?Piping?
 		if(resultToPipe && ok){ //Piping interim results
 			xslTransformer.saveTransformResultAsByteArray(outputstream);
-		} else { // Clear interim results pipe
-			//TODO?? xslTransformer.clearInterimResultPipe();			
+		} else if(resultToPipe){ // Clear interim results pipe
+			operErrorBuffer.append("**NOT-SAVED-TO-PIPE**PIPE-CLEARED**");
+			xslTransformer.clearInterimResultPipe();			
 		}
 		
 		return ok;

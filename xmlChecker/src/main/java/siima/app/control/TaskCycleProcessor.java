@@ -429,9 +429,9 @@ public class TaskCycleProcessor {
 											oper_ok = false;
 										}
 									} else { //TO_INTERIM_PIPE: Transform xml result to INTERIM PIPE for the next transform
-										
+										//Transform result saved to pipe thus result string can be ignored
 										String retStr = trans_ctrl.runTransformToInterimPipe(resultOutputStream, paramlist, valuelist);
-										if (retStr == null){ // NEW ??
+										if (retStr == null){ 
 											operErrorBuffer = trans_ctrl.getOperErrorBuffer();
 											oper_ok = false;
 										}
