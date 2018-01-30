@@ -430,7 +430,12 @@ public class TaskCycleProcessor {
 										}
 									} else { //TO_INTERIM_PIPE: Transform xml result to INTERIM PIPE for the next transform
 										
-										trans_ctrl.runTransformToInterimPipe(resultOutputStream, paramlist, valuelist);
+										String retStr = trans_ctrl.runTransformToInterimPipe(resultOutputStream, paramlist, valuelist);
+										if (retStr == null){ // NEW ??
+											operErrorBuffer = trans_ctrl.getOperErrorBuffer();
+											oper_ok = false;
+										}
+										
 									}
 								} else {
 									if (!"TO_INTERIM_PIPE".equalsIgnoreCase(returnChannel))
