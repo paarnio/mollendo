@@ -540,12 +540,12 @@ public class TaskCycleProcessor {
 										
 										//Parameters: (filtDiffOper, minLength, cutLength, ignore)									 
 										if((this.singleStudentRun_MODE)||((!filterOption)&&((!this.writeToStudentExcel)))) {//||(!this.writeToStudentExcel)){
-											operErrorBuffer = compare_ctrl.getFilteredResults("ALL", 0, 1000, " ");
+											operErrorBuffer = compare_ctrl.getFilteredResults("ALL", 0, 1000, null);
 										} else if(filterOption){ //filter option e.g. '-F DELETE' 
 												String filter = option.substring(3);
-												operErrorBuffer = compare_ctrl.getFilteredResults(filter, 0, 1000, " ");
+												operErrorBuffer = compare_ctrl.getFilteredResults(filter, 0, 1000, null);
 										} else { //default filter for all student run when writing results to excel
-												operErrorBuffer = compare_ctrl.getFilteredResults("DELETE_INSERT", 0, 1000, " ");			
+												operErrorBuffer = compare_ctrl.getFilteredResults("DELETE_INSERT", 0, 1000, null);			
 										}
 										result = "NON-EQUAL";
 										oper_ok = false;
