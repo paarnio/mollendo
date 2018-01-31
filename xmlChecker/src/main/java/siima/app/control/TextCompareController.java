@@ -65,6 +65,8 @@ public class TextCompareController {
 				}
 			}
 		}
+		} else {
+			diffResultBuf.append("*TEXT COMPARE:TEXT_NULL_OR_EMPTY*");
 		}
 		return diffResultBuf;
 	}
@@ -75,6 +77,7 @@ public class TextCompareController {
 		  if((textlines1!=null)&&(textlines2!=null)&&(!textlines1.isEmpty())&&(!textlines2.isEmpty())){			 
 			  isequal = runDiffMain(textlines1, textlines2);			  
 		  } else {
+			  this.textDiffsList = null; //new
 			  System.out.println("??????compareTextLines() ERROR: textlines1(" + textlines1 + ") textlines2(" + textlines2 + ")");
 			  logger.log(Level.ERROR, "method:compareTextLines():One of the textlines is NULL or EMPTY. Cannot be compared!"); 
 		  }
