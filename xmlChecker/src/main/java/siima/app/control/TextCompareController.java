@@ -1,5 +1,6 @@
-/*
+/* TextCompareController.java
  * 
+ * TODO: Use the calculated Levenshtein distance value somewhere?
  * /https://code.google.com/archive/p/google-diff-match-patch/wikis/LineOrWordDiffs.wiki
  */
 package siima.app.control;
@@ -40,6 +41,7 @@ public class TextCompareController {
 		StringBuffer diffResultBuf = new StringBuffer();
 		
 		//diffResultBuf.append("TEXT COMPARE:");
+		if(this.textDiffsList!=null){
 		for (Diff diff : this.textDiffsList) {
 			Operation op = diff.operation;
 			String txt = diff.text;
@@ -63,7 +65,7 @@ public class TextCompareController {
 				}
 			}
 		}
-
+		}
 		return diffResultBuf;
 	}
 
@@ -91,7 +93,8 @@ public class TextCompareController {
 		   *  Diff(Operation.EQUAL, " world.")}
 		   * which means: delete "Hello", add "Goodbye" and keep " world."
 		   */
-		  logger.log(Level.INFO, "Entering: method: runDiffMain()");			
+		  logger.log(Level.INFO, "Entering: method: runDiffMain()");
+		  this.textDiffsList = null;
 		  boolean isequal = true;
 		  
 		  if((textlines1==null)||(textlines2==null)||(textlines1.isEmpty())||(textlines2.isEmpty())){
@@ -112,13 +115,11 @@ public class TextCompareController {
 				  System.out.println("runDiffMain(): op: " + op.name() + " diff.text: " + txt);
 			  }
 		  }
-		  
+		  //TODO: Use this Levenshtein value somewhere
 		  int leven = dmp.diff_levenshtein(diffslist);
 		  System.out.println("???????diff_levenshtein(): (" + leven + ")");
 		  return isequal;
 	  }
-	  
-	  
 	  
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

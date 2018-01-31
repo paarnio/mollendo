@@ -363,6 +363,8 @@ public class TaskCycleProcessor {
 					String zippath1 = null;
 					String zippath2 = null;
 					
+					// Jos par:n arvona on FROM_INTERIM_PIPE
+					// Silloin zippath:n arvo ei muutu eli pysyy null:na
 					if(par1!=null){
 						if(par1.startsWith("stuDir")) zippath1=studentZipFolder + zip; 
 						else if(par1.startsWith("refDir")) zippath1=referenceZipFolder + refzip;
@@ -415,10 +417,10 @@ public class TaskCycleProcessor {
 									System.out.println("                 resultfile: " + resultFilePath);
 								*/
 									
-									//OPTION Results to String
+									//OPTIONs Results TO STRING or TO PIPE
 									ByteArrayOutputStream resultOutputStream = new ByteArrayOutputStream();
 									
-									if (!"TO_INTERIM_PIPE".equalsIgnoreCase(returnChannel)) {
+									if (!"TO_INTERIM_PIPE".equalsIgnoreCase(returnChannel)) {//OPTION Results to String
 										String retStr = trans_ctrl.runTransformToString(resultOutputStream, paramlist,
 												valuelist);
 										if (retStr != null) {
@@ -437,7 +439,7 @@ public class TaskCycleProcessor {
 										}
 										
 									}
-								} else {
+								} else { //Preparation unsuccessful
 									if (!"TO_INTERIM_PIPE".equalsIgnoreCase(returnChannel))
 										setChannelStringValue(returnChannel, "XSLT_PREPARE_ERROR");
 									operErrorBuffer = trans_ctrl.getOperErrorBuffer();
@@ -534,27 +536,17 @@ public class TaskCycleProcessor {
 								compare_ctrl.setUp();	
 								
 								if((stuFlow_ok && refFlow_ok)||(this.singleStudentRun_MODE)){//compare only successful flows in all students case
+									
 									boolean isequal = compare_ctrl.compareTextLines(arg1str, arg2str);
 									if (!isequal) {
-										String option = oper.getOpt();
-										boolean filterOption = false;
-										if(option!=null){
-											if(option.startsWith("-F ")) filterOption = true;
-										} 
-											
-										
-										//Parameters: (filtDiffOper, minLength, cutLength, ignore)									 
-										if((this.singleStudentRun_MODE)||((!filterOption)&&((!this.writeToStudentExcel)))) {//||(!this.writeToStudentExcel)){
-											operErrorBuffer = compare_ctrl.getFilteredResults("ALL", 0, 1000, null);
-										} else if(filterOption){ //filter option e.g. '-F DELETE' 
-												String filter = option.substring(3);
-												operErrorBuffer = compare_ctrl.getFilteredResults(filter, 0, 1000, null);
-										} else { //default filter for all student run when writing results to excel
-												operErrorBuffer = compare_ctrl.getFilteredResults("DELETE_INSERT", 0, 1000, null);			
-										}
+										String oper_option = oper.getOpt();									
+										String filter = defineErrorFilter(oper_option, this.singleStudentRun_MODE, this.writeToStudentExcel);
+										//Parameters: (filtDiffOper, minLength, cutLength, ignore)	
+										operErrorBuffer = compare_ctrl.getFilteredResults(filter, 0, 1000, null);										
 										result = "NON-EQUAL";
 										oper_ok = false;
 									}
+									
 									System.out.println("====== MERGE RESULT: " + result + "============\n");	
 									setChannelStringValue(returnChannel, result);
 									checkResultBuffer.append("OPER_STD:MERGE:RESULT(" + result + ")");
@@ -675,6 +667,32 @@ public class TaskCycleProcessor {
 		
 	}
 	
+	private String defineErrorFilter(String oper_option, boolean singleStudentMode, boolean writeProjectExcel){
+		/* Defining error msg filtering option based on run modes and possible filter operation option
+		 * filter option e.g. '-F DELETE' or '-F DELETE_INSERT' or '-F ALL'
+		 * DEFAULT VALUES:
+		 * for all student run: ALL
+		 * for all student run when writing results to excel: DELETE_INSERT
+		 * for single student run: ALL 
+		 * 
+		 */
+		String filter=null;
+		boolean filterOption = false;
+		if(oper_option!=null){
+			if(oper_option.startsWith("-F ")) {
+				filter = oper_option.substring(3);
+				filterOption = true;
+			}
+		} 
+											 
+		if((singleStudentMode)||((!filterOption)&&((!writeProjectExcel)))) {
+			filter = "ALL";
+		} else if((!filterOption)&&((writeProjectExcel))){ 
+			filter = "DELETE_INSERT";		
+		} 
+		
+		return filter;
+	}
 	
 	
 	public List<String> readSubmitZipNames() { //String sheetname){
