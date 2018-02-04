@@ -34,6 +34,7 @@ import siima.model.jaxb.checker.student.StudentType;
 import siima.model.jaxb.checker.taskflow.CheckerTaskFlowType;
 import siima.model.jaxb.checker.taskflow.FlowType;
 import siima.model.jaxb.checker.taskflow.OperationType;
+import siima.model.jaxb.checker.taskflow.ParamValueListType;
 import siima.model.jaxb.checker.taskflow.TestCaseType;
 
 public class MainAppController {
@@ -473,7 +474,31 @@ public class MainAppController {
 			infobuff.append("\nDESCRIPTION: " + oper.getDescription());
 			infobuff.append("\nPARAMETER 1: \t" + oper.getPar1());
 			infobuff.append("\nPARAMETER 2: \t" + oper.getPar2());
+			
+			ParamValueListType parvallist = oper.getParamValueList();
+			if(parvallist!=null){
+				List<String> parkeys = parvallist.getParamList();
+				List<String> parvalues = parvallist.getValueList();				
+				infobuff.append("\nPARAMVALUELIST:");
+				infobuff.append("\nPARAM_NAMES: \t");
+				for(String param : parkeys){
+					infobuff.append("" + param + ", ");					
+				}
+				infobuff.append("\nPARAM_VALUES: \t");
+				for(String value : parvalues){
+					infobuff.append("" + value + ", ");					
+				}				
+			}			
+						
+			List<String> options = oper.getOpt();
+			if(options!=null){
+				infobuff.append("\nOPT: \t");		
+				for(String opt : options){
+					infobuff.append("" + opt + ", ");					
+				}				
+			}			
 			infobuff.append("\nRETURN: " + oper.getReturn());
+			
 		} else if("StuSolution".equals(nodetype)){
 			ElementNode parentTaskflowNode = node.getParent();
 			CheckerTaskFlowType parenttaskflow = (CheckerTaskFlowType)parentTaskflowNode.getJaxbObject();

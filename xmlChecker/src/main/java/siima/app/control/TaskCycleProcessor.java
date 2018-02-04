@@ -340,7 +340,7 @@ public class TaskCycleProcessor {
 					System.out.println("--+--+--+ Operation Loop --- ");
 					System.out.println("          Operation type: " + oper.getType());
 					System.out.println("          Operation name: " + oper.getName());
-					System.out.println("          Operation option: " + oper.getOpt());
+					//System.out.println("          Operation option: " + oper.getOpt());
 					System.out.println("          Operation return channel: " + oper.getReturn());
 					operErrorBuffer = new StringBuffer();
 					List<String> paramlist = null;
@@ -349,12 +349,19 @@ public class TaskCycleProcessor {
 					String par1 =oper.getPar1();
 					String par2 =oper.getPar2();
 					String returnChannel = oper.getReturn();
-					//NEW
+					
 					ParamValueListType parvallist = oper.getParamValueList();
 					if(parvallist!=null){
 						paramlist = parvallist.getParamList();
 						valuelist = parvallist.getValueList();
 						System.out.println("          Operation (Param:Value) (" + paramlist.get(0) + ":" + valuelist.get(0) + ")");
+					}
+					// new in v8:
+					List<String> operOptions = oper.getOpt();
+					if(operOptions!=null){
+						for(String opt : operOptions){
+						System.out.println("          Operation Option: " + opt);
+						}
 					}
 					
 					//String refzip = taskFlowMetaData.getReferenceZipFile(); // "RoundU1_sub2_reference.zip"; // reference Zip file
@@ -539,8 +546,9 @@ public class TaskCycleProcessor {
 									
 									boolean isequal = compare_ctrl.compareTextLines(arg1str, arg2str);
 									if (!isequal) {
-										String oper_option = oper.getOpt();									
-										String filter = defineErrorFilter(oper_option, this.singleStudentRun_MODE, this.writeToStudentExcel);
+										String filterOpt = findOperOptionValue(operOptions,"-F");
+										//String oper_option = oper.getOpt();									
+										String filter = defineErrorFilter(filterOpt, this.singleStudentRun_MODE, this.writeToStudentExcel);
 										//Parameters: (filtDiffOper, minLength, cutLength, ignore)	
 										operErrorBuffer = compare_ctrl.getFilteredResults(filter, 0, 1000, null);										
 										result = "NON-EQUAL";
@@ -667,7 +675,7 @@ public class TaskCycleProcessor {
 		
 	}
 	
-	private String defineErrorFilter(String oper_option, boolean singleStudentMode, boolean writeProjectExcel){
+	private String defineErrorFilter(String filterOptValue, boolean singleStudentMode, boolean writeProjectExcel){
 		/* Defining error msg filtering option based on run modes and possible filter operation option
 		 * filter option e.g. '-F DELETE' or '-F DELETE_INSERT' or '-F ALL'
 		 * DEFAULT VALUES:
@@ -677,21 +685,38 @@ public class TaskCycleProcessor {
 		 * 
 		 */
 		String filter=null;
-		boolean filterOption = false;
-		if(oper_option!=null){
-			if(oper_option.startsWith("-F ")) {
-				filter = oper_option.substring(3);
-				filterOption = true;
-			}
+		boolean isfilterOption = false;
+		if(filterOptValue!=null){
+				filter = filterOptValue;
+				isfilterOption = true;
 		} 
 											 
-		if((singleStudentMode)||((!filterOption)&&((!writeProjectExcel)))) {
+		if((singleStudentMode)||((!isfilterOption)&&((!writeProjectExcel)))) {
 			filter = "ALL";
-		} else if((!filterOption)&&((writeProjectExcel))){ 
+		} else if((!isfilterOption)&&((writeProjectExcel))){ 
 			filter = "DELETE_INSERT";		
 		} 
 		
 		return filter;
+	}
+	
+	private String findOperOptionValue(List<String> operOptions, String optKey){
+		/* new in v8:
+		 * option example Filter: '-F DELETE_INSERT'
+		 * optValue valueIdx = 3 ('-F ')
+		 */
+		int valueIdx=3;
+		String optValue=null;
+		if((operOptions!=null)&&(optKey!=null)){
+			for(String opt : operOptions){				
+				//System.out.println("???Operation Option: " + opt);
+				if(opt.startsWith(optKey)){
+					optValue=opt.substring(valueIdx);
+				}
+			}
+		}
+		
+		return optValue;
 	}
 	
 	

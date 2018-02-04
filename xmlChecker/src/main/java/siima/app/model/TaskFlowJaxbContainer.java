@@ -38,7 +38,7 @@ import siima.model.jaxb.checker.taskflow.TestCaseType;
 
 public class TaskFlowJaxbContainer {
 	private static final Logger logger=Logger.getLogger(TaskFlowJaxbContainer.class.getName());
-	private static String TASKFLOW_SCHEMA ="configure/schema/taskflow7.xsd";
+	private static String TASKFLOW_SCHEMA ="configure/schema/taskflow8.xsd"; //v8: 2018-02-04
 	//private Object taskflowRootObject;
 	private CheckerTaskFlowType taskflow;
 	private Path taskFlowFilePath; //latest loaded
@@ -84,7 +84,7 @@ public class TaskFlowJaxbContainer {
 		
 		String stuzip = this.taskflow.getStuZip();
 		String refzip = this.taskflow.getRefZip();
-		String comment = this.taskflow.getComment();		
+		//String comment = this.taskflow.getComment();	v8: removed	
 		List<TestCaseType> testcasetypes = this.taskflow.getTestCase();
 		
 		//TaskFlows hierarchy Tree
@@ -318,6 +318,8 @@ public class TaskFlowJaxbContainer {
 		String par2 = parentObject.getPar2();		
 		String ret = parentObject.getReturn();
 		ParamValueListType parvaluelist = parentObject.getParamValueList();
+		//new v8:
+		List<String> options = parentObject.getOpt();
 		
 		 if(type!=null){
 		    	ElementNode kid = new ElementNode("Type: " + type);
@@ -354,12 +356,6 @@ public class TaskFlowJaxbContainer {
 			    children.add(kid);	    	
 		 }
 		 
-		 if(ret!=null){
-		    	ElementNode kid = new ElementNode("Return: " + ret);
-				kid.setJaxbObject(ret);
-				kid.setNodetype("Return");
-			    children.add(kid);	    	
-		 }
 		 
 		 if(parvaluelist!=null){
 		    	ElementNode kid = new ElementNode("ParamValueListType: ");
@@ -372,7 +368,23 @@ public class TaskFlowJaxbContainer {
 			    */
 		 }
 		 
-		 
+			if (options != null) { //New v8.
+				for (String opt : options) {
+					ElementNode kid = new ElementNode("Opt: " + opt);
+					kid.setJaxbObject(opt);
+					kid.setNodetype("Opt");
+					children.add(kid);
+					// System.out.println(" Operation Option: " + opt);
+				}
+			}
+			
+			 if(ret!=null){
+			    	ElementNode kid = new ElementNode("Return: " + ret);
+					kid.setJaxbObject(ret);
+					kid.setNodetype("Return");
+				    children.add(kid);	    	
+			 }
+	 
 	}
 	
 	public boolean loadData(Path path) {
