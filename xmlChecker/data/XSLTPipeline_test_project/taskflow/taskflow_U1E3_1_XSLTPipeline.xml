@@ -122,6 +122,8 @@
         <name>StringCompare1</name>
         <par1>stuC001</par1>
         <par2>refC001</par2>
+		<opt>-F DELETE</opt>
+		<opt>-W testfile.txt</opt>
 		<return>merC001</return>
       </operation>
 	</flow>
