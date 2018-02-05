@@ -26,6 +26,11 @@ import java.util.zip.ZipFile;
 import javax.xml.XMLConstants;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
+//NEW 2018-02-05
+import javax.xml.transform.stream.StreamResult;
+
+
+
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
@@ -47,6 +52,8 @@ public class XMLValidationCheck {
 		boolean ok = false;
 		StreamSource xsdSource = null;
 		StreamSource xmlSource = null;
+		//StreamResult validationResult = new StreamResult();
+		
 		String xmluri = null; // Not available 
 		
 		//System.out.println("?????? validateXMLSchema: zippath1:" + zippath1 + " xsdPath:" + xsdPath);
@@ -67,9 +74,11 @@ public class XMLValidationCheck {
 			}
 			
 			if((xsdSource!=null)&&(xmlSource!=null)){		
-				ok = validateXMLSchema(xsdSource, xmlSource);								
+				ok = validateXMLSchema(xsdSource, xmlSource);						
 			}
+			
 		
+			
 		} catch (IOException e) {
 			logger.log(Level.ERROR,  "MSG:" + e.getMessage());
 			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessage());
@@ -80,12 +89,13 @@ public class XMLValidationCheck {
 	}
 
 	private boolean validateXMLSchema(Source xsdSource, Source xmlSource){ 
-
+		//Test 2018-02-05  StreamResult validationResult ei toimi
+		//when using validationResult usage: ERROR:setResult() must be called prior to startDocument().)
 		try {
 			SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 			Schema schema = factory.newSchema(xsdSource);
 			Validator validator = schema.newValidator();
-			validator.validate(xmlSource);
+			validator.validate(xmlSource); //validator.validate(xmlSource, validationResult)
 		} catch (SAXException e) {
 			logger.log(Level.ERROR, "MSG:" + e.getMessage());
 			operErrorBuffer.append("OPER:" + getClass().getSimpleName() + ":ERROR:" + e.getMessage());

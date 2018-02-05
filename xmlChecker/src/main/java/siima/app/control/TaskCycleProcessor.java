@@ -455,18 +455,21 @@ public class TaskCycleProcessor {
 								break;
 							case "XSDValidation": { 
 								System.out.println("................ XSDValidation ");
-								//oper_ok = true;
 								valid_oper.setOperErrorBuffer(new StringBuffer());
 								String fullXSDPathInZip = operParamFilePathValue(par1);
 								String fullXMLPathInZip = operParamFilePathValue(par2);
-								oper_ok = valid_oper.validateXMLSchema(zippath1, fullXSDPathInZip, zippath2, fullXMLPathInZip);
+								boolean valid = valid_oper.validateXMLSchema(zippath1, fullXSDPathInZip, zippath2, fullXMLPathInZip);
 								
-								if(!oper_ok) {
+								if(!valid) {
 									setChannelStringValue(returnChannel, "INVALID");
 									operErrorBuffer = valid_oper.getOperErrorBuffer();
 								} else {
 									setChannelStringValue(returnChannel, "VALID");
 								}
+								/*NEW 2018-02-05 NOTE: INVALID result does not always mean that operation is false => oper_ok=true;
+								 *It depends of the corresponding reference operation. It might be the intention of the check.
+								 */ 
+								oper_ok = true;
 							}
 								break;
 							case "XMLWellFormed": { 
