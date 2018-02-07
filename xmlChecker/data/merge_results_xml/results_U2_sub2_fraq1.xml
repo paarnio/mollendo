@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<studentSubmits submitId="U2_sub2">
+    <description>FRAQMENT OF: Student submits for Round U2 submit 2 (project_U2_sub2_2.xlsx)</description>
+    <referenceZip>Round_U2_sub2_reference.zip</referenceZip>
+    <student studentId="478519">
+        <surname>Aalto</surname>
+        <firstname>Pyry Antti Kalevi</firstname>
+        <submitZip>Round_U2_sub2_478519.zip</submitZip>
+        <exercise exerciseId="U2E1_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>9</pointsOfTestCases>
+            <pointsOfTestCases>55</pointsOfTestCases><!-- mod -->
+            <resultsOfTestCases>STD:ST(1):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(2:XSLT_TO_PL1.xml):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(3:XSLT_TO_PL2.xml):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(1):TC(3):MSG:(EQU#(&lt;html&gt;&#xD;
+&lt;head&gt;&#xD;
+&lt;META http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;&#xD;
+&lt;title&gt;PL Production Line&lt;/title&gt;&#xD;
+&lt;/head&gt;&#xD;
+&lt;body&gt;&#xD;
+&lt;h1&gt;PL Production Line Information&lt;/h1&gt;&#xD;
+&lt;table cellspacing="2" cellpadding="1" border="1"&gt;&#xD;
+&lt;caption&gt;Module Table&lt;/caption&gt;&#xD;
+&lt;tr&gt;&#xD;
+&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&#xD;
+&lt;/tr&gt;&#xD;
+&lt;tr&gt;&#xD;
+&lt;td&gt;LM001&lt;/td&gt;&lt;td&gt;Starter Pallet Lift LM1&lt;/td&gt;&lt;td&gt;Lifts the pallets from the bottom conveyor up to the Starter module&lt;/td&gt;&#xD;
+&lt;/tr&gt;&#xD;
+&lt;tr&gt;&#xD;
+&lt;td&gt;)#DEL#(S)#INS#(L)#EQU#(M00)#DEL#(1)#INS#(2)#EQU#(&lt;/td&gt;&lt;td&gt;)#DEL#(Starter Module SM1)#INS#(Line End Pallet Lift LM2)#EQU#(&lt;/td&gt;&lt;td&gt;)#DEL#(Shar)#INS#(Mov)#EQU#(es the pallets )#DEL#(to three)#INS#(from the top conveyor down to the bottom)#EQU#( conveyor)#DEL#(s)#EQU#(&lt;/td&gt;&#xD;
+&lt;/tr&gt;&#xD;
+&lt;tr&gt;&#xD;
+&lt;td&gt;WM001&lt;/td&gt;&lt;td&gt;Workstation WM1&lt;/td&gt;&lt;td&gt;Contains left and right work posts&lt;/td&gt;&#xD;
+&lt;/tr&gt;&#xD;
+&lt;tr&gt;&#xD;
+&lt;td&gt;)#DEL#(L)#INS#(S)#EQU#(M00)#DEL#(2)#INS#(1)#EQU#(&lt;/td&gt;&lt;td&gt;)#DEL#(Line End Pallet Lift LM2)#INS#(Starter Module SM1)#EQU#(&lt;/td&gt;&lt;td&gt;)#DEL#(Mov)#INS#(Shar)#EQU#(es the pallets )#DEL#(from the top conveyor down to the bottom)#INS#(to three)#EQU#( conveyor)#INS#(s)#EQU#(&lt;/td&gt;&#xD;
+&lt;/tr&gt;&#xD;
+&lt;/table&gt;&#xD;
+&lt;/body&gt;&#xD;
+&lt;/html&gt;&#xD;
+)#)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U2E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>11</pointsOfTestCases>
+            <pointsOfTestCases>12</pointsOfTestCases>
+            <pointsOfTestCases>12</pointsOfTestCases>
+            <pointsOfTestCases>12</pointsOfTestCases>
+            <pointsOfTestCases>67</pointsOfTestCases><!-- mod -->
+            <resultsOfTestCases>STD:ST(1):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(2:XSLT_PIPED_SEL-TR_COUNT):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(3:XSLT_PIPED_SEL-TR_NAMES):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(4:XSLT_PIPED_SEL-TR_PATHS):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(5:XSLT_PIPED_SEL-TR_ELEMENTS):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(6:XSLT_TR_TO_MODIFIED_PL-XML):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U2E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(2:XSLT_CHECK_NS1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(3:XSLT_CHECK_NS2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(4:XSLT_CHECK_NS3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U2E4_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>3</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(2:XSLT_CHECK_ID_IDREF_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(3:XSLT_CHECK_ID_IDREF_2):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(4:XSLT_CHECK_ID_IDREF_3):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(1):TC(3):MSG:(EQU#(&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;id_check_report&gt;&#xD;
+&lt;document&gt;production_line.xml&lt;/document&gt;&#xD;
+&lt;id_check&gt;Module identifiers are )#INS#(not )#EQU#(unambiguous&lt;/id_check&gt;&#xD;
+&lt;idref_check&gt;Module references are valid&lt;/idref_check&gt;&#xD;
+&lt;/id_check_report&gt;&#xD;
+)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(1):TC(4):MSG:(EQU#(&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;id_check_report&gt;&#xD;
+&lt;document&gt;production_line.xml&lt;/document&gt;&#xD;
+&lt;id_check&gt;Module identifiers are unambiguous&lt;/id_check&gt;&#xD;
+&lt;idref_check&gt;Module references are )#INS#(not )#EQU#(valid&lt;/idref_check&gt;&#xD;
+&lt;/id_check_report&gt;&#xD;
+)#)</errorsOfTestCases>
+        </exercise>
+    </student>
+    <student studentId="525200">
+        <surname>Hallamaa</surname>
+        <firstname>Paavo Juhani</firstname>
+        <submitZip>Round_U2_sub2_525200.zip</submitZip>
+        <exercise exerciseId="U2E1_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>9</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(2:XSLT_TO_PL1.xml):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(3:XSLT_TO_PL2.xml):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U2E2_1">
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(1:WELLFORMED CHECK):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(2:XSLT_PIPED_SEL-TR_COUNT):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(3:XSLT_PIPED_SEL-TR_NAMES):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(4:XSLT_PIPED_SEL-TR_PATHS):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(5:XSLT_PIPED_SEL-TR_ELEMENTS):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(6:XSLT_TR_TO_MODIFIED_PL-XML):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(1):MSG:(OPER:XMLWellFormedCheck:ERROR:ParseError at [row,col]:[2,6]
+Message: The processing instruction target matching "[xX][mM][lL]" is not allowed.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(2):MSG:(OPER:XSLTransformer:ERROR:The processing instruction target matching "[xX][mM][lL]" is not allowed.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(2):MSG:(OPER:XSLTransformer:ERROR:javax.xml.transform.TransformerException: com.sun.org.apache.xml.internal.utils.WrappedRuntimeException: Premature end of file.*)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(3):MSG:(OPER:XSLTransformer:ERROR:The processing instruction target matching "[xX][mM][lL]" is not allowed.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(3):MSG:(OPER:XSLTransformer:ERROR:javax.xml.transform.TransformerException: com.sun.org.apache.xml.internal.utils.WrappedRuntimeException: Premature end of file.*)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(4):MSG:(OPER:XSLTransformer:ERROR:The processing instruction target matching "[xX][mM][lL]" is not allowed.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(4):MSG:(OPER:XSLTransformer:ERROR:javax.xml.transform.TransformerException: com.sun.org.apache.xml.internal.utils.WrappedRuntimeException: Premature end of file.*)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(5):MSG:(OPER:XSLTransformer:ERROR:The processing instruction target matching "[xX][mM][lL]" is not allowed.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(5):MSG:(OPER:XSLTransformer:ERROR:javax.xml.transform.TransformerException: com.sun.org.apache.xml.internal.utils.WrappedRuntimeException: Premature end of file.*)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(6):MSG:(OPER:XSLTransformer:ERROR:The processing instruction target matching "[xX][mM][lL]" is not allowed.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U2E3_1">
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(1:WELLFORMED CHECK):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(2:XSLT_CHECK_NS1):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(3:XSLT_CHECK_NS2):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(4:XSLT_CHECK_NS3):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(1):MSG:(OPER:XMLWellFormedCheck:ERROR:ParseError at [row,col]:[35,3]
+Message: The element type "pl" must be terminated by the matching end-tag "&lt;/pl&gt;".)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(2):MSG:(OPER:XSLTransformer:ERROR:javax.xml.transform.TransformerException: com.sun.org.apache.xml.internal.utils.WrappedRuntimeException: The element type "pl" must be terminated by the matching end-tag "&lt;/pl&gt;".*)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(3):MSG:(OPER:XSLTransformer:ERROR:javax.xml.transform.TransformerException: com.sun.org.apache.xml.internal.utils.WrappedRuntimeException: The element type "pl" must be terminated by the matching end-tag "&lt;/pl&gt;".*)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(4):MSG:(OPER:XSLTransformer:ERROR:javax.xml.transform.TransformerException: com.sun.org.apache.xml.internal.utils.WrappedRuntimeException: The element type "pl" must be terminated by the matching end-tag "&lt;/pl&gt;".*)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U2E4_1">
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(1:WELLFORMED CHECK):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(2:XSLT_CHECK_ID_IDREF_1):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(3:XSLT_CHECK_ID_IDREF_2):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(4:XSLT_CHECK_ID_IDREF_3):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(1):MSG:(OPER:XMLWellFormedCheck:ERROR:ParseError at [row,col]:[1,111]
+Message: Premature end of file.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(2):MSG:(OPER:XSLTransformer:ERROR:Premature end of file.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(3):MSG:(OPER:XSLTransformer:ERROR:Premature end of file.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(4):MSG:(OPER:XSLTransformer:ERROR:Premature end of file.)</errorsOfTestCases>
+        </exercise>
+    </student>
+   
+</studentSubmits>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="merge_xml_fraqs12.xsl"?>
+<!--title>Result Files for Master Report</title-->
+<report>
+    <resultfile name="results_U2_sub2_fraq1.xml"/>
+	<resultfile name="results_U2_sub3_fraq2.xml"/>
+	<resultfile name="results_U2_sub4_fraq3.xml"/>
+</report>

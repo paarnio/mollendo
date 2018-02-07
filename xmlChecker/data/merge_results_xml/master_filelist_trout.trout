@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><combinedStudents>
+Current Level
+1:478519
+2:525200
+Next Level
+1:478519
+2:585224
+3:525051
+4:525200
+PROCESS BEGINS
+478519
+U2E1_1,U2E2_1,U2E3_1,U2E4_1,
+<student studentId="478519">
+<exercise exerciseId="U2E1_1">
+<totalPoints>65</totalPoints>
+<totalPoints>20</totalPoints>
+<totalPoints>99</totalPoints>
+</exercise>
+<exercise exerciseId="U2E2_1">
+<totalPoints>115</totalPoints>
+<totalPoints>60</totalPoints>
+<totalPoints>159</totalPoints>
+</exercise>
+<exercise exerciseId="U2E3_1">
+<totalPoints>20</totalPoints>
+<totalPoints>20</totalPoints>
+<totalPoints>574</totalPoints>
+</exercise>
+<exercise exerciseId="U2E4_1">
+<totalPoints>4</totalPoints>
+<totalPoints>4</totalPoints>
+<totalPoints>1003</totalPoints>
+</exercise>
+</student>525200
+U2E1_1,U2E2_1,U2E3_1,U2E4_1,
+<student studentId="525200">
+<exercise exerciseId="U2E1_1">
+<totalPoints>20</totalPoints>
+<totalPoints>20</totalPoints>
+<totalPoints>20</totalPoints>
+</exercise>
+<exercise exerciseId="U2E2_1">
+<totalPoints>0</totalPoints>
+<totalPoints>0</totalPoints>
+<totalPoints>0</totalPoints>
+</exercise>
+<exercise exerciseId="U2E3_1">
+<totalPoints>0</totalPoints>
+<totalPoints>0</totalPoints>
+<totalPoints>22222</totalPoints>
+</exercise>
+<exercise exerciseId="U2E4_1">
+<totalPoints>0</totalPoints>
+<totalPoints>0</totalPoints>
+<totalPoints>12345</totalPoints>
+</exercise>
+</student>
+</combinedStudents>
