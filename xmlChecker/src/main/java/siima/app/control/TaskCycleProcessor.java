@@ -549,19 +549,18 @@ public class TaskCycleProcessor {
 									
 									boolean isequal = compare_ctrl.compareTextLines(arg1str, arg2str);
 									if (!isequal) {
-										String filterOpt = findOperOptionValue(operOptions,"-F");
-										//String oper_option = oper.getOpt();									
+										String filterOpt = findOperOptionValue(operOptions,"-F");									
 										String filter = defineErrorFilter(filterOpt, this.singleStudentRun_MODE, this.writeToStudentExcel);
 										//Parameters: (filtDiffOper, minLength, cutLength, ignore)	
 										operErrorBuffer = compare_ctrl.getFilteredResults(filter, 0, 1000, null);										
 										result = "NON-EQUAL";
 										oper_ok = false;
 										
-										//TODO: Testing Write File
-										String writeOpt = findOperOptionValue(operOptions,"-W");
-										if(writeOpt!=null){
-											String relativePath = "results_xml/ST" + submitcnt + "_Ex" + this.currentTaskflow.getExercise() + "_TC" + testcasecount + "_FLmergeFlow_" + writeOpt; 
-											this.writeTextFile(operErrorBuffer.toString(), relativePath);
+										//Writing difference results to file
+										String writefile = findOperOptionValue(operOptions,"-W");
+										if(writefile!=null){
+											String relativePath = "results_xml"; 
+											this.writeOperErrorToTextFile(operErrorBuffer.toString(), relativePath, writefile, submitcnt, testcasecount);
 										}
 										
 									}
@@ -749,10 +748,15 @@ public class TaskCycleProcessor {
 		return cases;
 	}
 	
-	public void writeTextFile(String textContent, String relativePath){
-		//NEW 
-		String filepath = this.projectHome + "/" + relativePath;
+	public void writeOperErrorToTextFile(String textContent, String relativeFolderPath, String filename, int submitcnt, int testcasecount){
+		//NEW 28.1.2018
+		if((submitcnt>0)&&(testcasecount>0)){
+		String absFolderPath = this.projectHome + "/";
+		if((relativeFolderPath!=null)&&(!relativeFolderPath.isEmpty())) absFolderPath = absFolderPath + relativeFolderPath + "/";		
+		String filepath = absFolderPath + "ST" + submitcnt + "_Ex" + this.currentTaskflow.getExercise() + "_TC" + testcasecount + "_" + filename;
 		FileUtil.writeTextFile(textContent, filepath);
+		logger.log(Level.INFO, "writeOperErrorToTextFile():" + filepath);
+		}
 	}
 	
 	
