@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="utf-8"?><studentSubmits submitId="U_example_sub1">
+<description>Student submits for Round U example submit 1 (project_U_example_sub1.xlsx)</description>
+<referenceZip>Round_U_example_sub1_reference.zip</referenceZip>
+<student studentId="430793">
+<submitZip>Round_U_example_sub1_430793.zip</submitZip>
+<exercise exerciseId="U1E2_1">
+            <pointsOfTestCases>5</pointsOfTestCases>
+            <pointsOfTestCases>11</pointsOfTestCases>
+            <pointsOfTestCases>11</pointsOfTestCases>
+            <pointsOfTestCases>11</pointsOfTestCases>
+            <pointsOfTestCases>11</pointsOfTestCases>
+            <pointsOfTestCases>11</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(2:VALIDATION PHASE 1_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(3:VALIDATION PHASE 1_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(4:VALIDATION PHASE 2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(5:VALIDATION PHASE 3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(6:VALIDATION PHASE 4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+<exercise exerciseId="U1E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>2</pointsOfTestCases>
+            <pointsOfTestCases>3</pointsOfTestCases>
+            <pointsOfTestCases>3</pointsOfTestCases>
+            <pointsOfTestCases>3</pointsOfTestCases>
+            <pointsOfTestCases>3</pointsOfTestCases>
+            <pointsOfTestCases>3</pointsOfTestCases>
+            <pointsOfTestCases>3</pointsOfTestCases>
+            <pointsOfTestCases>3</pointsOfTestCases>
+            <pointsOfTestCases>3</pointsOfTestCases>
+            <pointsOfTestCases>3</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(2:XSLT_XPATH Q1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(3:XSLT_XPATH Q2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(4:XSLT_XPATH Q3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(5:XSLT_XPATH Q4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(6:XSLT_XPATH Q5):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(7:XSLT_XPATH Q6):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(8:XSLT_XPATH Q7):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(9:XSLT_XPATH Q8):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(10:XSLT_XPATH Q9):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(11:XSLT_XPATH Q10):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+<exercise exerciseId="U2E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>11</pointsOfTestCases>
+            <pointsOfTestCases>12</pointsOfTestCases>
+            <pointsOfTestCases>12</pointsOfTestCases>
+            <pointsOfTestCases>12</pointsOfTestCases>
+            <pointsOfTestCases>12</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(2:XSLT_PIPED_SEL-TR_COUNT):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(3:XSLT_PIPED_SEL-TR_NAMES):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(4:XSLT_PIPED_SEL-TR_PATHS):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(5:XSLT_PIPED_SEL-TR_ELEMENTS):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(6:XSLT_TR_TO_MODIFIED_PL-XML):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+<exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(1):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{lift_module, starter_module, workstation}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(1):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(1):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'description'. One of '{name}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(1):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(1):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(1):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+        </exercise>
+</student>
+<student studentId="530130">
+<submitZip>Round_U_example_sub1_530130.zip</submitZip>
+<exercise exerciseId="U1E2_1">
+            <pointsOfTestCases>5</pointsOfTestCases>
+            <pointsOfTestCases>11</pointsOfTestCases>
+            <pointsOfTestCases>11</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(2:VALIDATION PHASE 1_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(3:VALIDATION PHASE 1_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(4:VALIDATION PHASE 2):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(5:VALIDATION PHASE 3):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(6:VALIDATION PHASE 4):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.3.2.2: Attribute 'feed1' is not allowed to appear in element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(4):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(5):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.3.2.2: Attribute 'feed1' is not allowed to appear in element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(5):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.3.2.2: Attribute 'feed1' is not allowed to appear in element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(6):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+        </exercise>
+<exercise exerciseId="U1E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(2:XSLT_XPATH Q1):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(3:XSLT_XPATH Q2):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(4:XSLT_XPATH Q3):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(5:XSLT_XPATH Q4):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(6:XSLT_XPATH Q5):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(7:XSLT_XPATH Q6):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(8:XSLT_XPATH Q7):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(9:XSLT_XPATH Q8):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(10:XSLT_XPATH Q9):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(11:XSLT_XPATH Q10):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(2):MSG:(OPER:XSLTransformer:ERROR:line 69: Required attribute 'select' is missing.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(3):MSG:(OPER:XSLTransformer:ERROR:line 69: Required attribute 'select' is missing.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(4):MSG:(OPER:XSLTransformer:ERROR:line 69: Required attribute 'select' is missing.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(5):MSG:(OPER:XSLTransformer:ERROR:line 69: Required attribute 'select' is missing.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(6):MSG:(OPER:XSLTransformer:ERROR:line 69: Required attribute 'select' is missing.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(7):MSG:(OPER:XSLTransformer:ERROR:line 69: Required attribute 'select' is missing.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(8):MSG:(OPER:XSLTransformer:ERROR:line 69: Required attribute 'select' is missing.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(9):MSG:(OPER:XSLTransformer:ERROR:line 69: Required attribute 'select' is missing.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(10):MSG:(OPER:XSLTransformer:ERROR:line 69: Required attribute 'select' is missing.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(11):MSG:(OPER:XSLTransformer:ERROR:line 69: Required attribute 'select' is missing.)</errorsOfTestCases>
+        </exercise>
+<exercise exerciseId="U2E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>11</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>12</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(2:XSLT_PIPED_SEL-TR_COUNT):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(3:XSLT_PIPED_SEL-TR_NAMES):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(4:XSLT_PIPED_SEL-TR_PATHS):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(5:XSLT_PIPED_SEL-TR_ELEMENTS):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(6:XSLT_TR_TO_MODIFIED_PL-XML):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(3):MSG:(EQU#(Name attributes of InternalElements:&#13;
+chassis_1&#13;
+chassis_1&#13;
+conveyor_1&#13;
+conveyor_1&#13;
+conveyor_1&#13;
+conveyor_1&#13;
+conveyor_2&#13;
+conveyor_2&#13;
+conveyor_2&#13;
+conveyor_2&#13;
+conveyor_3&#13;
+conveyor_3&#13;
+crossing_1&#13;
+crossing_1&#13;
+crossing_2&#13;
+crossing_2&#13;
+crossing_3&#13;
+crossing_3&#13;
+Line End Pallet Lift LM2&#13;
+sensor_1&#13;
+sensor_1&#13;
+sensor_1&#13;
+sensor_1&#13;
+)#INS#(sensor_1&#13;
+sensor_1&#13;
+)#EQU#(sensor_2&#13;
+sensor_2&#13;
+sensor_2&#13;
+sensor_2&#13;
+Starter Module SM1&#13;
+Starter Pallet Lift LM1&#13;
+unit_1&#13;
+unit_2&#13;
+unit_3&#13;
+unit_4&#13;
+Workstation WM1&#13;
+)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(5):MSG:(EQU#(&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;InternalElement )#DEL#(ID="sensor_1" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&lt;InternalElement ID="sensor_1" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&lt;InternalElement )#EQU#(Name="chassis_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/SAFETYchassis"&gt;&#13;
+&lt;InternalElement )#DEL#(ID)#INS#(Name)#EQU#(="sensor_1")#INS#( ID="101")#EQU#( RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;/InternalElement&gt;&lt;InternalElement Name="chassis_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/SAFETYchassis"&gt;&#13;
+&lt;InternalElement )#DEL#(ID)#INS#(Name)#EQU#(="sensor_1")#INS#( ID="101")#EQU#( RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;/InternalElement&gt;&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&lt;InternalElement Name="conveyor_3" ID="101")#INS#(&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+)#EQU#(&lt;InternalElement Name="chassis_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/SAFETYchassis"&gt;&#13;
+&lt;InternalElement )#DEL#(ID)#INS#(Name)#EQU#(="sensor_1")#INS#( ID="101")#EQU#( RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&#13;
+&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;)#INS#(/)#EQU#(InternalElement)#DEL#( Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+)#INS#(&gt;)#EQU#(&lt;InternalElement Name=")#DEL#(convey)#INS#(sens)#EQU#(or_)#DEL#(2)#INS#(1)#EQU#(" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/)#DEL#(BELTconveyor"/&gt;&#13;
+&lt;/InternalElement)#INS#(OPTICsensor"/)#EQU#(&gt;&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&lt;InternalElement Name="sensor_1" ID="101")#INS#( RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&lt;InternalElement Name="sensor_1" ID="101")#EQU#( RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&lt;InternalElement Name="Starter Module SM1" ID="SM001" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/starter_module"&gt;&#13;
+)#DEL#(&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&#13;
+&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+)#EQU#(&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_3" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="crossing_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+&lt;InternalElement Name="crossing_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+&lt;InternalElement Name="crossing_3" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+&lt;)#DEL#(/InternalElement&gt;&lt;InternalElement Name="Starter Pallet Lift LM1" ID="LM001" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/lift_module")#INS#(InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&#13;
+&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;/InternalElement&gt;&lt;InternalElement Name="Starter Pallet Lift LM1" ID="LM001" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/lift_module"&gt;&#13;
+&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/)#EQU#(&gt;&#13;
+&lt;InternalElement Name="chassis_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/SAFETYchassis"&gt;&#13;
+&lt;InternalElement )#DEL#(ID)#INS#(Name)#EQU#(="sensor_1")#INS#( ID="101")#EQU#( RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&#13;
+&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+)#INS#(&lt;/InternalElement&gt;&lt;InternalElement Name="unit_1" ID="101"&gt;&#13;
+&lt;InternalElement Name="Starter Pallet Lift LM1" ID="LM001" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/lift_module"&gt;&#13;
+)#EQU#(&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+)#DEL#(&lt;/InternalElement&gt;&lt;InternalElement Name="unit_1" ID="101"&gt;&#13;
+&lt;InternalElement Name="Starter Pallet Lift LM1" ID="LM001" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/lift_module"&gt;&#13;
+)#EQU#(&lt;InternalElement Name="chassis_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/SAFETYchassis"&gt;&#13;
+&lt;InternalElement )#DEL#(ID)#INS#(Name)#EQU#(="sensor_1")#INS#( ID="101")#EQU#( RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&#13;
+&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;)#DEL#(InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;/InternalElement&gt;&lt;InternalElement Name="unit_2" ID="101"&gt;&#13;
+&lt;InternalElement Name="Starter Module SM1" ID="SM001" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/starter_module"&gt;&#13;
+&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&#13;
+&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/)#INS#(/InternalElement&gt;&#13;
+&lt;/InternalElement&gt;&lt;InternalElement Name="unit_2" ID="101"&gt;&#13;
+&lt;InternalElement Name="Starter Module SM1" ID="SM001" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/starter_module")#EQU#(&gt;&#13;
+&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_3" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="crossing_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+&lt;InternalElement Name="crossing_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+&lt;InternalElement Name="crossing_3" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+)#DEL#(&lt;/InternalElement&gt;&#13;
+&lt;/InternalElement&gt;&lt;InternalElement Name="unit_3" ID="101"&gt;&#13;
+&lt;InternalElement Name="Workstation WM1" ID="WM001" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/workstation"&gt;&#13;
+)#EQU#(&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&#13;
+&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+)#INS#(&lt;/InternalElement&gt;&#13;
+&lt;/InternalElement&gt;&lt;InternalElement Name="unit_3" ID="101"&gt;&#13;
+&lt;InternalElement Name="Workstation WM1" ID="WM001" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/workstation"&gt;&#13;
+)#EQU#(&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_3" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="crossing_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+&lt;InternalElement Name="crossing_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+&lt;InternalElement Name="crossing_3" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+&lt;)#DEL#(/InternalElement&gt;&#13;
+&lt;/InternalElement&gt;&lt;InternalElement Name="unit_4" ID="101"&gt;&#13;
+&lt;InternalElement Name="Line End Pallet Lift LM2" ID="LM002" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/lift_module")#INS#(InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&#13;
+&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;/InternalElement&gt;&lt;InternalElement Name="unit_4" ID="101"&gt;&#13;
+&lt;InternalElement Name="Line End Pallet Lift LM2" ID="LM002" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/lift_module"&gt;&#13;
+&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/)#EQU#(&gt;&#13;
+&lt;InternalElement Name="chassis_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/SAFETYchassis"&gt;&#13;
+&lt;InternalElement )#DEL#(ID)#INS#(Name)#EQU#(="sensor_1")#INS#( ID="101")#EQU#( RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&#13;
+&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;)#DEL#(InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;/InternalElement&gt;&lt;InternalElement Name="Workstation WM1" ID="WM001" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/workstation"&gt;&#13;
+&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&#13;
+&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/)#INS#(/InternalElement&gt;&#13;
+&lt;/InternalElement&gt;&lt;InternalElement Name="Workstation WM1" ID="WM001" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/workstation")#EQU#(&gt;&#13;
+&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_3" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="crossing_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+&lt;InternalElement Name="crossing_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+&lt;InternalElement Name="crossing_3" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+)#INS#(&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&#13;
+&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+)#EQU#(&lt;/InternalElement&gt;&#13;
+)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(6):MSG:(EQU#(&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;AutomationMLLibrary&gt;&#13;
+&lt;InstanceHierarchy Name="production_line"&gt;&#13;
+&lt;InternalElement Name="unit_1" ID="101"&gt;&#13;
+&lt;InternalElement Name="Starter Pallet Lift LM1" ID="LM001" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/lift_module"&gt;&#13;
+&lt;InternalElement Name="c)#DEL#(hassis)#INS#(onveyor)#EQU#(_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/)#DEL#(SAFETYchassis")#INS#(BELTTIconveyor"/)#EQU#(&gt;&#13;
+&lt;InternalElement )#DEL#(ID="sensor_)#INS#(Name="conveyor_2" ID="10)#EQU#(1" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/)#DEL#(OPTICsensor"/&gt;&#13;
+&lt;/InternalElement)#INS#(BELTconveyor"/)#EQU#(&gt;&#13;
+&lt;InternalElement Name=")#DEL#(sensor)#INS#(chassis)#EQU#(_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/)#DEL#(INDUCTIVEsensor"/)#INS#(SAFETYchassis")#EQU#(&gt;&#13;
+&lt;InternalElement Name="sensor_)#DEL#(2)#INS#(1)#EQU#(" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+)#INS#(&lt;/InternalElement&gt;&#13;
+)#EQU#(&lt;InternalElement Name=")#DEL#(convey)#INS#(sens)#EQU#(or_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/)#DEL#(BELTTIconvey)#INS#(INDUCTIVEsens)#EQU#(or"/&gt;&#13;
+&lt;InternalElement Name=")#DEL#(convey)#INS#(sens)#EQU#(or_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/)#DEL#(BELTconvey)#INS#(OPTICsens)#EQU#(or"/&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;InternalElement Name="unit_2" ID="101"&gt;&#13;
+&lt;InternalElement Name="Starter Module SM1" ID="SM001" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/starter_module"&gt;&#13;
+&lt;InternalElement Name=")#DEL#(sens)#INS#(convey)#EQU#(or_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/)#DEL#(INDUCTIVEsens)#INS#(BELTTIconvey)#EQU#(or"/&gt;&#13;
+&lt;InternalElement Name=")#DEL#(sens)#INS#(convey)#EQU#(or_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/)#DEL#(OPTICsens)#INS#(BELTconvey)#EQU#(or"/&gt;&#13;
+&lt;InternalElement Name=")#DEL#(sens)#INS#(convey)#EQU#(or_3" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/)#DEL#(OPTICsens)#INS#(BELTconvey)#EQU#(or"/&gt;&#13;
+&lt;InternalElement Name="c)#DEL#(onveyor)#INS#(rossing)#EQU#(_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/)#DEL#(BELTTIconveyor)#INS#(crossing)#EQU#("/&gt;&#13;
+&lt;InternalElement Name=")#DEL#(convey)#INS#(sens)#EQU#(or_)#DEL#(2)#INS#(1)#EQU#(" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/)#DEL#(BELTconvey)#INS#(INDUCTIVEsens)#EQU#(or"/&gt;&#13;
+&lt;InternalElement Name=")#DEL#(convey)#INS#(sens)#EQU#(or_)#DEL#(3)#INS#(2)#EQU#(" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/)#DEL#(BELTconvey)#INS#(OPTICsens)#EQU#(or"/&gt;&#13;
+&lt;InternalElement Name=")#DEL#(crossing_1)#INS#(sensor_3)#EQU#(" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/)#DEL#(crossing)#INS#(OPTICsensor)#EQU#("/&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;InternalElement Name="unit_3" ID="101"&gt;&#13;
+&lt;InternalElement Name="Workstation WM1" ID="WM001" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/workstation"&gt;&#13;
+)#DEL#(&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&#13;
+&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+)#EQU#(&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_3" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="crossing_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+&lt;InternalElement Name="crossing_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+&lt;InternalElement Name="crossing_3" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+&lt;)#DEL#(/InternalElement&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;InternalElement Name="unit_4" ID="101"&gt;&#13;
+&lt;InternalElement Name="Line End Pallet Lift LM2" ID="LM002" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/lift_module")#INS#(InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&#13;
+&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;InternalElement Name="unit_4" ID="101"&gt;&#13;
+&lt;InternalElement Name="Line End Pallet Lift LM2" ID="LM002" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/lift_module"&gt;&#13;
+&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/)#EQU#(&gt;&#13;
+&lt;InternalElement Name="chassis_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/SAFETYchassis"&gt;&#13;
+&lt;InternalElement )#DEL#(ID)#INS#(Name)#EQU#(="sensor_1")#INS#( ID="101")#EQU#( RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&#13;
+&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+)#DEL#(&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+)#EQU#(&lt;/InternalElement&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;/InstanceHierarchy&gt;&#13;
+&lt;/AutomationMLLibrary&gt;&#13;
+)#)</errorsOfTestCases>
+        </exercise>
+<exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:s4s-elt-invalid-content.1: The content of 'chassisType' is invalid.  Element 'element' is invalid, misplaced, or occurs too often.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:s4s-elt-invalid-content.1: The content of 'chassisType' is invalid.  Element 'element' is invalid, misplaced, or occurs too often.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:s4s-elt-invalid-content.1: The content of 'chassisType' is invalid.  Element 'element' is invalid, misplaced, or occurs too often.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:s4s-elt-invalid-content.1: The content of 'chassisType' is invalid.  Element 'element' is invalid, misplaced, or occurs too often.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+        </exercise>
+</student>
+<student studentId="544867">
+<submitZip>Round_U_example_sub1_544867.zip</submitZip>
+<exercise exerciseId="U1E2_1">
+            <pointsOfTestCases>5</pointsOfTestCases>
+            <pointsOfTestCases>11</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(2:VALIDATION PHASE 1_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(3:VALIDATION PHASE 1_2):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(4:VALIDATION PHASE 2):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(5:VALIDATION PHASE 3):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(6:VALIDATION PHASE 4):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'conveyor1'. One of '{conveyor, chassis, sensor, name, description}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(3):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'conveyor1'. One of '{conveyor, chassis, sensor, name, description}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(4):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(5):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'conveyor1'. One of '{conveyor, chassis, sensor, name, description}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(5):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'conveyor1'. One of '{conveyor, chassis, sensor, name, description}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(6):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+        </exercise>
+<exercise exerciseId="U1E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(2:XSLT_XPATH Q1):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(3:XSLT_XPATH Q2):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(4:XSLT_XPATH Q3):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(5:XSLT_XPATH Q4):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(6:XSLT_XPATH Q5):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(7:XSLT_XPATH Q6):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(8:XSLT_XPATH Q7):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(9:XSLT_XPATH Q8):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(10:XSLT_XPATH Q9):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(11:XSLT_XPATH Q10):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(2):MSG:(OPER:XSLTransformer:ERROR:Error checking type of the expression 'com.sun.org.apache.xalan.internal.xsltc.compiler.ForEach@2e848450'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(3):MSG:(OPER:XSLTransformer:ERROR:Error checking type of the expression 'com.sun.org.apache.xalan.internal.xsltc.compiler.ForEach@5e8cc700'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(4):MSG:(OPER:XSLTransformer:ERROR:Error checking type of the expression 'com.sun.org.apache.xalan.internal.xsltc.compiler.ForEach@3d1d51f8'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(5):MSG:(OPER:XSLTransformer:ERROR:Error checking type of the expression 'com.sun.org.apache.xalan.internal.xsltc.compiler.ForEach@420647a4'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(6):MSG:(OPER:XSLTransformer:ERROR:Error checking type of the expression 'com.sun.org.apache.xalan.internal.xsltc.compiler.ForEach@75772665'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(7):MSG:(OPER:XSLTransformer:ERROR:Error checking type of the expression 'com.sun.org.apache.xalan.internal.xsltc.compiler.ForEach@27efb2fc'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(8):MSG:(OPER:XSLTransformer:ERROR:Error checking type of the expression 'com.sun.org.apache.xalan.internal.xsltc.compiler.ForEach@33202c90'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(9):MSG:(OPER:XSLTransformer:ERROR:Error checking type of the expression 'com.sun.org.apache.xalan.internal.xsltc.compiler.ForEach@6f1b6c4c'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(10):MSG:(OPER:XSLTransformer:ERROR:Error checking type of the expression 'com.sun.org.apache.xalan.internal.xsltc.compiler.ForEach@267625e1'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(11):MSG:(OPER:XSLTransformer:ERROR:Error checking type of the expression 'com.sun.org.apache.xalan.internal.xsltc.compiler.ForEach@60911468'.)</errorsOfTestCases>
+        </exercise>
+<exercise exerciseId="U2E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>11</pointsOfTestCases>
+            <pointsOfTestCases>12</pointsOfTestCases>
+            <pointsOfTestCases>12</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(2:XSLT_PIPED_SEL-TR_COUNT):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(3:XSLT_PIPED_SEL-TR_NAMES):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(4:XSLT_PIPED_SEL-TR_PATHS):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(5:XSLT_PIPED_SEL-TR_ELEMENTS):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(6:XSLT_TR_TO_MODIFIED_PL-XML):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(5):MSG:(EQU#(&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;InternalElement Name="chassis_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/SAFETYchassis"&gt;&#13;
+&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;/InternalElement&gt;&lt;InternalElement Name="chassis_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/SAFETYchassis"&gt;&#13;
+&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;/InternalElement&gt;&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSys)#DEL#(Line End Pallet Lift LM2)#INS#(Starter Module SM1)#EQU#(" ID=")#DEL#(L)#INS#(S)#EQU#(M00)#DEL#(2)#INS#(1)#EQU#(" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/)#DEL#(lift)#INS#(starter)#EQU#(_module"&gt;&#13;
+&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="c)#DEL#(hassis)#INS#(onveyor_3" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="crossing)#EQU#(_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/)#DEL#(SAFETYchassis")#INS#(crossing"/)#EQU#(&gt;&#13;
+&lt;InternalElement Name=")#DEL#(sensor_1)#INS#(crossing_2)#EQU#(" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/)#DEL#(OPTICsensor)#INS#(crossing)#EQU#("/&gt;&#13;
+&lt;)#DEL#(/)#EQU#(InternalElement)#INS#( Name="crossing_3" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/)#EQU#(&gt;&#13;
+&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&#13;
+&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;/InternalElement&gt;&lt;InternalElement Name="unit_3" ID="101"&gt;&#13;
+&lt;InternalElement Name=")#DEL#(Starter Module S)#INS#(Workstation W)#EQU#(M1" ID=")#DEL#(S)#INS#(W)#EQU#(M001" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/)#DEL#(starter_module)#INS#(workstation)#EQU#("&gt;&#13;
+&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_3" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="crossing_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+&lt;InternalElement Name="crossing_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+&lt;InternalElement Name="crossing_3" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&#13;
+&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;/InternalElement&gt;&lt;InternalElement Name="unit_4" ID="101"&gt;&#13;
+&lt;InternalElement Name=")#DEL#(Workstation WM1)#INS#(Line End Pallet Lift LM2)#EQU#(" ID=")#DEL#(W)#INS#(L)#EQU#(M00)#DEL#(1)#INS#(2)#EQU#(" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/)#DEL#(workstation)#INS#(lift_module)#EQU#("&gt;&#13;
+&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="c)#DEL#(onveyor_3" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="crossing)#INS#(hassis)#EQU#(_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/)#DEL#(crossing"/)#INS#(SAFETYchassis")#EQU#(&gt;&#13;
+&lt;InternalElement Name=")#DEL#(crossing_2)#INS#(sensor_1)#EQU#(" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/)#DEL#(crossing)#INS#(OPTICsensor)#EQU#("/&gt;&#13;
+&lt;)#INS#(/)#EQU#(InternalElement)#DEL#( Name="crossing_3" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/)#EQU#(&gt;&#13;
+&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&#13;
+&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;/InternalElement&gt;&lt;InternalElement Name="Workstation WM1" ID="WM001" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/workstation"&gt;&#13;
+&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_3" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="crossing_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+&lt;InternalElement Name="crossing_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+&lt;InternalElement Name="crossing_3" ID="101" RefBaseSystemUnitPath="ProdLineS)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(6):MSG:(EQU#(&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;AutomationMLLibrary&gt;&#13;
+&lt;InstanceHierarchy Name="production_line"&gt;&#13;
+&lt;InternalElement Name="unit_1" ID="101"&gt;&#13;
+&lt;InternalElement Name="Starter Pallet Lift LM1" ID="LM001" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/lift_module"&gt;&#13;
+&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELT)#INS#(TI)#EQU#(conveyor"/&gt;&#13;
+)#DEL#()#EQU#(&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="chassis_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/SAFETYchassis"&gt;&#13;
+&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&#13;
+&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;InternalElement Name="unit_)#DEL#(3)#INS#(2)#EQU#(" ID="101"&gt;&#13;
+&lt;InternalElement Name="Starter Module SM1" ID="SM001" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/starter_module"&gt;&#13;
+&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELT)#INS#(TI)#EQU#(conveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_3" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="crossing_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&#13;
+&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;InternalElement Name="sensor_3" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;InternalElement Name="unit_)#DEL#(4)#INS#(3)#EQU#(" ID="101"&gt;&#13;
+&lt;InternalElement Name="Workstation WM1" ID="WM001" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/workstation"&gt;&#13;
+&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_3" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="crossing_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+&lt;InternalElement Name="crossing_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+&lt;InternalElement Name="crossing_3" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/crossing"/&gt;&#13;
+&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&#13;
+&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/)#DEL#(2)#INS#(4)#EQU#(" ID="101"&gt;&#13;
+&lt;InternalElement Name="Line End Pallet Lift LM2" ID="LM002" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/lift_module"&gt;&#13;
+&lt;InternalElement Name="conveyor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="conveyor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/BELTconveyor"/&gt;&#13;
+&lt;InternalElement Name="chassis_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/SAFETYchassis"&gt;&#13;
+&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;InternalElement Name="sensor_1" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/INDUCTIVEsensor"/&gt;&#13;
+&lt;InternalElement Name="sensor_2" ID="101" RefBaseSystemUnitPath="ProdLineSystemUnitClassLib/OPTICsensor"/&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;/InternalElement&gt;&#13;
+&lt;/InstanceHierarchy&gt;&#13;
+&lt;/AutomationMLLibrary&gt;&#13;
+)#)</errorsOfTestCases>
+        </exercise>
+<exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'production_line'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(3):MSG:(EQU#(XS:ELEMENTS...&#13;
+elements local and global total: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;=)#EQU#(5)&#13;
+elements with @name: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;=)#EQU#(5)&#13;
+...XS:ELEMENTS&#13;
+XS:ELEMENTS with spesific names ...&#13;
+root element @name = production_line:)#DEL#(0)#INS#(1)#EQU#( (1)&#13;
+root's child elements @name = unit:)#DEL#(0)#INS#(1)#EQU#( (1)&#13;
+total with @name = $mod1-3:)#DEL#(0)#INS#(3)#EQU#( (3)&#13;
+...XS:ELEMENTS&#13;
+XS:COMPLEXTYPE...&#13;
+local and global total: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;=)#EQU#(2)&#13;
+...XS:COMPLEXTYPE&#13;
+)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'production_line'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(5):MSG:(EQU#(XS:ELEMENTS...&#13;
+elements local and global total: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;=)#EQU#(8)&#13;
+elements with @name: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;=)#EQU#(8)&#13;
+...XS:ELEMENTS&#13;
+XS:ELEMENTS with spesific names ...&#13;
+root element @name = production_line:)#DEL#(0)#INS#(1)#EQU#( (1)&#13;
+root's child elements @name = unit:)#DEL#(0)#INS#(1)#EQU#( (1)&#13;
+total with @name = $mod1-3:)#DEL#(0)#INS#(3)#EQU#( (3)&#13;
+total of the common module children @name = $mc1-4: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;=)#EQU#(4)&#13;
+...XS:ELEMENTS&#13;
+XS:COMPLEXTYPE...&#13;
+local and global total: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;=)#EQU#(3)&#13;
+...XS:COMPLEXTYPE&#13;
+)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'production_line'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(7):MSG:(EQU#(XS:ELEMENTS...&#13;
+elements local and global total: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;= )#EQU#(11)&#13;
+elements with @name: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;= )#EQU#(11)&#13;
+...XS:ELEMENTS&#13;
+XS:ELEMENTS with spesific names ...&#13;
+root element @name = production_line:)#DEL#(0)#INS#(1)#EQU#( (1)&#13;
+root's child elements @name = unit:)#DEL#(0)#INS#(1)#EQU#( (1)&#13;
+total with @name = $mod1-3:)#DEL#(0)#INS#(3)#EQU#( (3)&#13;
+total of all module children @name = $mc1-7: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;= )#EQU#(6)&#13;
+...XS:ELEMENTS&#13;
+XS:COMPLEXTYPE...&#13;
+local and global total: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;= )#EQU#(6)&#13;
+...XS:COMPLEXTYPE&#13;
+)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'production_line'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+        </exercise>
+</student>
+<student studentId="594930">
+<submitZip>Round_U_example_sub1_594930.zip</submitZip>
+<exercise exerciseId="U1E2_1">
+            <pointsOfTestCases>5</pointsOfTestCases>
+            <pointsOfTestCases>11</pointsOfTestCases>
+            <pointsOfTestCases>11</pointsOfTestCases>
+            <pointsOfTestCases>11</pointsOfTestCases>
+            <pointsOfTestCases>11</pointsOfTestCases>
+            <pointsOfTestCases>11</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(2:VALIDATION PHASE 1_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(3:VALIDATION PHASE 1_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(4:VALIDATION PHASE 2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(5:VALIDATION PHASE 3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(6:VALIDATION PHASE 4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+<exercise exerciseId="U1E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>2</pointsOfTestCases>
+            <pointsOfTestCases>3</pointsOfTestCases>
+            <pointsOfTestCases>3</pointsOfTestCases>
+            <pointsOfTestCases>3</pointsOfTestCases>
+            <pointsOfTestCases>3</pointsOfTestCases>
+            <pointsOfTestCases>3</pointsOfTestCases>
+            <pointsOfTestCases>3</pointsOfTestCases>
+            <pointsOfTestCases>3</pointsOfTestCases>
+            <pointsOfTestCases>3</pointsOfTestCases>
+            <pointsOfTestCases>3</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(2:XSLT_XPATH Q1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(3:XSLT_XPATH Q2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(4:XSLT_XPATH Q3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(5:XSLT_XPATH Q4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(6:XSLT_XPATH Q5):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(7:XSLT_XPATH Q6):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(8:XSLT_XPATH Q7):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(9:XSLT_XPATH Q8):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(10:XSLT_XPATH Q9):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(11:XSLT_XPATH Q10):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+<exercise exerciseId="U2E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>11</pointsOfTestCases>
+            <pointsOfTestCases>12</pointsOfTestCases>
+            <pointsOfTestCases>12</pointsOfTestCases>
+            <pointsOfTestCases>12</pointsOfTestCases>
+            <pointsOfTestCases>12</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(2:XSLT_PIPED_SEL-TR_COUNT):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(3:XSLT_PIPED_SEL-TR_NAMES):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(4:XSLT_PIPED_SEL-TR_PATHS):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(5:XSLT_PIPED_SEL-TR_ELEMENTS):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(6:XSLT_TR_TO_MODIFIED_PL-XML):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+<exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(4):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{lift_module, starter_module, workstation}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(4):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(4):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'description'. One of '{name}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(4):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(4):TC(7):MSG:(EQU#(XS:ELEMENTS...&#13;
+elements local and global total: is OK (&gt;= 11)&#13;
+elements with @name: is OK (&gt;= 11)&#13;
+...XS:ELEMENTS&#13;
+XS:ELEMENTS with spesific names ...&#13;
+root element @name = production_line:1 (1)&#13;
+root's child elements @name = unit:1 (1)&#13;
+total with @name = $mod1-3:3 (3)&#13;
+total of all module children @name = $mc1-7: is OK (&gt;= 6)&#13;
+...XS:ELEMENTS&#13;
+XS:COMPLEXTYPE...&#13;
+local and global total: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;= )#EQU#(6)&#13;
+...XS:COMPLEXTYPE&#13;
+)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(4):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(4):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+        </exercise>
+</student>
+</studentSubmits>

@@ -1,0 +1,1309 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<studentSubmits submitId="U3_sub1">
+    <description>Student submits for Round U3 submit 1 (project_U3_sub1_1.xlsx)</description>
+    <referenceZip>Round_U3_sub1_reference.zip</referenceZip>
+    <student studentId="605612">
+        <surname>Hirvonen</surname>
+        <firstname>Elias Aatto Olavi</firstname>
+        <submitZip>Round_U3_sub1_605612.zip</submitZip>
+        <exercise exerciseId="U3E1_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>19</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(2:VALIDATION_CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(1):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{lift_module, starter_module, workstation}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(1):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(1):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'description'. One of '{name}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(1):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(1):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(1):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(3:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(4:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(1):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'production_line'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(1):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(1):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'production_line'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(1):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(1):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'production_line'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(1):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E4_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(1):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(1):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'inventions'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(1):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+        </exercise>
+    </student>
+    <student studentId="529057">
+        <surname>Järvistö</surname>
+        <firstname>Alexander Christian</firstname>
+        <submitZip>Round_U3_sub1_529057.zip</submitZip>
+        <exercise exerciseId="U3E1_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>19</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(2:VALIDATION_CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{lift_module, starter_module, workstation}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'description'. One of '{name}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(3:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(4:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(2):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E4_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>9</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(2):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+    </student>
+    <student studentId="592071">
+        <surname>Kaisanlahti</surname>
+        <firstname>Anna Helena</firstname>
+        <submitZip>Round_U3_sub1_592071.zip</submitZip>
+        <exercise exerciseId="U3E1_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>19</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(2:VALIDATION_CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{lift_module, starter_module, workstation}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'description'. One of '{name}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(3:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(4:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E4_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(3):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'inventions'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(3):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+        </exercise>
+    </student>
+    <student studentId="602945">
+        <surname>Karvinen</surname>
+        <firstname>Samuli Ville Valtteri</firstname>
+        <submitZip>Round_U3_sub1_602945.zip</submitZip>
+        <exercise exerciseId="U3E1_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>19</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(2:VALIDATION_CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(4):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(4):TC(4):MSG:(INS#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(4):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(4):TC(6):MSG:(INS#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(4):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(4):TC(8):MSG:(INS#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(3:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(4:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(4):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'production_line'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(4):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(4):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'production_line'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(4):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(4):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'production_line'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(4):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E4_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(4):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(4):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'inventions'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(4):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+        </exercise>
+    </student>
+    <student studentId="526021">
+        <surname>Korhonen</surname>
+        <firstname>Katariina Milla Maria</firstname>
+        <submitZip>Round_U3_sub1_526021.zip</submitZip>
+        <exercise exerciseId="U3E1_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>19</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(5):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(5):TC(2:VALIDATION_CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(5):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(5):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(5):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(5):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(5):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(5):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(5):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(5):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(5):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{lift_module, starter_module, workstation}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(5):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(5):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'description'. One of '{name}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(5):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(5):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(5):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(5):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(5):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(5):TC(3:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(5):TC(4:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(5):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:s4s-elt-must-match.1: The content of 'restriction' must match (annotation?, (simpleType?, (minExclusive | minInclusive | maxExclusive | maxInclusive | totalDigits | fractionDigits | length | minLength | maxLength | enumeration | whiteSpace | pattern)*)). A problem was found starting at: attribute.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(5):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(5):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:s4s-elt-must-match.1: The content of 'restriction' must match (annotation?, (simpleType?, (minExclusive | minInclusive | maxExclusive | maxInclusive | totalDigits | fractionDigits | length | minLength | maxLength | enumeration | whiteSpace | pattern)*)). A problem was found starting at: attribute.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(5):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(5):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:s4s-elt-must-match.1: The content of 'restriction' must match (annotation?, (simpleType?, (minExclusive | minInclusive | maxExclusive | maxInclusive | totalDigits | fractionDigits | length | minLength | maxLength | enumeration | whiteSpace | pattern)*)). A problem was found starting at: attribute.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(5):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E4_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(5):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(5):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(5):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'inventions'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(5):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+        </exercise>
+    </student>
+    <student studentId="605793">
+        <surname>Leinonen</surname>
+        <firstname>Mikael Alexander</firstname>
+        <submitZip>Round_U3_sub1_605793.zip</submitZip>
+        <exercise exerciseId="U3E1_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>19</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(6):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(6):TC(2:VALIDATION_CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(6):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(6):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(6):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(6):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(6):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(6):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(6):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(6):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(6):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{lift_module, starter_module, workstation}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(6):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(6):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'description'. One of '{name}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(6):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(6):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(6):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(6):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(6):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(6):TC(3:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(6):TC(4:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(6):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(6):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(6):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(6):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E4_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(6):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(6):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(6):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'inventions'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(6):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+        </exercise>
+    </student>
+    <student studentId="529581">
+        <surname>Lindeman</surname>
+        <firstname>Karri Tuukka Aleksi</firstname>
+        <submitZip>Round_U3_sub1_529581.zip</submitZip>
+        <exercise exerciseId="U3E1_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(7):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(7):TC(2:VALIDATION_CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(7):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-datatype-valid.1.2.1: '20' is not a valid value for 'gYear'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(7):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(7):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(7):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(7):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(7):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(7):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(7):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(7):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(7):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(7):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(7):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(7):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'description'. One of '{name}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(7):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(7):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(7):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E3_1">
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(7):TC(1:WELLFORMED CHECK):FL(false):MSG(OPER_STD:MERGE:RESULT(NOT-COMPARED-STUFLOW-ERROR))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(7):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(7):TC(3:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(7):TC(4:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(7):TC(1):MSG:(OPER:XMLWellFormedCheck:ERROR:ParseError at [row,col]:[64,3]
+Message: The markup in the document following the root element must be well-formed.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(7):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:The markup in the document following the root element must be well-formed.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(7):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(7):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:The markup in the document following the root element must be well-formed.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(7):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(7):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:The markup in the document following the root element must be well-formed.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(7):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E4_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(7):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(7):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(7):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'inventions'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(7):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+        </exercise>
+    </student>
+    <student studentId="390778">
+        <surname>Lähde</surname>
+        <firstname>Juhani Mikael</firstname>
+        <submitZip>Round_U3_sub1_390778.zip</submitZip>
+        <exercise exerciseId="U3E1_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>19</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(8):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(8):TC(2:VALIDATION_CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(8):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(8):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(8):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(8):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(8):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(8):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(8):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(8):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(8):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:s4s-elt-must-match.1: The content of 'sequence' must match (annotation?, (element | group | choice | sequence | any)*). A problem was found starting at: choise.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(8):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(8):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:s4s-elt-must-match.1: The content of 'sequence' must match (annotation?, (element | group | choice | sequence | any)*). A problem was found starting at: choise.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(8):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(8):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:s4s-elt-must-match.1: The content of 'sequence' must match (annotation?, (element | group | choice | sequence | any)*). A problem was found starting at: choise.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(8):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(8):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:s4s-elt-must-match.1: The content of 'sequence' must match (annotation?, (element | group | choice | sequence | any)*). A problem was found starting at: choise.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(8):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(8):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(8):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(8):TC(3:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(8):TC(4:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(8):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'production_line'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(8):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(8):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'production_line'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(8):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(8):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'production_line'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(8):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E4_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(8):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(8):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(8):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'inventions'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(8):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+        </exercise>
+    </student>
+    <student studentId="588470">
+        <surname>Nedergård</surname>
+        <firstname>Benjamin Jarl Einar</firstname>
+        <submitZip>Round_U3_sub1_588470.zip</submitZip>
+        <exercise exerciseId="U3E1_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>19</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(9):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(9):TC(2:VALIDATION_CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(9):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(9):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(9):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(9):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(9):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(9):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(9):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(9):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(9):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{lift_module, starter_module, workstation}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(9):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(9):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'description'. One of '{name}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(9):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(9):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(9):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(9):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(9):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(9):TC(3:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(9):TC(4:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(9):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:s4s-elt-must-match.1: The content of 'sequence' must match (annotation?, (element | group | choice | sequence | any)*). A problem was found starting at: attribute.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(9):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(9):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:s4s-elt-must-match.1: The content of 'sequence' must match (annotation?, (element | group | choice | sequence | any)*). A problem was found starting at: attribute.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(9):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(9):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:s4s-elt-must-match.1: The content of 'sequence' must match (annotation?, (element | group | choice | sequence | any)*). A problem was found starting at: attribute.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(9):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E4_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(9):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(9):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(9):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'inventions'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(9):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+        </exercise>
+    </student>
+    <student studentId="526885">
+        <surname>Nissi</surname>
+        <firstname>Janita Kristiina</firstname>
+        <submitZip>Round_U3_sub1_526885.zip</submitZip>
+        <exercise exerciseId="U3E1_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>19</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(10):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(10):TC(2:VALIDATION_CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(10):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(10):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(10):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(10):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(10):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(10):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(10):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(10):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(10):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{lift_module, starter_module, workstation}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(10):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(10):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'description'. One of '{name}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(10):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(10):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(10):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(10):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(10):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(10):TC(3:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(10):TC(4:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(10):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'modID' must appear on element 'starter_module'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(10):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(10):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(10):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E4_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>9</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(10):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(10):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+    </student>
+    <student studentId="593504">
+        <surname>Nordlund</surname>
+        <firstname>Roope Juho Lassi</firstname>
+        <submitZip>Round_U3_sub1_593504.zip</submitZip>
+        <exercise exerciseId="U3E1_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>19</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(11):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(11):TC(2:VALIDATION_CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(11):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(11):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(11):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(11):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(11):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(11):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(11):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(11):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(11):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{lift_module, starter_module, workstation}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(11):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(11):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'description'. One of '{name}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(11):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(11):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(11):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(11):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(11):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(11):TC(3:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(11):TC(4:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(11):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(11):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(11):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(11):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E4_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(11):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(11):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(11):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'inventions'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(11):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+        </exercise>
+    </student>
+    <student studentId="588713">
+        <surname>Nyman</surname>
+        <firstname>Robin Christian</firstname>
+        <submitZip>Round_U3_sub1_588713.zip</submitZip>
+        <exercise exerciseId="U3E1_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>19</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(12):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(12):TC(2:VALIDATION_CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(12):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(12):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(12):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(12):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(12):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(12):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(12):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(12):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(12):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cos-element-consistent: Error for type '#AnonType_production_line'. Multiple elements with name 'unit', with different types, appear in the model group.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(12):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(12):TC(3):MSG:(EQU#(XS:ELEMENTS...&#xD;
+elements local and global total: is OK (&gt;=5)&#xD;
+elements with @name: is OK (&gt;=5)&#xD;
+...XS:ELEMENTS&#xD;
+XS:ELEMENTS with spesific names ...&#xD;
+root element @name = production_line:1 (1)&#xD;
+root's child elements @name = unit:)#DEL#(4)#INS#(1)#EQU#( (1)&#xD;
+total with @name = $mod1-3:)#DEL#(4)#INS#(3)#EQU#( (3)&#xD;
+...XS:ELEMENTS&#xD;
+XS:COMPLEXTYPE...&#xD;
+local and global total: is OK (&gt;=2)&#xD;
+...XS:COMPLEXTYPE&#xD;
+)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(12):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cos-element-consistent: Error for type '#AnonType_production_line'. Multiple elements with name 'unit', with different types, appear in the model group.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(12):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(12):TC(5):MSG:(EQU#(XS:ELEMENTS...&#xD;
+elements local and global total: is OK (&gt;=8)&#xD;
+elements with @name: is OK (&gt;=8)&#xD;
+...XS:ELEMENTS&#xD;
+XS:ELEMENTS with spesific names ...&#xD;
+root element @name = production_line:1 (1)&#xD;
+root's child elements @name = unit:)#DEL#(4)#INS#(1)#EQU#( (1)&#xD;
+total with @name = $mod1-3:)#DEL#(4)#INS#(3)#EQU#( (3)&#xD;
+total of the common module children @name = $mc1-4: is OK (&gt;=4)&#xD;
+...XS:ELEMENTS&#xD;
+XS:COMPLEXTYPE...&#xD;
+local and global total: is OK (&gt;=3)&#xD;
+...XS:COMPLEXTYPE&#xD;
+)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(12):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cos-element-consistent: Error for type '#AnonType_production_line'. Multiple elements with name 'unit', with different types, appear in the model group.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(12):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(12):TC(7):MSG:(EQU#(XS:ELEMENTS...&#xD;
+elements local and global total: is OK (&gt;= 11)&#xD;
+elements with @name: is OK (&gt;= 11)&#xD;
+...XS:ELEMENTS&#xD;
+XS:ELEMENTS with spesific names ...&#xD;
+root element @name = production_line:1 (1)&#xD;
+root's child elements @name = unit:)#DEL#(4)#INS#(1)#EQU#( (1)&#xD;
+total with @name = $mod1-3:)#DEL#(4)#INS#(3)#EQU#( (3)&#xD;
+total of all module children @name = $mc1-7: is OK (&gt;= 6)&#xD;
+...XS:ELEMENTS&#xD;
+XS:COMPLEXTYPE...&#xD;
+local and global total: is OK (&gt;= 6)&#xD;
+...XS:COMPLEXTYPE&#xD;
+)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(12):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cos-element-consistent: Error for type '#AnonType_production_line'. Multiple elements with name 'unit', with different types, appear in the model group.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(12):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(12):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(12):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(12):TC(3:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(12):TC(4:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(12):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:s4s-att-not-allowed: Attribute 'name' cannot appear in element 'complexType'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(12):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(12):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:s4s-att-not-allowed: Attribute 'name' cannot appear in element 'complexType'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(12):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(12):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:s4s-att-not-allowed: Attribute 'name' cannot appear in element 'complexType'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(12):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E4_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(12):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(12):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(12):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'inventions'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(12):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+        </exercise>
+    </student>
+    <student studentId="514020">
+        <surname>Penttilä</surname>
+        <firstname>Tommi Juhani</firstname>
+        <submitZip>Round_U3_sub1_514020.zip</submitZip>
+        <exercise exerciseId="U3E1_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>19</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(13):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(13):TC(2:VALIDATION_CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(13):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(13):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(13):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(13):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(13):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(13):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(13):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(13):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(13):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{lift_module, starter_module, workstation}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(13):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(13):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'description'. One of '{name}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(13):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(13):TC(7):MSG:(EQU#(XS:ELEMENTS...&#xD;
+elements local and global total: is OK (&gt;= 11)&#xD;
+elements with @name: is OK (&gt;= 11)&#xD;
+...XS:ELEMENTS&#xD;
+XS:ELEMENTS with spesific names ...&#xD;
+root element @name = production_line:1 (1)&#xD;
+root's child elements @name = unit:1 (1)&#xD;
+total with @name = $mod1-3:3 (3)&#xD;
+total of all module children @name = $mc1-7: is OK (&gt;= 6)&#xD;
+...XS:ELEMENTS&#xD;
+XS:COMPLEXTYPE...&#xD;
+local and global total: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;= )#EQU#(6)&#xD;
+...XS:COMPLEXTYPE&#xD;
+)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(13):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(13):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(13):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(13):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(13):TC(3:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(13):TC(4:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(13):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(13):TC(3):MSG:(INS#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(13):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(13):TC(4):MSG:(INS#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E4_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(13):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(13):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(13):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'inventions'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(13):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+        </exercise>
+    </student>
+    <student studentId="530130">
+        <surname>Prinsén</surname>
+        <firstname>Jonatan Alexander</firstname>
+        <submitZip>Round_U3_sub1_530130.zip</submitZip>
+        <exercise exerciseId="U3E1_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>19</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(14):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(14):TC(2:VALIDATION_CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(14):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(14):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(14):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(14):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(14):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(14):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(14):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(14):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(14):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:s4s-elt-invalid-content.1: The content of 'chassisType' is invalid.  Element 'element' is invalid, misplaced, or occurs too often.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(14):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(14):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:s4s-elt-invalid-content.1: The content of 'chassisType' is invalid.  Element 'element' is invalid, misplaced, or occurs too often.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(14):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(14):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:s4s-elt-invalid-content.1: The content of 'chassisType' is invalid.  Element 'element' is invalid, misplaced, or occurs too often.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(14):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(14):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:s4s-elt-invalid-content.1: The content of 'chassisType' is invalid.  Element 'element' is invalid, misplaced, or occurs too often.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(14):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(14):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(14):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(14):TC(3:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(14):TC(4:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(14):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'production_line'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(14):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(14):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'production_line'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(14):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(14):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'production_line'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(14):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E4_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(14):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(14):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(14):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'inventions'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(14):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+        </exercise>
+    </student>
+    <student studentId="530143">
+        <surname>Prinsén</surname>
+        <firstname>Pontus Oliver</firstname>
+        <submitZip>Round_U3_sub1_530143.zip</submitZip>
+        <exercise exerciseId="U3E1_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>19</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(15):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(15):TC(2:VALIDATION_CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(15):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(15):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(15):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(15):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(15):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(15):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(15):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(15):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(15):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{lift_module, starter_module, workstation}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(15):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(15):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'description'. One of '{name}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(15):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(15):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(15):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(15):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(15):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(15):TC(3:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(15):TC(4:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(15):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.3.2.2: Attribute 'type' is not allowed to appear in element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(15):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(15):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.3.2.2: Attribute 'feed' is not allowed to appear in element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(15):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(15):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.3.2.2: Attribute 'type' is not allowed to appear in element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(15):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E4_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(15):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(15):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(15):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'inventions'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(15):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+        </exercise>
+    </student>
+    <student studentId="589518">
+        <surname>Riikonen</surname>
+        <firstname>Emma Julia</firstname>
+        <submitZip>Round_U3_sub1_589518.zip</submitZip>
+        <exercise exerciseId="U3E1_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>19</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(16):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(16):TC(2:VALIDATION_CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(16):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(16):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(16):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(16):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(16):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(16):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(16):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(16):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(16):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{lift_module, starter_module, workstation}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(16):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(16):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'description'. One of '{name}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(16):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(16):TC(7):MSG:(EQU#(XS:ELEMENTS...&#xD;
+elements local and global total: is OK (&gt;= 11)&#xD;
+elements with @name: is OK (&gt;= 11)&#xD;
+...XS:ELEMENTS&#xD;
+XS:ELEMENTS with spesific names ...&#xD;
+root element @name = production_line:1 (1)&#xD;
+root's child elements @name = unit:1 (1)&#xD;
+total with @name = $mod1-3:3 (3)&#xD;
+total of all module children @name = $mc1-7: is OK (&gt;= 6)&#xD;
+...XS:ELEMENTS&#xD;
+XS:COMPLEXTYPE...&#xD;
+local and global total: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;= )#EQU#(6)&#xD;
+...XS:COMPLEXTYPE&#xD;
+)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(16):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(16):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(16):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(16):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(16):TC(3:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(16):TC(4:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(16):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(16):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(16):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-datatype-valid.1.2.1: '1m20cm' is not a valid value for 'integer'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(16):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E4_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(16):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(16):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(16):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'inventions'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(16):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+        </exercise>
+    </student>
+    <student studentId="521372">
+        <surname>Tarvo</surname>
+        <firstname>Noora Elisa</firstname>
+        <submitZip>Round_U3_sub1_521372.zip</submitZip>
+        <exercise exerciseId="U3E1_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>19</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(17):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(17):TC(2:VALIDATION_CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(17):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(17):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(17):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(17):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(17):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(17):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(17):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(17):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(17):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'production_line'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(17):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(17):TC(3):MSG:(EQU#(XS:ELEMENTS...&#xD;
+elements local and global total: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;=)#EQU#(5)&#xD;
+elements with @name: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;=)#EQU#(5)&#xD;
+...XS:ELEMENTS&#xD;
+XS:ELEMENTS with spesific names ...&#xD;
+root element @name = production_line:)#DEL#(0)#INS#(1)#EQU#( (1)&#xD;
+root's child elements @name = unit:)#DEL#(0)#INS#(1)#EQU#( (1)&#xD;
+total with @name = $mod1-3:)#DEL#(0)#INS#(3)#EQU#( (3)&#xD;
+...XS:ELEMENTS&#xD;
+XS:COMPLEXTYPE...&#xD;
+local and global total: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;=)#EQU#(2)&#xD;
+...XS:COMPLEXTYPE&#xD;
+)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(17):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'production_line'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(17):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(17):TC(5):MSG:(EQU#(XS:ELEMENTS...&#xD;
+elements local and global total: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;=)#EQU#(8)&#xD;
+elements with @name: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;=)#EQU#(8)&#xD;
+...XS:ELEMENTS&#xD;
+XS:ELEMENTS with spesific names ...&#xD;
+root element @name = production_line:)#DEL#(0)#INS#(1)#EQU#( (1)&#xD;
+root's child elements @name = unit:)#DEL#(0)#INS#(1)#EQU#( (1)&#xD;
+total with @name = $mod1-3:)#DEL#(0)#INS#(3)#EQU#( (3)&#xD;
+total of the common module children @name = $mc1-4: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;=)#EQU#(4)&#xD;
+...XS:ELEMENTS&#xD;
+XS:COMPLEXTYPE...&#xD;
+local and global total: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;=)#EQU#(3)&#xD;
+...XS:COMPLEXTYPE&#xD;
+)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(17):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'production_line'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(17):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(17):TC(7):MSG:(EQU#(XS:ELEMENTS...&#xD;
+elements local and global total: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;= )#EQU#(11)&#xD;
+elements with @name: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;= )#EQU#(11)&#xD;
+...XS:ELEMENTS&#xD;
+XS:ELEMENTS with spesific names ...&#xD;
+root element @name = production_line:)#DEL#(0)#INS#(1)#EQU#( (1)&#xD;
+root's child elements @name = unit:)#DEL#(0)#INS#(1)#EQU#( (1)&#xD;
+total with @name = $mod1-3:)#DEL#(0)#INS#(3)#EQU#( (3)&#xD;
+total of all module children @name = $mc1-7: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;= )#EQU#(6)&#xD;
+...XS:ELEMENTS&#xD;
+XS:COMPLEXTYPE...&#xD;
+local and global total: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;= )#EQU#(6)&#xD;
+...XS:COMPLEXTYPE&#xD;
+)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(17):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'production_line'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(17):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(17):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(17):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(17):TC(3:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(17):TC(4:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(17):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'production_line'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(17):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(17):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'production_line'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(17):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(17):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'production_line'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(17):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E4_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(17):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(17):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(17):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'inventions'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(17):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+        </exercise>
+    </student>
+    <student studentId="594930">
+        <surname>Vaarnamo</surname>
+        <firstname>Juha Pekka Antero</firstname>
+        <submitZip>Round_U3_sub1_594930.zip</submitZip>
+        <exercise exerciseId="U3E1_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>19</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(18):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(18):TC(2:VALIDATION_CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(18):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(18):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(18):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(18):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(18):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(18):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(18):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(18):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(18):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{lift_module, starter_module, workstation}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(18):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(18):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'description'. One of '{name}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(18):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(18):TC(7):MSG:(EQU#(XS:ELEMENTS...&#xD;
+elements local and global total: is OK (&gt;= 11)&#xD;
+elements with @name: is OK (&gt;= 11)&#xD;
+...XS:ELEMENTS&#xD;
+XS:ELEMENTS with spesific names ...&#xD;
+root element @name = production_line:1 (1)&#xD;
+root's child elements @name = unit:1 (1)&#xD;
+total with @name = $mod1-3:3 (3)&#xD;
+total of all module children @name = $mc1-7: is OK (&gt;= 6)&#xD;
+...XS:ELEMENTS&#xD;
+XS:COMPLEXTYPE...&#xD;
+local and global total: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;= )#EQU#(6)&#xD;
+...XS:COMPLEXTYPE&#xD;
+)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(18):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(18):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(18):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(18):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(18):TC(3:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(18):TC(4:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(18):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(18):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(18):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(18):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E4_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(18):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(18):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(18):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'inventions'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(18):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+        </exercise>
+    </student>
+    <student studentId="530868">
+        <surname>Westerholm</surname>
+        <firstname>Lauri Verner</firstname>
+        <submitZip>Round_U3_sub1_530868.zip</submitZip>
+        <exercise exerciseId="U3E1_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>19</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(19):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(19):TC(2:VALIDATION_CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(19):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(19):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(19):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(19):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(19):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(19):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(19):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(19):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(19):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{lift_module, starter_module, workstation}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(19):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(19):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'description'. One of '{name}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(19):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(19):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(19):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(19):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(19):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(19):TC(3:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(19):TC(4:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(19):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(19):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(19):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(19):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E4_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>9</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(19):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(19):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+    </student>
+    <student studentId="598266">
+        <surname>Öz</surname>
+        <firstname>Emrehan</firstname>
+        <submitZip>Round_U3_sub1_598266.zip</submitZip>
+        <exercise exerciseId="U3E1_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>19</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(20):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(20):TC(2:VALIDATION_CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E2_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>10</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>8</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(20):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(20):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(20):TC(3:XSLT_TRANSFORM_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(20):TC(4:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(20):TC(5:XSLT_TRANSFORM_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(20):TC(6:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(20):TC(7:XSLT_TRANSFORM_3):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(20):TC(8:VALIDATION_CHECK_4):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(20):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{lift_module, starter_module, workstation}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(20):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'foo_module'. One of '{workstation, starter_module, lift_module}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(20):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'description'. One of '{name}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(20):TC(6):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'bar_sensor'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(20):TC(7):MSG:(EQU#(XS:ELEMENTS...&#xD;
+elements local and global total: is OK (&gt;= 11)&#xD;
+elements with @name: is OK (&gt;= 11)&#xD;
+...XS:ELEMENTS&#xD;
+XS:ELEMENTS with spesific names ...&#xD;
+root element @name = production_line:1 (1)&#xD;
+root's child elements @name = unit:1 (1)&#xD;
+total with @name = $mod1-3:3 (3)&#xD;
+total of all module children @name = $mc1-7: is OK (&gt;= 6)&#xD;
+...XS:ELEMENTS&#xD;
+XS:COMPLEXTYPE...&#xD;
+local and global total: is )#DEL#(N)#EQU#(OK ()#DEL#(&lt;)#INS#(&gt;= )#EQU#(6)&#xD;
+...XS:COMPLEXTYPE&#xD;
+)#)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(20):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(20):TC(8):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.2.4.a: Invalid content was found starting with element 'fool_hill'. One of '{sensor}' is expected.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E3_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>7</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <pointsOfTestCases>6</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(20):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(20):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(20):TC(3:VALIDATION_CHECK_2):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(20):TC(4:VALIDATION_CHECK_3):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(20):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(20):TC(3):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'type' must appear on element 'conveyor'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(20):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(20):TC(4):MSG:(OPER:XMLValidationCheck:ERROR:cvc-complex-type.4: Attribute 'width' must appear on element 'chassis'.)</errorsOfTestCases>
+        </exercise>
+        <exercise exerciseId="U3E4_1">
+            <pointsOfTestCases>1</pointsOfTestCases>
+            <pointsOfTestCases>0</pointsOfTestCases>
+            <resultsOfTestCases>STD:ST(20):TC(1:WELLFORMED CHECK):FL(true):MSG(OPER_STD:MERGE:RESULT(EQUAL))</resultsOfTestCases>
+            <resultsOfTestCases>STD:ST(20):TC(2:VALIDATION_CHECK_1):FL(true):MSG(OPER_STD:MERGE:RESULT(NON-EQUAL))</resultsOfTestCases>
+            <errorsOfTestCases>ERR:ST(20):TC(2):MSG:(OPER:XMLValidationCheck:ERROR:cvc-elt.1: Cannot find the declaration of element 'inventions'.)</errorsOfTestCases>
+            <errorsOfTestCases>ERR:ST(20):TC(2):MSG:(DEL#(IN)#EQU#(VALID)#)</errorsOfTestCases>
+        </exercise>
+    </student>
+</studentSubmits>

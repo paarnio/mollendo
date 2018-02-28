@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 2018-01-12 taskflow_U1E2_1_sub1.xml validated by taskflow8.xsd -->
+<checkerTaskFlow>
+  <round>U1</round>
+  <exercise>U1E2_1</exercise>
+  <description>Validation tests in Round_U1</description>
+  <stuSolution>Round_Ux/U1E2_1/src/production_line.xml</stuSolution>
+  <refSolution>Round_Ux/U1E2_1/test/production_line_hidden.xml</refSolution>
+  <stuZip>./submit/Round_Ux_sub1_</stuZip>
+  <refZip>./submit/Round_Ux_sub1_reference.zip</refZip>
+   <testCase number="1">
+	<name>WELLFORMED CHECK</name>
+	<description>The Well Formed testcase</description>
+    <points>5</points>
+    <stuDir1>Round_Ux/U1E2_1/src/</stuDir1>
+	<stuFile1>production_line.xml</stuFile1>
+	<refDir1>Round_Ux/U1E2_1/test/</refDir1>
+	<refFile1>production_line_hidden.xml</refFile1>
+	<flow>
+	  <type>studentFlow</type>
+	  <name>studentFlow1</name>
+	  <description>The student flow</description>
+	  <operation>
+	    <type>XMLWellFormed</type>
+        <name>XMLWellFormed1</name>
+        <par1>stuDir1/stuFile1</par1>
+		<return>stuC001</return>
+	    <comment>XMLWellFormed operation comment1</comment>
+      </operation>
+	</flow>
+	<flow>
+	  <type>referenceFlow</type>
+	  <name>referenceFlow1</name>
+	  <description>Direct Answer for XMLWellFormed question</description>
+	  <operation>
+	    <type>DirectStringOutOper</type>
+        <name>DirectStringOutOper1</name>
+        <par1>WELLFORMED</par1>
+		<return>refC001</return>
+      </operation>
+	</flow>
+  	<flow>
+	  <type>mergeFlow</type>
+	  <name>mergeFlow2</name>
+	  <description>Merging student and reference flow</description>
+	  <inChannel>outC012</inChannel>
+	  <outChannel>merC002</outChannel>
+	  <operation>
+	    <type>StringCompare</type>
+        <name>StringCompare1</name>
+        <par1>stuC001</par1>
+        <par2>refC001</par2>
+		<return>merC002</return>
+      </operation>
+	</flow>
+  </testCase>
+  <testCase number="2">
+	<name>VALIDATION PHASE 1_1</name>
+	<description>phase1_validationtest1</description>
+    <points>11</points>
+    <stuDir1>Round_Ux/U1E2_1/src/</stuDir1>
+	<stuFile1>dummy.xsd</stuFile1><!-- not used -->
+	<stuFile2>production_line.xml</stuFile2>
+	<refDir1>Round_Ux/U1E2_1/test/</refDir1>
+	<refFile1>production_line_checker_v1_1_hidden.xsd</refFile1>
+	<refFile2>production_line_v1_hidden.xml</refFile2><!-- not used (for testing only) -->
+	<flow>
+	  <type>studentFlow</type>
+	  <name>studentFlow1</name>
+	  <description>The student flow</description>
+	  <inChannel>inC001</inChannel>
+	  <outChannel>stuC001</outChannel>
+	  <operation>
+	    <type>XSDValidation</type>
+        <name>XSDValidation1</name>
+		<par1>refDir1/refFile1</par1>
+        <par2>stuDir1/stuFile2</par2>
+		<return>stuC001</return>
+	    <comment>XSDValidation</comment>
+      </operation>
+	</flow>
+	<flow>
+	  <type>referenceFlow</type>
+	  <name>referenceFlow1</name>
+	  <description>Direct Answer for VALIDATION question</description>
+	  <operation>
+	    <type>DirectStringOutOper</type>
+        <name>DirectStringOutOper1</name>
+        <par1>VALID</par1>
+		<return>refC001</return>
+      </operation>
+	  <!-- Replaced Validation Operation
+	  <operation>
+	    <type>XSDValidation</type>
+        <name>XSDValidation1</name>
+		<par1>refDir1/refFile1</par1>
+        <par2>refDir1/refFile2</par2>
+		<return>refC001</return>
+	    <comment>XSDValidation</comment>
+      </operation>
+	  -->
+	</flow>
+  	<flow>
+	  <type>mergeFlow</type>
+	  <name>mergeFlow1</name>
+	  <description>Merging student and reference flow</description>
+	  <inChannel>outC002</inChannel>
+	  <outChannel>merC001</outChannel>
+	  <operation>
+	    <type>StringCompare</type>
+        <name>StringCompare1</name>
+        <par1>stuC001</par1>
+        <par2>refC001</par2>
+		<return>merC001</return>
+      </operation>
+	</flow>
+  </testCase>
+  <testCase number="3">
+ 	<name>VALIDATION PHASE 1_2</name>
+	<description>phase1_validationtest2</description>
+    <points>11</points>
+    <stuDir1>Round_Ux/U1E2_1/src/</stuDir1>
+	<stuFile1>dummy.xsd</stuFile1><!-- not used -->
+	<stuFile2>production_line.xml</stuFile2>
+	<refDir1>Round_Ux/U1E2_1/test/</refDir1>
+	<refFile1>production_line_checker_v1_2_hidden.xsd</refFile1>
+	<refFile2>production_line_v1_hidden.xml</refFile2><!-- not used (for testing only) -->
+	<flow>
+	  <type>studentFlow</type>
+	  <name>studentFlow1</name>
+	  <description>The student flow</description>
+	  <inChannel>inC001</inChannel>
+	  <outChannel>stuC001</outChannel>
+	  <operation>
+	    <type>XSDValidation</type>
+        <name>XSDValidation1</name>
+		<par1>refDir1/refFile1</par1>
+        <par2>stuDir1/stuFile2</par2>
+		<return>stuC001</return>
+	    <comment>XSDValidation</comment>
+      </operation>
+	</flow>
+	<flow>
+	  <type>referenceFlow</type>
+	  <name>referenceFlow1</name>
+	  <description>Direct Answer for VALIDATION question</description>
+	  <operation>
+	    <type>DirectStringOutOper</type>
+        <name>DirectStringOutOper1</name>
+        <par1>VALID</par1>
+		<return>refC001</return>
+      </operation>
+	</flow>
+  	<flow>
+	  <type>mergeFlow</type>
+	  <name>mergeFlow1</name>
+	  <description>Merging student and reference flow</description>
+	  <inChannel>outC002</inChannel>
+	  <outChannel>merC001</outChannel>
+	  <operation>
+	    <type>StringCompare</type>
+        <name>StringCompare1</name>
+        <par1>stuC001</par1>
+        <par2>refC001</par2>
+		<return>merC001</return>
+      </operation>
+	</flow>
+  </testCase>
+  <testCase number="4">
+    <name>VALIDATION PHASE 2</name>
+	<description>phase2_validationtest2</description>
+    <points>11</points>
+    <stuDir1>Round_Ux/U1E2_1/src/</stuDir1>
+	<stuFile1>dummy.xsd</stuFile1><!-- not used -->
+	<stuFile2>production_line.xml</stuFile2>
+	<refDir1>Round_Ux/U1E2_1/test/</refDir1>
+	<refFile1>production_line_checker_v2_1_hidden.xsd</refFile1>
+	<refFile2>production_line_v2_hidden.xml</refFile2><!-- not used (for testing only) -->
+	<flow>
+	  <type>studentFlow</type>
+	  <name>studentFlow1</name>
+	  <description>The student flow</description>
+	  <inChannel>inC001</inChannel>
+	  <outChannel>stuC001</outChannel>
+	  <operation>
+	    <type>XSDValidation</type>
+        <name>XSDValidation1</name>
+		<par1>refDir1/refFile1</par1>
+        <par2>stuDir1/stuFile2</par2>
+		<return>stuC001</return>
+	    <comment>XSDValidation</comment>
+      </operation>
+	</flow>
+	<flow>
+	  <type>referenceFlow</type>
+	  <name>referenceFlow1</name>
+	  <description>Direct Answer for VALIDATION question</description>
+	  <operation>
+	    <type>DirectStringOutOper</type>
+        <name>DirectStringOutOper1</name>
+        <par1>VALID</par1>
+		<return>refC001</return>
+      </operation>
+	</flow>
+  	<flow>
+	  <type>mergeFlow</type>
+	  <name>mergeFlow1</name>
+	  <description>Merging student and reference flow</description>
+	  <inChannel>outC002</inChannel>
+	  <outChannel>merC001</outChannel>
+	  <operation>
+	    <type>StringCompare</type>
+        <name>StringCompare1</name>
+        <par1>stuC001</par1>
+        <par2>refC001</par2>
+		<return>merC001</return>
+      </operation>
+	</flow>
+  </testCase>
+  <testCase number="5">
+    <name>VALIDATION PHASE 3</name>
+	<description>phase3_validationtest1</description>
+    <points>11</points>
+    <stuDir1>Round_Ux/U1E2_1/src/</stuDir1>
+	<stuFile1>dummy.xsd</stuFile1><!-- not used -->
+	<stuFile2>production_line.xml</stuFile2>
+	<refDir1>Round_Ux/U1E2_1/test/</refDir1>
+	<refFile1>production_line_checker_v3_1_hidden.xsd</refFile1>
+	<refFile2>production_line_v3_hidden.xml</refFile2><!-- not used (for testing only) -->
+	<flow>
+	  <type>studentFlow</type>
+	  <name>studentFlow1</name>
+	  <description>The student flow</description>
+	  <inChannel>inC001</inChannel>
+	  <outChannel>stuC001</outChannel>
+	  <operation>
+	    <type>XSDValidation</type>
+        <name>XSDValidation1</name>
+		<par1>refDir1/refFile1</par1>
+        <par2>stuDir1/stuFile2</par2>
+		<return>stuC001</return>
+	    <comment>XSDValidation</comment>
+      </operation>
+	</flow>
+	<flow>
+	  <type>referenceFlow</type>
+	  <name>referenceFlow1</name>
+	  <description>Direct Answer for VALIDATION question</description>
+	  <operation>
+	    <type>DirectStringOutOper</type>
+        <name>DirectStringOutOper1</name>
+        <par1>VALID</par1>
+		<return>refC001</return>
+      </operation>
+	</flow>
+  	<flow>
+	  <type>mergeFlow</type>
+	  <name>mergeFlow1</name>
+	  <description>Merging student and reference flow</description>
+	  <inChannel>outC002</inChannel>
+	  <outChannel>merC001</outChannel>
+	  <operation>
+	    <type>StringCompare</type>
+        <name>StringCompare1</name>
+        <par1>stuC001</par1>
+        <par2>refC001</par2>
+		<return>merC001</return>
+      </operation>
+	</flow>
+  </testCase>
+   <testCase number="6">
+    <name>VALIDATION PHASE 4</name>
+	<description>phase4_validationtest1</description>
+    <points>11</points>
+    <stuDir1>Round_Ux/U1E2_1/src/</stuDir1>
+	<stuFile1>dummy.xsd</stuFile1><!-- not used -->
+	<stuFile2>production_line.xml</stuFile2>
+	<refDir1>Round_Ux/U1E2_1/test/</refDir1>
+	<refFile1>production_line_checker_v4_1_hidden.xsd</refFile1>
+	<refFile2>production_line_v4_hidden.xml</refFile2><!-- not used (for testing only) -->
+	<flow>
+	  <type>studentFlow</type>
+	  <name>studentFlow1</name>
+	  <description>The student flow</description>
+	  <inChannel>inC001</inChannel>
+	  <outChannel>stuC001</outChannel>
+	  <operation>
+	    <type>XSDValidation</type>
+        <name>XSDValidation1</name>
+		<par1>refDir1/refFile1</par1>
+        <par2>stuDir1/stuFile2</par2>
+		<return>stuC001</return>
+	    <comment>XSDValidation</comment>
+      </operation>
+	</flow>
+	<flow>
+	  <type>referenceFlow</type>
+	  <name>referenceFlow1</name>
+	  <description>Direct Answer for VALIDATION question</description>
+	  <operation>
+	    <type>DirectStringOutOper</type>
+        <name>DirectStringOutOper1</name>
+        <par1>VALID</par1>
+		<return>refC001</return>
+      </operation>
+	</flow>
+  	<flow>
+	  <type>mergeFlow</type>
+	  <name>mergeFlow1</name>
+	  <description>Merging student and reference flow</description>
+	  <inChannel>outC002</inChannel>
+	  <outChannel>merC001</outChannel>
+	  <operation>
+	    <type>StringCompare</type>
+        <name>StringCompare1</name>
+        <par1>stuC001</par1>
+        <par2>refC001</par2>
+		<return>merC001</return>
+      </operation>
+	</flow>
+  </testCase>
+</checkerTaskFlow>

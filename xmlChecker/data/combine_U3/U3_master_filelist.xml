@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="combine_sub_results_part1.xsl"?>
+<!--title>Result Files for Master Report</title-->
+<report>
+    <resultfile name="results_U3_sub1_1_2018-02-05_1730.xml"/>
+	<resultfile name="results_U3_sub2_1_2018-02-08_1620.xml"/>
+	<resultfile name="results_U3_sub3_1_2018-02-12_1240.xml"/>
+</report>
