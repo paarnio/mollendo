@@ -26,7 +26,7 @@ import siima.model.jaxb.checker.taskflow.FlowType;
 import siima.model.jaxb.checker.taskflow.OperationType;
 import siima.model.jaxb.checker.taskflow.ParamValueListType;
 import siima.model.jaxb.checker.taskflow.TestCaseType;
-import siima.utils.Testing_diff_match_patch;
+import siima.utils.FileUtil;
 
 public class TaskCycleProcessor {
 	private static final Logger logger=Logger.getLogger(TaskCycleProcessor.class.getName());
@@ -556,6 +556,14 @@ public class TaskCycleProcessor {
 										operErrorBuffer = compare_ctrl.getFilteredResults(filter, 0, 1000, null);										
 										result = "NON-EQUAL";
 										oper_ok = false;
+										
+										//TODO: Testing Write File
+										String writeOpt = findOperOptionValue(operOptions,"-W");
+										if(writeOpt!=null){
+											String relativePath = "results_xml/ST" + submitcnt + "_Ex" + this.currentTaskflow.getExercise() + "_TC" + testcasecount + "_FLmergeFlow_" + writeOpt; 
+											this.writeTextFile(operErrorBuffer.toString(), relativePath);
+										}
+										
 									}
 									
 									System.out.println("====== MERGE RESULT: " + result + "============\n");	
@@ -739,6 +747,12 @@ public class TaskCycleProcessor {
 		else
 			System.out.println("???? readTestCases(): taskflow: null");
 		return cases;
+	}
+	
+	public void writeTextFile(String textContent, String relativePath){
+		//NEW 
+		String filepath = this.projectHome + "/" + relativePath;
+		FileUtil.writeTextFile(textContent, filepath);
 	}
 	
 	

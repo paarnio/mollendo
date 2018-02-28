@@ -1,13 +1,11 @@
+/* TxtFileReadOper.java
+ * Reading text file in zip package
+ * 
+ */
 package siima.app.operator;
 
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-//import org.apache.log4j.Level;
-//import org.apache.log4j.Logger;
-
-//import siima.app.TaskCycleProcessor;
 import siima.utils.ZipFileReader;
 
 public class TxtFileReadOper {
