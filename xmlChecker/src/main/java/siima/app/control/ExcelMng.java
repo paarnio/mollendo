@@ -60,7 +60,6 @@ public class ExcelMng {
 	private int errorMsgFirstCol = 46; //+20
 	private int errorMsgFirstRow = 10;
 	
-	//NEW
 	private List<TaskFlowMetaData> taskFlowMetaDataList;
 	//private List<StudentType> studentList;
 	
@@ -155,8 +154,6 @@ public class ExcelMng {
 		 * Reading Key Values
 		 */
 		TaskFlowMetaData taskFlowMD = new TaskFlowMetaData();
-		//taskFlowMD.setTaskFlowId("TASKFLOW_X");
-		
 		searchKey = "TASKFLOW";
 		rowIdx = this.ex2s.searchString(searchKey, colIdx, this.mainInfoKeyFirstRow, this.mainInfoKeyLastRow);
 		if(rowIdx>=0){
@@ -165,8 +162,6 @@ public class ExcelMng {
 		}
 		logger.log(Level.INFO,"readTaskFlowMainInfo():taskFlowId: " + taskFlowMD.getTaskFlowMetaId());
 		//System.out.println("???MAININFO taskFlowId: " + taskFlowMD.getTaskFlowMetaId());
-		
-		
 		searchKey = "TaskFlowXmlFile";
 		rowIdx = this.ex2s.searchString(searchKey, colIdx, this.mainInfoKeyFirstRow, this.mainInfoKeyLastRow);
 		if(rowIdx>=0){
@@ -356,61 +351,13 @@ public class ExcelMng {
 	/*
 	 * GETTERS SETTERS
 	 */
-	
-	
-	
 
 	public List<TaskFlowMetaData> getTaskFlowMetaDataList() {
 		return taskFlowMetaDataList;
 	}
 
 
-	/*
-	public String getTaskFlowXmlFile() {
-		return taskFlowXmlFile;
-	}
 	
-	
-	public String getZipFilesSheet() {
-		return zipFilesSheet;
-	}
-
-	public String getResultsSheet() {
-		return resultsSheet;
-	}
-
-	public String getStudentDataExcel() {
-		return studentDataExcel;
-	}
-
-	public void setStudentDataExcel(String studentDataExcel) {
-		this.studentDataExcel = studentDataExcel;
-	}
-
-	public int getSubmitZipCol() {
-		return submitZipCol;
-	}
-
-	public int getSubmitZipFirstRow() {
-		return submitZipFirstRow;
-	}
-
-	public int getSubmitZipCount() {
-		return submitZipCount;
-	}
-
-	public String getStudentZipFileFolder() {
-		return studentZipFileFolder;
-	}
-
-	public String getReferenceZipFileFolder() {
-		return referenceZipFileFolder;
-	}
-
-	public String getReferenceZipFile() {
-		return referenceZipFile;
-	}
-*/
 	public static void main(String[] args) {
 		
 		/*ExcelMng mng = new ExcelMng("data/excel/test.xlsx");

@@ -124,9 +124,5 @@ public class TextCompareController {
 		  return isequal;
 	  }
 	  
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
 
 }

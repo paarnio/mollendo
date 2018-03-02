@@ -30,8 +30,7 @@ import siima.utils.FileUtil;
 
 public class TaskCycleProcessor {
 	private static final Logger logger=Logger.getLogger(TaskCycleProcessor.class.getName());
-	
-	private String studentDataExcel; // = "data/excel/students.xlsx";
+
 	private boolean writeToStudentExcel = false;
 	private String projectHome;
 	private int currentTaskflowIndex;
@@ -41,20 +40,13 @@ public class TaskCycleProcessor {
 	private boolean singleStudentRun_MODE = false;
 	private int singleStudentTestCaseIdx = -1;
 	private int singleStudentIdx = -1;
-	private TriptychContent singleStudentCompareResults;
-	
+	private TriptychContent singleStudentCompareResults;	
 	private String studentZipFolder;
 	private String referenceZipFolder;
 	private String refzip;
-	//private List<StudentExercise> studentsExerciseData;
-	
 	private StudentJaxbContainer studentContainer;
 	private List<StudentType> students;
-	//private int currentTaskFlowIdx = 0;
-	private ExcelMng excel_mng; // = new ExcelMng("data/excel/students.xlsx");
-	//private TestCaseContainer test_cc = new TestCaseContainer();
-	//private TaskFlowJaxbContainer taskflow_cont; // = new TaskFlowJaxbContainer(); //test_cc
-	
+	private ExcelMng excel_mng; 	
 	
 	private TransformController trans_ctrl = new TransformController();	
 	private TextCompareController compare_ctrl = new TextCompareController();
@@ -76,8 +68,6 @@ public class TaskCycleProcessor {
 	
 	/* Constructor */
 	public TaskCycleProcessor(){ //String studentsExcel){
-		//this.studentDataExcel = studentsExcel;
-		//excel_mng = new ExcelMng(this.studentDataExcel);
 		
 		dirKeyIndexMap.put("stuDir1", 0); 
 		dirKeyIndexMap.put("stuDir2", 1);
@@ -105,8 +95,7 @@ public class TaskCycleProcessor {
 	}
 	
 	public String getChannelStringValue(String channelKey){
-		/* 
-		 **/
+
 		String value = null;
 		Integer channelIdx = channelKeyIndexMap.get(channelKey);
 		value = channelList.get(channelIdx.intValue());
@@ -114,8 +103,7 @@ public class TaskCycleProcessor {
 	}
 	
 	public void setChannelStringValue(String channelKey, String value){
-		/* 
-		 **/
+
 		Integer channelIdx = channelKeyIndexMap.get(channelKey);
 		channelList.set(channelIdx.intValue(), value);
 			
@@ -186,8 +174,6 @@ public class TaskCycleProcessor {
 		this.refzip = taskFlowMetaData.getReferenceZipFile();
 		
 		this.currentTaskflow = currentTaskflow;
-		//this.studentsExerciseData = readStudentBaseData();
-		//TODO: NEW
 		this.studentContainer = studentContainer;
 		this.students = studentContainer.getStudents();
 		logger.log(Level.INFO, "************ TASKFLOW/EXERCISE: " + this.currentTaskflow.getExercise() + " CHECKING INITIALIZED **********");
@@ -226,12 +212,11 @@ public class TaskCycleProcessor {
 		this.singleStudentIdx = -1;
 		
 		boolean oper_ok = true;
-		//NEEDED??String taskFlowXmlFile = this.projectHome + "/" + taskFlowMetaData.getTaskFlowXmlFile();
-		
+		//NEEDED??String taskFlowXmlFile = this.projectHome + "/" + taskFlowMetaData.getTaskFlowXmlFile();		
 		//List<String> zips = readSubmitZipNames(); //zipFilesSheet);
 		//System.out.println("???? runTaskCycles(): taskFlowXmlFile: " + taskFlowXmlFile );
 		List<TestCaseType> testcases = readTestCases(); //taskFlowXmlFile);
-		//TODO:NEW Reading the base info of all students
+		//Reading the base info of all students
 		//List<StudentExercise> allStudents = readStudentBaseData();
 		//System.out.println("???? runTaskCycles(): all Students #" + allStudents.size() );
 		List<String> studentzips= new ArrayList<String>();
@@ -241,7 +226,6 @@ public class TaskCycleProcessor {
 			studentzips.add(szip);
 		}
 		
-		//this.runTaskCycles(testcases, zips);
 		this.runTaskCycles(testcases, studentzips);
 	}
 	
@@ -356,7 +340,7 @@ public class TaskCycleProcessor {
 						valuelist = parvallist.getValueList();
 						System.out.println("          Operation (Param:Value) (" + paramlist.get(0) + ":" + valuelist.get(0) + ")");
 					}
-					// new in v8:
+					
 					List<String> operOptions = oper.getOpt();
 					if(operOptions!=null){
 						for(String opt : operOptions){
@@ -364,9 +348,6 @@ public class TaskCycleProcessor {
 						}
 					}
 					
-					//String refzip = taskFlowMetaData.getReferenceZipFile(); // "RoundU1_sub2_reference.zip"; // reference Zip file
-					//String studentZipFolder= this.projectHome + "/" + taskFlowMetaData.getStudentZipFileFolder(); //"data/zips/RoundU1/";
-					//String referenceZipFolder= this.projectHome + "/" + taskFlowMetaData.getReferenceZipFileFolder(); //"data/zips/RoundU1/";
 					String zippath1 = null;
 					String zippath2 = null;
 					
@@ -387,6 +368,10 @@ public class TaskCycleProcessor {
 						
 						/* --- Operation Branch --- */
 							String operationType = oper.getType();
+							//OPTION: Writing transform results to file
+							String writefile = findOperOptionValue(operOptions,"-W");
+							String relativePath = "results_xml"; 
+							
 							switch (operationType) {
 							case "XSLTransform": {
 								System.out.println("................ XSLTransform ");		
@@ -410,19 +395,9 @@ public class TaskCycleProcessor {
 								}
 								
 								
-								if(oper_ok){ //Runing XSL Transform
+								if(oper_ok){ //Preparation OK. Running XSL Transform
 									
 									
-								/* OPTION Results to File 
-									String resultFilePath = null;
-									String[] splits = zip.split(".zip");
-									if("studentFlow".equals(flowType))
-										resultFilePath = resultFileDir + "/" + returnChannel + "_student_" + splits[0] + ".xml";
-									else if("referenceFlow".equals(flowType))
-										resultFilePath = resultFileDir + "/" + returnChannel + "_reference_" + splits[0] + ".xml";
-									trans_ctrl.runTransformToFile(resultFilePath,  null,null);
-									System.out.println("                 resultfile: " + resultFilePath);
-								*/
 									
 									//OPTIONs Results TO STRING or TO PIPE
 									ByteArrayOutputStream resultOutputStream = new ByteArrayOutputStream();
@@ -432,19 +407,35 @@ public class TaskCycleProcessor {
 												valuelist);
 										if (retStr != null) {
 											setChannelStringValue(returnChannel, retStr);
+											if(writefile!=null){// OPTION Results to file
+												this.writeOperResultsToTextFile(retStr , relativePath, writefile, submitcnt, testcasecount);
+											}
 										} else {
 											setChannelStringValue(returnChannel, "XSLT_ERROR");
 											operErrorBuffer = trans_ctrl.getOperErrorBuffer();
+											if(writefile!=null){// OPTION Error Results to file
+												this.writeOperResultsToTextFile(operErrorBuffer.toString(), relativePath, writefile, submitcnt, testcasecount);
+											}
 											oper_ok = false;
 										}
 									} else { //TO_INTERIM_PIPE: Transform xml result to INTERIM PIPE for the next transform
-										//Transform result saved to pipe thus result string can be ignored
-										String retStr = trans_ctrl.runTransformToInterimPipe(resultOutputStream, paramlist, valuelist);
-										if (retStr == null){ 
+										
+										String retStr = trans_ctrl.runTransformToInterimPipe(resultOutputStream,
+												paramlist, valuelist);
+										if (retStr != null) {
+											if (writefile != null) {// OPTION Results to file
+												this.writeOperResultsToTextFile(retStr, relativePath, writefile,
+														submitcnt, testcasecount);
+											}
+										} else {
 											operErrorBuffer = trans_ctrl.getOperErrorBuffer();
+											if (writefile != null) {// OPTION Error Results to file
+												this.writeOperResultsToTextFile(operErrorBuffer.toString(),
+														relativePath, writefile, submitcnt, testcasecount);
+											}
 											oper_ok = false;
 										}
-										
+						
 									}
 								} else { //Preparation unsuccessful
 									if (!"TO_INTERIM_PIPE".equalsIgnoreCase(returnChannel))
@@ -463,6 +454,9 @@ public class TaskCycleProcessor {
 								if(!valid) {
 									setChannelStringValue(returnChannel, "INVALID");
 									operErrorBuffer = valid_oper.getOperErrorBuffer();
+									if(writefile!=null){// OPTION Results to file
+										this.writeOperResultsToTextFile(operErrorBuffer.toString() , relativePath, writefile, submitcnt, testcasecount);
+									}
 								} else {
 									setChannelStringValue(returnChannel, "VALID");
 								}
@@ -483,6 +477,9 @@ public class TaskCycleProcessor {
 								if(!oper_ok){
 									setChannelStringValue(returnChannel, "NON-WELLFORMED");
 									operErrorBuffer = wf_oper.getOperErrorBuffer();
+									if(writefile!=null){// OPTION Results to file
+										this.writeOperResultsToTextFile(operErrorBuffer.toString() , relativePath, writefile, submitcnt, testcasecount);
+									}
 								} else {
 									setChannelStringValue(returnChannel, "WELLFORMED");
 								}
@@ -498,8 +495,14 @@ public class TaskCycleProcessor {
 								if(txtContent==null){
 									setChannelStringValue(returnChannel, "");
 									operErrorBuffer = read_oper.getOperErrorBuffer();
+									if(writefile!=null){// OPTION Results to file
+										this.writeOperResultsToTextFile(operErrorBuffer.toString() , relativePath, writefile, submitcnt, testcasecount);
+									}
 								} else {
 									setChannelStringValue(returnChannel, txtContent);
+									if(writefile!=null){// OPTION Results to file
+										this.writeOperResultsToTextFile(txtContent , relativePath, writefile, submitcnt, testcasecount);
+									}
 								}
 								
 							}
@@ -560,7 +563,7 @@ public class TaskCycleProcessor {
 										String writefile = findOperOptionValue(operOptions,"-W");
 										if(writefile!=null){
 											String relativePath = "results_xml"; 
-											this.writeOperErrorToTextFile(operErrorBuffer.toString(), relativePath, writefile, submitcnt, testcasecount);
+											this.writeOperResultsToTextFile(operErrorBuffer.toString(), relativePath, writefile, submitcnt, testcasecount);
 										}
 										
 									}
@@ -643,7 +646,6 @@ public class TaskCycleProcessor {
 	}
 	
 	public void setStudentResultsData(int submitcnt, int testcasecount, List<String> tcResults, List<String> operErrors, List<String> tcPoints){
-		//TODO: this.currentTaskflowIndex
 		//Saving results to Student's ExerciseType object
 		int studentIdx = submitcnt-1;
 		//StudentType student = studentContainer.getStudent(studentIdx);
@@ -748,8 +750,7 @@ public class TaskCycleProcessor {
 		return cases;
 	}
 	
-	public void writeOperErrorToTextFile(String textContent, String relativeFolderPath, String filename, int submitcnt, int testcasecount){
-		//NEW 28.1.2018
+	public void writeOperResultsToTextFile(String textContent, String relativeFolderPath, String filename, int submitcnt, int testcasecount){
 		if((submitcnt>0)&&(testcasecount>0)){
 		String absFolderPath = this.projectHome + "/";
 		if((relativeFolderPath!=null)&&(!relativeFolderPath.isEmpty())) absFolderPath = absFolderPath + relativeFolderPath + "/";		
@@ -759,6 +760,19 @@ public class TaskCycleProcessor {
 		}
 	}
 	
+	public String concatOperResultFilePath(String relativeFolderPath, String filename, int submitcnt,
+			int testcasecount) {
+		String filepath = null;
+		if ((submitcnt > 0) && (testcasecount > 0)) {
+			String absFolderPath = this.projectHome + "/";
+			if ((relativeFolderPath != null) && (!relativeFolderPath.isEmpty()))
+				absFolderPath = absFolderPath + relativeFolderPath + "/";
+				filepath = absFolderPath + "ST" + submitcnt + "_Ex" + this.currentTaskflow.getExercise() + "_TC"
+					+ testcasecount + "_" + filename;
+			logger.log(Level.INFO, "concatOperResultFilePath():" + filepath);
+		}
+		return filepath;
+	}
 	
 	public ExcelMng getExcel_mng() {
 		return excel_mng;

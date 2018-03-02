@@ -1,40 +1,24 @@
 package siima.app.gui;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Container;
-import java.awt.Dimension;
 import java.awt.EventQueue;
-import java.awt.Font;
-
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JRadioButtonMenuItem;
 import javax.swing.border.EmptyBorder;
+/*
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
+*/
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DefaultHighlighter;
-import javax.swing.text.Document;
 import javax.swing.text.Highlighter;
 import javax.swing.text.Highlighter.HighlightPainter;
-import javax.swing.text.html.HTMLEditorKit;
-import javax.swing.text.html.StyleSheet;
-
-import siima.app.control.MainAppController;
-import siima.app.model.TriptychContent;
-
-//X import siima.app.control.MainAppController;
-//X import siima.app.model.tree.ElementModel;
 
 import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
-
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JScrollPane;
@@ -45,74 +29,53 @@ import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.awt.event.KeyEvent;
 import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import javax.swing.BorderFactory;
-import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JEditorPane;
-
 import static javax.swing.ScrollPaneConstants.*;
 
+import siima.app.control.MainAppController;
+import siima.app.model.TriptychContent;
+
+
 public class MainFrame extends JFrame implements ActionListener, ItemListener { 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public String eraProjectHomeDirectory = ".";
 	public String latestOpenedFolder = ".";
 	private final static String newline="\n";
-	//private JPanel contentPane;
 	private JFileChooser fileChooser;
 	private JSplitPane m_contentPane;
 	private JMenuItem mntmOpen;
 	private JMenuItem mntmOpenWithout;
 	private JMenuItem mntmLoadStudentData;
 	private JMenuItem mntmOpenTaskFlow;
-	private JMenu newProjectVersionSubmenu;
-
 	private File mainOpenFile;
 	private JMenuItem mntmSave;
 	private JMenuItem mntmSaveResultsAsXML;
 	private JMenuItem mntmShowResults;
-	
 	private JButton btnInvokeButton;
 
 	public MainAppController appControl;
 	private JScrollPane hierarchyTreeScrollPane;
-	private JScrollPane hierarchyTreeScrollPane2;
-	private JScrollPane hierarchyTreeScrollPane3;
-	private JScrollPane hierarchyTreeScrollPane4;
-	private JScrollPane hierarchyTreeScrollPane5;
 	private JScrollPane consoleScrollPane;
 	private JScrollPane resultScrollPane;
-	private JScrollPane spinCommandFileScrollPane;
-	private JScrollPane svgGraphicsScrollPane1;
-	private JScrollPane svgGraphicsScrollPane2;
-	private JMenuItem mntmGenerateJmonkey;
+	
 	private JTextArea bottomLeftTextArea;
 	private JTextArea txtrConsoleOutput;
 	private JTextArea txtrResultOutput;
-	private JTextArea txtrSpinCommandFileOutput;
 	
 	private JTextArea rightTopLeftTextArea;
 	private JTextArea rightTopRightTextArea;
 	private JTextArea rightmostBottomTextArea;
-	
-	private JMenuItem mntmLoadRules;
-	private JMenuItem mntmInvokeReasoner;
-	private JMenuItem mntmSaveResultModels;
-	private JMenuItem mntmCaexToAsp;
 	private JTabbedPane tabbedPane;
 	private JTabbedPane bottomRightTabbedPane;
-	private JTabbedPane svgGraphicsTabbedPane;
-	private JMenuItem mntmConfigureSchema;
 	
 	private JMenuItem mntmExit;
 	private JMenuItem mntmInvoke;
@@ -127,62 +90,8 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 	private JMenuItem mntmSetTransformContext;
 	private JMenuItem mntmResultsToCsv;
 	private JMenuItem mntmResultsToStudentsXml;
-	/*
-	private JMenuItem mntmGenOntologyModel;
-	private JMenuItem mntmNewProject;
-	private JMenuItem mntmSaveProjectAs;
-	private JMenuItem mntmSaveProject;
-	private JMenuItem mntmOpenProject;
-	private JMenuItem mntmAspSolver;
-	private JMenuItem mntmSaveOntologyModel;
-	private JMenuItem mntmMergeModels;
-	private JMenuItem mntmLoadOntologyModels;
-	private JMenuItem mntmLoadSpinCommands;
-	private JMenuItem mntmInvokeSpinCommands;
-	private JMenuItem mntmSaveSpinCommands;
-	private JMenuItem mntmClearPartials;
-	private JMenuItem mntmClearCombined;
-	private JMenuItem mntmClearMerged;
-	private JMenuItem mntmOpenDiagram;
-	// private JTree tree;
-	private JRadioButtonMenuItem versionMenuItem1;
-	private JRadioButtonMenuItem versionMenuItem2;
-	
-	private JRadioButtonMenuItem rbMenuItem1;
-	private JRadioButtonMenuItem rbMenuItem2;
-	private JRadioButtonMenuItem rbMenuItem3;
-	private JRadioButtonMenuItem rbMenuItem4;
-	private JRadioButtonMenuItem rbMenuItem5;
-	private JRadioButtonMenuItem rbMenuItem6;
-	*/
-	//For Search CSMCommand block
-	private JTextField textField1;
-	private JTextField textField2;
-	private JTextField textField3;
-	//For found CSMCommand block
-	private JTextField textField11;
-	private JTextField textField12;
-	private JTextField textField13;
-	private JTextField textField14;
-	private JTextField textField15;
-	private JTextField textField16;
-	
-	private JButton btnSearchCommandButton;
-	private  JTextArea oneJsonCommandTextArea;
-	private JButton btnUpdateCSMCommandButton;
-	private JButton btnSequenceRunButton;
-	private JTextField idxsequencetext; 
-	private Map<String,JTextField> dataDisplayMap;
-	//protected JLabel actionLabel;
-	
-	// The SVG canvas.
-    //protected JSVGCanvas svgCanvas;
-    // for html
+    private StudentTablePanel studentTablePanel;
     protected JEditorPane jEditorPane;
-    
-    //NEW
-    StudentTablePanel studentTablePanel;
-	
 	
 	/**
 	 * Launch the application.
@@ -205,10 +114,10 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 	 */
 	public MainFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1100, 600); //(100, 100, 450, 300);
+		setBounds(100, 100, 1100, 600); 
 		setTitle("XML-Checker");
 
-		this.appControl = new MainAppController(this); //(this);
+		this.appControl = new MainAppController(this); 
 
 		fileChooser = new JFileChooser();
 		fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -226,27 +135,27 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		menuBar.add(mnFile);
 
 		mntmOpen = new JMenuItem("Open Project Excel");
-		mntmOpen.addActionListener(this); // See: method											// actionPerformed(ActionEvent arg0)
+		mntmOpen.addActionListener(this);
 		mnFile.add(mntmOpen);
 		mntmOpen.setEnabled(true);
 		
 		mnFile.addSeparator();
 		
 		mntmOpenWithout = new JMenuItem("Open Project Excel without Student Data");
-		mntmOpenWithout.addActionListener(this); // See: method											// actionPerformed(ActionEvent arg0)
+		mntmOpenWithout.addActionListener(this);
 		mnFile.add(mntmOpenWithout);
 		mntmOpenWithout.setEnabled(true);	
 		
 		mntmLoadStudentData = new JMenuItem("Load Student XML Data");
-		mntmLoadStudentData.addActionListener(this); // See: method											// actionPerformed(ActionEvent arg0)
+		mntmLoadStudentData.addActionListener(this); 
 		mnFile.add(mntmLoadStudentData);
 		mntmLoadStudentData.setEnabled(false);
 		
 		mnFile.addSeparator();
 		
-		//TODO: Do not use this (might corrupt the excel)
+		//NOTE:Do not use this (might corrupt the excel)
 		mntmSave = new JMenuItem("Save and Close Project Excel ");
-		mntmSave.addActionListener(this);// See: method											// actionPerformed(ActionEvent arg0)
+		mntmSave.addActionListener(this);
 		mnFile.add(mntmSave);
 		mntmSave.setEnabled(false); //Not in use
 		
@@ -254,48 +163,9 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		mntmOpenTaskFlow = new JMenuItem("Open TaskFlow File...");
 		mntmOpenTaskFlow.addActionListener(this);
 		mnFile.add(mntmOpenTaskFlow);
-		
-		/*
-		//NEW SUBMENU
-		newProjectVersionSubmenu = new JMenu("New Project Version");
-		newProjectVersionSubmenu.setEnabled(false);
-		// Radio buttons: https://docs.oracle.com/javase/tutorial/displayCode.html?code=https://docs.oracle.com/javase/tutorial/uiswing/examples/components/MenuLookDemoProject/src/components/MenuLookDemo.java
-		ButtonGroup caexVersionGroup = new ButtonGroup();
-		
-		versionMenuItem1 = new JRadioButtonMenuItem("2.15");
-		versionMenuItem1.setSelected(false);
-        //versionMenuItem1.setMnemonic(KeyEvent.VK_R);
-		versionMenuItem1.addActionListener(this);       
-        caexVersionGroup.add(versionMenuItem1);
-        newProjectVersionSubmenu.add(versionMenuItem1);
- 
-        versionMenuItem2 = new JRadioButtonMenuItem("3.0");
-		versionMenuItem2.setSelected(false);
-        //versionMenuItem2.setMnemonic(KeyEvent.VK_R);
-		versionMenuItem2.addActionListener(this);       
-        caexVersionGroup.add(versionMenuItem2);
-        newProjectVersionSubmenu.add(versionMenuItem2);
 
-		mnFile.add(newProjectVersionSubmenu);
-
-		
-		mntmSaveResults = new JMenuItem("Save Results");
-		mntmSaveResults.addActionListener(this);
-		mnFile.add(mntmSaveResults);
-		mntmSaveResults.setEnabled(false);
-		*/
-		
-	
-		/*
 		mnFile.addSeparator();
 		
-		mntmConfigureSchema = new JMenuItem("Configure Schema...");
-		mntmConfigureSchema.addActionListener(this);
-		mnFile.add(mntmConfigureSchema);
-		mntmConfigureSchema.setEnabled(false);
-		
-		mnFile.addSeparator();
-		*/
 		mntmExit = new JMenuItem("Exit");
 		mntmExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -304,8 +174,6 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 			}
 		});
 		mnFile.add(mntmExit);
-
-		
 		
 		/*
 		 * Processor Menu
@@ -324,12 +192,10 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		mnPros.addSeparator();
 		mntmCbResToExcel = new JCheckBoxMenuItem("Results to Project Excel");
 		mntmCbResToExcel.addItemListener(this);
-		//mntmCbResToExcel.setMnemonic(KeyEvent.VK_C);
 		mnPros.add(mntmCbResToExcel);
 
 		mntmCbMenuItem2 = new JCheckBoxMenuItem("Another CheckBox");
 		mntmCbMenuItem2.addItemListener(this);
-		//mntmCbMenuItem2.setMnemonic(KeyEvent.VK_H);
 		mnPros.add(mntmCbMenuItem2);
 		
 		/*
@@ -383,8 +249,7 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		
 		mntmResultsToStudentsXml = new JMenuItem("Transform To Students XML (.trout) ...");
 		mntmResultsToStudentsXml.addActionListener(this);
-		submenu.add(mntmResultsToStudentsXml);
-		
+		submenu.add(mntmResultsToStudentsXml);	
 		
 		submenu.addSeparator();
 		
@@ -445,7 +310,7 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		/*
 		 * tabbedPane.addChangeListener(new ChangeListener() { public void
 		 * stateChanged(ChangeEvent e) {
-		 * System.out.println("TEEEST:Tab Changed: " +
+		 * System.out.println("TEST:Tab Changed: " +
 		 * tabbedPane.getSelectedIndex()); } });
 		 */
 		hierarchyTreeScrollPane = new JScrollPane();
@@ -475,16 +340,9 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		bottomLeftTextArea = new JTextArea();
 		bottomLeftTextArea.setRows(30);
 		bottomLeftTextArea.setColumns(100);
+		
 		//"----------bottomLeftTextArea---------\n"
 		bottomLeftTextArea.setText("---------- TaskFlow Node Info ---------\n");
-		/*
-		 * GridBagConstraints gbc_bottomLeftTextArea = new GridBagConstraints();
-		 * gbc_bottomLeftTextArea.insets = new Insets(0, 0, 5, 0);
-		 * gbc_bottomLeftTextArea.fill = GridBagConstraints.BOTH;
-		 * gbc_bottomLeftTextArea.gridx = 1; gbc_bottomLeftTextArea.gridy = 0;
-		 */
-		// bottomLeftPanel.add(bottomLeftTextArea, gbc_bottomLeftTextArea);
-
 		bottomLeftScrollPane.setViewportView(bottomLeftTextArea);
 
 		JPanel buttonPanel = new JPanel();
@@ -535,7 +393,6 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		/*----Right Side JSplitPane----*/
 		JSplitPane rightVerticalSplitPane = new JSplitPane();
 		rightVerticalSplitPane.setOrientation(JSplitPane.VERTICAL_SPLIT);
-		//X m_contentPane.setRightComponent(rightVerticalSplitPane);
 		rightHorizontalSplitPane.setLeftComponent(rightVerticalSplitPane);
 		
 		/* ===================================== 
@@ -554,13 +411,13 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		rightTopVerticalSplitPane.setLeftComponent(rightTopLeftPanel);
 		
 		GridBagLayout gbl_rightTopLeftPanel = new GridBagLayout();
-		gbl_rightTopLeftPanel.columnWidths = new int[] {5, 250, 0 }; //NEW 5,250,0 old(250,0)
-		gbl_rightTopLeftPanel.rowHeights = new int[] { 300, 0 };//{ 300,0 };
+		gbl_rightTopLeftPanel.columnWidths = new int[] {5, 250, 0 }; 
+		gbl_rightTopLeftPanel.rowHeights = new int[] { 300, 0 };
 		gbl_rightTopLeftPanel.columnWeights = new double[] {0.05, 1.0, Double.MIN_VALUE };
 		gbl_rightTopLeftPanel.rowWeights = new double[] { 1.0, Double.MIN_VALUE };//{ 1.0, 1.0, 1.0, Double.MIN_VALUE };
 		rightTopLeftPanel.setLayout(gbl_rightTopLeftPanel);
 		
-		//2018-01-20 line number ruler text area
+		//Line number ruler text area
 		JScrollPane lineNrRulerScrollPane = new JScrollPane();
 		lineNrRulerScrollPane.setHorizontalScrollBarPolicy(HORIZONTAL_SCROLLBAR_NEVER);
 		GridBagConstraints gbc_lineNrRulerScrollPane = new GridBagConstraints();
@@ -577,25 +434,24 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 				+ " 11:\n 12:\n 13:\n 14:\n 15:\n 16:\n 17:\n 18:\n 19:\n 20:\n"
 				+ " 21:\n 22:\n 23:\n 24:\n 25:\n 26:\n 27:\n 28:\n 29:\n 30:\n");
 				//+ " 31:\n 32:\n 33:\n 34:\n 35:\n 36:\n 37:\n 38:\n 39:\n 40:\n");
-		lineRulerTextArea.setCaretPosition(HORIZONTAL_SCROLLBAR_NEVER);
-		
+		lineRulerTextArea.setCaretPosition(HORIZONTAL_SCROLLBAR_NEVER);	
 		lineNrRulerScrollPane.setViewportView(lineRulerTextArea);
 				
 		// Student text scroll pane
 		JScrollPane rightTopLeftScrollPane = new JScrollPane();
 		GridBagConstraints gbc_rightTopLeftScrollPane = new GridBagConstraints();
 		gbc_rightTopLeftScrollPane.fill = GridBagConstraints.BOTH;
-		gbc_rightTopLeftScrollPane.gridx = 1; //New 1 old(0)
+		gbc_rightTopLeftScrollPane.gridx = 1; 
 		gbc_rightTopLeftScrollPane.gridy = 0;
 		rightTopLeftPanel.add(rightTopLeftScrollPane, gbc_rightTopLeftScrollPane);
 
 		rightTopLeftTextArea = new JTextArea();
 		rightTopLeftTextArea.setRows(30);
 		rightTopLeftTextArea.setColumns(250);
-		rightTopLeftTextArea.setLineWrap(false); //(true);
-		//"-------------rightTopLeftTextArea-------------\n"
-		rightTopLeftTextArea.setText("------------- Student Text -------------\n");
+		rightTopLeftTextArea.setLineWrap(false);
 		
+		//"-------------rightTopLeftTextArea-------------\n"
+		rightTopLeftTextArea.setText("------------- Student Text -------------\n");		
 		rightTopLeftScrollPane.setViewportView(rightTopLeftTextArea);
 	
 		
@@ -623,7 +479,7 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		rightTopRightTextArea = new JTextArea();
 		rightTopRightTextArea.setRows(30);
 		rightTopRightTextArea.setColumns(250);
-		rightTopRightTextArea.setLineWrap(false);//(true);
+		rightTopRightTextArea.setLineWrap(false);
 		//"-------------rightTopRightTextArea-------------\n"
 		rightTopRightTextArea.setText("------------- Reference Text -------------\n");
 		
@@ -672,22 +528,10 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		txtrResultOutput.setRows(1000);
 		txtrResultOutput.setColumns(620);
 		txtrResultOutput.setLineWrap(true);
-		txtrResultOutput.setText("--- RESULTS ---"); //"--- RESULTS ---"
+		txtrResultOutput.setText("--- RESULTS ---"); 
 		resultScrollPane.setViewportView(txtrResultOutput);
 		
-		/*
-		spinCommandFileScrollPane = new JScrollPane();
-		bottomRightTabbedPane.insertTab("SpinCommands", null, spinCommandFileScrollPane, "SpinCommands", 2);
-		
-		txtrSpinCommandFileOutput = new JTextArea();
-		txtrSpinCommandFileOutput.setRows(1000);
-		txtrSpinCommandFileOutput.setColumns(600);
-		txtrSpinCommandFileOutput.setLineWrap(true);
-		txtrSpinCommandFileOutput.setText(""); 
-		spinCommandFileScrollPane.setViewportView(txtrSpinCommandFileOutput);
-		*/
-		
-		
+				
 		/* ===================================== 
 		 * 			Rightmost side 
 		 * ===================================== */
@@ -697,21 +541,12 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		RightmostSideVerticalSplitPane.setOrientation(JSplitPane.VERTICAL_SPLIT);
 		rightHorizontalSplitPane.setRightComponent(RightmostSideVerticalSplitPane);
 			
-		/*JPanel rightmostTopPanel = new JPanel();		
-		RightmostSideVerticalSplitPane.setLeftComponent(rightmostTopPanel);		
-		GridBagLayout gbl_rightmostTopPanel = new GridBagLayout();
-		gbl_rightmostTopPanel.columnWidths = new int[] { 300, 0 };
-		gbl_rightmostTopPanel.rowHeights = new int[] { 300, 0 };//{ 50, 200, 0, 0 };
-		gbl_rightmostTopPanel.columnWeights = new double[] { 1.0, Double.MIN_VALUE };
-		gbl_rightmostTopPanel.rowWeights = new double[] { 1.0, Double.MIN_VALUE };
-		rightmostTopPanel.setLayout(gbl_rightmostTopPanel);
-		*/
 		this.studentTablePanel = new StudentTablePanel();
 		RightmostSideVerticalSplitPane.setLeftComponent(studentTablePanel);	
 		
 		/*
 		 *  Rightmost Bottom
-		 *  TODO:
+		 *  
 		 */
 		
 		JPanel rightmostBottomPanel = new JPanel();
@@ -735,8 +570,6 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		rightmostBottomTextArea.setColumns(100);
 		//"----------rightmostBottomTextArea---------\n"
 		rightmostBottomTextArea.setText("----------Selected Student's Results Info---------\n");
-		
-
 		rightmostBottomScrollPane.setViewportView(rightmostBottomTextArea);
 
 		JPanel rightmostBottomButtonPanel = new JPanel();
@@ -746,19 +579,12 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		gbc_rightmostBottomButtonPanel.gridx = 0;
 		gbc_rightmostBottomButtonPanel.gridy = 1;
 		rightmostBottomPanel.add(rightmostBottomButtonPanel, gbc_rightmostBottomButtonPanel);
-		
-	
 
 		JButton btnShowSelectedStudentButton = new JButton("Select Student");
 		btnShowSelectedStudentButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//int tabnumber = tabbedPane.getSelectedIndex();
-				//this.studentTablePanel.
 				String info = appControl.getSelectedStudentInfo(); 			
 				rightmostBottomTextArea.setText(info);
-				//rightmostBottomTextArea.append("\nFEEDBACK:");
-				//boolean runEnabled = appControl.runConditions();
-				//if(runEnabled) btnInvokeButton.setEnabled(true);
 			}
 		});
 		rightmostBottomButtonPanel.add(btnShowSelectedStudentButton);
@@ -766,16 +592,11 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		JButton btnSaveFeedbackTextButton = new JButton("Save Feedback Msg");
 		btnSaveFeedbackTextButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//int tabnumber = tabbedPane.getSelectedIndex();
-				//this.studentTablePanel.
-				//String info = appControl.getSelectedStudentInfo();
 				String stuText ="";
 				stuText = rightmostBottomTextArea.getText();
 				String[] txtparts = stuText.split("FEEDBACK");
 				appControl.setStudentExFeedback(txtparts[txtparts.length-1]);
 				System.out.println("??????? Contains Feedback Msg" + txtparts[txtparts.length-1] );
-				//boolean runEnabled = appControl.runConditions();stuText
-				//if(runEnabled) btnInvokeButton.setEnabled(true);
 			}
 		});
 		rightmostBottomButtonPanel.add(btnSaveFeedbackTextButton);
@@ -929,13 +750,6 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 
 	}
 
-/*	public void displaySolutionCompareResults(String studentSolution, String referenceSolution, String differences){
-		
-		rightTopLeftTextArea.setText(studentSolution);
-		rightTopRightTextArea.setText(referenceSolution);
-		txtrResultOutput.setText(differences);
-	
-	} */
 
 	public int getSelectedStudentTableRow(){
 		int selectedfirstrow = this.studentTablePanel.getSelectedFirstRow();
@@ -960,31 +774,11 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		return hierarchyTreeScrollPane;
 	}
 
-	public JScrollPane getHierarchyTreeScrollPane2() {
-		// For SystemUnitClassLib hierarchy
-		return hierarchyTreeScrollPane2;
-	}
-
-	
-	public JScrollPane getHierarchyTreeScrollPane3() {
-		return hierarchyTreeScrollPane3;
-	}
-	//---- CAEX 3.0 REQUIRED ADDITION
-	public JScrollPane getHierarchyTreeScrollPane4() {
-		return hierarchyTreeScrollPane4;
-	}
-
-	
 	/*
 	 * actionPerformed() method for Menu and Button actions
 	 * (non-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
-
-
-	public JScrollPane getHierarchyTreeScrollPane5() {
-		return hierarchyTreeScrollPane5;
-	}
 
 	@Override
 	public void itemStateChanged(ItemEvent e) {
@@ -1020,7 +814,7 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 				System.out.println("-- Opened file: " + mainOpenFile.getPath());
 				
 				//Application Initialization
-				// reading also student data from project excel
+				//reading also student data from project excel
 				appControl.openProjectExcel(mainOpenFile, true); 
 				//Displaying TaskFlow tree
 				JTree elementTree = appControl.getTaskFlowsTree();
@@ -1064,7 +858,7 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 				mainOpenFile = fileChooser.getSelectedFile();
 				System.out.println("-- Opened file: " + mainOpenFile.getPath());				
 				//Application Initialization
-				// NO student data from project excel
+				//NO student data from project excel
 				appControl.openProjectExcel(mainOpenFile, false); 
 				//Displaying TaskFlow tree
 				JTree elementTree = appControl.getTaskFlowsTree();
@@ -1221,7 +1015,7 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 			txtrConsoleOutput.setCaretPosition(txtrConsoleOutput.getText().length());
 						
 		} else	if (arg0.getSource() == mntmCompareSol) {
-			/*TODO: Difference of selected students solution with the reference solution
+			/* Difference of selected students solution with the reference solution
 			// One Student have to be selected from Student table and
 			// stuSolution have to be selected from TaskFlow tree
 			// Displaying student file content in: rightTopLeftTextArea

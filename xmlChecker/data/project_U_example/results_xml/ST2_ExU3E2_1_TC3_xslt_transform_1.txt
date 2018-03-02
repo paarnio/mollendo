@@ -1,0 +1,12 @@
+XS:ELEMENTS...
+elements local and global total: is OK (>=5)
+elements with @name: is OK (>=5)
+...XS:ELEMENTS
+XS:ELEMENTS with spesific names ...
+root element @name = production_line:1 (1)
+root's child elements @name = unit:1 (1)
+total with @name = $mod1-3:3 (3)
+...XS:ELEMENTS
+XS:COMPLEXTYPE...
+local and global total: is OK (>=2)
+...XS:COMPLEXTYPE

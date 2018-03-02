@@ -114,6 +114,7 @@
         <name>XSLTransform1</name>
         <par1>refDir1/refFile1</par1>
         <par2>stuDir1/stuFile2</par2>
+		<opt>-W xslt_transform_1.txt</opt>
 		<return>stuC001</return>
       </operation>
 	</flow>

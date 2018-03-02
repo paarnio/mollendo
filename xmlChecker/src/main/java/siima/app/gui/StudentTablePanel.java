@@ -101,7 +101,6 @@ public class StudentTablePanel extends JPanel
     }
     
     public void addStudentTableRow(List<Object> newRowData){
-    	//TODO:
     	MyTableModel mytablemodel = (MyTableModel)this.table.getModel();
     	mytablemodel.addRowToTable(newRowData);
     }
@@ -176,7 +175,7 @@ public class StudentTablePanel extends JPanel
             cellCheck.setSelected(table.getCellSelectionEnabled());
         }
         
-        //VPA ADDIN
+        //VPA
         setSelectedFirstRow(-1); //clear
         setSelectedLastRow(-1); //clear
         setSelectedFirstCol(-1); //clear
@@ -230,11 +229,7 @@ public class StudentTablePanel extends JPanel
     }
  
     class MyTableModel extends AbstractTableModel {
-        //private String[] columnNames = {"First Name","Last Name", "Sport", "# of Years", "Vegetarian"};
-        
-        private String[] columnNames = {"Nr","Last Name","First Name","Student ID","P1","P2","P3","P4","P5","P6","Total" }; 
-        //VPA NEW CONSTRUCTOR
-        
+        private String[] columnNames = {"Nr","Surname","First Name","Student ID","E1","E2","E3","E4","E5","E6","Total" };      
         public MyTableModel(){
         	
         	  List<Object> orderList = new ArrayList<Object>();
@@ -248,23 +243,7 @@ public class StudentTablePanel extends JPanel
               List<Object> listP5 = new ArrayList<Object>();
               List<Object> listP6 = new ArrayList<Object>();
               List<Object> totalList = new ArrayList<Object>();
-              /*
-              lastNameList.add("Muuminen"); lastNameList.add("Muuminen");
-             // lastNameList.add("Muuminen"); lastNameList.add("Muuminen");
-              
-              firstNameList.add("Mikko"); firstNameList.add("Mikko");
-             // firstNameList.add("Mikko"); firstNameList.add("Mikko");
-              
-              studentIDList.add("111111"); studentIDList.add("111111");
-             // studentIDList.add("111111");  studentIDList.add("111111");
-              listP1.add("10");  listP1.add("10");
-              listP2.add("10");  listP2.add("10");
-              listP3.add("10");  listP3.add("10");
-              listP4.add("10");  listP4.add("10");
-              listP5.add("10");  listP5.add("10");
-              listP6.add("10");  listP6.add("10");
-              //this.addColumnToListOfColumnLists(lastNameList);
-               */
+           
               orderList.add("");
               lastNameList.add("");
               firstNameList.add("");
@@ -333,48 +312,21 @@ public class StudentTablePanel extends JPanel
 			}
 		}
         
-        /*
-         * 
-         *  Original code
        
-        private Object[][] data = {
-        {"Kathy", "Smith",
-         "Snowboarding", new Integer(5), new Boolean(false)},
-        {"John", "Doe",
-         "Rowing", new Integer(3), new Boolean(true)},
-        {"Sue", "Black",
-         "Knitting", new Integer(2), new Boolean(false)},
-        {"Jane", "White",
-         "Speed reading", new Integer(20), new Boolean(true)},
-        {"Joe", "Brown",
-         "Pool", new Integer(10), new Boolean(false)},
-         {"Joe", "Brown",
-         "Pool", new Integer(10), new Boolean(false)}
-        };
-        
-          */
-        
-        
-      
-        
-        
         public int getColumnCount() {
             return columnNames.length;
         }
  
         public int getRowCount() {
         	return this.listOfColumnLists.get(0).size();
-            //return data.length;
         }
  
         public String getColumnName(int col) {
             return columnNames[col];
         }
  
-        public Object getValueAt(int row, int col) {
-        	
+        public Object getValueAt(int row, int col) {      	
         	return this.listOfColumnLists.get(col).get(row);       	
-            //return data[row][col];
         }
  
         /*
@@ -405,51 +357,11 @@ public class StudentTablePanel extends JPanel
          * Don't need to implement this method unless your table's
          * data can change.
          */
-        public void setValueAt(Object value, int row, int col) {
-        	
+        public void setValueAt(Object value, int row, int col) {        	
         	this.listOfColumnLists.get(col).set(row, value); 
-        	
-           // data[row][col] = value;
             fireTableCellUpdated(row, col);
         }
         
-        //VPA: Getters
-        
-        
- 
     }
  
-    /**
-     * Create the GUI and show it.  For thread safety,
-     * this method should be invoked from the
-     * event-dispatching thread.
-    
-    private static void createAndShowGUI() {
-        //Disable boldface controls.
-        UIManager.put("swing.boldMetal", Boolean.FALSE); 
- 
-        //Create and set up the window.
-        JFrame frame = new JFrame("TableSelectionDemo");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
- 
-        //Create and set up the content pane.
-        TableSelectionDemo newContentPane = new TableSelectionDemo();
-        newContentPane.setOpaque(true); //content panes must be opaque
-        frame.setContentPane(newContentPane);
- 
-        //Display the window.
-        frame.pack();
-        frame.setVisible(true);
-    }
- 
-    public static void main(String[] args) {
-        //Schedule a job for the event-dispatching thread:
-        //creating and showing this application's GUI.
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                createAndShowGUI();
-            }
-        });
-    }
-     */
 }

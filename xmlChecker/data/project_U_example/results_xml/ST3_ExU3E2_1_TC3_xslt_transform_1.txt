@@ -1,0 +1,12 @@
+XS:ELEMENTS...
+elements local and global total: is NOK (<5)
+elements with @name: is NOK (<5)
+...XS:ELEMENTS
+XS:ELEMENTS with spesific names ...
+root element @name = production_line:0 (1)
+root's child elements @name = unit:0 (1)
+total with @name = $mod1-3:0 (3)
+...XS:ELEMENTS
+XS:COMPLEXTYPE...
+local and global total: is NOK (<2)
+...XS:COMPLEXTYPE

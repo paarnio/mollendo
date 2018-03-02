@@ -46,7 +46,6 @@ public class MainAppController {
 	private StudentJaxbContainer studentContainer;	
 	private TaskCycleProcessor taskCycleProcessor;
 	private ExcelMng excel_mng;
-	//New Addon
 	private ContextXSLTransform contextXsltAddon = new ContextXSLTransform();
 	
 	
@@ -72,7 +71,6 @@ public class MainAppController {
 	}
 
 	public boolean loadStudentDataFromXMLFile(File studentXML){
-		//NEW:
 		Path path = studentXML.toPath(); 
 		boolean ok = this.studentContainer.unmarshalStudentSubmitsType(path);
 		return ok;
@@ -86,7 +84,6 @@ public class MainAppController {
 		this.projectHome = project_xlsx.getParent();
 		this.initApplication(loadStudentData);
 		System.out.println("===HOME=== " + this.projectHome);
-		//return ok;
 	}
 	
 	public void closeProjectExcel(){
@@ -109,7 +106,6 @@ public class MainAppController {
 		if((taskFlowMetaDataList!=null)&&(!taskFlowMetaDataList.isEmpty())){
 			
 			for(TaskFlowMetaData taskFlowMetaData: taskFlowMetaDataList ){
-			//TaskFlowMetaData taskFlowMetaData = taskFlowMetaDataList.get(0);
 			String taskFlowXmlfile = this.projectHome + "/" + taskFlowMetaData.getTaskFlowXmlFile();
 			openTaskFlowFile(taskFlowXmlfile);			
 			}
@@ -131,11 +127,9 @@ public class MainAppController {
 	public boolean runConditions(){
 		boolean ok = false;
 		if((selectedTaskflowObject!=null)&&(this.taskFlowMetaDataList!=null)&&(this.selectedTaskflowIndex>=0)
-				&&(this.selectedTaskflowIndex < this.taskFlowMetaDataList.size())){
-			
+				&&(this.selectedTaskflowIndex < this.taskFlowMetaDataList.size())){			
 			ok = true;
-		}
-		
+		}		
 		return ok;
 	}
 	
@@ -143,19 +137,15 @@ public class MainAppController {
 	public void openTaskFlowFile(String taskFlowXmlfile){
 		boolean ok = true;
 		buildJaxbModel(taskFlowXmlfile);
-		//return ok;
 	}
 	
 	public void buildJaxbModel(String xmlfile) {
 		/*
 		 * See: project ERAmlHandler
-		 * 
 		 */
 		logger.log(Level.INFO,"buildJaxbModel()");
 		//ElementTree
-		// Example file: "data/caex_exs/RunningExample_SimpleIH.aml"
 		Path path = Paths.get(xmlfile);
-		// this.graphbuilder = new JaxbContainer(path);
 		graphbuilder.loadData(path);
 		graphbuilder.buildElementGraphFromXML();
 		
@@ -319,26 +309,8 @@ public class MainAppController {
 
 	}
 	
-/*	public String getSelectedStudentZipFile(){
-		
-		//Call MainFrame method getSelectedStudentTableRow()
-		//Selected row from StudenttablePanel
-		StringBuffer infobuff = new StringBuffer();		
-		int studentRowIdx = this.viewFrame.getSelectedStudentTableRow();
-		if(studentRowIdx>=0){
-			List<StudentType> students = this.studentContainer.getStudents();
-			StudentType student = students.get(studentRowIdx);
-			infobuff.append(student.getSubmitZip());
-		}
-		
-		System.out.println("???????? Selected student row index: " + studentRowIdx);
-		
-		return infobuff.toString();
-	} */
-	
 	
 	public void setStudentExFeedback(String feedback){
-		//TODO:
 		int studentRowIdx = this.viewFrame.getSelectedStudentTableRow();
 		int studentColIdx = this.viewFrame.getSelectedStudentTableCol(); 
 		
@@ -581,8 +553,7 @@ public class MainAppController {
 	}
 	
 	/*
-	 * ADDONS
-	 * 
+	 * ADDONS 
 	 */
 	
 	public boolean invokeSpecificTransform(String transformtype, File[] files) {
@@ -628,8 +599,7 @@ public class MainAppController {
 			ok = true;
 		}
 		
-		return ok;
-		
+		return ok;		
 	}
 	
 	
@@ -645,8 +615,6 @@ public class MainAppController {
 		logger.info("initXslContext()");
 	}
 
-	
-	
 	/*
 	 *  GETTERS SETTERS
 	 * 
@@ -661,12 +629,4 @@ public class MainAppController {
 		return taskFlowsTreeModel;
 	}
 
-	/*
-	public static void main(String[] args) {
-		String taskFlowXmlFile = "data/project_U1_sub1/taskflow/taskflow_U1E1_1_sub1.xml";
-		
-		MainAppController app = new MainAppController();
-		app.openTaskFlowFile(taskFlowXmlFile);
-		
-	} */
 }
