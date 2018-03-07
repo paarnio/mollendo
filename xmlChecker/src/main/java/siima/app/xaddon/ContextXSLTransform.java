@@ -22,6 +22,8 @@ import org.apache.log4j.Logger;
 
 public class ContextXSLTransform {
 	private static final Logger logger=Logger.getLogger(ContextXSLTransform.class.getName());
+	private static String RESULTS2CSV ="xslt/results2mc_csv.xsl";
+	private static String RESULTS2XML ="xslt/results2students_xml.xsl";
 	private TransformerFactory factory = TransformerFactory.newInstance();
 	
 	private String xslContextSrcFile; //source .xml
@@ -40,11 +42,16 @@ public class ContextXSLTransform {
 		String results2csv_xsl = "configure/xslt/results2mc_csv.xsl";
 		String results2students_xsl = "configure/xslt/results2students_xml.xsl";
 		Source xslstream = null;
+		
+		//Get XSL files from resources folder
+    	ClassLoader classLoader = getClass().getClassLoader();
 
 		if ("results2csv".equalsIgnoreCase(transformtype)) {
-			xslstream = new StreamSource(results2csv_xsl);
+			xslstream = new StreamSource(new File(classLoader.getResource(RESULTS2CSV).getFile()));
+			//xslstream = new StreamSource(results2csv_xsl);
 		} else if ("results2students".equalsIgnoreCase(transformtype)) {
-			xslstream = new StreamSource(results2students_xsl);
+			xslstream = new StreamSource(new File(classLoader.getResource(RESULTS2XML).getFile()));
+			//xslstream = new StreamSource(results2students_xsl);
 		} else if ("contextSrc2Trout".equalsIgnoreCase(transformtype)) {
 			sourcefile = this.getXslContextSrcFile();
 			troutfile = this.getXslContextTroutFile();
