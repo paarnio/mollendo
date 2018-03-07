@@ -25,7 +25,6 @@
         <name>XMLWellFormed1</name>
         <par1>stuDir1/stuFile1</par1>
 		<return>stuC001</return>
-	    <comment>XMLWellFormed operation comment1</comment>
       </operation>
 	</flow>
 	<flow>

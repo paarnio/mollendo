@@ -25,7 +25,6 @@
         <name>XMLWellFormed1</name>
         <par1>stuDir1/stuFile1</par1>
 		<return>stuC001</return>
-	    <comment>XMLWellFormed operation comment1</comment>
       </operation>
 	</flow>
 	<flow>
@@ -76,7 +75,6 @@
 		<par1>refDir1/refFile1</par1>
         <par2>stuDir1/stuFile2</par2>
 		<return>stuC001</return>
-	    <comment>XSDValidation</comment>
       </operation>
 	</flow>
 	<flow>
@@ -96,7 +94,6 @@
 		<par1>refDir1/refFile1</par1>
         <par2>refDir1/refFile2</par2>
 		<return>refC001</return>
-	    <comment>XSDValidation</comment>
       </operation>
 	  -->
 	</flow>
@@ -137,7 +134,6 @@
 		<par1>refDir1/refFile1</par1>
         <par2>stuDir1/stuFile2</par2>
 		<return>stuC001</return>
-	    <comment>XSDValidation</comment>
       </operation>
 	</flow>
 	<flow>
@@ -188,7 +184,6 @@
 		<par1>refDir1/refFile1</par1>
         <par2>stuDir1/stuFile2</par2>
 		<return>stuC001</return>
-	    <comment>XSDValidation</comment>
       </operation>
 	</flow>
 	<flow>
@@ -239,7 +234,6 @@
 		<par1>refDir1/refFile1</par1>
         <par2>stuDir1/stuFile2</par2>
 		<return>stuC001</return>
-	    <comment>XSDValidation</comment>
       </operation>
 	</flow>
 	<flow>
@@ -290,7 +284,6 @@
 		<par1>refDir1/refFile1</par1>
         <par2>stuDir1/stuFile2</par2>
 		<return>stuC001</return>
-	    <comment>XSDValidation</comment>
       </operation>
 	</flow>
 	<flow>

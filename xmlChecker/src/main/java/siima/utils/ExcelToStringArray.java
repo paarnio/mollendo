@@ -176,14 +176,14 @@ public class ExcelToStringArray {
 				//---
 				break;
 			default:
-				System.out.println("UNKNOWN TYPE");
+				System.out.println("ExcelToStringArray:UNKNOWN TYPE");
 			}			
 			
 		} else {
-			System.out.println("EMPTY CELL");
+			System.out.println("ExcelToStringArray:EMPTY CELL");
 		}
 		} else {
-			System.out.println("EMPTY ROW");
+			System.out.println("ExcelToStringArray:EMPTY ROW");
 		}	
 		return value;
 	}
@@ -374,7 +374,7 @@ public class ExcelToStringArray {
 						//colarray[i]=colarray[i] + cell2.getCellFormula();
 						break;
 					default:
-						System.out.println("UNKNOWN CELL TYPE");
+						System.out.println("ExcelToStringArray:UNKNOWN CELL TYPE");
 					}
 					
 					
@@ -393,7 +393,7 @@ public class ExcelToStringArray {
 			colarray[i-1]=colarray[i-1].substring(0,colarray[i-1].length()-1 ) + lastrow_suffix;
 		else if(islastsfx) colarray[i-1]=colarray[i-1] + lastrow_suffix; //add last_suffix
 		} // end if
-		System.out.println("METHOD: toFullRowStringArray: ROWS total: " + i);
+		System.out.println("ExcelToStringArray:toFullRowStringArray(): ROWS total: " + i);
 		return colarray;
 	}
 	
@@ -439,11 +439,11 @@ public class ExcelToStringArray {
 						//System.out.println(cell2.getCellFormula());
 						break;
 					default:
-						System.out.println("UNKNOWN TYPE");
+						System.out.println("ExcelToStringArray:UNKNOWN TYPE");
 					}
 				} else {
 					//empty cell
-					System.out.println("NIL");
+					System.out.println("ExcelToStringArray:NIL");
 				}
 			}
 		}
@@ -473,14 +473,11 @@ public class ExcelToStringArray {
 			
 			this.rowcount=lastrowind-firstrowind+1;
 			
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
+		} catch (FileNotFoundException e) {			
 			e.printStackTrace();
-		} catch (IOException e2) {
-			// TODO Auto-generated catch block
+		} catch (IOException e2) {			
 			e2.printStackTrace();
-		} catch (InvalidFormatException e) {
-			// TODO Auto-generated catch block
+		} catch (InvalidFormatException e) {			
 			e.printStackTrace();
 		}
 	}
@@ -513,13 +510,10 @@ public class ExcelToStringArray {
 			this.rowcount=lastrowind-firstrowind+1;
 			
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e2) {
-			// TODO Auto-generated catch block
 			e2.printStackTrace();
 		} catch (InvalidFormatException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

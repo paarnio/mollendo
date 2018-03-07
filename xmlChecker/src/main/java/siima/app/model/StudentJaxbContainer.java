@@ -36,7 +36,8 @@ import siima.model.jaxb.checker.taskflow.CheckerTaskFlowType;
 
 public class StudentJaxbContainer {
 	private static final Logger logger=Logger.getLogger(StudentJaxbContainer.class.getName());
-	private static String STUDENT_SCHEMA ="configure/schema/students3.xsd";
+	//private static String STUDENT_SCHEMA ="configure/schema/students3.xsd";
+	private static String STUDENT_SCHEMA ="schema/students3.xsd";//Schema from resources directory: schema/students3.xsd
 	private ExcelMng excelMng;
 	private List<StudentType> students;
 	private StudentSubmits studentSubmits;
@@ -180,7 +181,10 @@ public class StudentJaxbContainer {
 			//Validate against taskflow Schema
 			 SchemaFactory sf = SchemaFactory.newInstance(W3C_XML_SCHEMA_NS_URI);
 	            try {
-	            	schema = sf.newSchema(new File(STUDENT_SCHEMA)); //
+	            	//Get schema file from resources folder
+	            	ClassLoader classLoader = getClass().getClassLoader();
+	            	schema = sf.newSchema(new File(classLoader.getResource(STUDENT_SCHEMA).getFile()));
+	            	//schema = sf.newSchema(new File(STUDENT_SCHEMA)); //
 	            	
 	                u.setSchema(schema);
 	                u.setEventHandler(

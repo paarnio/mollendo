@@ -38,8 +38,8 @@ import siima.model.jaxb.checker.taskflow.TestCaseType;
 
 public class TaskFlowJaxbContainer {
 	private static final Logger logger=Logger.getLogger(TaskFlowJaxbContainer.class.getName());
-	private static String TASKFLOW_SCHEMA ="configure/schema/taskflow8.xsd"; //v8: 2018-02-04 configure/schema/taskflow8.xsd
-	//private static String TASKFLOW_SCHEMA ="schema/taskflow8.xsd"; //Not working In repository: schema/taskflow8.xsd
+	//private static String TASKFLOW_SCHEMA ="configure/schema/taskflow8.xsd"; 
+	private static String TASKFLOW_SCHEMA ="schema/taskflow8.xsd"; //Schema from resources directory: schema/taskflow8.xsd
 	//private Object taskflowRootObject;
 	private CheckerTaskFlowType taskflow;
 	private Path taskFlowFilePath; //latest loaded
@@ -405,10 +405,10 @@ public class TaskFlowJaxbContainer {
 			//Validate against taskflow Schema
 			 SchemaFactory sf = SchemaFactory.newInstance(W3C_XML_SCHEMA_NS_URI);
 	            try {
-	            	//Get file from resources folder
+	            	//Get schema file from resources folder
 	            	ClassLoader classLoader = getClass().getClassLoader();
-	            	//TODO: problems with: schema = sf.newSchema(new File(classLoader.getResource(TASKFLOW_SCHEMA).getFile()));
-	            	schema = sf.newSchema(new File(TASKFLOW_SCHEMA)); //
+	            	schema = sf.newSchema(new File(classLoader.getResource(TASKFLOW_SCHEMA).getFile()));
+	            	//schema = sf.newSchema(new File(TASKFLOW_SCHEMA)); 
 	            	
 	                u.setSchema(schema);
 	                u.setEventHandler(

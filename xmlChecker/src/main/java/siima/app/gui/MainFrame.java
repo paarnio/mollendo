@@ -189,14 +189,11 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		mntmInvoke.setEnabled(false);
 		
 		//a group of check box menu items
-		mnPros.addSeparator();
-		mntmCbResToExcel = new JCheckBoxMenuItem("Results to Project Excel");
-		mntmCbResToExcel.addItemListener(this);
-		mnPros.add(mntmCbResToExcel);
-
+		/*mnPros.addSeparator();
 		mntmCbMenuItem2 = new JCheckBoxMenuItem("Another CheckBox");
 		mntmCbMenuItem2.addItemListener(this);
 		mnPros.add(mntmCbMenuItem2);
+		*/
 		
 		/*
 		 * Student Menu
@@ -234,6 +231,13 @@ public class MainFrame extends JFrame implements ActionListener, ItemListener {
 		mnView.add(mntmShowResults);
 		mntmShowResults.setEnabled(false);
 		
+		//a check box menu item
+		mnView.addSeparator();
+		mntmCbResToExcel = new JCheckBoxMenuItem("Results to Project Excel");
+		mntmCbResToExcel.addItemListener(this);
+		mnView.add(mntmCbResToExcel);
+		
+		mnView.addSeparator();
 		mntmSaveResultsAsXML = new JMenuItem("Save Results As XML...");
 		mntmSaveResultsAsXML.addActionListener(this);
 		mnView.add(mntmSaveResultsAsXML);
