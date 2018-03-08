@@ -222,7 +222,7 @@ public class MainAppController {
 		StringBuffer operErrorBuffer = new StringBuffer();
 		taskCycleProcessor.getRead_oper().setOperErrorBuffer(new StringBuffer());
 		
-		String stuFilePathInZip = (String) this.selectedStuSolutionObject; // "Round_U1/U1E1_1/src/CDcatalog.xml";
+		String stuFilePathInZip = this.selectedStuSolutionObject; // "Round_U1/U1E1_1/src/CDcatalog.xml";
 		if (stuFilePathInZip != null) {
 			List<StudentType> students = studentContainer.getStudents();
 			String studentZipFolder = this.projectHome + "/"
@@ -280,8 +280,8 @@ public class MainAppController {
 		String refZipFilePath = referenceZipFolder + refzipFile;
 		
 		if ((stuZipFilePath != null) && (!"null".equals(stuZipFilePath))) {
-			String stuFilePathInZip = (String) this.selectedStuSolutionObject; //"Round_U1/U1E1_1/src/CDcatalog_X_hidden.xml";
-			String refFilePathInZip = (String) this.selectedRefSolutionObject; //"Round_U1/U1E1_1/test/CDcatalog_3_hidden.xml";
+			String stuFilePathInZip = this.selectedStuSolutionObject; //"Round_U1/U1E1_1/src/CDcatalog_X_hidden.xml";
+			String refFilePathInZip = this.selectedRefSolutionObject; //"Round_U1/U1E1_1/test/CDcatalog_3_hidden.xml";
 			logger.log(Level.INFO,"compareSolutionFiles(): Student's solution in zip:" + stuFilePathInZip);
 			//System.out.println("???? ReadTxtContent from TXT file: " + stuFilePathInZip);
 			String stuTxtContent = taskCycleProcessor.getRead_oper().readTxtFile(stuZipFilePath, stuFilePathInZip);

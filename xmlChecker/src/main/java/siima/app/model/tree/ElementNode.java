@@ -48,7 +48,7 @@ public class ElementNode {
 	}
 
 	public ElementNode getChildAt(int i) {
-		return (ElementNode) children.elementAt(i);
+		return children.elementAt(i);
 	}
 
 	public int getIndexOfChild(ElementNode kid) {

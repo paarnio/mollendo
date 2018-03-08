@@ -12,7 +12,7 @@ import java.util.List;
 public class FileUtil {
 
 	public static String searchLineByTwoPatternsTextFile(String patternA, String patternB, String filepath) {
-		/* 2017-09-17 TODO Test with .Owl file
+		/* 
 		 * Returns the last matchlineA that is before the matchlineB.
 		 * Example: Searching the line containing ontology uri using patterns:
 		 * patternA = "rdf:Description rdf:about="
@@ -43,6 +43,7 @@ public class FileUtil {
 						return matchlineA;
 					}
 				}
+				br.close();
 			} else {
 				System.out.println("- FileUtil:searchLineByTwoPatternsTextFile File does not exist: " + filepath);
 			}
@@ -72,6 +73,7 @@ public class FileUtil {
 						matchlines.add(sCurrentLine);
 					}
 				}
+				br.close();
 			} else {
 				System.out.println("- FileUtil:searchLinesTextFile() File does not exist: " + filepath);
 			}
@@ -91,13 +93,13 @@ public class FileUtil {
 			// Does file exist?
 			File pfile = new File(filepath);
 			if (pfile.exists()) {
-
 				BufferedReader br = new BufferedReader(new FileReader(filepath));
 				String sCurrentLine;
 				while ((sCurrentLine = br.readLine()) != null) {
 					// System.out.println(sCurrentLine + line_end);
 					sbuf.append(sCurrentLine + line_end);
 				}
+				br.close();
 			} else {
 				System.out.println("- FileUtil:readTextFile() File does not exist: " + filepath);
 			}

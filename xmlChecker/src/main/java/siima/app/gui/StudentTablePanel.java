@@ -19,7 +19,8 @@ import java.awt.Dimension;
  
 public class StudentTablePanel extends JPanel 
                                 implements ActionListener { 
-    private JTable table;
+	private static final long serialVersionUID = 1L;
+	private JTable table;
     private JCheckBox rowCheck;
     private JCheckBox columnCheck;
     private JCheckBox cellCheck;
@@ -229,6 +230,7 @@ public class StudentTablePanel extends JPanel
     }
  
     class MyTableModel extends AbstractTableModel {
+    	private static final long serialVersionUID = 1L;
         private String[] columnNames = {"Nr","Surname","First Name","Student ID","E1","E2","E3","E4","E5","E6","Total" };      
         public MyTableModel(){
         	
