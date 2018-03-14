@@ -16,7 +16,7 @@
 
  <xsl:template name="listStudentIds">
 	<xsl:variable name="list-of-studids">
-		<xsl:for-each select="document(/report/resultfile/@name, document(''))/studentSubmits/student/@studentId">
+		<xsl:for-each select="document(/report/resultfile/@name, document(' '))/studentSubmits/student/@studentId">
 			<xsl:sort select="."/>
 			<xsl:value-of select="."/><xsl:text> </xsl:text>
 		</xsl:for-each>
@@ -49,7 +49,7 @@
 			<xsl:variable name="remaining-ids">
 			<xsl:value-of select="substring-after($list-of-unique-studids, ' ')"/>
 			</xsl:variable>
-			<xsl:for-each select="document(/report/resultfile/@name, document(''))/studentSubmits/student">
+			<xsl:for-each select="document(/report/resultfile/@name, document(' '))/studentSubmits/student">
 				<xsl:if test="@studentId=$next-id">
 					<xsl:element name="student">
 						<xsl:attribute name="id">

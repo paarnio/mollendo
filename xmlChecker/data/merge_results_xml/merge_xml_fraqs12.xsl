@@ -10,7 +10,7 @@
 	<xsl:element name="combinedStudents">
 	   <xsl:call-template name="docContent">
 			<xsl:with-param name="docid" select="$docid"/>
-			<xsl:with-param name="studs" select="document(/report/resultfile[position()=$docid]/@name, document(''))/studentSubmits/student"/>	
+			<xsl:with-param name="studs" select="document(/report/resultfile[position()=$docid]/@name, document(' '))/studentSubmits/student"/>	
 		</xsl:call-template>
 	</xsl:element>
   </xsl:template>
@@ -20,9 +20,9 @@
 	<xsl:param name="studs" select=""/>
 	<xsl:param name="listIds" select="list_of_student_IDs"/>
 	
-	<xsl:variable name="subId" select="document(/report/resultfile[position()=$docid]/@name, document(''))/studentSubmits/@submitId"/>
+	<xsl:variable name="subId" select="document(/report/resultfile[position()=$docid]/@name, document(' '))/studentSubmits/@submitId"/>
 	<xsl:variable name="nexDoc" select="$docid+1"/>
-	<xsl:variable name="nexStuds" select="document(/report/resultfile[position()=$nexDoc]/@name, document(''))/studentSubmits/student"/>
+	<xsl:variable name="nexStuds" select="document(/report/resultfile[position()=$nexDoc]/@name, document(' '))/studentSubmits/student"/>
 	
 	<xsl:choose>
 		<xsl:when test="$docid='1'">
@@ -63,7 +63,7 @@
 	<!-- Recursion 
 	<xsl:call-template name="docContent">
 			<xsl:with-param name="docid" select="$docid"/>
-			<xsl:with-param name="studs" select="document(/report/resultfile[position()=$docid]/@name, document(''))/studentSubmits/student"/>	
+			<xsl:with-param name="studs" select="document(/report/resultfile[position()=$docid]/@name, document(' '))/studentSubmits/student"/>	
 	</xsl:call-template>
 	-->
 	
@@ -114,8 +114,8 @@
 	<xsl:param name="nexDoc" select="'1'"/> 
 	<xsl:param name="stuid" select=""/>
 	<xsl:param name="exid" select=""/>
-	<xsl:variable name="subId" select="document(/report/resultfile[position()=$nexDoc]/@name, document(''))/studentSubmits/@submitId"/>
-	<xsl:variable name="nexStuds" select="document(/report/resultfile[position()=$nexDoc]/@name, document(''))/studentSubmits/student"/>
+	<xsl:variable name="subId" select="document(/report/resultfile[position()=$nexDoc]/@name, document(' '))/studentSubmits/@submitId"/>
+	<xsl:variable name="nexStuds" select="document(/report/resultfile[position()=$nexDoc]/@name, document(' '))/studentSubmits/student"/>
 	<xsl:variable name="same" select="$nexStuds[@studentId = $stuid]"/>
 	
 				
