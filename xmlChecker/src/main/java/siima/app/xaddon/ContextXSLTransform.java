@@ -17,11 +17,14 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Level;
+//import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.Level;
 
 public class ContextXSLTransform {
-	private static final Logger logger=Logger.getLogger(ContextXSLTransform.class.getName());
+	private static final Logger logger=LogManager.getLogger(ContextXSLTransform.class.getName());
 	private static String RESULTS2CSV ="xslt/results2mc_csv.xsl";
 	private static String RESULTS2XML ="xslt/results2students_xml.xsl";
 	private TransformerFactory factory = TransformerFactory.newInstance();

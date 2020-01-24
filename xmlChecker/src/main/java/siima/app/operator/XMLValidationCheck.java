@@ -18,8 +18,11 @@ import java.io.IOException;
 import java.io.InputStream;
 //import java.util.logging.Level;
 //import java.util.logging.Logger;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Level;
+//import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.Level;
 
 import java.util.zip.ZipFile;
 
@@ -43,7 +46,7 @@ import org.xml.sax.SAXException;
 import siima.utils.ZipFileReader;
 
 public class XMLValidationCheck {
-	private static final Logger logger=Logger.getLogger(XMLValidationCheck.class.getName());
+	private static final Logger logger=LogManager.getLogger(XMLValidationCheck.class.getName());
 	private StringBuffer operErrorBuffer = new StringBuffer();
 	private ZipFileReader zipper = new ZipFileReader();
 	

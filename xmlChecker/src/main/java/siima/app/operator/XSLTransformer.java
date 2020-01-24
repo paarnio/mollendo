@@ -32,8 +32,11 @@ import java.util.Arrays;
 import java.util.List;
 //import java.util.logging.Level;
 //import java.util.logging.Logger;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Level;
+//import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.Level;
 
 import javax.xml.transform.Result;
 import javax.xml.transform.Source;
@@ -49,7 +52,7 @@ import javax.xml.transform.stream.StreamSource;
 //import org.apache.log4j.Logger;
 
 public class XSLTransformer {
-	private static final Logger logger=Logger.getLogger(XSLTransformer.class.getName());
+	private static final Logger logger=LogManager.getLogger(XSLTransformer.class.getName());
 	private StringBuffer operErrorBuffer = new StringBuffer();
 
 	private TransformerFactory factory;	

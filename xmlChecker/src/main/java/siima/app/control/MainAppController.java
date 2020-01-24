@@ -16,29 +16,34 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 //import java.util.logging.Logger;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Level;
+//import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.Level;
 
-import siima.app.gui.MainFrame;
-import siima.app.model.StudentJaxbContainer;
-import siima.app.model.TaskFlowJaxbContainer;
 import siima.app.model.TaskFlowMetaData;
-import siima.app.model.TriptychContent;
-import siima.app.model.tree.ElementModel;
+
+//import siima.app.gui.MainFrame;
+//import siima.app.model.StudentJaxbContainer;
+//import siima.app.model.TaskFlowJaxbContainer;
+
+//import siima.app.model.TriptychContent;
+//import siima.app.model.tree.ElementModel;
 import siima.app.model.tree.ElementNode;
 import siima.app.model.tree.ElementTree;
 import siima.app.operator.TxtFileReadOper;
 import siima.app.xaddon.ContextXSLTransform;
-import siima.model.jaxb.checker.student.ExerciseType;
-import siima.model.jaxb.checker.student.StudentType;
+//import siima.model.jaxb.checker.student.ExerciseType;
+//import siima.model.jaxb.checker.student.StudentType;
 import siima.model.jaxb.checker.taskflow.CheckerTaskFlowType;
-import siima.model.jaxb.checker.taskflow.FlowType;
-import siima.model.jaxb.checker.taskflow.OperationType;
+//import siima.model.jaxb.checker.taskflow.FlowType;
+//import siima.model.jaxb.checker.taskflow.OperationType;
 import siima.model.jaxb.checker.taskflow.ParamValueListType;
 import siima.model.jaxb.checker.taskflow.TestCaseType;
 
 public class MainAppController {
-	private static final Logger logger=Logger.getLogger(MainAppController.class.getName());
+	private static final Logger logger=LogManager.getLogger(MainAppController.class.getName());
 	private String projectExcelFile = "data/project_U1_sub1/students_U1.xlsx";
 	private String projectHome;
 	private MainFrame viewFrame;

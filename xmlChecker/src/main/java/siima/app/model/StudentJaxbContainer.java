@@ -14,8 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 //import java.util.logging.Level;
 //import java.util.logging.Logger;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Level;
+//import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.Level;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
@@ -35,7 +38,7 @@ import siima.model.jaxb.checker.student.StudentType;
 import siima.model.jaxb.checker.taskflow.CheckerTaskFlowType;
 
 public class StudentJaxbContainer {
-	private static final Logger logger=Logger.getLogger(StudentJaxbContainer.class.getName());
+	private static final Logger logger=LogManager.getLogger(StudentJaxbContainer.class.getName());
 	//private static String STUDENT_SCHEMA ="configure/schema/students3.xsd";
 	private static String STUDENT_SCHEMA ="schema/students3.xsd";//Schema from resources directory: schema/students3.xsd
 	private ExcelMng excelMng;

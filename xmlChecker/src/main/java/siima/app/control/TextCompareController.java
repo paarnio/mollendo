@@ -8,8 +8,11 @@ package siima.app.control;
 import java.util.LinkedList;
 //import java.util.logging.Level;
 //import java.util.logging.Logger;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Level;
+//import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.Level;
 
 import siima.app.operator.XMLValidationCheck;
 import siima.utils.diff_match_patch;
@@ -17,7 +20,7 @@ import siima.utils.diff_match_patch.Diff;
 import siima.utils.diff_match_patch.Operation;
 
 public class TextCompareController {
-	private static final Logger logger=Logger.getLogger(TextCompareController.class.getName());
+	private static final Logger logger=LogManager.getLogger(TextCompareController.class.getName());
 
 	private diff_match_patch dmp;
 	private diff_match_patch.Operation DELETE = diff_match_patch.Operation.DELETE;
